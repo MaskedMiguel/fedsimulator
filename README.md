@@ -14,13 +14,13 @@
 
 ### 💪 <a name="installing"> Installing</a>
 ```
-npm cache clean;
+npm cache clean
 npm install
-npm run start;
+npm run start
 ```
 or
 ```
-yarn
+yarn install
 ```
 
 ### Features
