@@ -9,7 +9,7 @@
 * [Testing](#testing)
 
 
-[![CircleCI](https://circleci.com/gh/azz0r/fed-simulator/tree/feature%2Fmatch.svg?style=svg)](https://circleci.com/gh/azz0r/fed-simulator/tree/master)
+[![CircleCI](https://circleci.com/gh/azz0r/fed-simulator.png?circle-token=:circle-token)](https://circleci.com/gh/azz0r/fed-simulator/tree/master)
 
 
 ### 💪 <a name="installing"> Installing</a>
