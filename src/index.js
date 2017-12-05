@@ -3,6 +3,7 @@ import { AppContainer } from "react-hot-loader"
 import Root from "./root"
 import FastClick from "fastclick"
 import ReactDOM from "react-dom"
+import registerServiceWorker from "./registerServiceWorker"
 
 const rootEl = document.getElementById("root")
 
@@ -14,3 +15,4 @@ export const App = (
 
 ReactDOM.render(App, rootEl)
 FastClick.attach(rootEl)
+registerServiceWorker()
