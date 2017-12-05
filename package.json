@@ -14,15 +14,10 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.34",
-    "@babel/plugin-transform-react-jsx": "^7.0.0-beta.34",
-    "babel-eslint": "7",
     "chromatism": "2.6.0",
     "classnames": "2.2.5",
-    "eslint": "3.x",
     "expect.js": "0.3.1",
     "fastclick": "1.0.6",
-    "flow-bin": "^0.60.1",
     "immutable": "4.0.0-rc.4",
     "lodash.groupby": "4.6.0",
     "lodash.includes": "^4.3.0",
@@ -47,6 +42,8 @@
     "weighted": "0.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.34",
+    "@babel/plugin-transform-react-jsx": "^7.0.0-beta.34",
     "abbrev": "1.1.0",
     "autoprefixer": "6.5.1",
     "babel-cli": "6.26.0",
@@ -71,7 +68,7 @@
     "css-loader": "0.23.1",
     "css-modules-require-hook": "4.0.5",
     "debug": "2.2.0",
-    "enzyme": "^2.4.1",
+    "enzyme": "^2.9.1",
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "3.8.1",
     "eslint-config-react-app": "1.0.4",
