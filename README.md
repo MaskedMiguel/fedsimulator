@@ -52,3 +52,4 @@ Tests are written by creating .spec files under a __tests__ directory.
 * Redux
 * React Router 3.0
 * Stage 0, ES6
+* Service Workers for offline viewing
