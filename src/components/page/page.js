@@ -32,32 +32,15 @@ class Page extends PureComponent {
   }
 
   render() {
-    const {
-      children,
-      classnames,
-      style,
-      name,
-      location: { pathname, },
-    } = this.props
-    const topClasses = classNames(classnames, ["page-container", "no-select"])
-    const darkStyle = Object.assign({}, style, {
-      backgroundColor: style.darkBgColor,
-    })
-    const activeUrl = pathname.replace(/^\//, "")
+    const { children, classnames, style, name } = this.props
+    const darkStyle = Object.assign({}, style, { backgroundColor: style.darkBgColor })
     const isNavVisible = !style.untouched && this.state.openNavBar
     const activeLinks = isNavVisible ? links : []
     return (
-      <div id="page-container" style={darkStyle} className={topClasses}>
+      <div id="page-container" style={darkStyle} className={classNames(classnames, ["page-container", "no-select"])}>
         <main style={darkStyle}>
           <aside>
-            <Nav
-              name={name}
-              tabIndex="0"
-              activeUrl={activeUrl}
-              links={activeLinks}
-              style={style}
-              modifier="main"
-            />
+            <Nav name={name} tabIndex="0" links={activeLinks} style={style} modifier="main" />
           </aside>
           {children}
         </main>
@@ -70,13 +53,9 @@ class Page extends PureComponent {
 Page.displayName = "Page"
 
 Page.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   classnames: PropTypes.string,
   dispatch: PropTypes.func.isRequired,
-  location: PropTypes.object,
   name: PropTypes.string,
   style: PropTypes.object.isRequired,
   version: PropTypes.number.isRequired,
@@ -86,10 +65,6 @@ Page.defaultProps = {
   name: "Fed Simulator",
   classnames: "",
   version: 1,
-}
-
-Page.contextTypes = {
-  location: PropTypes.object,
 }
 
 export default connect(state => ({
