@@ -1,10 +1,10 @@
-import React, { Component } from "react"
+import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
 import Dropzone from "react-dropzone"
 
 import "./image.scss"
 
-class Image extends Component {
+class Image extends PureComponent {
   onDrop = files => {
     const file = files[0]
     const reader = new FileReader()
