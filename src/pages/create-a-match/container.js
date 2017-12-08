@@ -73,7 +73,7 @@ export default compose(
         onWrestlerClick: wrestlerId => {
           return props.onWrestlerClick({
             matchId: currentMatch.id,
-            wrestler: Object.assign(props.roster.find(item => item.id === wrestlerId), { teamId: getId(), }),
+            wrestler: Object.assign({}, props.roster.find(item => item.id === wrestlerId), { teamId: getId(), }),
           })
         },
         onReset: () => {
