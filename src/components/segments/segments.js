@@ -6,7 +6,7 @@ import "./segments.scss"
 class Segments extends PureComponent {
   render() {
     return (
-      <div className="segments" style={{ width: "100%", }}>
+      <div className="segments">
         {this.props.segments.map((segment, key) => {
           return (
             <span key={key} style={segment.style} className="segment">
