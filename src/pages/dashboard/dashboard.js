@@ -7,6 +7,7 @@ import Champions from "../../components/champions/champions"
 import HeaderOne from "../../components/header/header"
 import Simulator from "../../components/simulator"
 import Ranking from "../../components/ranking/ranking"
+import Segments from "../../components/segments/brands.container"
 
 import { RANKED_COLUMNS } from "../../constants/ranking"
 
@@ -21,6 +22,14 @@ export const DashboardPage = ({ name, style, championships, rankedMaleWrestlers,
       </span>
     </HeaderOne>
     <div className="row">
+      <div className="col-xs">
+        <div className="box">
+          <Segments />
+        </div>
+      </div>
+    </div>
+    <br />
+    <div className="row">
       <If condition={championships.length > 0}>
         <div className="col-xs">
           <div className="box">
@@ -28,7 +37,7 @@ export const DashboardPage = ({ name, style, championships, rankedMaleWrestlers,
             <br />
           </div>
         </div>
-    </If>
+      </If>
       <div className="col-xs">
         <div className="box">
           <Ranking style={style} amountToShow={30} rows={rankedMaleWrestlers} columns={RANKED_COLUMNS} title="Ranked Male Wrestlers" />

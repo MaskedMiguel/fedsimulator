@@ -1,0 +1,43 @@
+@import "src/stylesheets/breakpoints";
+
+.segments {
+  clear: both;
+
+  .segment {
+    background-color: black;
+    color: white;
+    float: left;
+    vertical-align: middle;
+    padding: 1rem 0;
+    height: 2rem;
+    line-height: 2rem;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .name {
+      font-size: large;
+      padding: 1rem;
+    }
+
+    .amount {
+      font-size: small;
+    }
+
+    @include breakpoint(xs) {
+      padding: 0.5rem 0;
+
+      .name {
+        font-size: small;
+      }
+      .points {
+        display: none;
+        font-size: small;
+      }
+    }
+  }
+}
