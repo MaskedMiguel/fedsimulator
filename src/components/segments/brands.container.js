@@ -9,14 +9,11 @@ const propsMapper = ({ roster, brands, }) => {
 
   brands.forEach(brand => {
     const value = roster.filter(wrestler => wrestler.brandId === brand.id).reduce((sum, wrestler) => sum + wrestler.wins, 0)
-    const percent = 100 * value / totalWins
-
     if (value === 0) return
 
-    brand.style = Object.assign({}, brand.style, {
-      width: `${percent}%`,
-    })
-    segments.push({ ...brand, value, })
+    const width = 100 * value / totalWins
+
+    segments.push({ ...brand, width, value, })
   })
   return { segments, }
 }

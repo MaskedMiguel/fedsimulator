@@ -8,10 +8,12 @@ class Segments extends PureComponent {
     return (
       <div className="segments">
         {this.props.segments.map((segment, key) => {
+          const { width, value, name, } = segment
+          const style = Object.assign({}, segment.style, { width: width + "%", })
           return (
-            <span key={key} style={segment.style} className="segment">
-              <span className="name">{segment.name}</span>
-              <span className="amount">{segment.value.toLocaleString()}</span>
+            <span key={key} style={style} className="segment">
+              <span className="name">{name}</span>
+              <span className="amount">{value.toLocaleString()}</span>
             </span>
           )
         })}
