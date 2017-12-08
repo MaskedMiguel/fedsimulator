@@ -37,15 +37,15 @@ class ChampionshipsContainer extends Component {
   onChangeColor = (championship, color) => {
     const { dispatch, } = this.props
 
-    championship.style.color = color
+    championship.style = Object.assign({}, championship.style, { color, })
 
     dispatch(updateChampionship(championship))
   }
 
-  onChangeBackgroundColor = (championship, color) => {
+  onChangeBackgroundColor = (championship, backgroundColor) => {
     const { dispatch, } = this.props
 
-    championship.style.backgroundColor = color
+    championship.style = Object.assign({}, championship.style, { backgroundColor, })
 
     dispatch(updateChampionship(championship))
   }
