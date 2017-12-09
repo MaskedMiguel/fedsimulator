@@ -5,6 +5,12 @@ export function generateFederation() {
     type: types.GENERATE,
   }
 }
+export function updateGameSimulation({ simulationSpeed, simulation, }) {
+  return {
+    type: types.UPDATE_GAME_SIMULATION,
+    payload: { simulationSpeed, simulation, },
+  }
+}
 
 export function toggleStarted() {
   return {

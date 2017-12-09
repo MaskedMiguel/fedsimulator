@@ -4,6 +4,8 @@ export const schema = {
   id: undefined,
   name: "",
   started: false,
+  simulation: false,
+  simulationSpeed: 0,
 }
 
 export const Championship = new Record(schema)

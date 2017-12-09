@@ -23,6 +23,7 @@ export const CHECK_VERSION = "CHECK_VERSION"
 export const UPDATE_NAME = "UPDATE_NAME"
 export const GENERATE = "GENERATE"
 export const RESET_GAME = "RESET_GAME"
+export const UPDATE_GAME_SIMULATION = "UPDATE_GAME_SIMULATION"
 
 // roster
 export const GENERATE_ROSTER = "GENERATE_ROSTER"

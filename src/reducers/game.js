@@ -16,6 +16,13 @@ export default (state, action) => {
     case "START_GAME":
       state = state.set("started", true)
       break
+    case "UPDATE_GAME_SIMULATION":
+      const { simulation, simulationSpeed, } = action.payload
+
+      state = state.set("simulation", simulation)
+      state = state.set("simulationSpeed", simulationSpeed)
+      break
+
     case "UPDATE_NAME":
       state = state.set("name", action.payload.name)
       break

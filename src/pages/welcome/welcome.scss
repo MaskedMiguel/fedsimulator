@@ -5,6 +5,12 @@ section.page.welcome {
   font-weight: 100;
   margin-top: 1rem;
   height: 100%;
+  text-align: center;
+
+  a,
+  a:hover {
+    color: white;
+  }
 
   .items {
     margin-bottom: 10rem;
@@ -20,13 +26,8 @@ section.page.welcome {
       margin-bottom: 1rem;
       padding: 0.4rem;
       text-decoration: none;
-      font-size: x-small;
+      font-size: small;
       overflow: hidden;
-
-      a,
-      a:hover {
-        color: white;
-      }
 
       &.highlight {
         background-color: gold;

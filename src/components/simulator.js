@@ -1,64 +1,77 @@
 import React, { PureComponent } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
-
+import Slider from "./form/slider"
 import { Icon } from "./icons"
 
 import { simulateRandomMatches } from "../actions/matches"
-import { SIMULATE_MATCHES_AMOUNT, SIMULATE_MATCHES_PERIOD } from "../constants/game"
+import { updateGameSimulation } from "../actions/game"
 
 const NOOP = () => {}
 
 class Simulator extends PureComponent {
-  state = {
-    active: false,
-    counter: 0,
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      counter: 0,
+    }
+
+    if (props.simulationSpeed > 0) {
+      this.startInterval()
+    }
   }
 
-  onToggleActive = () => {
-    const active = !this.state.active
-
-    this.setState({
-      active,
-    })
-
-    if (active) {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.simulationSpeed > 0) {
+      this.clearInterval()
       this.startInterval()
     } else {
       this.clearInterval()
     }
   }
 
-  startSimulations = () => {
-    this.setState({ counter: this.state.counter + SIMULATE_MATCHES_AMOUNT, })
-    this.props.dispatch(simulateRandomMatches())
-  }
-
-  startInterval = () => {
-    this._interval = setInterval(this.startSimulations, SIMULATE_MATCHES_PERIOD)
-  }
-
-  clearInterval = () => {
-    this.setState({
-      counter: 0,
-    })
-    clearInterval(this._interval)
-  }
-
   componentWillUnmount() {
     this.clearInterval()
+  }
+
+  onChange = event => {
+    const simulationSpeed = event.currentTarget.value
+
+    this.props.dispatch(
+      updateGameSimulation({
+        simulationSpeed,
+        simulation: true,
+      })
+    )
   }
 
   render() {
     const color = !this.state.active ? "white" : "gold"
     const icon = !this.state.active ? "play-circle" : "stop-circle"
-    const title = !this.state.active ? "Start simulations" : "Stop simulating"
     return (
-      <span className={color} onClick={this.onToggleActive}>
-        <Icon icon={icon} /> {title}
-        <If condition={this.state.active}>&nbsp;({this.state.counter.toLocaleString("en")})</If>
+      <span className={color}>
+        <Icon icon={icon} /> Simulation &nbsp;({this.state.counter.toLocaleString("en")})&nbsp;
+        <Slider max={70} value={this.props.simulationSpeed} onChange={this.onChange} />
       </span>
     )
+  }
+
+  startSimulations = () => {
+    if (this.props.simulationSpeed > 0) {
+      const counter = Number(this.state.counter) + Number(this.props.simulationSpeed)
+
+      this.setState({ counter, })
+      this.props.dispatch(simulateRandomMatches(this.props.simulationSpeed))
+    }
+  }
+
+  startInterval = () => {
+    this._interval = setInterval(this.startSimulations, 350)
+  }
+
+  clearInterval = () => {
+    clearInterval(this._interval)
   }
 }
 
@@ -66,10 +79,14 @@ Simulator.displayName = "PageSecondary"
 
 Simulator.propTypes = {
   dispatch: PropTypes.func,
+  simulationSpeed: PropTypes.oneOfType([PropTypes.number, PropTypes.string,]),
 }
 
 Simulator.defaultProps = {
   dispatch: NOOP,
+  simulationSpeed: 0,
 }
 
-export default connect(null)(Simulator)
+export default connect(state => ({
+  simulationSpeed: state.game.simulationSpeed,
+}))(Simulator)
