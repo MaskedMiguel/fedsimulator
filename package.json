@@ -10,8 +10,7 @@
     "lint": "eslint src --fix",
     "test": "NODE_ENV=test mocha --opts mocha.opts",
     "test:watch": "NODE_ENV=test mocha --watch --opts mocha.opts ",
-    "prepush": "npm test",
-    "precommit": "lint-staged"
+    "prepush": "npm test"
   },
   "dependencies": {
     "chromatism": "2.6.0",
