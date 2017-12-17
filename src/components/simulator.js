@@ -47,14 +47,7 @@ class Simulator extends PureComponent {
   }
 
   render() {
-    const color = !this.state.active ? "white" : "gold"
-    const icon = !this.state.active ? "play-circle" : "stop-circle"
-    return (
-      <span className={color}>
-        <Icon icon={icon} /> Simulation &nbsp;({this.state.counter.toLocaleString("en")})&nbsp;
-        <Slider max={70} value={this.props.simulationSpeed} onChange={this.onChange} />
-      </span>
-    )
+    return [`Simulations `, `(${this.state.counter.toLocaleString("en")}) `, <Slider max={70} value={this.props.simulationSpeed} onChange={this.onChange} />,]
   }
 
   startSimulations = () => {
