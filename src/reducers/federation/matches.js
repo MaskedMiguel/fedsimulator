@@ -5,7 +5,7 @@ import WrestlersReducer from "./match.wrestlers"
 
 import { getId } from "../../models/model.helper"
 
-export default (state, action) => {
+export default (state, action, getState) => {
   state = List(state)
   let index
 
@@ -16,6 +16,19 @@ export default (state, action) => {
         const id = action.payload.id ? action.payload.id : getId()
 
         state = state.push(new Model(payload).merge({ id, }))
+      }
+      break
+    case "RANDOMISE_MATCH":
+      if (action.payload) {
+        index = state.findIndex(item => item.id === action.payload)
+
+        if (index > -1) {
+          state = state.updateIn([index,], item => {
+            item.simulated = true
+            item.wrestlers = new WrestlersReducer(getState("roster"), action)
+            return item
+          })
+        }
       }
       break
     case "SIMULATE_MATCH":
@@ -56,17 +69,15 @@ export default (state, action) => {
       }
       break
     case "ADD_WRESTLER_TO_MATCH":
-      {
-        index = state.findIndex(item => item.id === action.payload.matchId)
+      index = state.findIndex(item => item.id === action.payload.matchId)
 
-        if (index > -1) {
-          state = state.update(index, item => {
-            return new Model(item).merge({
-              simulated: false,
-              wrestlers: new WrestlersReducer(item.wrestlers, action),
-            })
+      if (index > -1) {
+        state = state.update(index, item => {
+          return new Model(item).merge({
+            simulated: false,
+            wrestlers: new WrestlersReducer(item.wrestlers, action),
           })
-        }
+        })
       }
       break
     case "CLEAR_WRESTLERS_FROM_MATCH":

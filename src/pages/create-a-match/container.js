@@ -5,7 +5,7 @@ import { List } from "immutable"
 
 import { getId } from "../../models/model.helper"
 import CreateAMatch from "./create-a-match"
-import { createMatch, simulateMatch, addWrestlerToMatch } from "../../actions/matches"
+import { createMatch, simulateMatch, addWrestlerToMatch, randomiseMatch } from "../../actions/matches"
 import { MATCH_CONFIRM_RESET } from "../../constants/confirmations"
 
 export const pick = items => items[Math.floor(Math.random() * (items.length - 1))]
@@ -51,6 +51,7 @@ export default compose(
       style: state.style,
     }),
     dispatch => ({
+      onRandomise: id => dispatch(randomiseMatch(id)),
       onCreate: currentMatch => dispatch(createMatch(currentMatch)),
       onSimulateMatch: id => dispatch(simulateMatch(id)),
       onWrestlerClick: props => dispatch(addWrestlerToMatch(props)),
@@ -89,6 +90,11 @@ export default compose(
           event.preventDefault()
 
           return props.onSimulateMatch(currentMatch.id)
+        },
+        onRandomise: event => {
+          event.preventDefault()
+
+          return props.onRandomise(currentMatch.id)
         },
         winner,
         loser,

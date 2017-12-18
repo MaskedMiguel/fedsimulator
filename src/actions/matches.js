@@ -8,6 +8,13 @@ export function createMatch(payload) {
   }
 }
 
+export function randomiseMatch(matchId) {
+  return {
+    type: types.RANDOMISE_MATCH,
+    payload: matchId,
+  }
+}
+
 export function simulateRandomMatches(amountOfMatches = SIMULATE_MATCHES_AMOUNT) {
   return {
     type: types.SIMULATE_RANDOM_MATCHES,

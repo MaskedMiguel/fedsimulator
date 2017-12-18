@@ -11,6 +11,7 @@ const Create = ({ onClick, }) => new Icon({ icon: "plus-circle green", onClick, 
 const Generate = ({ onClick, }) => new Icon({ icon: "rocket", onClick, })
 const ListToggle = ({ onClick, }) => new Icon({ icon: "list", onClick, })
 const Reset = ({ onClick, }) => new Icon({ icon: "trash", onClick, })
+const Randomise = ({ onClick, }) => new Icon({ icon: "random", onClick, })
 
 const Gender = ({ gender = false, onClick = NOOP, }) => {
   let icon = "genderless"
@@ -45,4 +46,4 @@ Icon.propTypes = {
 }
 Gender.propTypes = Object.assign({}, Icon.propTypes, { gender: PropTypes.bool, })
 
-export { Icon, Create, Gender, Generate, ListToggle, SortBy, Visible, Direction, Reset }
+export { Icon, Create, Gender, Generate, ListToggle, SortBy, Randomise, Visible, Direction, Reset }

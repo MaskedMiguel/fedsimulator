@@ -1,5 +1,6 @@
 import { List } from "immutable"
 
+import randomiseWrestlers from "../../helpers/randomise-wrestlers.js"
 import selectRandomResults from "../../helpers/select-random-results"
 import Model from "../../models/match.wrestler.model"
 
@@ -9,6 +10,9 @@ export default (state, action) => {
   switch (action.type) {
     case "SIMULATE_MATCH":
       state = selectRandomResults(state.toJS())
+      break
+    case "RANDOMISE_MATCH":
+      state = randomiseWrestlers({ wrestlers: state.toJS(), })
       break
     case "SELECT_WINNER_IN_MATCH":
       state = state.map(item => {

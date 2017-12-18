@@ -6,7 +6,7 @@ import { Winner, Loser } from "../../components/winner/winner"
 import HeaderOne from "../../components/header/header"
 import Match from "../../components/match/container"
 import Button from "../../components/button/button"
-import { Reset } from "../../components/icons"
+import { Reset, Randomise } from "../../components/icons"
 
 import "./create-a-match.scss"
 
@@ -16,6 +16,7 @@ const CreateAMatch = ({
   currentMatch = {},
   loser = {},
   onReset = NOOP,
+  onRandomise = NOOP,
   onSimulateMatch = NOOP,
   onWrestlerClick = NOOP,
   style = {},
@@ -30,6 +31,7 @@ const CreateAMatch = ({
             <HeaderOne>
               Create a Match
               <span tabIndex="0" className="tools">
+                <Randomise onClick={onRandomise} />
                 <Reset onClick={onReset} />
               </span>
             </HeaderOne>
@@ -58,6 +60,7 @@ const CreateAMatch = ({
 CreateAMatch.propTypes = {
   currentMatch: PropTypes.object,
   loser: PropTypes.object,
+  onRandomise: PropTypes.func,
   onReset: PropTypes.func,
   onSimulateMatch: PropTypes.func,
   onWrestlerClick: PropTypes.func,
