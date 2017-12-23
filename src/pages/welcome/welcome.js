@@ -3,18 +3,17 @@ import { Link } from "react-router"
 import PropTypes from "prop-types"
 
 import { Icon } from "../../components/icons"
-import { schema as defaultStyle } from "../../models/style.model"
+import Social from "../../components/social"
 
 import "./welcome.scss"
-import "./pulse.scss"
 
 const NOOP = () => {}
 
-const WelcomePage = ({ generateFederation = NOOP, style = defaultStyle, }) => (
+const WelcomePage = ({ generateFederation = NOOP, }) => (
   <section className="page welcome">
     <div className="items collection">
       <Link tabIndex="0" to="/name">
-        <div className="item highlight">
+        <div className="item highlight pulse">
           <Icon icon="plus" /> I'll build this company from the ground up, dammit
         </div>
       </Link>
@@ -23,15 +22,7 @@ const WelcomePage = ({ generateFederation = NOOP, style = defaultStyle, }) => (
       </div>
     </div>
     <footer>
-      <a target="_blank" href="https://twitter.com/UniverseSimMan">
-        <i className="fab fa-twitter" aria-hidden="true" /> Twitter
-      </a>
-      &nbsp;&nbsp;&nbsp;
-      <i className="fa fa-ellipsis-v" aria-hidden="true" />
-      &nbsp;&nbsp;&nbsp;
-      <a target="_blank" href="https://github.com/azz0r/fed-simulator">
-        <i className="fab fa-github" aria-hidden="true" /> Github
-      </a>
+      <Social />
     </footer>
   </section>
 )

@@ -23,7 +23,7 @@ const Team = ({ classes = "", teamId = "", wrestlers = [], onSelectWinner = NOOP
   return (
     <div className={teamClasses}>
       <Droppable types={["wrestler",]} onDrop={onDrop}>
-        <div className="box dropzone">
+        <div className="box dropzone pulse">
           <Choose>
             <When condition={wrestlers.length > 0}>
               {wrestlers.map(wrestler => {

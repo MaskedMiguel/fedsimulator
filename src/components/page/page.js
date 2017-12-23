@@ -6,6 +6,7 @@ import PropTypes from "prop-types"
 import StyleBrands from "./style-brands"
 import * as versionActions from "../../actions/version"
 import Nav from "../nav/container"
+import Social from "../social"
 import links from "./links.json"
 
 import "../../stylesheets/base.scss"

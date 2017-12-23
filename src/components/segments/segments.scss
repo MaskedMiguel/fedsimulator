@@ -13,11 +13,6 @@
     line-height: 2rem;
     vertical-align: middle;
     overflow: hidden;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: scale(1.03);
-    }
 
     .name {
       font-size: large;

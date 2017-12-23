@@ -11,7 +11,7 @@ class Segments extends PureComponent {
           const { width, value, name, } = segment
           const style = Object.assign({}, segment.style, { width: width + "%", })
           return (
-            <span key={key} style={style} className="segment">
+            <span key={key} style={style} className="segment pulse">
               <span className="name">{name}</span>
               <span className="amount">{value.toLocaleString()}</span>
             </span>

@@ -5,19 +5,24 @@ import { Link } from "react-router"
 import chromatism from "chromatism"
 
 import { Reset } from "../../components/icons"
+import Social from "../../components/social"
 import ColorPickers from "../../components/color-pickers/container"
 import { resetAll } from "../../actions/game"
 import HeaderOne from "../../components/header/header"
 
 import "./settings.scss"
 
+const BRIGHTNESS_REDUCTION_STEP = 4
+
 class Settings extends Component {
   render() {
     const { style, } = this.props
-    const reduceBrightness = amount => {
+    let brightness = 0
+    const reduceBrightness = () => {
+      brightness = brightness + BRIGHTNESS_REDUCTION_STEP
       return {
         color: style.color,
-        backgroundColor: chromatism.brightness(amount, style.backgroundColor).hex,
+        backgroundColor: chromatism.brightness(brightness, style.backgroundColor).hex,
       }
     }
 
@@ -25,20 +30,29 @@ class Settings extends Component {
       <section className="page settings">
         <HeaderOne>Settings</HeaderOne>
         <div className="row">
-          <div className="col-xs-12">
-            <div className="box" style={reduceBrightness(4)}>
+          <div className="col-xs-12 pulse pulse-small">
+            <div className="box" style={reduceBrightness()}>
+              <Link tabIndex="0" to="name">
+                Name your federation
+              </Link>
+            </div>
+          </div>
+          <div className="col-xs-12 pulse pulse-small">
+            <div className="box" style={reduceBrightness()}>
               <ColorPickers />
             </div>
-            <div className="box" style={reduceBrightness(10)}>
+          </div>
+          <div className="col-xs-12 pulse pulse-small">
+            <div className="box" style={reduceBrightness()}>
               <a tabIndex="0" onClick={this.onReset}>
                 <Reset />
                 &nbsp;Reset game
               </a>
             </div>
-            <div className="box" style={reduceBrightness(16)}>
-              <Link tabIndex="0" to="name">
-                Name your federation
-              </Link>
+          </div>
+          <div className="col-xs-12 pulse pulse-small">
+            <div className="box" style={reduceBrightness()}>
+              <Social />
             </div>
           </div>
         </div>

@@ -7,7 +7,13 @@ import "./labels.scss"
 const NOOP = () => {}
 
 export const Label = ({ style = {}, id = "", active = false, onClick = NOOP, name = "", }) => (
-  <span tabIndex="0" onKeyPress={() => onClick(id)} onClick={() => onClick(id)} className={classnames({ active: active, }, "label", "title")} style={style}>
+  <span
+    tabIndex="0"
+    onKeyPress={() => onClick(id)}
+    onClick={() => onClick(id)}
+    className={classnames({ active: active, }, "pulse", "label", "title")}
+    style={style}
+  >
     {name}
   </span>
 )

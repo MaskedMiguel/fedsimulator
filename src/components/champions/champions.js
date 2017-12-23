@@ -13,7 +13,7 @@ export const Champions = ({ champions, championships, }) => (
       const secondChampion = championship.tag ? champions.find(item => item.championshipId === championship.id && item.id !== champion.id) : null
 
       return !champion ? null : (
-        <div key={championship.id} className="col-xs champion" style={championship.style}>
+        <div key={championship.id} className="col-xs pulse champion" style={championship.style}>
           <header>{championship.name}</header>
           <Wrestler wrestler={champion} canDrag={false} />
           <If condition={secondChampion}>

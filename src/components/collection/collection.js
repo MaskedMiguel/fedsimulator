@@ -41,7 +41,7 @@ const Collection = ({
         }
         roster = newRoster[item.male]
         return (
-          <div key={item.id} className="item row middle-xs" style={style}>
+          <div key={item.id} className="item row middle-xs pulse pulse-small" style={style}>
             <If condition={canUpdateColors}>
               <div className="col-xs small">
                 <div className="box">
