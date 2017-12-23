@@ -8,4 +8,11 @@
   overflow: auto;
   padding: 0.3rem;
   z-index: $z-index-wrestlers;
+
+  h3 {
+    font-size: xx-small;
+    margin: 1rem 0 0;
+    display: block;
+    width: 100%;
+  }
 }

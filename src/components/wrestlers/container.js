@@ -10,7 +10,6 @@ export const mappedPropTypes = {
   collection: PropTypes.array,
   onClick: PropTypes.func,
   canDrag: PropTypes.bool,
-  withFilter: PropTypes.bool,
 }
 
 export const propsMapper = props => {

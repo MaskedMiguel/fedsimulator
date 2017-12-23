@@ -25,8 +25,8 @@ const CreateAMatch = ({
 }) => (
   <section className="page create-a-match">
     <form onSubmit={onSimulateMatch}>
-      <div className="row">
-        <div className="col-xs-12">
+      <div className="row center-xs">
+        <div className="col-xs-12 col-lg-8">
           <div className="box">
             <HeaderOne>
               Create a Match
@@ -36,23 +36,22 @@ const CreateAMatch = ({
               </span>
             </HeaderOne>
             <Match currentMatch={currentMatch} />
-            <If condition={winner.name && loser.name}>
-              <div className="col-xs-12">
-                <div className="box middle-xs center-xs">
-                  <Winner {...winner} />
-                  <br />
-                  <Loser {...loser} />
-                </div>
-              </div>
-            </If>
+            <br />
             <If condition={numberOfWrestlers > 1}>
-              <br />
               <Button tabIndex="0" value="Simulate Match" onClick={onSimulateMatch} />
+            </If>
+            <If condition={winner.name && loser.name}>
+              <br />
+              <Winner {...winner} />
+              <br />
+              <Loser {...loser} />
             </If>
           </div>
         </div>
+        <div className="col-lg 4 col-xs-12">
+          <Wrestlers onClick={onWrestlerClick} style={style} />
+        </div>
       </div>
-      <Wrestlers onClick={onWrestlerClick} style={style} />
     </form>
   </section>
 )

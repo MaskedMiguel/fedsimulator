@@ -28,7 +28,7 @@ $nav-height: 2.5rem;
 }
 
 .nav-toggle {
-  @media (min-width: $mobile) {
+  @media (min-width: $mobile + 1) {
     display: none;
   }
 

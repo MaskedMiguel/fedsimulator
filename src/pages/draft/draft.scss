@@ -6,15 +6,13 @@
 
   .brand {
     flex: 1 0;
-    height: 100vh;
     margin: 0;
     overflow: hidden;
-    padding: 0;
-    text-align: center;
+    padding: 0.5rem;
+  }
 
-    .wrestlers {
-      justify-content: center;
-    }
+  h3 {
+    margin: 0.5rem 0;
   }
 
   @include breakpoint(xs) {
@@ -29,12 +27,12 @@
     }
 
     .icon.trophy {
-      font-size: 0.4rem;
+      font-size: small;
       margin: 0;
     }
 
     h3 {
-      display: none;
+      font-size: xx-small;
     }
   }
 }

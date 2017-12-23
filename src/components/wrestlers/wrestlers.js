@@ -7,23 +7,35 @@ import "./wrestlers.scss"
 
 const NOOP = () => {}
 
-const Wrestlers = ({ collection = [], onClick = NOOP, canDrag = true, style = {}, }) => {
+const Collection = ({ collection = [], ...props }) => {
+  return collection.map(wrestler => <Wrestler key={wrestler.id} wrestler={wrestler} {...props} />)
+}
+
+const Container = ({ collection = [], onClick = NOOP, canDrag = true, style = {}, }) => {
+  const women = collection.filter(item => !item.male)
+  const men = collection.filter(item => item.male)
   return (
     <div className="wrestlers" style={style}>
-      {collection.map(wrestler => {
-        const props = { onClick, wrestler, canDrag, }
-
-        return <Wrestler key={wrestler.id} {...props} />
-      })}
+      <If condition={men.length > 0}>
+        <h3>Men</h3>
+        <Collection collection={men} onClick={onClick} canDrag={canDrag} />
+      </If>
+      <If condition={women.length > 0}>
+        <h3>Women</h3>
+        <Collection collection={women} onClick={onClick} canDrag={canDrag} />
+      </If>
     </div>
   )
 }
 
-Wrestlers.propTypes = {
+Collection.propTypes = {
   collection: PropTypes.array,
   onClick: PropTypes.func,
   canDrag: PropTypes.bool,
-  style: PropTypes.object,
 }
 
-export default Wrestlers
+Container.propTypes = Object.assign({}, Collection.propTypes, {
+  style: PropTypes.object,
+})
+
+export default Container

@@ -24,13 +24,13 @@ const WelcomePage = ({ generateFederation = NOOP, style = defaultStyle, }) => (
     </div>
     <footer>
       <a target="_blank" href="https://twitter.com/UniverseSimMan">
-        <i className="fa fa-twitter" aria-hidden="true" /> Twitter
+        <i className="fab fa-twitter" aria-hidden="true" /> Twitter
       </a>
       &nbsp;&nbsp;&nbsp;
       <i className="fa fa-ellipsis-v" aria-hidden="true" />
       &nbsp;&nbsp;&nbsp;
       <a target="_blank" href="https://github.com/azz0r/fed-simulator">
-        <i className="fa fa-github" aria-hidden="true" /> Github
+        <i className="fab fa-github" aria-hidden="true" /> Github
       </a>
     </footer>
   </section>

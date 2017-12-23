@@ -1,9 +1,9 @@
 import { Record } from "immutable"
 
 export const schema = {
-	backgroundColor: "#3e029f",
+  backgroundColor: "#3e029f",
   color: "#fff",
-  darkBgColor: "#000",
+  darkBgColor: "#000025",
   shade: -60,
   untouched: true,
 }
