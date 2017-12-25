@@ -14,7 +14,9 @@ const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, link
     <nav className="nav" style={style}>
       <div className="nav-left">
         <h1>
-          <Link to="/">Fed Simulator</Link>
+          <Link to="/">
+            Fed Simulator <i className="icon fa fa-tree" />
+          </Link>
         </h1>
       </div>
       <If condition={links.length > 0}>
