@@ -9,7 +9,7 @@ import "./nav.scss"
 
 const NOOP = () => {}
 
-const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, links = [] }) => {
+const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, links = [], }) => {
   return (
     <nav className="nav" style={style}>
       <div className="nav-left">
@@ -23,14 +23,14 @@ const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, link
         <label htmlFor="menu-toggle" className="nav-toggle" onClick={toggleSubMenuOpen}>
           &equiv;
         </label>
-        <div className={classnames({ active: isSubMenuOpen }, "nav-right", "nav-menu")} style={style}>
+        <div className={classnames({ active: isSubMenuOpen, }, "nav-right", "nav-menu")} style={style}>
           {links.map((item, key) => {
-            const { url, icon, title } = item
+            const { url, icon, title, } = item
             return (
               <Link
-                className={classnames("nav-item", "pointer", { active: item.active })}
+                className={classnames("nav-item", "pointer", { active: item.active, })}
                 key={key}
-                style={{ color: style.color }}
+                style={{ color: style.color, }}
                 to={url}
                 onClick={toggleSubMenuOpen}
               >
@@ -46,11 +46,12 @@ const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, link
 }
 
 Nav.propTypes = {
-  isSubMenuOpen: PropTypes.bool,
-  toggleSubMenuOpen: PropTypes.func,
   backgroundColor: PropTypes.string,
   color: PropTypes.string,
+  isSubMenuOpen: PropTypes.bool,
   links: PropTypes.array,
+  style: PropTypes.object,
+  toggleSubMenuOpen: PropTypes.func,
 }
 
 export default Nav
