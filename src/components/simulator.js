@@ -2,7 +2,6 @@ import React, { PureComponent } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import Slider from "./form/slider"
-import { Icon } from "./icons"
 
 import { simulateRandomMatches } from "../actions/matches"
 import { updateGameSimulation } from "../actions/game"
@@ -47,7 +46,12 @@ class Simulator extends PureComponent {
   }
 
   render() {
-    return [`Simulations `, `(${this.state.counter.toLocaleString("en")}) `, <Slider max={70} value={this.props.simulationSpeed} onChange={this.onChange} />,]
+    return (
+      <div>
+        Simulations ({this.state.counter.toLocaleString("en")})
+        <Slider max={70} value={this.props.simulationSpeed} onChange={this.onChange} />
+      </div>
+    )
   }
 
   startSimulations = () => {
