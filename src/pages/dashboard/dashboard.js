@@ -13,13 +13,15 @@ import { RANKED_COLUMNS } from "../../constants/ranking"
 
 import "./dashboard.scss"
 
-export const DashboardPage = ({ name, style, championships, rankedMaleWrestlers, rankedFemaleWrestlers, }) => (
+export const DashboardPage = ({ name, canSimulate, style, championships, rankedMaleWrestlers, rankedFemaleWrestlers, }) => (
   <section className="page dashboard zoom">
     <HeaderOne>
       {name} Dashboard
-      <span tabIndex="0" className="tools">
-        <Simulator />
-      </span>
+      <If condition={canSimulate}>
+        <span tabIndex="0" className="tools">
+          <Simulator />
+        </span>
+      </If>
     </HeaderOne>
     <Segments />
     <div className="row">
@@ -48,6 +50,7 @@ export const DashboardPage = ({ name, style, championships, rankedMaleWrestlers,
 DashboardPage.displayName = "DashboardPage"
 
 DashboardPage.propTypes = {
+  canSimulate: PropTypes.bool.isRequired,
   championships: PropTypes.array.isRequired,
   name: PropTypes.string.isRequired,
   rankedFemaleWrestlers: PropTypes.array.isRequired,
@@ -56,6 +59,7 @@ DashboardPage.propTypes = {
 }
 
 export default connect(state => ({
+  canSimulate: state.federation.roster.length > 0,
   championships: state.federation.championships,
   rankedMaleWrestlers: orderBy(state.federation.roster.filter(wrestler => wrestler.male), "points", "desc"),
   rankedFemaleWrestlers: orderBy(state.federation.roster.filter(wrestler => !wrestler.male), "points", "desc"),

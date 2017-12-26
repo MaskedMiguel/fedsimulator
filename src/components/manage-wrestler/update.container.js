@@ -9,7 +9,7 @@ const propsMapper = ({ dispatch, id, }) => ({
   onResetChampionship: () => dispatch(updateWrestler({ championshipId: null, id: id, })),
   onChampionshipSelected: championshipId => dispatch(updateWrestler({ championshipId: String(championshipId), id: id, })),
   onGenderUpdate: male => dispatch(updateWrestler({ male: Boolean(male), id: id, })),
-  onBrandSelected: brandId => dispatch(updateWrestler({ brandId: String(brandId), id: id, })),
+  onBrandSelected: brandId => dispatch(updateWrestler({ championshipId: null, brandId: String(brandId), id: id, })),
   onPointsUpdate: e => dispatch(updateWrestler({ points: Number(e.target.value), id: id, })),
   onNameUpdate: e => dispatch(updateWrestler({ name: String(e.target.value), id: id, })),
   onImageUpdate: (name, value) => dispatch(updateWrestler({ image: String(value), id: id, })),

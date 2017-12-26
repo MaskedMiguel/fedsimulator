@@ -5,13 +5,15 @@ import keyBy from "lodash.keyby"
 import randomiseWrestlers from "./randomise-wrestlers"
 import selectRandomResults from "./select-random-results"
 
+import { POINTS_STEP } from "../constants/game"
+
 export default class Match {
   /*
     wrestlers: array, collection of wrestlers already in the Match
     roster: array, full collection of available wrestlers to pick from
     championship: array, belts to pass the championshipId to
   */
-  constructor({ roster = [], wrestlers = [], brandId = null, championships = [] }) {
+  constructor({ roster = [], wrestlers = [], brandId = null, championships = [], }) {
     this.roster = new List(roster)
     this.brandId = String(brandId)
     this.wrestlers = new List(wrestlers)
@@ -36,7 +38,7 @@ export default class Match {
       wrestlers = wrestlers.filter(item => item.brandId === this.brandId)
     }
 
-    this.wrestlers = new List(randomiseWrestlers({ wrestlers }))
+    this.wrestlers = new List(randomiseWrestlers({ wrestlers, }))
 
     return this
   }
@@ -91,16 +93,16 @@ export default class Match {
 
     this.roster = this.roster.map(wrestler => {
       if (includes(this.loserIds, wrestler.id)) {
-        wrestler = wrestler.set("losses", wrestler.get("losses") + 1)
+        wrestler = wrestler.set("losses", wrestler.get("losses") + POINTS_STEP)
 
         if (wrestler.get("losses") % 10 === 0) {
-          wrestler = wrestler.set("points", wrestler.get("points") - 1)
+          wrestler = wrestler.set("points", wrestler.get("points") - POINTS_STEP)
         }
       } else if (includes(this.winnerIds, wrestler.id)) {
-        wrestler = wrestler.set("wins", wrestler.get("wins") + 1)
+        wrestler = wrestler.set("wins", wrestler.get("wins") + POINTS_STEP)
 
         if (wrestler.get("wins") % 10 === 0) {
-          wrestler = wrestler.set("points", wrestler.get("points") + 1)
+          wrestler = wrestler.set("points", wrestler.get("points") + POINTS_STEP)
         }
       }
       return wrestler

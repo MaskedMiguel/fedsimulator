@@ -33,7 +33,7 @@ class ColorPicker extends React.Component {
         {this.state.displayColorPicker ? (
           <div className="popover" onKeyPress={this.handleClose} onClick={this.handleClose}>
             <div className="cover" tabIndex="0" />
-            <Picker tabIndex="0" colors={colors} width="220px" onChange={this.onChange} />
+            <Picker tabIndex="0" colors={colors} width="200px" onChange={this.onChange} />
           </div>
         ) : null}
       </div>

@@ -43,7 +43,7 @@ const RosterPage = ({ onToggleListView, onClose, onClick, onClear, onGenerate, l
         <div className={col}>
           <Choose>
             <When condition={!listView}>
-              <Wrestlers byPassGender={true} style={style} highlightNewest={true} onClick={onClick} />
+              <Wrestlers style={style} onClick={onClick} />
             </When>
             <Otherwise>
               <Collection />

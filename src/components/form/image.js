@@ -28,9 +28,11 @@ class Image extends PureComponent {
             {label}
           </label>
         </div>
-        <div>
-          <img className="dropzone__image" src={value} />
-        </div>
+        <If condition={value}>
+          <div>
+            <img className="dropzone__image" src={value} />
+          </div>
+        </If>
       </Dropzone>
     )
   }

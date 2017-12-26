@@ -1,8 +1,12 @@
 @import "src/stylesheets/z-index";
 
+.github-picker,
+.popover {
+  z-index: $z-index-color-pickers;
+}
+
 .popover {
   position: fixed;
-  z-index: $z-index-color-pickers;
 }
 
 .cover {

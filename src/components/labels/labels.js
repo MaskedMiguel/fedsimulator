@@ -25,8 +25,8 @@ export const Labels = ({ style = {}, highlighted, onClick = NOOP, labels = [], }
 )
 
 Labels.propTypes = {
-  labels: PropTypes.array,
   highlighted: PropTypes.any,
+  labels: PropTypes.array,
   onClick: PropTypes.func,
   style: PropTypes.object,
 }

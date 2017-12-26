@@ -8,6 +8,10 @@
     width: 100%;
   }
 
+  .form-field {
+    margin: 0.5rem;
+  }
+
   .championships .label {
     background-color: #a17f1a;
     color: currentColor;
@@ -15,8 +19,13 @@
   }
 
   .label {
+    margin: 0 0.5rem 0 0;
     font-size: small;
     font-variant: normal;
     text-transform: capitalize;
+  }
+
+  .dropzone {
+    width: 100%;
   }
 }

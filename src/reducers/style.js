@@ -1,7 +1,7 @@
 import chromatism from "chromatism"
 
 import Model from "../models/style.model"
-import { shade } from "../helpers/colours"
+import { shade } from "../helpers/shade"
 
 export default (state, action) => {
   state = new Model(state)

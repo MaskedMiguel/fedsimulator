@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 class DefaultPage extends Component {
   componentWillMount() {
-    const { championships, name, router, started, untouched, } = this.props
+    const { brands, roster, name, router, started, untouched, } = this.props
 
     let pathName = "dashboard"
 
@@ -14,6 +14,10 @@ class DefaultPage extends Component {
       pathName = "/name"
     } else if (untouched === true) {
       pathName = "/branding"
+    } else if (brands.length === 0) {
+      pathName = "/brands"
+    } else if (roster.length === 0) {
+      pathName = "/roster"
     }
 
     router.push(pathName)
@@ -31,14 +35,18 @@ DefaultPage.contextTypes = {
 }
 
 DefaultPage.propTypes = {
-  started: PropTypes.bool.isRequired,
+  brands: PropTypes.array.isRequired,
   name: PropTypes.string.isRequired,
-  untouched: PropTypes.bool.isRequired,
+  roster: PropTypes.array.isRequired,
   router: PropTypes.object.isRequired,
+  started: PropTypes.bool.isRequired,
+  untouched: PropTypes.bool.isRequired,
 }
 
 export default connect(state => ({
-  started: state.game.started,
+  brands: state.federation.brands,
   name: state.game.name,
+  roster: state.federation.roster,
+  started: state.game.started,
   untouched: state.style.untouched,
 }))(DefaultPage)

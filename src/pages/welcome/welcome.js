@@ -12,13 +12,16 @@ const NOOP = () => {}
 const WelcomePage = ({ generateFederation = NOOP, }) => (
   <section className="page welcome">
     <div className="items collection">
+      <div className="item">
+        FedSimulator.com is a web based wrestling match & federation simulator with tools to manage the roster, brands and championships
+      </div>
       <Link tabIndex="0" to="/name">
         <div className="item highlight pulse">
-          <Icon icon="plus" /> I'll build this company from the ground up, dammit
+          <Icon icon="plus" /> I'll build this company from the ground up, dammit!
         </div>
       </Link>
       <div className="item highlight pulse" onClick={generateFederation}>
-        <Icon icon="play" /> This is an invasion, create everything for me
+        <Icon icon="play" /> This is an invasion, create everything for me! (recommended)
       </div>
     </div>
     <footer>

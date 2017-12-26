@@ -1,7 +1,7 @@
 import React from "react"
 
 const Social = () => (
-  <div>
+  <div className="social">
     <a target="_blank" rel="noopener" href="https://twitter.com/FedSimulator">
       <i className="fab fa-twitter" aria-hidden="true" /> Twitter
     </a>

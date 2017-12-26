@@ -14,7 +14,7 @@ const propsMapper = props => {
   }
 }
 
-const defaultState = { id: false, creating: false, listView: false, }
+const defaultState = { id: false, creating: true, listView: false, }
 
 const stateHandlers = {
   onToggleCreating: ({ creating, }) => () => ({

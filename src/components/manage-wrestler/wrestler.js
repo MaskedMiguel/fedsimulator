@@ -36,47 +36,49 @@ const EditWrestler = ({
   style = {},
 }) => (
   <div className="manage-wrestler" style={style}>
-    <div className="name">
+    <div className="name form-field">
       <label htmlFor="name">Name</label>
       <Input tabIndex="0" id="name" onChange={onNameUpdate} value={name} />
     </div>
-    <label htmlFor="name">Brand</label>
-    <div className="brands">
+    <div className="brands form-field">
+      <label htmlFor="name">Brand</label>
       <Labels id="brands" tabIndex="0" onClick={onBrandSelected} highlighted={brandId} labels={brands} />
     </div>
     <If condition={id}>
-      <label htmlFor="championshipId">
-        Championship (<a onClick={onResetChampionship}>reset</a>)
-      </label>
-      <Labels
-        id="championshipId"
-        tabIndex="0"
-        onClick={onChampionshipSelected}
-        highlighted={championshipId}
-        labels={championships.filter(item => item.male === male && item.brandId === brandId)}
-      />
+      <div className="brands form-field">
+        <label htmlFor="championshipId">
+          Championship (<a onClick={onResetChampionship}>reset</a>)
+        </label>
+        <Labels
+          id="championshipId"
+          tabIndex="0"
+          onClick={onChampionshipSelected}
+          highlighted={championshipId}
+          labels={championships.filter(item => item.male === male && item.brandId === brandId)}
+        />
+      </div>
     </If>
-    <div className="gender">
+    <div className="gender form-field">
       <label htmlFor="gender">Gender</label>
       <Labels id="gender" tabIndex="0" onKeyPress={onGenderUpdate} onClick={onGenderUpdate} highlighted={male} labels={genderLabels} />
     </div>
-    <div className="image">
+    <div className="image form-field">
       <label htmlFor="image">
         Image (<a onClick={onResetImage}>reset</a>)
       </label>
       <Image id="image" name="image" label={image ? "" : "Drop image here"} value={image} onChange={onImageUpdate} />
     </div>
-    <div className="points">
+    <div className="points form-field">
       <label htmlFor="points">Points</label>
       <Input id="points" tabIndex="0" onChange={onPointsUpdate} value={points} />
     </div>
     <If condition={!id}>
-      <div className="create">
+      <div className="create form-field">
         <Button tabIndex="0" classes="btn-create" onKeyPress={onCreate} onClick={onCreate} value="Create wrestler" />
       </div>
     </If>
     <If condition={showDelete}>
-      <div className="delete">
+      <div className="delete form-field">
         <Button tabIndex="0" classes="btn-delete" onKeyPress={onDelete} onClick={onDelete}>
           <Reset /> Delete wrestler
         </Button>
