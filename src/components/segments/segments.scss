@@ -2,21 +2,20 @@
 
 .segments {
   clear: both;
+  display: flex;
+  padding: 1rem 0;
 
   .segment {
     background-color: black;
     color: white;
-    float: left;
-    vertical-align: middle;
-    padding: 1rem 0;
-    height: 2rem;
-    line-height: 2rem;
-    vertical-align: middle;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 
     .name {
       font-size: large;
-      padding: 1rem;
     }
 
     .amount {
@@ -29,7 +28,8 @@
       .name {
         font-size: small;
       }
-      .points {
+
+      .amount {
         display: none;
         font-size: small;
       }
