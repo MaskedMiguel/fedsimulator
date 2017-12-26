@@ -21,13 +21,7 @@ export const DashboardPage = ({ name, style, championships, rankedMaleWrestlers,
         <Simulator />
       </span>
     </HeaderOne>
-    <div className="row segment-container">
-      <div className="col-xs">
-        <div className="box">
-          <Segments />
-        </div>
-      </div>
-    </div>
+    <Segments />
     <div className="row">
       <If condition={championships.length > 0}>
         <div className="col-xs">
