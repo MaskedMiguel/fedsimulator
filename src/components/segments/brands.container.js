@@ -1,4 +1,4 @@
-import { compose, withProps } from "recompose"
+import { compose, withProps, renderNothing, branch } from "recompose"
 import { connect } from "react-redux"
 
 import Segments from "./segments"
@@ -24,5 +24,6 @@ export default compose(
     brands: state.federation.brands,
     style: state.style,
   })),
-  withProps(propsMapper)
+  withProps(propsMapper),
+  branch(props => props.segments < 1, renderNothing)
 )(Segments)
