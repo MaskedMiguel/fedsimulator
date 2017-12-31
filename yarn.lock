@@ -2761,9 +2761,9 @@ eslint-loader@1.6.0:
     loader-utils "^0.2.7"
     object-assign "^4.0.1"
 
-eslint-plugin-flowtype@2.23.0:
-  version "2.23.0"
-  resolved "https://registry.npmjs.org/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.23.0.tgz#e6c5ce5770743cb0653da30ca082cbfaa4c61574"
+eslint-plugin-flowtype:
+  version "2.40.1"
+  resolved "https://registry.npmjs.org/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.40.1.tgz#f78a8e6a4cc6da831dd541eb61e803ff0279b796"
   dependencies:
     lodash "^4.15.0"
 
@@ -6267,6 +6267,14 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
+react-redux-firebase@^2.0.0-rc.2:
+  version "2.0.0-rc.2"
+  resolved "https://registry.npmjs.org/react-redux-firebase/-/react-redux-firebase-2.0.0-rc.2.tgz#b468e966fd150008116a5c2524a1bd5e3377a92e"
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
+    lodash "^4.17.4"
+    prop-types "^15.6.0"
+
 react-redux@5.0.6:
   version "5.0.6"
   resolved "https://registry.npmjs.org/react-redux/-/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
@@ -6454,6 +6462,10 @@ redux:
 redux-localstorage@0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/redux-localstorage/-/redux-localstorage-0.4.1.tgz#faf6d719c581397294d811473ffcedee065c933c"
+
+redux-thunk:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
 regenerate@^1.2.1:
   version "1.3.3"
