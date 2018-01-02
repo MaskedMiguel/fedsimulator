@@ -1,6 +1,6 @@
 {
   "name": "fed-simulator",
-  "version": "5.0.0",
+  "version": "5.9.6",
   "homepage": "https://www.fedsimulator.com",
   "repository": "https://github.com/azz0r/federation-simulator.git",
   "license": "MIT",
@@ -124,9 +124,6 @@
     "fsevents": "*"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"]
   }
 }
