@@ -146,6 +146,10 @@ module.exports = {
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(paths.appNodeModules),
     new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      minChunks: module => module.context && module.context.indexOf("node_modules") !== -1,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
       children: true,
       async: "common",
       minChunks: 3,
