@@ -1,6 +1,7 @@
 {
   "name": "fed-simulator",
   "version": "5.0.0",
+  "homepage": "https://www.fedsimulator.com",
   "repository": "https://github.com/azz0r/federation-simulator.git",
   "license": "MIT",
   "scripts": {
@@ -13,8 +14,10 @@
     "prepush": "npm test"
   },
   "dependencies": {
+    "babel-loader": "7.1.2",
     "chromatism": "2.6.0",
     "classnames": "2.2.5",
+    "eslint-loader": "1.6.3",
     "expect.js": "0.3.1",
     "fastclick": "1.0.6",
     "immutable": "4.0.0-rc.4",
@@ -24,6 +27,7 @@
     "lodash.orderby": "4.6.0",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "4.7.0",
+    "node-sass": "3.7.0",
     "promise": "7.1.1",
     "react": "^16.2.0",
     "react-color": "^2.13.8",
