@@ -1,5 +1,7 @@
 import { compose, withProps } from "recompose"
-import { connect } from "react-redux"
+
+import withBrands from "../../hoc/withBrands"
+import withChampionships from "../../hoc/withChampionships"
 
 import { WRESTLER_CONFIRM_DELETE } from "../../constants/confirmations"
 import { updateWrestler, deleteWrestler } from "../../actions/roster"
@@ -23,10 +25,8 @@ const propsMapper = ({ dispatch, id, }) => ({
 })
 
 export default compose(
-  connect(state => ({
-    championships: state.federation.championships,
-    brands: state.federation.brands,
-  })),
-  withProps(propsMapper),
-  withStyle
+  withChampionships,
+  withBrands,
+  withStyle,
+  withProps(propsMapper) //
 )(EditWrestler)

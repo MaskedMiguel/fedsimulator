@@ -109,6 +109,11 @@ ChampionshipsContainer.defaultProps = {
   style: {},
 }
 
-export const enhance = compose(withStyle, withBrands, withRoster, withChampionships)
+export const enhance = compose(
+  withStyle,
+  withBrands,
+  withRoster,
+  withChampionships //
+)
 
 export default enhance(ChampionshipsContainer)

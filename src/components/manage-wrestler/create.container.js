@@ -2,6 +2,8 @@ import { compose, withStateHandlers, withProps } from "recompose"
 import { connect } from "react-redux"
 import pick from "lodash.pick"
 
+import withBrands from "../../hoc/withBrands"
+import withChampionships from "../../hoc/withChampionships"
 import withStyle from "../../hoc/withStyle.js"
 import { createWrestler } from "../../actions/roster"
 import Wrestler from "./wrestler"
@@ -38,16 +40,12 @@ const mappedProps = props => ({
 })
 
 export default compose(
-  connect(
-    state => ({
-      championships: state.federation.championships,
-      brands: state.federation.brands,
-    }),
-    dispatch => ({
-      onCreate: props => dispatch(createWrestler(props)),
-    })
-  ),
+  withChampionships,
+  withBrands,
+  withStyle,
+  connect(null, dispatch => ({
+    onCreate: props => dispatch(createWrestler(props)),
+  })),
   withStateHandlers(defaultWrestler, stateHandlers),
-  withProps(mappedProps),
-  withStyle
+  withProps(mappedProps)
 )(Wrestler)
