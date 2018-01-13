@@ -44,30 +44,32 @@ const BattleRoyal = ({
       <div className="row">
         <div style={style} className="col-xs-12 col-sm-3 col-md-2 col-lg-2 center-xs start-lg start-md start-sm panel">
           <div className="box">
-            <p>
+            <div className="form-group">
               <label htmlFor="entry">
                 Entry amount ({amountOfEntries} / {maxEntries})
               </label>
               <Slider max={maxEntries} value={amountOfEntries} onChange={onUpdateAmountOfEntries} />&nbsp;
-            </p>
-            <p>
+            </div>
+            <div className="form-group">
               <label htmlFor="gender">Gender</label>
               <Labels id="gender" tabIndex="0" onKeyPress={onGenderUpdate} onClick={onGenderUpdate} highlighted={male} labels={genderLabels} />
-            </p>
-            <Button style={style.darkStyle} classes="rounded" onClick={onGenerateEntries}>
-              Generate entries
-            </Button>
-            <Choose>
-              <When condition={winner}>
-                <h3>Winner!</h3>
-                <Wrestler wrestler={winner} />
-              </When>
-              <Otherwise>
-                <Button style={style.darkStyle} classes="rounded" onClick={onSimulate}>
-                  {simulateButtonTitle}
-                </Button>
-              </Otherwise>
-            </Choose>
+            </div>
+            <div className="form-group">
+              <Button style={style.darkStyle} classes="rounded" onClick={onGenerateEntries}>
+                Generate entries
+              </Button>
+              <Choose>
+                <When condition={winner}>
+                  <h3>Winner!</h3>
+                  <Wrestler wrestler={winner} />
+                </When>
+                <Otherwise>
+                  <Button style={style.darkStyle} classes="rounded" onClick={onSimulate}>
+                    {simulateButtonTitle}
+                  </Button>
+                </Otherwise>
+              </Choose>
+            </div>
           </div>
         </div>
         <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5">
@@ -90,19 +92,19 @@ const BattleRoyal = ({
 }
 
 BattleRoyal.propTypes = {
-  winner: PropTypes.any,
   amountOfEntries: PropTypes.number,
-  entries: PropTypes.array,
   eliminated: PropTypes.array,
-  onClear: PropTypes.func,
-  onGenerateEntries: PropTypes.func,
+  entries: PropTypes.array,
   male: PropTypes.bool,
+  maxEntries: PropTypes.number,
+  onClear: PropTypes.func,
   onGenderUpdate: PropTypes.func,
-  simulate: PropTypes.bool,
+  onGenerateEntries: PropTypes.func,
   onSimulate: PropTypes.func,
   onUpdateAmountOfEntries: PropTypes.func,
+  simulate: PropTypes.bool,
   style: PropTypes.object,
-  maxEntries: PropTypes.number,
+  winner: PropTypes.any,
 }
 
 export default BattleRoyal

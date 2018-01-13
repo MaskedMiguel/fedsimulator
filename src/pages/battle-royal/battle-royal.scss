@@ -13,6 +13,14 @@
     font-size: small;
   }
 
+  .panel {
+    padding: 1rem;
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+  }
+
   @include breakpoint(xs) {
     .panel {
       margin-bottom: 1rem;
