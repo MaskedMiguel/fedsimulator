@@ -42,8 +42,8 @@ class BrandingPage extends Component {
             </div>
           </div>
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <Button style={style} type="submit" onClick={this.onHandleSubmit}>
+        <form onSubmit={this.handleSubmit} className="center-xs middle-xs">
+          <Button classes="rounded" style={style} type="submit" onClick={this.onHandleSubmit}>
             Paint Save and build your dream roster
           </Button>
         </form>

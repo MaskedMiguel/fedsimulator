@@ -38,6 +38,15 @@ const Router = () => {
           }}
         />
       </Route>
+      <Route path="battle-royal">
+        <IndexRoute
+          getComponent={(location, cb) => {
+            System.import("./pages/battle-royal/container")
+              .then(loadRoute(cb))
+              .catch(errorLoading)
+          }}
+        />
+      </Route>
       <Route path="create-a-match">
         <IndexRoute
           getComponent={(location, cb) => {

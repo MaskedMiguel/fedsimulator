@@ -6,7 +6,6 @@ import PropTypes from "prop-types"
 import StyleBrands from "./style-brands"
 import * as versionActions from "../../actions/version"
 import Nav from "../nav/container"
-import Social from "../social"
 import links from "./links.json"
 
 import "../../stylesheets/base.scss"
@@ -34,12 +33,11 @@ class Page extends PureComponent {
 
   render() {
     const { children, classnames, style, name, } = this.props
-    const darkStyle = Object.assign({}, style, { backgroundColor: style.darkBgColor, })
     const isNavVisible = !style.untouched && this.state.openNavBar
     const activeLinks = isNavVisible ? links : []
     return (
-      <div id="page-container" style={darkStyle} className={classNames(classnames, ["page-container", "no-select",])}>
-        <main style={darkStyle}>
+      <div id="page-container" style={style.darkStyle} className={classNames(classnames, ["page-container", "no-select",])}>
+        <main style={style.darkStyle}>
           <aside>
             <Nav name={name} tabIndex="0" links={activeLinks} style={style} modifier="main" />
           </aside>

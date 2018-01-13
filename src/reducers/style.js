@@ -8,14 +8,15 @@ export default (state, action) => {
 
   switch (action.type) {
     case "RESET":
-      state = state = new Model()
+      state = new Model()
       break
     case "GENERATE":
       state = state.set("untouched", false)
       break
     case "UPDATE_STYLE":
       state = state.merge(action.payload, { untouched: false, })
-      state = state.set("darkBgColor", shade(state.get("backgroundColor"), state.get("shade")))
+      const darkStyle = state.get("darkStyle")
+      state = state.set("darkStyle", Object.assign({}, { color: "white", backgroundColor: shade(state.get("backgroundColor"), state.get("shade")), }))
 
       if (state.get("color") === state.get("backgroundColor")) {
         const color = chromatism.complementary(state.get("backgroundColor")).hex

@@ -12,7 +12,18 @@ import "./roster.scss"
 
 const NOOP = () => {}
 
-const RosterPage = ({ onToggleListView, onClose, onClick, onClear, onGenerate, listView, onToggleCreating, creating, currentWrestler, style, }) => {
+const RosterPage = ({
+  creating = false,
+  currentWrestler = null,
+  listView = false,
+  onClick = NOOP,
+  onClose = NOOP,
+  onClear = NOOP,
+  onToggleListView = NOOP,
+  onGenerate = NOOP,
+  onToggleCreating = NOOP,
+  style = {},
+}) => {
   const hasPane = creating || currentWrestler
   const col = hasPane ? "col-lg-6 col-md-6 col-sm-6 col-xs-12" : "col-lg-12 col-md-12 col-sm-12 col-xs-12"
   return (
@@ -66,18 +77,6 @@ RosterPage.propTypes = {
   onToggleCreating: PropTypes.func,
   onToggleListView: PropTypes.func,
   style: PropTypes.object,
-}
-
-RosterPage.defaultProps = {
-  creating: false,
-  currentWrestler: null,
-  listView: false,
-  onClick: NOOP,
-  onClose: NOOP,
-  onClear: NOOP,
-  onGenerate: NOOP,
-  onToggleCreating: NOOP,
-  style: {},
 }
 
 export default RosterPage

@@ -1,11 +1,18 @@
 import { Record } from "immutable"
 
+const light = "#fff"
+const dark = "#4b09be"
+
 export const schema = {
-  backgroundColor: "#3e029f",
-  color: "#fff",
-  darkBgColor: "#000",
+  backgroundColor: "#4b09be",
+  color: light,
+  darkBgColor: dark,
   shade: -60,
   untouched: true,
+  darkStyle: {
+    color: light,
+    backgroundColor: "#000025",
+  },
 }
 
 export const Style = new Record(schema)

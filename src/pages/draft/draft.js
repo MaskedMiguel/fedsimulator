@@ -13,8 +13,6 @@ import "./draft.scss"
 
 const NOOP = () => {}
 
-const darkStyle = style => Object.assign({}, style, { backgroundColor: style.darkBgColor, })
-
 const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, onGenerate = NOOP, }) => (
   <section className="page draft">
     <HeaderOne />
@@ -23,14 +21,14 @@ const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, onGenerate = NOOP, 
     </If>
     <If condition={brands.length > 0}>
       <div className="brands">
-        <div style={darkStyle(style)} className="brand">
+        <div style={style.darkStyle} className="brand">
           <h3>
             All{" "}
             <span tabIndex="0" className="tools">
               <Generate onClick={onGenerate} title="Generate default roster" />
             </span>
           </h3>
-          <Wrestlers style={darkStyle(style)} />
+          <Wrestlers style={style.darkStyle} />
         </div>
         {brands.map(brand => {
           const { style, id: brandId, } = brand

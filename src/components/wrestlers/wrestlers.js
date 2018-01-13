@@ -17,11 +17,11 @@ const Container = ({ collection = [], onClick = NOOP, canDrag = true, style = {}
   return (
     <div className="wrestlers" style={style}>
       <If condition={men.length > 0}>
-        <h3>Men</h3>
+        <h3>Men ({men.length})</h3>
         <Collection collection={men} onClick={onClick} canDrag={canDrag} />
       </If>
       <If condition={women.length > 0}>
-        <h3>Women</h3>
+        <h3>Women ({women.length})</h3>
         <Collection collection={women} onClick={onClick} canDrag={canDrag} />
       </If>
     </div>

@@ -25,12 +25,14 @@ const Ranking = ({ currencySymbol, style, columns, rows, amountToShow, title, })
           return (
             <tr key={rowKey}>
               {Object.keys(columns).map((column, key) => {
-                let type = columns[column].type
+                const type = columns[column].type
+
                 return (
                   <td className={column} tabIndex="0" key={key}>
                     <Choose>
                       <When condition={type === "rank"}>#{rowKey + 1}</When>
                       <When condition={type === "currency"}>{formatCurrency(currencySymbol, row[column])}</When>
+                      <When condition={type === "winner"}>{row[column] == true ? "Winner!" : ""}</When>
                       <Otherwise>{row[column]}</Otherwise>
                     </Choose>
                   </td>

@@ -1,0 +1,25 @@
+@import "src/stylesheets/breakpoints";
+
+.page.battle-royal {
+  font-size: small;
+
+  .tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .ranking {
+    font-size: small;
+  }
+
+  @include breakpoint(xs) {
+    .panel {
+      margin-bottom: 1rem;
+    }
+
+    .labels {
+      justify-content: center;
+    }
+  }
+}

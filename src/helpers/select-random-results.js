@@ -4,9 +4,9 @@ import groupBy from "lodash.groupby"
 import arrayOfLength from "./array-of-length"
 import getPercentageAmount from "./get-percentage-amount"
 
-import { PERCENT_GAIN_FOR_HIGHEST_WRESTLER } from "../constants/game"
+import { EXTREME_PERCENT_GAIN_FOR_HIGHEST_WRESTLER, PERCENT_GAIN_FOR_HIGHEST_WRESTLER } from "../constants/game"
 
-export default function selectRandomResults(wrestlers = []) {
+export default function selectRandomResults(wrestlers = [], highBias = false) {
   const numberOfTeams = Object.keys(groupBy(wrestlers, "teamId")).length
   const numberOfWrestlers = wrestlers.length
   const hasWinner = wrestlers.findIndex(wrestler => wrestler.winner) > -1
@@ -22,7 +22,8 @@ export default function selectRandomResults(wrestlers = []) {
       highestIndex = wrestlers.findIndex(wrestler => wrestler.id === highestId)
 
     if (lowest.points !== highest.points) {
-      const highestAttackersPercentageGain = getPercentageAmount(weightedWrestlers[lowestIndex], PERCENT_GAIN_FOR_HIGHEST_WRESTLER)
+      const percentageGain = highBias ? EXTREME_PERCENT_GAIN_FOR_HIGHEST_WRESTLER : PERCENT_GAIN_FOR_HIGHEST_WRESTLER
+      const highestAttackersPercentageGain = getPercentageAmount(weightedWrestlers[lowestIndex], percentageGain)
 
       weightedWrestlers[lowestIndex] = weightedWrestlers[lowestIndex] - highestAttackersPercentageGain
       weightedWrestlers[highestIndex] = weightedWrestlers[highestIndex] + highestAttackersPercentageGain
@@ -34,7 +35,7 @@ export default function selectRandomResults(wrestlers = []) {
     const loser = weighted.select(losers, losersRandomWeighting)
 
     return wrestlers.map(item => {
-      item.winner = item.id === winner.id
+      item.winner = item.id === winner.id || winner.teamId === item.teamId
       item.loser = item.id === loser.id
       return item
     })

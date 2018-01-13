@@ -1,14 +1,14 @@
 // style
 export const UPDATE_STYLE = "UPDATE_STYLE"
 
-// brand
+// Brand
 export const CREATE_BRAND = "CREATE_BRAND"
 export const UPDATE_BRAND = "UPDATE_BRAND"
 export const DELETE_BRAND = "DELETE_BRAND"
 export const RESET_BRANDS = "RESET_BRANDS"
 export const GENERATE_BRANDS = "GENERATE_BRANDS"
 
-// championships
+// Championships
 export const GENERATE_CHAMPIONSHIPS = "GENERATE_CHAMPIONSHIPS"
 export const CREATE_CHAMPIONSHIP = "CREATE_CHAMPIONSHIP"
 export const UPDATE_CHAMPIONSHIP = "UPDATE_CHAMPIONSHIP"
@@ -16,7 +16,7 @@ export const DELETE_CHAMPIONSHIP = "DELETE_CHAMPIONSHIP"
 export const RESET_CHAMPIONSHIPS = "RESET_CHAMPIONSHIPS"
 export const AWARD_CHAMPIONSHIP = "AWARD_CHAMPIONSHIP"
 
-// game
+// Game
 export const START_GAME = "START_GAME"
 export const TOGGLE_STARTED = "TOGGLE_STARTED"
 export const CHECK_VERSION = "CHECK_VERSION"
@@ -25,18 +25,18 @@ export const GENERATE = "GENERATE"
 export const RESET_GAME = "RESET_GAME"
 export const UPDATE_GAME_SIMULATION = "UPDATE_GAME_SIMULATION"
 
-// roster
+// Roster
 export const GENERATE_ROSTER = "GENERATE_ROSTER"
 export const CREATE_WRESTLER = "CREATE_WRESTLER"
 export const UPDATE_WRESTLER = "UPDATE_WRESTLER"
 export const RESET_ROSTER = "RESET_ROSTER"
 
-// shows
+// Shows
 export const CREATE_SHOW = "CREATE_SHOW"
 export const UPDATE_SHOW = "UPDATE_SHOW"
 export const DELETE_SHOW = "DELETE_SHOW"
 
-// matches
+// Matches
 export const CREATE_MATCH = "CREATE_MATCH"
 export const SELECT_WINNER_IN_MATCH = "SELECT_WINNER_IN_MATCH"
 export const REMOVE_WRESTLER_FROM_MATCH = "REMOVE_WRESTLER_FROM_MATCH"
@@ -48,8 +48,12 @@ export const SIMULATE_RANDOM_MATCHES = "SIMULATE_RANDOM_MATCHES"
 export const CLEAR_WRESTLERS_FROM_MATCH = "CLEAR_WRESTLERS_FROM_MATCH"
 export const RANDOMISE_MATCH = "RANDOMISE_MATCH"
 
-// resets
+// Battle Royal
+export const RESET_BATTLE_ROYAL = "RESET_BATTLE_ROYAL"
+export const UPDATE_BATTLE_ROYAL = "UPDATE_BATTLE_ROYAL"
+
+// Resets
 export const RESET = "RESET"
 
-// droppables
+// Droppables
 export const WRESTLER = "WRESTLER"

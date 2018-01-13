@@ -2,12 +2,17 @@
   {
     "url": "dashboard",
     "title": "Dashboard",
-    "icon": "tachometer"
+    "icon": "tachometer-alt"
   },
   {
     "url": "create-a-match",
     "title": "Create a match",
     "icon": "ambulance"
+  },
+  {
+    "url": "battle-royal",
+    "title": "Battle Royal",
+    "icon": "unlink"
   },
   {
     "url": "draft",

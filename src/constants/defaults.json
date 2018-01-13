@@ -23,6 +23,14 @@
         "color": "#ffffff",
         "backgroundColor": "#750de5"
       }
+    },
+    {
+      "id": "HOF",
+      "name": "Hall Of Fame",
+      "style": {
+        "color": "#f5edb5",
+        "backgroundColor": "#1a3f83"
+      }
     }
   ],
   "roster": [
@@ -764,7 +772,40 @@
       "losses": 0,
       "male": false,
       "name": "Nia Jax",
-      "points": 77,
+      "points": 89,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "456yhgfdr5tg",
+      "brandId": "j9mr6qa9",
+      "image": "",
+      "losses": 0,
+      "male": true,
+      "name": "Mike Kanellis",
+      "points": 79,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "3456tyhgfr",
+      "brandId": "j9mr6qa9",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Maria Kanellis",
+      "points": 49,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "Maryse",
+      "brandId": "j9mr6qa8",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Maryse",
+      "points": 49,
       "wins": 0,
       "created": "2017-11-05T12:34:38.641Z"
     },
@@ -787,6 +828,83 @@
       "male": false,
       "name": "Nikki Bella",
       "points": 75,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "LivMorgan",
+      "brandId": "j9mr6qa9",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Liv Morgan",
+      "points": 65,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "SarahLogan",
+      "brandId": "j9mr6qa9",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Sarah Logan",
+      "points": 75,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "RubyRiott",
+      "brandId": "j9mr6qa9",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Ruby Riott",
+      "points": 80,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "Paige",
+      "brandId": "j9mr6qa8",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Paige",
+      "points": 90,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "MandyRose",
+      "brandId": "j9mr6qa8",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Mandy Rose",
+      "points": 80,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "SonyaDeville",
+      "brandId": "j9mr6qa8",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Sonya Deville",
+      "points": 70,
+      "wins": 0,
+      "created": "2017-11-05T12:34:38.641Z"
+    },
+    {
+      "id": "babyBella",
+      "brandId": "j9mr6qa9",
+      "image": "",
+      "losses": 0,
+      "male": false,
+      "name": "Brie Bella",
+      "points": 55,
       "wins": 0,
       "created": "2017-11-05T12:34:38.641Z"
     },

@@ -1,6 +1,7 @@
 import Championships from "./championships"
 import Roster from "./roster"
 import Matches from "./matches"
+import BattleRoyal from "./battle-royal"
 import Brands from "./brands"
 
 const defaultState = {
@@ -8,6 +9,7 @@ const defaultState = {
   roster: [],
   matches: [],
   brands: [],
+  battleRoyal: {},
 }
 
 export default (state = defaultState, action) => {
@@ -17,6 +19,6 @@ export default (state = defaultState, action) => {
   state.brands = Brands(state.brands, action, getState)
   state.matches = Matches(state.matches, action, getState)
   state.roster = Roster(state.roster, action, getState)
-
+  state.battleRoyal = BattleRoyal(state.battleRoyal, action)
   return state
 }

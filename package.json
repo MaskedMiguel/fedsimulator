@@ -26,7 +26,8 @@
     "lodash.keyby": "^4.6.0",
     "lodash.orderby": "4.6.0",
     "lodash.pick": "^4.4.0",
-    "lodash.sortby": "4.7.0",
+    "lodash.shuffle": "^4.2.0",
+    "lodash.sortby": "^4.7.0",
     "node-sass": "3.7.0",
     "promise": "7.1.1",
     "react": "^16.2.0",
@@ -124,7 +125,10 @@
     "fsevents": "*"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">=6.9.0"

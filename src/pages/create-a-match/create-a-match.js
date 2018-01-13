@@ -25,31 +25,33 @@ const CreateAMatch = ({
 }) => (
   <section className="page create-a-match">
     <form onSubmit={onSimulateMatch}>
-      <div className="row center-xs">
-        <div className="col-xs-12 col-lg-8">
+      <HeaderOne>
+        Create a Match
+        <span tabIndex="0" className="tools">
+          <Randomise onClick={onRandomise} />
+          <Reset onClick={onReset} />
+        </span>
+      </HeaderOne>
+      <div className="row">
+        <div className="col-xs-12 col-lg-8 center-xs middle-xs">
           <div className="box">
-            <HeaderOne>
-              Create a Match
-              <span tabIndex="0" className="tools">
-                <Randomise onClick={onRandomise} />
-                <Reset onClick={onReset} />
-              </span>
-            </HeaderOne>
             <Match currentMatch={currentMatch} />
-            <br />
             <If condition={numberOfWrestlers > 1}>
-              <Button tabIndex="0" value="Simulate Match" onClick={onSimulateMatch} />
+              <Button classes="rounded" tabIndex="0" value="Simulate match" onClick={onSimulateMatch} />
             </If>
             <If condition={winner.name && loser.name}>
               <br />
               <Winner {...winner} />
               <br />
               <Loser {...loser} />
+              <br />
             </If>
           </div>
         </div>
-        <div className="col-lg 4 col-xs-12">
-          <Wrestlers onClick={onWrestlerClick} style={style} />
+        <div className="col-xs-12 col-lg-4">
+          <div className="box">
+            <Wrestlers onClick={onWrestlerClick} style={style} />
+          </div>
         </div>
       </div>
     </form>

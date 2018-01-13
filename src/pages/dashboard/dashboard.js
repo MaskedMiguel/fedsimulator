@@ -8,6 +8,7 @@ import HeaderOne from "../../components/header/header"
 import Simulator from "../../components/simulator"
 import Ranking from "../../components/ranking/ranking"
 import Segments from "../../components/segments/brands.container"
+import EmptyRoster from "../../components/empty-roster.js"
 
 import { RANKED_COLUMNS } from "../../constants/ranking"
 
@@ -23,27 +24,34 @@ export const DashboardPage = ({ name, canSimulate, style, championships, rankedM
         </span>
       </If>
     </HeaderOne>
-    <Segments />
-    <div className="row">
-      <If condition={championships.length > 0}>
-        <div className="col-xs">
-          <div className="box">
-            <Champions />
-            <br />
+    <Choose>
+      <When condition={canSimulate}>
+        <Segments />
+        <div className="row">
+          <If condition={championships.length > 0}>
+            <div className="col-xs">
+              <div className="box">
+                <Champions />
+                <br />
+              </div>
+            </div>
+          </If>
+          <div className="col-xs">
+            <div className="box">
+              <Ranking style={style} amountToShow={30} rows={rankedMaleWrestlers} columns={RANKED_COLUMNS} title="Ranked Male Wrestlers" />
+            </div>
+          </div>
+          <div className="col-xs">
+            <div className="box">
+              <Ranking style={style} amountToShow={30} rows={rankedFemaleWrestlers} columns={RANKED_COLUMNS} title="Ranked Female Wrestlers" />
+            </div>
           </div>
         </div>
-      </If>
-      <div className="col-xs">
-        <div className="box">
-          <Ranking style={style} amountToShow={30} rows={rankedMaleWrestlers} columns={RANKED_COLUMNS} title="Ranked Male Wrestlers" />
-        </div>
-      </div>
-      <div className="col-xs">
-        <div className="box">
-          <Ranking style={style} amountToShow={30} rows={rankedFemaleWrestlers} columns={RANKED_COLUMNS} title="Ranked Female Wrestlers" />
-        </div>
-      </div>
-    </div>
+      </When>
+      <Otherwise>
+        <EmptyRoster />
+      </Otherwise>
+    </Choose>
   </section>
 )
 

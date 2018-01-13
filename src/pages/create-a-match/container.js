@@ -1,8 +1,9 @@
-import { compose, withProps, lifecycle, withStateHandlers } from "recompose"
+import { compose, withProps, lifecycle, withStateHandlers, branch, renderComponent } from "recompose"
 import { connect } from "react-redux"
 import { withRouter } from "react-router"
 import { List } from "immutable"
 
+import EmptyRoster from "../../components/empty-roster.js"
 import { getId } from "../../models/model.helper"
 import CreateAMatch from "./create-a-match"
 import { createMatch, simulateMatch, addWrestlerToMatch, randomiseMatch } from "../../actions/matches"
@@ -103,5 +104,6 @@ export default compose(
     }
     return { ...props, ...newProps, }
   }),
-  lifecycleMapper
+  lifecycleMapper,
+  branch(props => props.roster.length === 0, renderComponent(EmptyRoster))
 )(CreateAMatch)
