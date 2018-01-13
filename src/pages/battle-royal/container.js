@@ -3,12 +3,14 @@ import { connect } from "react-redux"
 import pick from "lodash.pick"
 import sortBy from "lodash.sortby"
 
-import EmptyRoster from "../../components/empty-roster.js"
-import withStyle from "../../hoc/withStyle.js"
-import BattleRoyal from "./battle-royal"
-import { generateEntries, resetBattleRoyal, updateBattleRoyal, eliminateEntry } from "../../actions/battle-royal"
+import withStyle from "../../hoc/withStyle"
+import withRoster from "../../hoc/withRoster"
 
-const TICK_TIMER = 750
+import EmptyRoster from "../../components/empty-roster"
+import BattleRoyal from "./battle-royal"
+
+import { generateEntries, resetBattleRoyal, updateBattleRoyal, eliminateEntry } from "../../actions/battle-royal"
+import { ELIMINATION_TICK_TIMER } from "../../constants/game"
 
 const validProps = ["onClear", "dispatch", "onGenerate", "male", "entries", "eliminations", "winner",]
 
@@ -44,7 +46,7 @@ const lifecycleMapper = {
       clearInterval(this._interval)
       this._interval = setInterval(() => {
         nextProps.onEliminateEntry(nextProps.entries)
-      }, TICK_TIMER)
+      }, ELIMINATION_TICK_TIMER)
     } else {
       clearInterval(this._interval)
     }
@@ -54,9 +56,10 @@ const lifecycleMapper = {
   },
 }
 export default compose(
+  withRoster,
+  withStyle,
   connect(
     state => ({
-      roster: state.federation.roster,
       ...state.federation.battleRoyal,
     }),
     dispatch => ({
@@ -70,6 +73,5 @@ export default compose(
   ),
   withProps(propsMapper),
   branch(props => props.roster.length === 0, renderComponent(EmptyRoster)),
-  lifecycle(lifecycleMapper),
-  withStyle
+  lifecycle(lifecycleMapper)
 )(BattleRoyal)

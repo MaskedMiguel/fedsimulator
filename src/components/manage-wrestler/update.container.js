@@ -2,10 +2,11 @@ import { compose, withProps } from "recompose"
 
 import withBrands from "../../hoc/withBrands"
 import withChampionships from "../../hoc/withChampionships"
+import withStyle from "../../hoc/withStyle"
 
 import { WRESTLER_CONFIRM_DELETE } from "../../constants/confirmations"
 import { updateWrestler, deleteWrestler } from "../../actions/roster"
-import withStyle from "../../hoc/withStyle"
+
 import EditWrestler from "./wrestler"
 
 const propsMapper = ({ dispatch, id, }) => ({

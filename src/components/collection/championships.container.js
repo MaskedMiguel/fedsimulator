@@ -6,7 +6,9 @@ import withRoster from "../../hoc/withRoster"
 import withBrands from "../../hoc/withBrands"
 import withStyle from "../../hoc/withStyle"
 import withChampionships from "../../hoc/withChampionships"
+
 import { updateChampionship, deleteChampionship } from "../../actions/champions"
+
 import Collection from "./collection"
 
 const NOOP = () => {}

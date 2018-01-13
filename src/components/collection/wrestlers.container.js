@@ -6,7 +6,9 @@ import chromatism from "chromatism"
 import withRoster from "../../hoc/withRoster"
 import withBrands from "../../hoc/withBrands"
 import withStyle from "../../hoc/withStyle"
+
 import { updateWrestler, deleteWrestler } from "../../actions/roster"
+
 import Collection from "./collection"
 
 const NOOP = () => {}

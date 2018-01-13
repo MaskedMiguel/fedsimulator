@@ -5,7 +5,9 @@ import pick from "lodash.pick"
 import withBrands from "../../hoc/withBrands"
 import withChampionships from "../../hoc/withChampionships"
 import withStyle from "../../hoc/withStyle.js"
+
 import { createWrestler } from "../../actions/roster"
+
 import Wrestler from "./wrestler"
 
 const defaultWrestler = {

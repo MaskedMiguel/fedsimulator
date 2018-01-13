@@ -1,9 +1,10 @@
 import { compose, withProps, renderNothing, branch } from "recompose"
 
-import Segments from "./segments"
 import withBrands from "../../hoc/withBrands"
 import withStyle from "../../hoc/withStyle"
 import withRoster from "../../hoc/withRoster"
+
+import Segments from "./segments"
 
 const propsMapper = ({ roster, brands, }) => {
   let segments = [],
@@ -24,7 +25,6 @@ export default compose(
   withBrands,
   withRoster,
   withStyle,
-  //
   withProps(propsMapper),
-  branch(props => props.segments < 1, renderNothing)
+  branch(props => props.segments < 1, renderNothing) //
 )(Segments)

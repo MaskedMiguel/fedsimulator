@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import chromatism from "chromatism"
 
 import Create from "./create"
+
 import { createBrand } from "../../actions/brands"
 
 const minLengthForCreate = 2

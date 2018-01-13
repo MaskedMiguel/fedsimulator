@@ -1,16 +1,17 @@
 import React, { Component } from "react"
 import { compose } from "recompose"
-import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import { Link } from "react-router"
 import chromatism from "chromatism"
 
 import withStyle from "../../hoc/withStyle"
+
 import { Reset } from "../../components/icons"
-import Social from "../../components/social"
-import ColorPickers from "../../components/color-pickers/container"
 import { resetAll } from "../../actions/game"
 import { createWrestler } from "../../actions/roster"
+
+import Social from "../../components/social"
+import ColorPickers from "../../components/color-pickers/container"
 import HeaderOne from "../../components/header/header"
 
 import "./settings.scss"
@@ -23,9 +24,10 @@ class Settings extends Component {
     let brightness = 0
     const reduceBrightness = () => {
       brightness = brightness + BRIGHTNESS_REDUCTION_STEP
+      const backgroundColor = chromatism.brightness(brightness, style.backgroundColor).hex
       return {
         color: style.color,
-        backgroundColor: chromatism.brightness(brightness, style.backgroundColor).hex,
+        backgroundColor,
       }
     }
 

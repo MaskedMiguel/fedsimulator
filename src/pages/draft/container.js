@@ -4,7 +4,9 @@ import { compose, withHandlers, branch, renderComponent } from "recompose"
 import withRoster from "../../hoc/withRoster"
 import withBrands from "../../hoc/withBrands"
 import withStyle from "../../hoc/withStyle"
+
 import { generateRoster } from "../../actions/roster"
+
 import EmptyRoster from "../../components/empty-roster.js"
 import Draft from "./draft"
 
