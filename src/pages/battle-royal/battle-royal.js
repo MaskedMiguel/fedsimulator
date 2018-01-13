@@ -42,13 +42,15 @@ const BattleRoyal = ({
         </span>
       </HeaderOne>
       <div className="row">
-        <div style={style} className="col-xs-12 col-sm-3 col-md-2 col-lg-2 center-xs start-lg start-md start-sm panel">
+        <div style={style} className="col-xs center-xs start-lg start-md start-sm panel">
           <div className="box">
             <div className="form-group">
               <label htmlFor="entry">
                 Entry amount ({amountOfEntries} / {maxEntries})
               </label>
-              <Slider max={maxEntries} value={amountOfEntries} onChange={onUpdateAmountOfEntries} />&nbsp;
+              <div>
+                <Slider max={maxEntries} value={amountOfEntries} onChange={onUpdateAmountOfEntries} />
+              </div>
             </div>
             <div className="form-group">
               <label htmlFor="gender">Gender</label>
@@ -72,13 +74,13 @@ const BattleRoyal = ({
             </div>
           </div>
         </div>
-        <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-          <div className="box">
-            <If condition={entries.length > 0}>
+        <If condition={entries.length > 0}>
+          <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <div className="box">
               <Ranking style={style} amountToShow={entries.length} rows={entries} columns={BATTLE_ROYAL_ENTRIES_COLUMNS} title="Entries" />
-            </If>
+            </div>
           </div>
-        </div>
+        </If>
         <If condition={eliminated.length > 0}>
           <div className="col-xs-12 col-sm-4 col-md-5 col-lg-5">
             <div className="box">
