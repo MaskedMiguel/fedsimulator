@@ -36,16 +36,16 @@ class MatchContainer extends Component {
       })
       teams = groupBy(wrestlers, "teamId")
     } else {
-      teams = { [getId()]: [] }
+      teams = { [getId()]: [], }
     }
-    return Object.assign({}, teams, { [getId()]: [] })
+    return Object.assign({}, teams, { [getId()]: [], })
   }
 
   onAddWrestler = (teamId, wrestler) => {
     const wrestlerId = wrestler.wrestler
-    const { roster, dispatch, currentMatch: { id: matchId } } = this.props
+    const { roster, dispatch, currentMatch: { id: matchId, }, } = this.props
 
-    wrestler = Object.assign({}, roster.find(wrestler => wrestler.id === wrestlerId), { teamId })
+    wrestler = Object.assign({}, roster.find(wrestler => wrestler.id === wrestlerId), { teamId, })
 
     dispatch(
       matchesAction.addWrestlerToMatch({
@@ -56,7 +56,7 @@ class MatchContainer extends Component {
   }
 
   onSelectWinner = wrestlerId => {
-    const { dispatch, currentMatch: { id: matchId } } = this.props
+    const { dispatch, currentMatch: { id: matchId, }, } = this.props
 
     dispatch(
       matchesAction.selectWinnerOfMatch({
@@ -67,7 +67,7 @@ class MatchContainer extends Component {
   }
 
   onRemoveWrestler = wrestlerId => {
-    const { dispatch, currentMatch: { id: matchId } } = this.props
+    const { dispatch, currentMatch: { id: matchId, }, } = this.props
 
     dispatch(
       matchesAction.removeWrestlerFromMatch({

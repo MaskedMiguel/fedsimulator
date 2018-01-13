@@ -1,7 +1,9 @@
-import { connect } from "react-redux"
 import { updateWrestler } from "../../actions/roster"
 import { compose, withHandlers, branch, renderComponent } from "recompose"
 
+import withRoster from "../../hoc/withRoster"
+import withBrands from "../../hoc/withBrands"
+import withStyle from "../../hoc/withStyle"
 import { generateRoster } from "../../actions/roster"
 import EmptyRoster from "../../components/empty-roster.js"
 import Draft from "./draft"
@@ -16,11 +18,9 @@ export const handlers = {
 }
 
 export const enhance = compose(
-  connect(state => ({
-    brands: state.federation.brands,
-    roster: state.federation.roster,
-    style: state.style,
-  })),
+  withBrands,
+  withStyle,
+  withRoster,
   withHandlers(handlers),
   branch(props => props.roster.length === 0, renderComponent(EmptyRoster))
 )

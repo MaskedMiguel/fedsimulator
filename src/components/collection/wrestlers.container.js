@@ -1,8 +1,11 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { connect } from "react-redux"
+import { compose } from "recompose"
 import chromatism from "chromatism"
 
+import withRoster from "../../hoc/withRoster"
+import withBrands from "../../hoc/withBrands"
+import withStyle from "../../hoc/withStyle"
 import { updateWrestler, deleteWrestler } from "../../actions/roster"
 import Collection from "./collection"
 
@@ -101,8 +104,6 @@ WrestlersContainer.propTypes = {
   style: PropTypes.object,
 }
 
-export default connect(state => ({
-  brands: state.federation.brands,
-  roster: state.federation.roster,
-  style: state.style,
-}))(WrestlersContainer)
+export const enhance = compose(withBrands, withRoster, withStyle)
+
+export default enhance(WrestlersContainer)

@@ -1,8 +1,12 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { connect } from "react-redux"
+import { compose } from "recompose"
 
-import { updateChampionship, deleteChampionship, awardChampionship } from "../../actions/champions"
+import withRoster from "../../hoc/withRoster"
+import withBrands from "../../hoc/withBrands"
+import withStyle from "../../hoc/withStyle"
+import withChampionships from "../../hoc/withChampionships"
+import { updateChampionship, deleteChampionship } from "../../actions/champions"
 import Collection from "./collection"
 
 const NOOP = () => {}
@@ -105,9 +109,6 @@ ChampionshipsContainer.defaultProps = {
   style: {},
 }
 
-export default connect(state => ({
-  brands: state.federation.brands,
-  championships: state.federation.championships,
-  roster: state.federation.roster,
-  style: state.style,
-}))(ChampionshipsContainer)
+export const enhance = compose(withStyle, withBrands, withRoster, withChampionships)
+
+export default enhance(ChampionshipsContainer)

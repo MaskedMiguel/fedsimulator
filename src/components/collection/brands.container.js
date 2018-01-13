@@ -1,7 +1,9 @@
 import React, { Component } from "react"
+import { compose } from "recompose"
 import PropTypes from "prop-types"
-import { connect } from "react-redux"
 
+import withBrands from "../../hoc/withBrands"
+import withStyle from "../../hoc/withStyle"
 import { updateBrand, deleteBrand } from "../../actions/brands"
 import Collection from "./collection"
 
@@ -20,7 +22,7 @@ class BrandsContainer extends Component {
   onChangeColor = (brand, color) => {
     const { dispatch, } = this.props
 
-    brand.style = Object.assign({}, brand.style, { color, }, )
+    brand.style = Object.assign({}, brand.style, { color, })
 
     dispatch(updateBrand(brand))
   }
@@ -28,7 +30,7 @@ class BrandsContainer extends Component {
   onChangeBackgroundColor = (brand, backgroundColor) => {
     const { dispatch, } = this.props
 
-    brand.style = Object.assign({}, brand.style, { backgroundColor, }, )
+    brand.style = Object.assign({}, brand.style, { backgroundColor, })
 
     dispatch(updateBrand(brand))
   }
@@ -77,7 +79,6 @@ BrandsContainer.propTypes = {
   style: PropTypes.object,
 }
 
-export default connect(state => ({
-  brands: state.federation.brands,
-  style: state.style,
-}))(BrandsContainer)
+export const enhance = compose(withBrands, withStyle)
+
+export default enhance(BrandsContainer)
