@@ -4,6 +4,7 @@ import pick from "lodash.pick"
 import sortBy from "lodash.sortby"
 
 import EmptyRoster from "../../components/empty-roster.js"
+import withStyle from "../../hoc/withStyle.js"
 import BattleRoyal from "./battle-royal"
 import { generateEntries, resetBattleRoyal, updateBattleRoyal, eliminateEntry } from "../../actions/battle-royal"
 
@@ -55,7 +56,6 @@ const lifecycleMapper = {
 export default compose(
   connect(
     state => ({
-      style: state.style,
       roster: state.federation.roster,
       ...state.federation.battleRoyal,
     }),
@@ -70,5 +70,6 @@ export default compose(
   ),
   withProps(propsMapper),
   branch(props => props.roster.length === 0, renderComponent(EmptyRoster)),
-  lifecycle(lifecycleMapper)
+  lifecycle(lifecycleMapper),
+  withStyle
 )(BattleRoyal)

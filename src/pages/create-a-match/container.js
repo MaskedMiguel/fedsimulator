@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router"
 import { List } from "immutable"
 
+import withStyle from "../../hoc/withStyle.js"
 import EmptyRoster from "../../components/empty-roster.js"
 import { getId } from "../../models/model.helper"
 import CreateAMatch from "./create-a-match"
@@ -49,7 +50,6 @@ export default compose(
     state => ({
       roster: state.federation.roster,
       matches: state.federation.matches,
-      style: state.style,
     }),
     dispatch => ({
       onRandomise: id => dispatch(randomiseMatch(id)),
@@ -105,5 +105,6 @@ export default compose(
     return { ...props, ...newProps, }
   }),
   lifecycleMapper,
+  withStyle,
   branch(props => props.roster.length === 0, renderComponent(EmptyRoster))
 )(CreateAMatch)

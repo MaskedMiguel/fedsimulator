@@ -1,9 +1,11 @@
 import React, { Component } from "react"
+import { compose } from "recompose"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import { Link } from "react-router"
 import chromatism from "chromatism"
 
+import withStyle from "../../hoc/withStyle"
 import { Reset } from "../../components/icons"
 import Social from "../../components/social"
 import ColorPickers from "../../components/color-pickers/container"
@@ -147,6 +149,6 @@ Settings.propTypes = {
   dispatch: PropTypes.func.isRequired,
 }
 
-export default connect(state => ({
-  style: state.style,
-}))(Settings)
+export const enhance = compose(withStyle)
+
+export default enhance(Settings)

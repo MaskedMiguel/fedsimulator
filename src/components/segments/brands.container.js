@@ -2,6 +2,7 @@ import { compose, withProps, renderNothing, branch } from "recompose"
 import { connect } from "react-redux"
 
 import Segments from "./segments"
+import withStyle from "../../hoc/withStyle"
 
 const propsMapper = ({ roster, brands, }) => {
   let segments = [],
@@ -22,8 +23,8 @@ export default compose(
   connect(state => ({
     roster: state.federation.roster,
     brands: state.federation.brands,
-    style: state.style,
   })),
   withProps(propsMapper),
+  withStyle,
   branch(props => props.segments < 1, renderNothing)
 )(Segments)

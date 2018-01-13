@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 
 import { WRESTLER_CONFIRM_DELETE } from "../../constants/confirmations"
 import { updateWrestler, deleteWrestler } from "../../actions/roster"
+import withStyle from "../../hoc/withStyle"
 import EditWrestler from "./wrestler"
 
 const propsMapper = ({ dispatch, id, }) => ({
@@ -25,7 +26,7 @@ export default compose(
   connect(state => ({
     championships: state.federation.championships,
     brands: state.federation.brands,
-    style: state.style,
   })),
-  withProps(propsMapper)
+  withProps(propsMapper),
+  withStyle
 )(EditWrestler)

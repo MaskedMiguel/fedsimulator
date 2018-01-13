@@ -1,6 +1,7 @@
 import { compose, withProps, withStateHandlers } from "recompose"
 import { connect } from "react-redux"
 
+import withStyle from "../../hoc/withStyle.js"
 import { resetRoster, generateRoster } from "../../actions/roster"
 import { ROSTER_CONFIRM_RESET } from "../../constants/confirmations"
 import RosterPage from "./roster"
@@ -42,7 +43,6 @@ export default compose(
   connect(
     state => ({
       roster: state.federation.roster,
-      style: state.style,
     }),
     dispatch => ({
       onClear: () => {
@@ -53,5 +53,6 @@ export default compose(
       onGenerate: () => dispatch(generateRoster()),
     })
   ),
-  withProps(propsMapper)
+  withProps(propsMapper),
+  withStyle
 )(RosterPage)
