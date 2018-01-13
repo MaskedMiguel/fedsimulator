@@ -1,5 +1,7 @@
 // style
 export const UPDATE_STYLE = "UPDATE_STYLE"
+export const TOGGLE_LIGHT = "TOGGLE_LIGHT"
+export const TOGGLE_DARK = "TOGGLE_DARK"
 
 // Brand
 export const CREATE_BRAND = "CREATE_BRAND"

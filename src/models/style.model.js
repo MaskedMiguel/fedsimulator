@@ -9,6 +9,7 @@ export const schema = {
   darkBgColor: dark,
   shade: -60,
   untouched: true,
+  light: false,
   darkStyle: {
     color: light,
     backgroundColor: "#000025",

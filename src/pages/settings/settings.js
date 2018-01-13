@@ -8,6 +8,7 @@ import withStyle from "../../hoc/withStyle"
 
 import { Reset } from "../../components/icons"
 import { resetAll } from "../../actions/game"
+import { toggleLight, toggleDark } from "../../actions/style"
 import { createWrestler } from "../../actions/roster"
 
 import Social from "../../components/social"
@@ -49,6 +50,22 @@ class Settings extends Component {
           </div>
           <div className="col-xs-12 pulse pulse-small">
             <div className="box" style={reduceBrightness()}>
+              <Choose>
+                <When condition={style.light}>
+                  <a onClick={this.onToggleDark}>
+                    <i className="icon fa far fa-lightbulb" style={{ color: "black", }} />
+                  </a>
+                </When>
+                <Otherwise>
+                  <a onClick={this.onToggleLight}>
+                    <i className="icon fa far fa-lightbulb" style={{ color: "white", }} />
+                  </a>
+                </Otherwise>
+              </Choose>
+            </div>
+          </div>
+          <div className="col-xs-12 pulse pulse-small">
+            <div className="box" style={reduceBrightness()}>
               <a tabIndex="0" onClick={this.onReset}>
                 <Reset />
                 &nbsp;Reset game
@@ -78,6 +95,10 @@ class Settings extends Component {
     dispatch(resetAll())
     router.push("/default")
   }
+
+  onToggleDark = () => this.props.dispatch(toggleDark())
+
+  onToggleLight = () => this.props.dispatch(toggleLight())
 
   onGenerate = () => {
     const maleWrestlers = [
@@ -151,6 +172,8 @@ Settings.propTypes = {
   dispatch: PropTypes.func.isRequired,
 }
 
-export const enhance = compose(withStyle)
+export const enhance = compose(
+  withStyle //
+)
 
 export default enhance(Settings)
