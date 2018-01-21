@@ -8,8 +8,8 @@ import ColorPicker from "../src/components/color-pickers/color-picker"
 import { Gender, Reset } from "../src/components/icons"
 import Input from "../src/components/form/input"
 
-const newStyle = { color: "red", backgroundColor: "white" }
-const defaultStyle = { color: "purple", backgroundColor: "black" }
+const newStyle = { color: "red", backgroundColor: "white", }
+const defaultStyle = { color: "purple", backgroundColor: "black", }
 
 const defaultCollection = [
   {
@@ -46,7 +46,7 @@ const getValuesTrueFor = (key, oldProps) => {
     canUpdateGender: false,
     canUpdateColors: false,
     canUpdateBrand: false,
-    collection: [defaultCollection[0]],
+    collection: [defaultCollection[0],],
   }
 
   if (newProps[key] !== undefined) {
@@ -97,7 +97,7 @@ describe("Given the Collection component", () => {
 
     describe("and input is updated", () => {
       before(() => {
-        component.find(Input).simulate("change", { target: { value: "My new value" } })
+        component.find(Input).simulate("change", { target: { value: "My new value", }, })
       })
 
       it("should call onChangeName", () => {
@@ -140,35 +140,35 @@ describe("Given the Collection component", () => {
       expect(component.find(component.find(".delete"))).to.have.length(0)
     })
 
-    describe.skip("and colorpickers is clicked", () => {
-      let colorPickers, color, backgroundColor
-
-      before(() => {
-        colorPickers = component.find(".color-pickers").simulate("click")
-      })
-
-      describe("and color is clicked", () => {
-        before(() => {
-          color = component.find(".color")
-          color.simulate("click")
-        })
-
-        it("should call onColorChange with id", () => {
-          expect(testProps.onColorChange).to.be.calledOnce
-        })
-      })
-
-      describe("and backgroundColor is clicked", () => {
-        before(() => {
-          backgroundColor = component.find(".background-color")
-          backgroundColor.simulate("click")
-        })
-
-        it("should call onColorChange with id", () => {
-          expect(testProps.onChangeBackgroundColorChange).to.be.calledOnce
-        })
-      })
-    })
+    // describe.skip("and colorpickers is clicked", () => {
+    //   let colorPickers, color, backgroundColor
+    //
+    //   before(() => {
+    //     colorPickers = component.find(".color-pickers").simulate("click")
+    //   })
+    //
+    //   describe("and color is clicked", () => {
+    //     before(() => {
+    //       color = component.find(".color")
+    //       color.simulate("click")
+    //     })
+    //
+    //     it("should call onColorChange with id", () => {
+    //       expect(testProps.onColorChange).to.be.calledOnce
+    //     })
+    //   })
+    //
+    //   describe("and backgroundColor is clicked", () => {
+    //     before(() => {
+    //       backgroundColor = component.find(".background-color")
+    //       backgroundColor.simulate("click")
+    //     })
+    //
+    //     it("should call onColorChange with id", () => {
+    //       expect(testProps.onChangeBackgroundColorChange).to.be.calledOnce
+    //     })
+    //   })
+    // })
   })
 
   describe("and delete is enabled", () => {

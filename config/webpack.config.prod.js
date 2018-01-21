@@ -15,6 +15,9 @@ const publicPath = "/"
 const publicUrl = ""
 const env = getClientEnvironment(publicUrl)
 
+// https://github.com/vuejs/vue-loader/issues/666
+process.noDeprecation = true
+
 module.exports = {
   devtool: "hidden-source-map",
   entry: [require.resolve("./polyfills"), require.resolve("react-error-overlay"), paths.appIndexJs,],
@@ -73,10 +76,6 @@ module.exports = {
             loader: "sass-loader",
           },
         ],
-      },
-      {
-        test: /\.css$/,
-        loader: "raw-loader",
       },
     ],
   },

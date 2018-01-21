@@ -104,7 +104,7 @@ describe("given a matches reducer", () => {
 
     describe("and the same wrestler is added to the match with a different teamId", () => {
       before(() => {
-        const wrestler = Object.assign({}, defaultWrestlers[1], { teamId })
+        const wrestler = Object.assign({}, defaultWrestlers[1], { teamId, })
         const payload = {
           wrestler,
           matchId: currentMatch.id,
@@ -134,8 +134,8 @@ describe("given a matches reducer", () => {
       describe("and another wrestler is added to the match", () => {
         before(() => {
           teamId = 33
-          const wrestler = Object.assign({}, defaultWrestlers[2], { teamId })
-          const payload = { wrestler, matchId: currentMatch.id }
+          const wrestler = Object.assign({}, defaultWrestlers[2], { teamId, })
+          const payload = { wrestler, matchId: currentMatch.id, }
 
           activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, payload)
           currentMatch = activeReducer[0]
@@ -206,103 +206,11 @@ describe("given a matches reducer", () => {
       })
     })
   })
-
   describe("and reset is called", () => {
     before(() => (activeReducer = reducerCreator(activeReducer, types.RESET)))
 
     it("should have NO items in the collection", () => {
       expect(activeReducer).to.have.length(0)
-    })
-  })
-
-  describe.skip("and a request to generate matches is called", () => {
-    const payload = {
-      roster: listOfWrestlers,
-      amountOfMatches: 50,
-    }
-    before(() => (activeReducer = reducerCreator(activeReducer, types.GENERATE_RANDOM_MATCHES, payload)))
-
-    it(`should have ${payload.amountOfMatches} items in the collection`, () => {
-      expect(activeReducer).to.have.length(payload.amountOfMatches)
-    })
-    describe("and a request to generate matches is called", () => {
-      before(() => (activeReducer = reducerCreator(activeReducer, types.GENERATE_RANDOM_MATCHES, payload)))
-
-      it(`should have ${payload.amountOfMatches} items in the collection`, () => {
-        expect(activeReducer).to.have.length(payload.amountOfMatches * 2)
-      })
-
-      // TODO
-      // it("should have an item with an id", () => {
-      //   expect(activeReducer[0].wrestlers[0].id).to.not.be(undefined)
-      // })
-    })
-    describe("and a simulate random match is requested", () => {
-      before(() => (activeReducer = reducerCreator(activeReducer, types.SIMULATE_RANDOM_MATCH)))
-
-      it("should have one match marked as simulate", () => {
-        const simulatedMatches = activeReducer.filter(item => item.simulated)
-
-        expect(simulatedMatches).to.have.length(1)
-      })
-
-      describe("and a simulate random match is requested", () => {
-        before(() => (activeReducer = reducerCreator(activeReducer, types.SIMULATE_RANDOM_MATCH)))
-
-        it("should have two matches marked as simulated", () => {
-          const simulatedMatches = activeReducer.filter(item => item.simulated)
-
-          expect(simulatedMatches).to.have.length(2)
-        })
-      })
-
-      describe("and a simulate random match with id is requested", () => {
-        let id
-        before(() => {
-          id = activeReducer.filter(item => !item.simulated)[0].id
-
-          activeReducer = reducerCreator(activeReducer, types.SIMULATE_MATCH, id)
-          currentMatch = activeReducer.find(item => item.id === id)
-        })
-        it("should have an updated simulated status", () => {
-          expect(currentMatch.simulated).to.have.equal(true)
-        })
-        describe("and a new person is added to the match", () => {
-          before(() => {
-            const wrestler = defaultWrestlers[1]
-            const payload = { wrestler, matchId: currentMatch.id }
-
-            activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, payload)
-            currentMatch = activeReducer.find(item => item.id === id)
-          })
-          it("it should be marked as NOT simulated", () => {
-            expect(currentMatch.simulated).to.have.equal(false)
-          })
-          describe("and its resimulated", () => {
-            before(() => {
-              activeReducer = reducerCreator(activeReducer, types.SIMULATE_MATCH, id)
-              currentMatch = activeReducer.find(item => item.id === id)
-            })
-            it("it should be marked as simulated", () => {
-              expect(currentMatch.simulated).to.have.equal(true)
-            })
-          })
-          describe("and a person is removed from the match", () => {
-            before(() => {
-              const payload = {
-                matchId: currentMatch.id,
-                wrestlerId: currentMatch.wrestlers[0].id,
-              }
-
-              activeReducer = reducerCreator(activeReducer, types.REMOVE_WRESTLER_FROM_MATCH, payload)
-              currentMatch = activeReducer.find(item => item.id === id)
-            })
-            it("it should be marked as NOT simulated", () => {
-              expect(currentMatch.simulated).to.have.equal(false)
-            })
-          })
-        })
-      })
     })
   })
 })

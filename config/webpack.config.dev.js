@@ -1,6 +1,5 @@
 "use strict"
 
-const autoprefixer = require("autoprefixer")
 const path = require("path")
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
@@ -17,6 +16,9 @@ const publicPath = "/"
 const publicUrl = ""
 
 const env = getClientEnvironment(publicUrl)
+
+// https://github.com/vuejs/vue-loader/issues/666
+process.noDeprecation = true
 
 module.exports = {
   devtool: "cheap-module-source-map",
@@ -89,11 +91,6 @@ module.exports = {
               },
             ],
           },
-          {
-            test: /\.css$/,
-            loader: "raw-loader",
-          },
-
           {
             exclude: [/\.js$/, /\.html$/, /\.json$/,],
             loader: require.resolve("file-loader"),

@@ -7,11 +7,11 @@ import "./wrestlers.scss"
 
 const NOOP = () => {}
 
-const Collection = ({ collection = [], ...props }) => {
+export const Collection = ({ collection = [], ...props }) => {
   return collection.map(wrestler => <Wrestler key={wrestler.id} wrestler={wrestler} {...props} />)
 }
 
-const Container = ({ collection = [], onClick = NOOP, canDrag = true, style = {}, }) => {
+export const Container = ({ collection = [], onClick = NOOP, canDrag = true, style = {}, }) => {
   const women = collection.filter(item => !item.male)
   const men = collection.filter(item => item.male)
   return (
