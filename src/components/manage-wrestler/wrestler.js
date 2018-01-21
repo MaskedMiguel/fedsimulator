@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Labels from "../labels/labels"
-import Button from "../button/button"
+import Button from "../button/withDarkStyle"
 import Image from "../form/image"
 import Input from "../form/input"
 import { Reset } from "../icons"

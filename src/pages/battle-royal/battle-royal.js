@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { Reset, Generate } from "../../components/icons"
-import Button from "../../components/button/button"
+import Button from "../../components/button/withDarkStyle"
 import HeaderOne from "../../components/header/header"
 import Labels from "../../components/labels/labels"
 import Slider from "../../components/form/slider"

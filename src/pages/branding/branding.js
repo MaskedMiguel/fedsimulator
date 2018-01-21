@@ -6,7 +6,7 @@ import { CirclePicker } from "react-color"
 import HeaderOne from "../../components/header/header"
 import { colors } from "../../constants/colors"
 import { updateStyle } from "../../actions/style"
-import Button from "../../components/button/button"
+import Button from "../../components/button/withLightStyle"
 
 import "./branding.scss"
 

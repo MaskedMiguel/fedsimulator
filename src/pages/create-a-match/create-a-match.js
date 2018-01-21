@@ -5,7 +5,7 @@ import Wrestlers from "../../components/wrestlers/container"
 import { Winner, Loser } from "../../components/winner/winner"
 import HeaderOne from "../../components/header/header"
 import Match from "../../components/match/container"
-import Button from "../../components/button/button"
+import Button from "../../components/button/withLightStyle"
 import { Reset, Randomise } from "../../components/icons"
 
 import "./create-a-match.scss"

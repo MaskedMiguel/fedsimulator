@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import { updateName } from "../../actions/game"
 import { toggleStarted } from "../../actions/game"
 import Input from "../../components/form/input"
-import Button from "../../components/button/button"
+import Button from "../../components/button/withLightStyle"
 import HeaderOne from "../../components/header/header"
 
 import "./name.scss"
