@@ -8,6 +8,4 @@ export const schema = {
   simulationSpeed: 0,
 }
 
-export const Championship = new Record(schema)
-
-export default Championship
+export default Record(schema)

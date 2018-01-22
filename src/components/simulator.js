@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import Slider from "./form/slider"
 
-import { simulateRandomMatches } from "../actions/matches"
+import { simulateRandomMatch } from "../actions/roster"
 import { updateGameSimulation } from "../actions/game"
 
 const NOOP = () => {}
@@ -11,10 +11,6 @@ const NOOP = () => {}
 class Simulator extends PureComponent {
   constructor(props) {
     super(props)
-
-    this.state = {
-      counter: 0,
-    }
 
     if (props.simulationSpeed > 0) {
       this.startInterval()
@@ -48,23 +44,24 @@ class Simulator extends PureComponent {
   render() {
     return (
       <div>
-        Simulations ({this.state.counter.toLocaleString("en")})
+        Simulations ({this.props.simulationCount.toLocaleString("en")})
         <Slider max={70} value={this.props.simulationSpeed} onChange={this.onChange} />
       </div>
     )
   }
 
   startSimulations = () => {
-    if (this.props.simulationSpeed > 0) {
-      const counter = Number(this.state.counter) + Number(this.props.simulationSpeed)
+    const { dispatch, simulationSpeed, roster, championships, } = this.props
 
-      this.setState({ counter, })
-      this.props.dispatch(simulateRandomMatches(this.props.simulationSpeed))
+    if (simulationSpeed > 0) {
+      dispatch(simulateRandomMatch({ roster, championships, }))
     }
   }
 
   startInterval = () => {
-    this._interval = setInterval(this.startSimulations, 350)
+    const speed = 50 - this.props.simulationSpeed * 0.8
+
+    this._interval = setInterval(this.startSimulations, speed)
   }
 
   clearInterval = () => {
@@ -85,5 +82,8 @@ Simulator.defaultProps = {
 }
 
 export default connect(state => ({
+  simulationCount: state.roster.reduce((previousValue, currentValue) => previousValue + currentValue.wins, 0),
   simulationSpeed: state.game.simulationSpeed,
+  roster: state.roster,
+  championships: state.championships,
 }))(Simulator)

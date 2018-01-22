@@ -3,7 +3,7 @@ import { compose } from "recompose"
 
 export const withStyle = compose(
   connect(state => ({
-    roster: state.federation.roster,
+    roster: state.roster,
   }))
 )
 

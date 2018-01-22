@@ -44,9 +44,9 @@ DefaultPage.propTypes = {
 }
 
 export default connect(state => ({
-  brands: state.federation.brands,
+  brands: state.brands,
   name: state.game.name,
-  roster: state.federation.roster,
+  roster: state.roster,
   started: state.game.started,
   untouched: state.style.untouched,
 }))(DefaultPage)

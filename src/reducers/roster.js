@@ -1,12 +1,10 @@
 import { List } from "immutable"
 
-import { getId } from "../../models/model.helper"
-import Model from "../../models/wrestler.model"
-import { roster } from "../../constants/defaults.json"
+import { getId } from "../models/model.helper"
+import Model from "../models/wrestler.model"
+import { roster } from "../constants/defaults.json"
 
-import Match from "../../helpers/match"
-
-export default (state, action, getState) => {
+export default (state, action) => {
   state = List(state).map(item => new Model(item))
   let index
 
@@ -14,6 +12,9 @@ export default (state, action, getState) => {
     case "RESET":
     case "RESET_ROSTER":
       state = List()
+      break
+    case "UPDATE_ROSTER":
+      // we do nothing because the new state is already set
       break
     case "GENERATE":
     case "GENERATE_ROSTER":
@@ -36,25 +37,7 @@ export default (state, action, getState) => {
         state = state.updateIn([index,], item => new Model(item).merge(action.payload))
       }
       break
-    case "SIMULATE_RANDOM_MATCHES":
-      {
-        let { amountOfMatches, } = action.payload
-
-        while (amountOfMatches > 0) {
-          const brandId = state.get(Math.floor(Math.random() * state.size)).get("brandId")
-
-          state = new Match({ roster: state, brandId, championships: getState("championships"), })
-            .generate()
-            .simulate()
-            .savePoints()
-            .switchChampionships()
-            .getRoster()
-          amountOfMatches--
-        }
-      }
-      break
   }
-  return List(state)
-    .map(item => new Model(item))
-    .toJS()
+
+  return state.toJS()
 }

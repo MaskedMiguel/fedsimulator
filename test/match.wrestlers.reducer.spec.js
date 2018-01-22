@@ -1,7 +1,7 @@
 import { List } from "immutable"
 
 import { getId } from "../src/models/model.helper"
-import reducer from "../src/reducers/federation/match.wrestlers"
+import reducer from "../src/reducers/match.wrestlers"
 import Model from "../src/models/match.wrestler.model"
 import * as types from "../src/actions/types"
 
@@ -28,19 +28,13 @@ const defaultWrestlers = new List([
   }),
 ]).toJS()
 
-const storeStates = {
-  roster: defaultWrestlers,
-}
-
-const getState = storeName => storeStates[storeName]
-
 const reducerCreator = (activeReducer, type = types.RESET, payload = false) => {
   const action = {
     type,
     payload,
   }
 
-  return reducer(activeReducer, action, getState)
+  return reducer(activeReducer, action)
 }
 
 describe("given a match wrestler reducer", () => {
@@ -50,7 +44,7 @@ describe("given a match wrestler reducer", () => {
 
   describe("and a wrestler is added to the match", () => {
     before(() => {
-      const payload = { wrestler: defaultWrestlers[0] }
+      const payload = { wrestler: defaultWrestlers[0], }
 
       activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, payload)
     })
@@ -59,7 +53,7 @@ describe("given a match wrestler reducer", () => {
     })
     describe("and the same wrestler is added to the match", () => {
       before(() => {
-        const payload = { wrestler: defaultWrestlers[0] }
+        const payload = { wrestler: defaultWrestlers[0], }
 
         activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, payload)
       })
@@ -69,7 +63,7 @@ describe("given a match wrestler reducer", () => {
     })
     describe("and a different wrestler is added to the match", () => {
       before(() => {
-        const payload = { wrestler: defaultWrestlers[2] }
+        const payload = { wrestler: defaultWrestlers[2], }
 
         activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, payload)
       })
@@ -114,9 +108,9 @@ describe("given a match wrestler reducer", () => {
   })
   describe("and a winner is sent", () => {
     before(() => {
-      const payload = { wrestlerId: defaultWrestlers[2].id }
+      const payload = { wrestlerId: defaultWrestlers[2].id, }
 
-      activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, { wrestler: defaultWrestlers[2] })
+      activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, { wrestler: defaultWrestlers[2], })
       activeReducer = reducerCreator(activeReducer, types.SELECT_WINNER_IN_MATCH, payload)
       winner = activeReducer.find(item => item.winner)
     })
@@ -127,7 +121,7 @@ describe("given a match wrestler reducer", () => {
       let winners
 
       before(() => {
-        const payload = { wrestlerId: defaultWrestlers[2].id }
+        const payload = { wrestlerId: defaultWrestlers[2].id, }
 
         activeReducer = reducerCreator(activeReducer, types.SELECT_WINNER_IN_MATCH, payload)
         winners = activeReducer.filter(item => item.winner)
@@ -147,10 +141,10 @@ describe("given a match wrestler reducer", () => {
     let numberOfWrestlers
 
     before(() => {
-      const payload = { wrestler: defaultWrestlers[3] }
+      const payload = { wrestler: defaultWrestlers[3], }
 
-      activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, { wrestler: defaultWrestlers[3] })
-      activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, { wrestler: defaultWrestlers[4] })
+      activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, { wrestler: defaultWrestlers[3], })
+      activeReducer = reducerCreator(activeReducer, types.ADD_WRESTLER_TO_MATCH, { wrestler: defaultWrestlers[4], })
 
       numberOfWrestlers = activeReducer.length
 

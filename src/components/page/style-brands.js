@@ -14,7 +14,7 @@ StyleBrands.propTypes = {
 }
 
 export default connect(state => ({
-  styleInline: state.federation.brands.reduce(
+  styleInline: state.brands.reduce(
     (prevVal, item) =>
       prevVal +
       ` .${item.id} .points {

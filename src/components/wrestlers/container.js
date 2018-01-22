@@ -27,7 +27,7 @@ export const propsMapper = props => {
 }
 
 export const defaultStoreState = state => ({
-  collection: state.federation.roster,
+  collection: state.roster,
 })
 
 export const enhance = compose(connect(defaultStoreState), setPropTypes(mappedPropTypes), withProps(propsMapper))

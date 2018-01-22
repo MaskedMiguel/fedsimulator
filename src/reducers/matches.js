@@ -1,11 +1,11 @@
 import { List } from "immutable"
 
-import Model from "../../models/match.model"
+import Model from "../models/match.model"
 import WrestlersReducer from "./match.wrestlers"
 
-import { getId } from "../../models/model.helper"
+import { getId } from "../models/model.helper"
 
-export default (state, action, getState) => {
+export default (state, action) => {
   state = List(state)
   let index
 
@@ -19,15 +19,18 @@ export default (state, action, getState) => {
       }
       break
     case "RANDOMISE_MATCH":
-      if (action.payload) {
-        index = state.findIndex(item => item.id === action.payload)
+      {
+        const { id, roster, } = action.payload
+        if (action.payload) {
+          index = state.findIndex(item => item.id === id)
 
-        if (index > -1) {
-          state = state.updateIn([index,], item => {
-            item.simulated = true
-            item.wrestlers = new WrestlersReducer(getState("roster"), action)
-            return item
-          })
+          if (index > -1) {
+            state = state.updateIn([index,], item => {
+              item.simulated = true
+              item.wrestlers = new WrestlersReducer(roster, action)
+              return item
+            })
+          }
         }
       }
       break

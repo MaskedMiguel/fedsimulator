@@ -33,6 +33,6 @@ Champions.propTypes = {
 }
 
 export default connect(state => ({
-  champions: state.federation.roster.filter(item => item.championshipId),
-  championships: state.federation.championships,
+  champions: state.roster.filter(item => item.championshipId),
+  championships: state.championships,
 }))(Champions)

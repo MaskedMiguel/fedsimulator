@@ -7,6 +7,4 @@ export const schema = {
   read: false,
 }
 
-export const Notification = new Record(schema)
-
-export default Notification
+export default Record(schema)

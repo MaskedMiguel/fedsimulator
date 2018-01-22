@@ -17,12 +17,8 @@ export default (state, action) => {
       state = state.set("started", true)
       break
     case "UPDATE_GAME_SIMULATION":
-      const { simulation, simulationSpeed, } = action.payload
-
-      state = state.set("simulation", simulation)
-      state = state.set("simulationSpeed", simulationSpeed)
+      state = state.merge(action.payload)
       break
-
     case "UPDATE_NAME":
       state = state.set("name", action.payload.name)
       break

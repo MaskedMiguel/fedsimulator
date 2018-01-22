@@ -1,4 +1,4 @@
-import reducer from "../src/reducers/federation/index"
+import reducer from "../src/reducers/index"
 
 const defaultState = {
   championships: [{ id: 1 }],

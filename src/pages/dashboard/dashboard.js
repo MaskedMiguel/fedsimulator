@@ -67,10 +67,10 @@ DashboardPage.propTypes = {
 }
 
 export default connect(state => ({
-  canSimulate: state.federation.roster.length > 0,
-  championships: state.federation.championships,
-  rankedMaleWrestlers: orderBy(state.federation.roster.filter(wrestler => wrestler.male), "points", "desc"),
-  rankedFemaleWrestlers: orderBy(state.federation.roster.filter(wrestler => !wrestler.male), "points", "desc"),
+  canSimulate: state.roster.length > 0,
+  championships: state.championships,
+  rankedMaleWrestlers: orderBy(state.roster.filter(wrestler => wrestler.male), "points", "desc"),
+  rankedFemaleWrestlers: orderBy(state.roster.filter(wrestler => !wrestler.male), "points", "desc"),
   ...state.game,
   style: state.style,
 }))(DashboardPage)

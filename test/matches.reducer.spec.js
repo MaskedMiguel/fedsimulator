@@ -1,7 +1,7 @@
 import { List } from "immutable"
 
 import { getId } from "../src/models/model.helper"
-import reducer from "../src/reducers/federation/matches"
+import reducer from "../src/reducers/matches"
 import WrestlerModel from "../src/models/wrestler.model"
 import * as types from "../src/actions/types"
 import listOfWrestlers from "./wrestlers.json"

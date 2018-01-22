@@ -7,6 +7,4 @@ export const schema = {
   loser: false,
 }
 
-const Model = new Record(schema)
-
-export default Model
+export default Record(schema)

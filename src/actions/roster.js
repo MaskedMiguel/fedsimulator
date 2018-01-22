@@ -1,4 +1,21 @@
 import * as types from "./types"
+import Match from "../helpers/match"
+
+export function simulateRandomMatch({ roster = [], championships = [], }) {
+  const brandId = roster[Math.floor(Math.random() * roster.length)].brandId
+  const payload = new Match({ roster, brandId, championships, })
+    .generate()
+    .simulate()
+    .savePoints()
+    .switchChampionships()
+    .getRoster()
+    .toJS()
+
+  return {
+    type: types.UPDATE_ROSTER,
+    payload,
+  }
+}
 
 export function updateWrestler(payload) {
   return {

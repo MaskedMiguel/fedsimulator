@@ -1,8 +1,8 @@
 import { List } from "immutable"
 
-import randomiseWrestlers from "../../helpers/randomise-wrestlers.js"
-import selectRandomResults from "../../helpers/select-random-results"
-import Model from "../../models/match.wrestler.model"
+import randomiseWrestlers from "../helpers/randomise-wrestlers.js"
+import selectRandomResults from "../helpers/select-random-results"
+import Model from "../models/match.wrestler.model"
 
 export default (state, action) => {
   state = List(state)

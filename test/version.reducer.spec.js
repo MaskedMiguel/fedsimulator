@@ -7,7 +7,7 @@ const action = {
 
 describe("given a version reducer", () => {
   it("should set a default version of 5", () => {
-    expect(reducer(undefined, action)).to.equal(5.5)
+    expect(reducer(undefined, action)).to.equal(6.0)
   })
 
   it("and the version number is now 6", () => {

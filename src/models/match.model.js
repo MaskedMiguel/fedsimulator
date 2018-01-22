@@ -9,6 +9,4 @@ export const schema = {
   wrestlers: List(),
 }
 
-export const Model = new Record(schema)
-
-export default Model
+export default Record(schema)

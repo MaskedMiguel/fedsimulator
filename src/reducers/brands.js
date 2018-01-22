@@ -1,8 +1,8 @@
 import { List } from "immutable"
 
-import { Championship as Model } from "../../models/championship.model"
-import { getId } from "../../models/model.helper"
-import { championships } from "../../constants/defaults.json"
+import Model from "../models/brand.model"
+import { getId } from "../models/model.helper"
+import { brands } from "../constants/defaults.json"
 
 export default (state, action) => {
   state = List(state).map(item => new Model(item))
@@ -10,24 +10,24 @@ export default (state, action) => {
 
   switch (action.type) {
     case "RESET":
-    case "RESET_CHAMPIONSHIPS":
+    case "RESET_BRANDS":
       state = List()
       break
     case "GENERATE":
-    case "GENERATE_CHAMPIONSHIPS":
-      state = List(championships.map(item => new Model(item)))
+    case "GENERATE_BRANDS":
+      state = List(brands.map(item => new Model(item)))
       break
-    case "CREATE_CHAMPIONSHIP":
+    case "CREATE_BRAND":
       state = state.push(new Model(action.payload).merge({ id: getId(), }))
       break
-    case "UPDATE_CHAMPIONSHIP":
+    case "UPDATE_BRAND":
       index = state.findIndex(item => item.id === action.payload.id)
 
       if (index > -1) {
         state = state.updateIn([index,], item => new Model(item).merge(action.payload))
       }
       break
-    case "DELETE_CHAMPIONSHIP":
+    case "DELETE_BRAND":
       index = state.findIndex(item => item.id === action.payload)
 
       if (index > -1) {

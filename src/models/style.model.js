@@ -16,6 +16,4 @@ export const schema = {
   },
 }
 
-export const Style = new Record(schema)
-
-export default Style
+export default Record(schema)

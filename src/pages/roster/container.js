@@ -44,7 +44,7 @@ export default compose(
   withStateHandlers(defaultState, stateHandlers),
   connect(
     state => ({
-      roster: state.federation.roster,
+      roster: state.roster,
     }),
     dispatch => ({
       onClear: () => {

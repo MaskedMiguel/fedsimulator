@@ -1,4 +1,4 @@
-import reducer from "../src/reducers/federation/roster"
+import reducer from "../src/reducers/roster"
 import * as types from "../src/actions/types"
 import { schema } from "../src/models/wrestler.model"
 

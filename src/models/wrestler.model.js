@@ -13,6 +13,4 @@ export const schema = {
   wins: 0,
 }
 
-const Wrestler = new Record(schema)
-
-export default Wrestler
+export default Record(schema)

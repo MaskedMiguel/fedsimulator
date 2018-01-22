@@ -9,6 +9,4 @@ export const schema = {
   },
 }
 
-export const Brand = new Record(schema)
-
-export default Brand
+export default Record(schema)

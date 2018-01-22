@@ -89,6 +89,6 @@ MatchContainer.propTypes = {
 MatchContainer.displayName = "MatchContainer"
 
 export default connect(state => ({
-  matches: state.federation.matches,
-  roster: state.federation.roster,
+  matches: state.matches,
+  roster: state.roster,
 }))(MatchContainer)

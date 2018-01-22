@@ -4,9 +4,12 @@ import { withRouter } from "react-router"
 import { List } from "immutable"
 
 import withStyle from "../../hoc/withStyle.js"
+import withRoster from "../../hoc/withRoster.js"
+
 import EmptyRoster from "../../components/empty-roster.js"
-import { getId } from "../../models/model.helper"
 import CreateAMatch from "./create-a-match"
+
+import { getId } from "../../models/model.helper"
 import { createMatch, simulateMatch, addWrestlerToMatch, randomiseMatch } from "../../actions/matches"
 import { MATCH_CONFIRM_RESET } from "../../constants/confirmations"
 
@@ -46,10 +49,11 @@ const stateHandlers = {
 export default compose(
   withRouter,
   withStateHandlers(initialState, stateHandlers),
+  withRoster,
   connect(
     state => ({
-      roster: state.federation.roster,
-      matches: state.federation.matches,
+      roster: state.roster,
+      matches: state.matches,
     }),
     dispatch => ({
       onRandomise: id => dispatch(randomiseMatch(id)),
@@ -95,7 +99,7 @@ export default compose(
         onRandomise: event => {
           event.preventDefault()
 
-          return props.onRandomise(currentMatch.id)
+          return props.onRandomise({ id: currentMatch.id, roster: props.roster, })
         },
         winner,
         loser,

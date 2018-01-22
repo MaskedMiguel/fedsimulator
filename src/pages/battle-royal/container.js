@@ -60,7 +60,7 @@ export default compose(
   withStyle,
   connect(
     state => ({
-      ...state.federation.battleRoyal,
+      ...state.battleRoyal,
     }),
     dispatch => ({
       onEliminateEntry: entries => dispatch(eliminateEntry(entries)),

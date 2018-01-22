@@ -1,5 +1,5 @@
-import Model from "../../models/battle-royal.model"
-import WrestlerModel from "../../models/battle-royal.wrestler.model"
+import Model from "../models/battle-royal.model"
+import WrestlerModel from "../models/battle-royal.wrestler.model"
 
 export default (state, action) => {
   state = new Model(state)

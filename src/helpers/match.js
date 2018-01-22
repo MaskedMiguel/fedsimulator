@@ -69,12 +69,12 @@ export default class Match {
     const losers = this.losers.size
     const winners = this.winners.size
 
-    if ((this.championship.tag === true && losers === 2 && winners === 2) || (this.championship.tag === false && losers === 1 && winners === 1)) {
+    if (losers === 1 && winners === 1) {
       this.roster = this.roster.map(wrestler => {
         if (includes(this.winnerIds, wrestler.id)) {
-          wrestler = wrestler.set("championshipId", this.championship.id)
-        } else if (includes(this.loserIds, wrestler.id) || wrestler.get("championshipId") === this.championship.id) {
-          wrestler = wrestler.set("championshipId", null)
+          wrestler.championshipId = this.championship.id
+        } else if (includes(this.loserIds, wrestler.id) || wrestler.championshipId === this.championship.id) {
+          wrestler.championshipId = null
         }
 
         return wrestler
@@ -93,16 +93,16 @@ export default class Match {
 
     this.roster = this.roster.map(wrestler => {
       if (includes(this.loserIds, wrestler.id)) {
-        wrestler = wrestler.set("losses", wrestler.get("losses") + POINTS_STEP)
+        wrestler = wrestler.losses = wrestler.losses + POINTS_STEP
 
-        if (wrestler.get("losses") % 10 === 0) {
-          wrestler = wrestler.set("points", wrestler.get("points") - POINTS_STEP)
+        if (wrestler.losses % 10 === 0) {
+          wrestler.points = wrestler.points - POINTS_STEP
         }
       } else if (includes(this.winnerIds, wrestler.id)) {
-        wrestler = wrestler.set("wins", wrestler.get("wins") + POINTS_STEP)
+        wrestler.wins = wrestler.wins + POINTS_STEP
 
-        if (wrestler.get("wins") % 10 === 0) {
-          wrestler = wrestler.set("points", wrestler.get("points") + POINTS_STEP)
+        if (wrestler.wins % 10 === 0) {
+          wrestler.points = wrestler.points + POINTS_STEP
         }
       }
       return wrestler
