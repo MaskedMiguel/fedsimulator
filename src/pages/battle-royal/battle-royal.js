@@ -1,13 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Loadable from "react-loadable";
 
+import ComponentLoader from "../../components/component-loader"
 import { Reset, Generate } from "../../components/icons"
 import Button from "../../components/button/withDarkStyle"
 import HeaderOne from "../../components/header/header"
 import Labels from "../../components/labels/labels"
 import Slider from "../../components/form/slider"
 import Wrestler from "../../components/wrestler/wrestler"
-import Ranking from "../../components/ranking/ranking"
 
 import { BATTLE_ROYAL_ENTRIES_COLUMNS, BATTLE_ROYAL_ELIMINATIONS_COLUMNS } from "../../constants/ranking"
 
@@ -15,6 +16,11 @@ import "./battle-royal.scss"
 
 const NOOP = () => {}
 const genderLabels = [{ id: true, name: "male", style: { backgroundColor: "blue", }, }, { id: false, name: "female", style: { backgroundColor: "red", }, },]
+
+const Ranking = Loadable({
+  loader: () => import('../../components/ranking/ranking'),
+  loading: ComponentLoader,
+})
 
 const BattleRoyal = ({
   amountOfEntries = 30,

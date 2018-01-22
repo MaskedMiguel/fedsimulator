@@ -24,8 +24,8 @@ module.exports = {
   output: {
     path: paths.appBuild,
     pathinfo: true,
-    filename: "static/js/[name].[hash:8].js",
-    chunkFilename: "static/js/chunk.[name].[hash:8].js",
+    filename: "js/[hash:8]/[name].js",
+    chunkFilename: "js/[hash:8]/[name].js",
     publicPath: publicPath,
     devtoolModuleFilenameTemplate: info => path.resolve(info.absoluteResourcePath),
   },
@@ -44,7 +44,7 @@ module.exports = {
         exclude: [/\.html$/, /\.(js|jsx)$/, /\.css|scss$/, /\.json$/, /\.gif$/, /\.jpe?g$/, /\.png$/,],
         loader: require.resolve("file-loader"),
         options: {
-          name: "static/media/[name].[hash:8].[ext]",
+          name: "media/[hash:8]/[name].[ext]",
         },
       },
       {
@@ -52,7 +52,7 @@ module.exports = {
         loader: require.resolve("url-loader"),
         options: {
           limit: 10000,
-          name: "static/media/[name].[hash:8].[ext]",
+          name: "media/[hash:8]/[name].[ext]",
         },
       },
       {
@@ -92,7 +92,7 @@ module.exports = {
       // If a URL is already hashed by Webpack, then there is no concern
       // about it being stale, and the cache-busting can be skipped.
       dontCacheBustUrlsMatching: /\.\w{8}\./,
-      filename: "service-worker.js",
+      filename: "js/lib/service-worker.js",
       logger(message) {
         if (message.indexOf("Total precache size is") === 0) {
           // This message occurs for every build and is a bit too noisy.
