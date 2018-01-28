@@ -83,7 +83,6 @@ Simulator.propTypes = {
 Simulator.defaultProps = {
   dispatch: NOOP,
   simulationCount: PropTypes.number,
-
   simulationSpeed: 0,
 }
 
