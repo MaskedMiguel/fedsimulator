@@ -51,9 +51,11 @@ class Simulator extends PureComponent {
   }
 
   startSimulations = () => {
-    const { dispatch, simulationSpeed, roster, championships, } = this.props
+    const { simulationSpeed, } = this.props
 
     if (simulationSpeed > 0) {
+      const { dispatch, roster, championships, } = this.props
+
       dispatch(simulateRandomMatch({ roster, championships, }))
     }
   }
@@ -73,11 +75,14 @@ Simulator.displayName = "PageSecondary"
 
 Simulator.propTypes = {
   dispatch: PropTypes.func,
+  championships: PropTypes.array,
+  simulationCount: PropTypes.number,
   simulationSpeed: PropTypes.oneOfType([PropTypes.number, PropTypes.string,]),
 }
 
 Simulator.defaultProps = {
   dispatch: NOOP,
+  simulationCount: PropTypes.number,
   simulationSpeed: 0,
 }
 
