@@ -1,14 +1,9 @@
 import * as types from "./types"
 
-export function generateFederation() {
-  return {
-    type: types.GENERATE,
-  }
-}
-export function updateGameSimulation({ simulationSpeed, simulation, }) {
+export function updateGameSimulation({ simulationSpeed, simulation }) {
   return {
     type: types.UPDATE_GAME_SIMULATION,
-    payload: { simulationSpeed, simulation, },
+    payload: { simulationSpeed, simulation },
   }
 }
 
@@ -21,7 +16,7 @@ export function toggleStarted() {
 export function updateName(name) {
   return {
     type: types.UPDATE_NAME,
-    payload: { name, },
+    payload: { name },
   }
 }
 

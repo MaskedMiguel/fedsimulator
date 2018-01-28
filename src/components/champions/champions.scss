@@ -3,20 +3,7 @@
   justify-content: center;
   align-items: center;
 
-  .champion {
-    margin: 0 0.5rem 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    header {
-      margin: 0;
-      font-weight: lighter;
-      font-size: small;
-    }
-
-    .wrestler .name {
-      font-size: xx-small;
-    }
+  .wrestler .name {
+    font-size: xx-small;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Loadable from "react-loadable";
+import Loadable from "react-loadable"
 
 import ComponentLoader from "../../components/component-loader"
 import { Reset, Generate } from "../../components/icons"
@@ -15,10 +15,10 @@ import { BATTLE_ROYAL_ENTRIES_COLUMNS, BATTLE_ROYAL_ELIMINATIONS_COLUMNS } from 
 import "./battle-royal.scss"
 
 const NOOP = () => {}
-const genderLabels = [{ id: true, name: "male", style: { backgroundColor: "blue", }, }, { id: false, name: "female", style: { backgroundColor: "red", }, },]
+const genderLabels = [{ id: true, name: "male", style: { backgroundColor: "blue" } }, { id: false, name: "female", style: { backgroundColor: "red" } }]
 
 const Ranking = Loadable({
-  loader: () => import('../../components/ranking/ranking'),
+  loader: () => import("../../components/ranking/ranking"),
   loading: ComponentLoader,
 })
 

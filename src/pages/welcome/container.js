@@ -3,22 +3,18 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router"
 
 import WelcomePage from "./welcome"
-import { generateFederation } from "../../actions/game"
 
 export default compose(
-  connect(
-    state => ({
-      started: state.game.started,
-    }),
-    dispatch => ({
-      generateFederation: () => dispatch(generateFederation()),
-    })
-  ),
+  connect(state => ({
+    name: state.game.name,
+    style: state.style,
+    gameReady: state.roster.length > 0 && state.game.name !== "",
+  })),
   withRouter,
   lifecycle({
-    componentWillReceiveProps(props) {
-      if (props.started) {
-        props.router.push("/dashboard")
+    componentDidMount() {
+      if (this.props.name) {
+        this.props.router.push("/dashboard")
       }
     },
   })

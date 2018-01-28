@@ -12,12 +12,13 @@ export default (state, action) => {
       state = selectRandomResults(state.toJS())
       break
     case "RANDOMISE_MATCH":
-      state = randomiseWrestlers({ wrestlers: state.toJS(), })
+      state = randomiseWrestlers({ wrestlers: state.toJS() })
       break
     case "SELECT_WINNER_IN_MATCH":
       state = state.map(item => {
         const isAlreadyWinner = item.winner
-        const isWinner = !isAlreadyWinner && item.id === action.payload.wrestlerId
+        const isWinner =
+          !isAlreadyWinner && item.id === action.payload.wrestlerId
 
         item.winner = isWinner
         item.loser = false
@@ -38,6 +39,13 @@ export default (state, action) => {
 
         state = state.filter(item => item.id !== newItem.get("id"))
         state = state.push(newItem)
+        state = state.map(item => {
+          let newItem = new Model(item)
+
+          newItem = newItem.set("winner", false)
+          newItem = newItem.set("loser", false)
+          return newItem
+        })
       }
       break
   }

@@ -24,7 +24,7 @@ const Router = () => {
     <Route path="/" onChange={onChange} component={Page}>
       <IndexRoute
         getComponent={(location, cb) => {
-          import('./pages/default/default'/* webpackChunkName:"default" */)
+          import("./pages/default/default" /* webpackChunkName:"default" */)
             .then(loadRoute(cb))
             .catch(errorLoading)
         }}
@@ -32,7 +32,7 @@ const Router = () => {
       <Route path="welcome">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/welcome/container'/* webpackChunkName:"welcome" */)
+            import("./pages/welcome/container" /* webpackChunkName:"welcome" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -41,7 +41,7 @@ const Router = () => {
       <Route path="battle-royal">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/battle-royal/container'/* webpackChunkName:"battle-royal" */)
+            import("./pages/battle-royal/container" /* webpackChunkName:"battle-royal" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -50,7 +50,7 @@ const Router = () => {
       <Route path="create-a-match">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/create-a-match/container'/* webpackChunkName:"create-a-match" */)
+            import("./pages/create-a-match/container" /* webpackChunkName:"create-a-match" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -59,7 +59,7 @@ const Router = () => {
       <Route path="roster">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/roster/container'/* webpackChunkName:"roster" */)
+            import("./pages/roster/container" /* webpackChunkName:"roster" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -68,7 +68,7 @@ const Router = () => {
       <Route path="brands">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/brands/container'/* webpackChunkName:"brands" */)
+            import("./pages/brands/container" /* webpackChunkName:"brands" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -77,7 +77,7 @@ const Router = () => {
       <Route path="draft">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/draft/container'/* webpackChunkName:"draft" */)
+            import("./pages/draft/container" /* webpackChunkName:"draft" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -86,7 +86,7 @@ const Router = () => {
       <Route path="dashboard">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/dashboard/dashboard'/* webpackChunkName:"dashboard" */)
+            import("./pages/dashboard/dashboard" /* webpackChunkName:"dashboard" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -95,25 +95,7 @@ const Router = () => {
       <Route path="championships">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/championships/container'/* webpackChunkName:"championships" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="branding">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import('./pages/branding/branding'/* webpackChunkName:"branding" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="name">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import('./pages/name/name'/* webpackChunkName:"name" */)
+            import("./pages/championships/container" /* webpackChunkName:"championships" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -122,7 +104,7 @@ const Router = () => {
       <Route path="settings">
         <IndexRoute
           getComponent={(location, cb) => {
-            import('./pages/settings/settings'/* webpackChunkName:"settings" */)
+            import("./pages/settings/wrapper" /* webpackChunkName:"settings" */)
               .then(loadRoute(cb))
               .catch(errorLoading)
           }}
@@ -131,7 +113,7 @@ const Router = () => {
       <Route
         path="*"
         getComponent={(location, cb) => {
-          import('./pages/default/default')
+          import("./pages/default/default")
             .then(loadRoute(cb))
             .catch(errorLoading)
         }}

@@ -7,12 +7,6 @@ export function createBrand(brand) {
   }
 }
 
-export function generateBrands() {
-  return {
-    type: types.GENERATE_BRANDS,
-  }
-}
-
 export function updateBrand(brand) {
   return {
     type: types.UPDATE_BRAND,

@@ -13,9 +13,9 @@ button {
   font-size: $button-font-size;
   padding: $button-padding;
   width: auto;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0.5rem 0.5rem 0;
   padding: 0.3rem 0.7rem;
-  border-radius: 0.7rem;
+  border-radius: 0.1rem;
 }
 
 button.btn-delete {

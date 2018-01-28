@@ -25,9 +25,6 @@ export default (state, action) => {
     case "RESET":
       state = new Model()
       break
-    case "GENERATE":
-      state = state.set("untouched", false)
-      break
     case "TOGGLE_LIGHT":
       state = state.set("light", true)
       break
@@ -35,7 +32,7 @@ export default (state, action) => {
       state = state.set("light", false)
       break
     case "UPDATE_STYLE":
-      state = state.merge(action.payload, { untouched: false, })
+      state = state.merge(action.payload)
 
       if (state.get("color") === state.get("backgroundColor")) {
         const color = chromatism.complementary(state.get("backgroundColor")).hex

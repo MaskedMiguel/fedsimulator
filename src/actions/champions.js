@@ -13,12 +13,6 @@ export function createChampionship(championship) {
   }
 }
 
-export function generateChampionships() {
-  return {
-    type: types.GENERATE_CHAMPIONSHIPS,
-  }
-}
-
 export function updateChampionship(championship) {
   return {
     type: types.UPDATE_CHAMPIONSHIP,

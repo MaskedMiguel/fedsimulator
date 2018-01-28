@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Labels from "../labels/labels"
-import Button from "../button/withDarkStyle"
+import Button from "../button/button"
 import Image from "../form/image"
 import Input from "../form/input"
 import { Reset } from "../icons"
@@ -10,7 +10,26 @@ import { Reset } from "../icons"
 import "./manage-wrestler.scss"
 
 const NOOP = () => {}
-const genderLabels = [{ id: true, name: "male", style: { backgroundColor: "blue", }, }, { id: false, name: "female", style: { backgroundColor: "red", }, },]
+const genderLabels = [
+  {
+    id: true,
+    name: "male",
+    style: { backgroundColor: "MidnightBlue", color: "white" },
+  },
+  {
+    id: false,
+    name: "female",
+    style: { backgroundColor: "MediumVioletRed", color: "white" },
+  },
+]
+const createStyle = {
+  backgroundColor: "green",
+  color: "white",
+}
+const deleteStyle = {
+  backgroundColor: "red",
+  color: "white",
+}
 
 const EditWrestler = ({
   brandId = "",
@@ -42,7 +61,13 @@ const EditWrestler = ({
     </div>
     <div className="brands form-field">
       <label htmlFor="name">Brand</label>
-      <Labels id="brands" tabIndex="0" onClick={onBrandSelected} highlighted={brandId} labels={brands} />
+      <Labels
+        id="brands"
+        tabIndex="0"
+        onClick={onBrandSelected}
+        highlighted={brandId}
+        labels={brands}
+      />
     </div>
     <If condition={id}>
       <div className="brands form-field">
@@ -54,32 +79,64 @@ const EditWrestler = ({
           tabIndex="0"
           onClick={onChampionshipSelected}
           highlighted={championshipId}
-          labels={championships.filter(item => item.male === male && item.brandId === brandId)}
+          labels={championships.filter(
+            item => item.male === male && item.brandId === brandId,
+          )}
         />
       </div>
     </If>
     <div className="gender form-field">
       <label htmlFor="gender">Gender</label>
-      <Labels id="gender" tabIndex="0" onKeyPress={onGenderUpdate} onClick={onGenderUpdate} highlighted={male} labels={genderLabels} />
+      <Labels
+        id="gender"
+        tabIndex="0"
+        onKeyPress={onGenderUpdate}
+        onClick={onGenderUpdate}
+        highlighted={male}
+        labels={genderLabels}
+      />
     </div>
     <div className="image form-field">
       <label htmlFor="image">
         Image (<a onClick={onResetImage}>reset</a>)
       </label>
-      <Image id="image" name="image" label={image ? "" : "Drop image here"} value={image} onChange={onImageUpdate} />
+      <Image
+        id="image"
+        name="image"
+        label={image ? "" : "Drop image here"}
+        value={image}
+        onChange={onImageUpdate}
+      />
     </div>
     <div className="points form-field">
       <label htmlFor="points">Points</label>
-      <Input id="points" tabIndex="0" onChange={onPointsUpdate} value={points} />
+      <Input
+        id="points"
+        tabIndex="0"
+        onChange={onPointsUpdate}
+        value={points}
+      />
     </div>
     <If condition={!id}>
       <div className="create form-field">
-        <Button tabIndex="0" classes="btn-create" onKeyPress={onCreate} onClick={onCreate} value="Create wrestler" />
+        <Button
+          classes="btn-create"
+          onClick={onCreate}
+          onKeyPress={onCreate}
+          style={createStyle}
+          tabIndex="0"
+          value="Create wrestler"
+        />
       </div>
     </If>
     <If condition={showDelete}>
       <div className="delete form-field">
-        <Button tabIndex="0" classes="btn-delete" onKeyPress={onDelete} onClick={onDelete}>
+        <Button
+          classes="btn-delete"
+          onClick={onDelete}
+          onKeyPress={onDelete}
+          style={deleteStyle}
+          tabIndex="0">
           <Reset /> Delete wrestler
         </Button>
       </div>

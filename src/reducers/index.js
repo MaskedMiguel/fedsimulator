@@ -1,4 +1,5 @@
 import { combineReducers } from "redux"
+import data from "./data"
 import battleRoyal from "./battle-royal"
 import brands from "./brands"
 import championships from "./championships"
@@ -9,6 +10,7 @@ import style from "./style"
 import version from "./version"
 
 const rootReducer = combineReducers({
+  data,
   battleRoyal,
   brands,
   championships,

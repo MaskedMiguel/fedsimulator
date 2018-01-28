@@ -3,13 +3,15 @@ import { connect } from "react-redux"
 
 import withStyle from "../../hoc/withStyle.js"
 
-import { resetRoster, generateRoster } from "../../actions/roster"
+import { resetRoster } from "../../actions/roster"
 import { ROSTER_CONFIRM_RESET } from "../../constants/confirmations"
 
 import RosterPage from "./roster"
 
 const propsMapper = props => {
-  const currentWrestler = props.id ? props.roster.find(wrestler => wrestler.id === props.id) : null
+  const currentWrestler = props.id
+    ? props.roster.find(wrestler => wrestler.id === props.id)
+    : null
 
   return {
     currentWrestler,
@@ -17,17 +19,17 @@ const propsMapper = props => {
   }
 }
 
-const defaultState = { id: false, creating: true, listView: false, }
+const defaultState = { id: false, creating: true, listView: false }
 
 const stateHandlers = {
-  onToggleCreating: ({ creating, }) => () => ({
+  onToggleCreating: ({ creating }) => () => ({
     creating: !creating,
     id: false,
   }),
-  onSetId: ({ id, }) => () => ({
+  onSetId: ({ id }) => () => ({
     id: id,
   }),
-  onToggleListView: ({ listView, }) => () => ({
+  onToggleListView: ({ listView }) => () => ({
     listView: !listView,
   }),
   onClick: () => id => ({
@@ -52,7 +54,6 @@ export default compose(
           dispatch(resetRoster())
         }
       },
-      onGenerate: () => dispatch(generateRoster()),
     })
   ),
   withProps(propsMapper),

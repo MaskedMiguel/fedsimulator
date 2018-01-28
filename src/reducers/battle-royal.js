@@ -14,7 +14,9 @@ export default (state, action) => {
       break
   }
 
-  const entries = state.get("entries").map(item => new WrestlerModel(item).toJS())
+  const entries = state
+    .get("entries")
+    .map(item => new WrestlerModel(item).toJS())
 
   state = state.set("entries", entries)
   return new Model(state).toJS()

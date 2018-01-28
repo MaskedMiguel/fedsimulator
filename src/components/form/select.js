@@ -7,8 +7,8 @@ const NOOP = () => {}
 
 class Select extends Component {
   render() {
-    let { value, } = this.props
-    const { name, onChange, } = this.props
+    let { value } = this.props
+    const { name, onChange } = this.props
 
     if (value === null) {
       value = ""
@@ -22,6 +22,7 @@ class Select extends Component {
 
     return (
       <select name={name} ref={name} value={value} onChange={onChange}>
+        <option />
         {options}
       </select>
     )

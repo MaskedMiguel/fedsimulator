@@ -1,52 +1,28 @@
 @import "src/stylesheets/breakpoints";
 
-section.page.welcome {
+.page.welcome {
   font-size: 1rem;
   font-weight: 100;
   margin-top: 1rem;
   height: 100%;
-  text-align: center;
 
   a,
   a:hover {
     color: white;
   }
 
-  .items {
-    margin-bottom: 10rem;
+  .gameReady,
+  .social {
+    font-size: medium;
+    padding: 1rem;
+
+    &,
+    & a {
+      color: white;
+    }
   }
 
   .social {
-    font-size: medium;
-  }
-
-  .collection {
-    align-items: end;
-    font-weight: lighter;
-    overflow: hidden;
-
-    .item {
-      cursor: pointer;
-      margin-bottom: 1rem;
-      padding: 0.4rem;
-      text-decoration: none;
-      font-size: small;
-      overflow: hidden;
-
-      &.highlight {
-        background-color: gold;
-        color: black;
-        font-size: initial;
-        padding: 1rem;
-
-        a {
-          color: black;
-        }
-      }
-
-      @include breakpoint(xs) {
-        font-size: smaller;
-      }
-    }
+    background-color: black;
   }
 }

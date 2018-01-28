@@ -1,0 +1,2343 @@
+[
+  {
+    "title": "Import current WWE brands",
+    "type": "GENERATE_BRANDS",
+    "payload": [
+      {
+        "id": "MNR",
+        "name": "Raw",
+        "style": {
+          "color": "white",
+          "backgroundColor": "#eb1826"
+        }
+      },
+      {
+        "id": "SDL",
+        "name": "Smackdown Live",
+        "style": {
+          "color": "white",
+          "backgroundColor": "#3b30fe"
+        }
+      },
+      {
+        "id": "205Live",
+        "name": "205 Live",
+        "style": {
+          "color": "#ffffff",
+          "backgroundColor": "#750de5"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Import current WWE roster",
+    "type": "GENERATE_ROSTER",
+    "payload": [
+      {
+        "id": "j9mr6qah",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Chad Gable",
+        "points": 55,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qaj",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Erick Rowan",
+        "points": 69,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qak",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Akira Tozawa",
+        "points": 76,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qal",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Bo Dallas",
+        "points": 49,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qam",
+        "brandId": "205Live",
+        "championshipId": "j9nfpobh",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Cedric Alexander",
+        "points": 60,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qan",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Curt Hawkins",
+        "points": 1,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qao",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Curtis Axel",
+        "points": 23,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qaq",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Dash Wilder",
+        "points": 51,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qar",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Drew Gulak",
+        "points": 50,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qas",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Heath Slater",
+        "points": 35,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qat",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Luke Gallows",
+        "points": 65,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qau",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "R-Truth",
+        "points": 23,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qav",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Rhyno",
+        "points": 66,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qaw",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Titus O Neil",
+        "points": 62,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qax",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jey Uso",
+        "points": 74,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qay",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jimmy Uso",
+        "points": 73,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "hhh",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "HHH",
+        "points": 90,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qaz",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Luke Harper",
+        "points": 70,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb0",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Mojo Rawley",
+        "points": 54,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb1",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Apollo Crews",
+        "points": 67,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb2",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Big Cass",
+        "points": 70,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb3",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Big Show",
+        "points": 78,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb4",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Bray Wyatt",
+        "points": 76,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb5",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Cesaro",
+        "points": 84,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb6",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Elias",
+        "points": 70,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb8",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Finn Balor",
+        "points": 93,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qb9",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jack Gallagher",
+        "points": 63,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qba",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jason Jordan",
+        "points": 76,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbb",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Gran Metalik",
+        "points": 69,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbc",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jeff Hardy",
+        "points": 88,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbd",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kalisto",
+        "points": 77,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbe",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Ariya Daivari",
+        "points": 58,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbf",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Karl Anderson",
+        "points": 64,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbg",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Noam Dar",
+        "points": 55,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbh",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Rich Swann",
+        "points": 71,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbi",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Scott Dawson",
+        "points": 65,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbj",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Brian Kendrick",
+        "points": 59,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbk",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Tony Nese",
+        "points": 68,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbl",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "TJP",
+        "points": 65,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbn",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Dolph Ziggler",
+        "points": 72,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbo",
+        "brandId": "SDL",
+        "championshipId": "wweUSW",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Baron Corbin",
+        "points": 83,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbp",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Chris Jericho",
+        "points": 82,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbq",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Randy Orton",
+        "points": 87,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbr",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jinder Mahal",
+        "points": 87,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbs",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Shinsuke Nakamura",
+        "points": 85,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbt",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kevin Owens",
+        "points": 87,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbu",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "John Cena",
+        "points": 91,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbv",
+        "brandId": "MNR",
+        "championshipId": "j9nfpobe",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Brock Lesnar",
+        "points": 99,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbw",
+        "brandId": "MNR",
+        "championshipId": "j9nfpobg",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Roman Reigns",
+        "points": 94,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qbx",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Dean Ambrose",
+        "points": 90,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qby",
+        "brandId": "SDL",
+        "championshipId": "wweC",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Aj Styles",
+        "points": 96,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc0",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Braun Strowman",
+        "points": 95,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc1",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Matt Hardy",
+        "points": 79,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc3",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Samoa Joe",
+        "points": 97,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc4",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Sheamus",
+        "points": 84,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc5",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "The Miz",
+        "points": 86,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc6",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Rusev",
+        "points": 80,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc7",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Lana",
+        "points": 20,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc8",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Carmella",
+        "points": 61,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qc9",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Tamina",
+        "points": 62,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcb",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Alicia Fox",
+        "points": 50,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcc",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Dana Brooke",
+        "points": 53,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qce",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Mickie James",
+        "points": 79,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcg",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Becky Lynch",
+        "points": 79,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qch",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Bayley",
+        "points": 80,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qci",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Nia Jax",
+        "points": 89,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "456yhgfdr5tg",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Mike Kanellis",
+        "points": 79,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "3456tyhgfr",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Maria Kanellis",
+        "points": 49,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "Maryse",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Maryse",
+        "points": 49,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcj",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Asuka",
+        "points": 98,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qck",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Nikki Bella",
+        "points": 75,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "LivMorgan",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Liv Morgan",
+        "points": 65,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "SarahLogan",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Sarah Logan",
+        "points": 75,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "RubyRiott",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Ruby Riott",
+        "points": 80,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "Paige",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Paige",
+        "points": 90,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "MandyRose",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Mandy Rose",
+        "points": 80,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "SonyaDeville",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Sonya Deville",
+        "points": 70,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "babyBella",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Brie Bella",
+        "points": 55,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcl",
+        "brandId": "SDL",
+        "championshipId": "wweCW",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Charlotte Flair",
+        "points": 92,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcm",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Naomi",
+        "points": 81,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcn",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Natalya",
+        "points": 89,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qco",
+        "brandId": "MNR",
+        "championshipId": "j9nfpobf",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Alexa Bliss",
+        "points": 87,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mr6qcp",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Sasha Banks",
+        "points": 88,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mrarh7",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Sunil Singh",
+        "points": 22,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mrb3m1",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Samir Singh",
+        "points": 23,
+        "wins": 0,
+        "created": "2017-11-05T12:34:38.641Z"
+      },
+      {
+        "id": "j9mrwbsa",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Seth Rollins",
+        "points": 90,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mrwzmd",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Aiden English",
+        "points": 66,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mrxrq8",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Big E",
+        "points": 77,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mry4ju",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Bobby Roode",
+        "points": 88,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mrz5h7",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Fandango",
+        "points": 50,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mrzgpj",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Goldust",
+        "points": 40,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9ms0hpg",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kane",
+        "points": 90,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9ms0wqd",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kofi Kingston",
+        "points": 78,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9ms16cw",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Konnor",
+        "points": 33,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9ms1ien",
+        "brandId": "MNR",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kurt Angle",
+        "points": 70,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9ms1xjc",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Lince Dorado",
+        "points": 56,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9msb3ot",
+        "brandId": "205Live",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Mustafa Ali",
+        "points": 40,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9msbxog",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Sami Zayn",
+        "points": 79,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mscf7q",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Shelton Benjamin",
+        "points": 80,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mscnd9",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Sin Cara",
+        "points": 60,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9msd3g9",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Tye Dillinger",
+        "points": 10,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9msdef9",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Tyler Breeze",
+        "points": 50,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9msdp6q",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Viktor",
+        "points": 30,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mse277",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Zack Ryder",
+        "points": 60,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      },
+      {
+        "id": "j9mseg5y",
+        "brandId": "SDL",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Xavier Woods",
+        "points": 77,
+        "wins": 0,
+        "created": "2017-11-05T13:07:11.109Z"
+      }
+    ]
+  },
+  {
+    "title": "Import current WWE Championships",
+    "type": "GENERATE_CHAMPIONSHIPS",
+    "payload": [
+      {
+        "id": "j9nfpobe",
+        "name": "Universal Champ",
+        "brandId": "MNR",
+        "male": true,
+        "tag": false,
+        "style": {
+          "color": "white",
+          "backgroundColor": "#d7182a"
+        }
+      },
+      {
+        "id": "j9nfpobf",
+        "name": "Womens Champ",
+        "brandId": "MNR",
+        "male": false,
+        "tag": false,
+        "style": {
+          "color": "white",
+          "backgroundColor": "#eb1826"
+        }
+      },
+      {
+        "id": "j9nfpobg",
+        "name": "Intercontinental Champ",
+        "brandId": "MNR",
+        "male": true,
+        "tag": false,
+        "style": {
+          "color": "black",
+          "backgroundColor": "#E4E2E3"
+        }
+      },
+      {
+        "id": "j9nfpobh",
+        "name": "Cruiserweight Champ",
+        "brandId": "205Live",
+        "male": true,
+        "tag": false,
+        "style": {
+          "color": "white",
+          "backgroundColor": "#5A49CD"
+        }
+      },
+      {
+        "id": "wweC",
+        "name": "WWE Champ",
+        "brandId": "SDL",
+        "male": true,
+        "tag": false,
+        "style": {
+          "color": "white",
+          "backgroundColor": "#404040"
+        }
+      },
+      {
+        "id": "wweCW",
+        "name": "Womens Champ",
+        "brandId": "SDL",
+        "male": false,
+        "tag": false,
+        "style": {
+          "color": "white",
+          "backgroundColor": "#3b30fe"
+        }
+      },
+      {
+        "id": "wweUSW",
+        "name": "US Champ",
+        "brandId": "SDL",
+        "male": true,
+        "tag": false,
+        "style": {
+          "color": "black",
+          "backgroundColor": "#E4E2E3"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Import WWE Hall Of Fame Brand",
+    "type": "GENERATE_BRANDS",
+    "payload": [
+      {
+        "id": "HOF",
+        "name": "Hall Of Fame",
+        "style": {
+          "color": "#f5edb5",
+          "backgroundColor": "#1a3f83"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Import WWE Hall of Fame roster",
+    "type": "GENERATE_ROSTER",
+    "payload": [
+      {
+        "id": "jcw3ln2a",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Rick Rude",
+        "points": 85,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2b",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Big Boss Man",
+        "points": 70,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2c",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Diamond Dallas Page",
+        "points": 92,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2d",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "The Godfather",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2e",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Sting",
+        "points": 90,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2f",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kevin Nash",
+        "points": 87,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2g",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Rikishi",
+        "points": 72,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2h",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Randy Savage",
+        "points": 84,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2i",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Scott Hall",
+        "points": 86,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2j",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jake Roberts",
+        "points": 76,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2k",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "The Ultimate Warrior",
+        "points": 97,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2l",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Booker T",
+        "points": 91,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2m",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Bruno Sammartino",
+        "points": 98,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2n",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Bob Backlund",
+        "points": 60,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2o",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Mick Foley",
+        "points": 73,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2p",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Yokozuna",
+        "points": 88,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2q",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Ron Simmons",
+        "points": 69,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2r",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Edge",
+        "points": 88,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2s",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Hacksaw Jim Duggan",
+        "points": 60,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2t",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Shawn Michaels",
+        "points": 96,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2u",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Stu Hart",
+        "points": 50,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2v",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Gorgeous George",
+        "points": 75,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2w",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Ted DiBiase",
+        "points": 75,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2x",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Ricky Steamboat",
+        "points": 85,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2y",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Steve Austin",
+        "points": 98,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln2z",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "The Rock",
+        "points": 97,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln30",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Perry Saturn",
+        "points": 70,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln31",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Ric Flair",
+        "points": 94,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln32",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Jerry Lawler",
+        "points": 65,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln33",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Curt Henning",
+        "points": 70,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln34",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Dusty Rhodes",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln35",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Eddie Guerrero",
+        "points": 90,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln36",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Bret Hart",
+        "points": 92,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln37",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Iron Shiek",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln38",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Hulk Hogan",
+        "points": 99,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln39",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Paul Orndorff",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3a",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Roddy Piper",
+        "points": 89,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3b",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Sgt Slaughter",
+        "points": 87,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3c",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Vince McMahon",
+        "points": 70,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3d",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Pat Patternson",
+        "points": 76,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3e",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "André the Giant",
+        "points": 95,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3f",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Mae Young",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3g",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Sunny",
+        "points": 50,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3h",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Trish Stratus",
+        "points": 90,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3i",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Jacqueline",
+        "points": 75,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3j",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Beth Phoenix",
+        "points": 92,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3k",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Alundra Blayze",
+        "points": 91,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3l",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Lita",
+        "points": 89,
+        "wins": 0
+      },
+      {
+        "id": "jcw3ln3m",
+        "brandId": "HOF",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Wendi Richter",
+        "points": 70,
+        "wins": 0
+      }
+    ]
+  },
+  {
+    "title": "Import current NXT brand",
+    "type": "GENERATE_BRANDS",
+    "payload": [
+      {
+        "id": "NXT",
+        "name": "NXT",
+        "style": {
+          "color": "#000",
+          "backgroundColor": "#ffc71c"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Import current NXT Championships",
+    "type": "GENERATE_CHAMPIONSHIPS",
+    "payload": [
+      {
+        "id": "j9nf",
+        "name": "NXT Champ",
+        "brandId": "NXT",
+        "male": true,
+        "tag": false,
+        "style": {
+          "color": "white",
+          "backgroundColor": "#261c11"
+        }
+      },
+      {
+        "id": "j9nfW",
+        "name": "NXT Women's Champ",
+        "brandId": "NXT",
+        "male": false,
+        "tag": false,
+        "style": {
+          "color": "white",
+          "backgroundColor": "#b5a092"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Import current NXT roster",
+    "type": "GENERATE_ROSTER",
+    "payload": [
+      {
+        "id": "3ln2a",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Adam Cole",
+        "points": 85,
+        "wins": 0
+      },
+      {
+        "id": "3ln2b",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Akam",
+        "points": 90,
+        "wins": 0
+      },
+      {
+        "id": "3ln2c",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Aleister Black",
+        "points": 92,
+        "wins": 0
+      },
+      {
+        "id": "3ln2d",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Alexander Wolfe",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "3ln2e",
+        "brandId": "NXT",
+        "championshipId": "j9nf",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Andrade 'Cien' Almas",
+        "points": 99,
+        "wins": 0
+      },
+      {
+        "id": "3ln2f",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Angelo Dawkins",
+        "points": 87,
+        "wins": 0
+      },
+      {
+        "id": "3ln2g",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Buddy Murphy",
+        "points": 72,
+        "wins": 0
+      },
+      {
+        "id": "3ln2h",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Cezar Bononi",
+        "points": 84,
+        "wins": 0
+      },
+      {
+        "id": "3ln2i",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Danny Burch",
+        "points": 86,
+        "wins": 0
+      },
+      {
+        "id": "3ln2j",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Drew McIntyre",
+        "points": 96,
+        "wins": 0
+      },
+      {
+        "id": "3ln2k",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Eric Young",
+        "points": 91,
+        "wins": 0
+      },
+      {
+        "id": "3ln2l",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Fabian Aichner",
+        "points": 86,
+        "wins": 0
+      },
+      {
+        "id": "3ln2m",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Johnny Gargano",
+        "points": 98,
+        "wins": 0
+      },
+      {
+        "id": "3ln2n",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kassius Ohno",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "3ln2o",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Lars Sullivan",
+        "points": 83,
+        "wins": 0
+      },
+      {
+        "id": "3ln2p",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Pete Dunne",
+        "points": 88,
+        "wins": 0
+      },
+      {
+        "id": "3ln2q",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Velveteen Dream",
+        "points": 89,
+        "wins": 0
+      },
+      {
+        "id": "3ln2r",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Tommaso Ciampa",
+        "points": 88,
+        "wins": 0
+      },
+      {
+        "id": "3ln2s",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Tyler Bate",
+        "points": 93,
+        "wins": 0
+      },
+      {
+        "id": "3ln2t",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Killian Dain",
+        "points": 86,
+        "wins": 0
+      },
+      {
+        "id": "3ln2u",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Roderick Strong",
+        "points": 75,
+        "wins": 0
+      },
+      {
+        "id": "3ln2v",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Rezar",
+        "points": 94,
+        "wins": 0
+      },
+      {
+        "id": "3ln2w",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "No Way Jose",
+        "points": 75,
+        "wins": 0
+      },
+      {
+        "id": "3ln2x",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Kyle O'Reilly",
+        "points": 85,
+        "wins": 0
+      },
+      {
+        "id": "3ln2y",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Lio Rush",
+        "points": 66,
+        "wins": 0
+      },
+      {
+        "id": "3ln2z",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Oney Lorcan",
+        "points": 87,
+        "wins": 0
+      },
+      {
+        "id": "3ln30",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Tino Sabbatelli",
+        "points": 70,
+        "wins": 0
+      },
+      {
+        "id": "3ln31",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Tucker Knight",
+        "points": 72,
+        "wins": 0
+      },
+      {
+        "id": "3ln32",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": true,
+        "name": "Wesley Blake",
+        "points": 69,
+        "wins": 0
+      },
+      {
+        "id": "3ln33",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Taynara Conti",
+        "points": 70,
+        "wins": 0
+      },
+      {
+        "id": "3ln34",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Zelina Vega",
+        "points": 50,
+        "wins": 0
+      },
+      {
+        "id": "3ln35",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Vanessa Borne",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "3ln36",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Shayna Baszler",
+        "points": 80,
+        "wins": 0
+      },
+      {
+        "id": "3ln37",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Peyton Royce",
+        "points": 75,
+        "wins": 0
+      },
+      {
+        "id": "3ln38",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Nikki Cross",
+        "points": 78,
+        "wins": 0
+      },
+      {
+        "id": "3ln39",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Lacey Evans",
+        "points": 70,
+        "wins": 0
+      },
+      {
+        "id": "3ln3a",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Kairi Sane",
+        "points": 89,
+        "wins": 0
+      },
+      {
+        "id": "3ln3b",
+        "brandId": "NXT",
+        "championshipId": "j9nfW",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Ember Moon",
+        "points": 95,
+        "wins": 0
+      },
+      {
+        "id": "3ln3c",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Billie Kay",
+        "points": 78,
+        "wins": 0
+      },
+      {
+        "id": "3ln3d",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Bianca Belair",
+        "points": 85,
+        "wins": 0
+      },
+      {
+        "id": "3ln3e",
+        "brandId": "NXT",
+        "created": "2018-01-26T15:44:19.229Z",
+        "image": "",
+        "losses": 0,
+        "male": false,
+        "name": "Aliyah",
+        "points": 65,
+        "wins": 0
+      }
+    ]
+  }
+]

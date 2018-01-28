@@ -1,6 +1,6 @@
 {
   "name": "fed-simulator",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "homepage": "https://www.fedsimulator.com",
   "repository": "https://github.com/azz0r/federation-simulator.git",
   "license": "MIT",
@@ -14,6 +14,7 @@
     "prepush": "npm test"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "chromatism": "~2.6.0",
     "classnames": "~2.2.5",
     "expect.js": "~0.3.1",
@@ -38,6 +39,7 @@
     "recompose": "~0.26.0",
     "redux": "~3.7.2",
     "redux-localstorage": "~0.4.1",
+    "redux-thunk": "^2.2.0",
     "string.prototype.includes": "~1.0.0",
     "uniqid": "~4.1.1",
     "weighted": "~0.3.0"
@@ -104,8 +106,7 @@
     "rimraf": "~2.5.4",
     "sass-loader": "~6.0.6",
     "sinon": "~1.17.6",
-    "style-loader":
-      "https://registry.npmjs.org/style-loader/-/style-loader-0.13.2.tgz",
+    "style-loader": "https://registry.npmjs.org/style-loader/-/style-loader-0.13.2.tgz",
     "superagent": "~2.3.0",
     "sw-precache-webpack-plugin": "~0.11.4",
     "tar-pack": "~3.4.0",

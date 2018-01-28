@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
 import { BRANDS_CONFIRM_CLEAR } from "../../constants/confirmations"
-import { resetBrands, generateBrands } from "../../actions/brands"
+import { resetBrands } from "../../actions/brands"
 import BrandsPage from "./brands"
 
 class BrandsContainer extends Component {
@@ -14,11 +14,8 @@ class BrandsContainer extends Component {
       dispatch(resetBrands())
     }
   }
-
-  onGenerate = () => this.props.dispatch(generateBrands())
-
   render() {
-    return <BrandsPage onGenerate={this.onGenerate} onClear={this.onClear} />
+    return <BrandsPage onClear={this.onClear} />
   }
 }
 

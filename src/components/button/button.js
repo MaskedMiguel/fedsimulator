@@ -6,16 +6,22 @@ import "./button.scss"
 
 const NOOP = () => {}
 
-const Button = ({ value = "", children = {}, classes = "", onClick = NOOP, style = {}, }) => (
-  <div className="row">
-    <div className="col-xs-12">
-      <div className="box">
-        <button style={style} type="submit" tabIndex="0" className={classnames("btn", classes)} onKeyPress={onClick} onClick={onClick}>
-          {value ? value : children}
-        </button>
-      </div>
-    </div>
-  </div>
+const Button = ({
+  value = "",
+  children = {},
+  classes = "",
+  onClick = NOOP,
+  style = {},
+}) => (
+  <button
+    style={style}
+    type="submit"
+    tabIndex="0"
+    className={classnames("btn", classes)}
+    onKeyPress={onClick}
+    onClick={onClick}>
+    {value ? value : children}
+  </button>
 )
 
 Button.defaultProps = {

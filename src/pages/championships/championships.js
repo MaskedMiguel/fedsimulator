@@ -4,18 +4,17 @@ import PropTypes from "prop-types"
 import HeaderOne from "../../components/header/header"
 import Create from "../../components/create/championship.container.js"
 import Collection from "../../components/collection/championships.container"
-import { Generate, Reset } from "../../components/icons"
+import { Reset } from "../../components/icons"
 
 import "./championships.scss"
 
 const NOOP = () => {}
 
-const Championships = ({ onGenerate = NOOP, onClear = NOOP, }) => (
+const Championships = ({ onClear = NOOP, }) => (
   <section className="page manage-championships">
     <HeaderOne>
       Manage Championships
       <span tabIndex="0" className="tools">
-        <Generate onClick={onGenerate} title="Generate championships" />
         <Reset onClick={onClear} />
       </span>
     </HeaderOne>
@@ -26,7 +25,6 @@ const Championships = ({ onGenerate = NOOP, onClear = NOOP, }) => (
 
 Championships.propTypes = {
   onClear: PropTypes.func,
-  onGenerate: PropTypes.func,
 }
 
 export default Championships

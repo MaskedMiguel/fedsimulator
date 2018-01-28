@@ -2,37 +2,44 @@ import React from "react"
 import { Link } from "react-router"
 import PropTypes from "prop-types"
 
-import { Icon } from "../../components/icons"
 import Social from "../../components/social"
+import Settings from "../settings/settings"
 
 import "./welcome.scss"
 
-const NOOP = () => {}
-
-const WelcomePage = ({ generateFederation = NOOP, }) => (
-  <section className="page welcome">
-    <div className="items collection">
-      <div className="item">
-        FedSimulator.com is a web based wrestling match & federation simulator with tools to manage the roster, brands and championships
-      </div>
-      <Link tabIndex="0" to="/name">
-        <div className="item highlight pulse">
-          <Icon icon="plus" /> I'll build this company from the ground up, dammit!
-        </div>
-      </Link>
-      <div className="item highlight pulse" onClick={generateFederation}>
-        <Icon icon="play" /> This is an invasion, create everything for me! (recommended)
-      </div>
+const GameReady = ({ style = {}, }) => (
+  <Link to={"/dashboard"}>
+    <div style={style} className="gameReady center-xs">
+      Go to your dashboard and start simulating!
     </div>
-    <footer>
+  </Link>
+)
+
+GameReady.propTypes = {
+  style: PropTypes.object,
+}
+
+const WelcomePage = ({ style = {}, gameReady = false, }) => (
+  <section className="page welcome">
+    <header className="center-xs">
+      FedSimulator.com is a web based wrestling match & federation simulator with tools to manage the roster, brands and championships
+    </header>
+    <br />
+    <header className="center-xs">Name your federation below to start!</header>
+    <br />
+    <Settings />
+    <If condition={gameReady}>
+      <GameReady style={style} />
+    </If>
+    <footer className="center-xs pulse">
       <Social />
     </footer>
   </section>
 )
 
 WelcomePage.propTypes = {
-  generateFederation: PropTypes.func.isRequired,
   style: PropTypes.object,
+  gameReady: PropTypes.bool,
 }
 
 export default WelcomePage

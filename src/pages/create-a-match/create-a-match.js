@@ -36,16 +36,17 @@ const CreateAMatch = ({
         <div className="col-xs-12 col-lg-8 center-xs middle-xs">
           <div className="box">
             <Match currentMatch={currentMatch} />
-            <If condition={numberOfWrestlers > 1}>
-              <Button classes="rounded" tabIndex="0" value="Simulate match" onClick={onSimulateMatch} />
-            </If>
-            <If condition={winner.name && loser.name}>
-              <br />
-              <Winner {...winner} />
-              <br />
-              <Loser {...loser} />
-              <br />
-            </If>
+            <Choose>
+              <When condition={winner.name && loser.name}>
+                <Winner {...winner} />
+                <br />
+                <Loser {...loser} />
+                <br />
+              </When>
+              <When condition={numberOfWrestlers > 1}>
+                <Button tabIndex="0" value="Simulate match" onClick={onSimulateMatch} />
+              </When>
+            </Choose>
           </div>
         </div>
         <div className="col-xs-12 col-lg-4">

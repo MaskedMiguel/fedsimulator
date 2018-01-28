@@ -1,24 +1,13 @@
-$highlight-header-font-size: 1rem;
-$highlight-header-line-size: 1.5rem;
-$highlight-active-bg: #ff6f00;
-$highlight-padding: 1rem;
-
 .highlight {
-  padding: $highlight-padding;
+  margin: 0 0.5rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
 
-  h3 {
-    font-size: $highlight-header-font-size;
-    height: $highlight-header-line-size;
-    line-height: $highlight-header-line-size;
-  }
-
-  h3,
-  p {
-    margin: 0 0 .4rem;
-  }
-
-  &.active,
-  &:hover {
-    background-color: $highlight-active-bg;
+  header {
+    margin: 0;
+    font-weight: lighter;
+    font-size: small;
   }
 }

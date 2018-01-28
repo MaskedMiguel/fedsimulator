@@ -6,7 +6,7 @@ import Wrestlers from "../../components/wrestlers/container"
 import Collection from "../../components/collection/wrestlers.container"
 import AddWrestler from "../../components/manage-wrestler/create.container"
 import EditWrestler from "../../components/manage-wrestler/update.container"
-import { Generate, Reset, ListToggle, Create } from "../../components/icons"
+import { Reset, ListToggle, Create } from "../../components/icons"
 
 import "./roster.scss"
 
@@ -20,12 +20,13 @@ const RosterPage = ({
   onClose = NOOP,
   onClear = NOOP,
   onToggleListView = NOOP,
-  onGenerate = NOOP,
   onToggleCreating = NOOP,
   style = {},
 }) => {
   const hasPane = creating || currentWrestler
-  const col = hasPane ? "col-lg-6 col-md-6 col-sm-6 col-xs-12" : "col-lg-12 col-md-12 col-sm-12 col-xs-12"
+  const col = hasPane
+    ? "col-lg-6 col-md-6 col-sm-6 col-xs-12"
+    : "col-lg-12 col-md-12 col-sm-12 col-xs-12"
   return (
     <div className="page roster">
       <HeaderOne>
@@ -33,7 +34,6 @@ const RosterPage = ({
         <span tabIndex="0" className="tools">
           <Create onClick={onToggleCreating} ritle="Create wrestler" />
           <ListToggle onClick={onToggleListView} title="Toggle list view" />
-          <Generate onClick={onGenerate} title="Generate roster" />
           <Reset onClick={onClear} title="Clear roster" />
         </span>
       </HeaderOne>
@@ -72,7 +72,6 @@ RosterPage.propTypes = {
   onClick: PropTypes.func,
   onClear: PropTypes.func,
   onClose: PropTypes.func,
-  onGenerate: PropTypes.func,
   listView: PropTypes.bool,
   onToggleCreating: PropTypes.func,
   onToggleListView: PropTypes.func,

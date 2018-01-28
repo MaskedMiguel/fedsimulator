@@ -6,14 +6,25 @@ import Wrestler from "../wrestler/wrestler"
 
 import "./champions.scss"
 
-export const Champions = ({ champions, championships, }) => (
+export const Champions = ({ champions, championships }) => (
   <div className="row champions">
     {championships.map(championship => {
-      const champion = champions.find(item => item.championshipId === championship.id)
-      const secondChampion = championship.tag ? champions.find(item => item.championshipId === championship.id && item.id !== champion.id) : null
+      const champion = champions.find(
+        item => item.championshipId === championship.id,
+      )
+      const secondChampion = championship.tag
+        ? champions.find(
+            item =>
+              item.championshipId === championship.id &&
+              item.id !== champion.id,
+          )
+        : null
 
       return !champion ? null : (
-        <div key={championship.id} className="col-xs pulse champion" style={championship.style}>
+        <div
+          key={championship.id}
+          className="col-xs pulse highlight"
+          style={championship.style}>
           <header>{championship.name}</header>
           <Wrestler wrestler={champion} canDrag={false} />
           <If condition={secondChampion}>
