@@ -127,8 +127,5 @@
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"]
-  },
-  "engines": {
-    "node": "6.4.0"
   }
 }
