@@ -5,8 +5,6 @@ import withRoster from "../../hoc/withRoster"
 import withBrands from "../../hoc/withBrands"
 import withStyle from "../../hoc/withStyle"
 
-import { generateRoster } from "../../actions/roster"
-
 import EmptyRoster from "../../components/empty-roster.js"
 import Draft from "./draft"
 
@@ -16,7 +14,6 @@ export const handlers = {
 
     props.dispatch(updateWrestler({ brandId, id, }))
   },
-  onGenerate: props => () => props.dispatch(generateRoster()),
 }
 
 export const enhance = compose(

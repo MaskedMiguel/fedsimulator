@@ -17,7 +17,7 @@ export default connect(state => ({
   styleInline: state.brands.reduce(
     (prevVal, item) =>
       prevVal +
-      ` .${item.id} .points {
+      ` .${item.id} .points, .${item.id}.taping {
           background-color: ${item.style.backgroundColor};
           color: ${item.style.color};
         }

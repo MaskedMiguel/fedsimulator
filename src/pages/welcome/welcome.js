@@ -1,16 +1,22 @@
 import React from "react"
-import { Link } from "react-router"
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
+import { Flash } from "animate-components"
 
 import Social from "../../components/social"
 import Settings from "../settings/settings"
 
 import "./welcome.scss"
 
+const gameReadyStyle = {
+  backgroundColor: "black",
+  color: "white",
+}
 const GameReady = ({ style = {}, }) => (
-  <Link to={"/dashboard"}>
-    <div style={style} className="gameReady center-xs">
-      Go to your dashboard and start simulating!
+  <Link to="/dashboard">
+    <br />
+    <div style={gameReadyStyle} className="gameReady center-xs">
+      Game ready! Go to your dashboard and start simulating!
     </div>
   </Link>
 )
@@ -25,12 +31,19 @@ const WelcomePage = ({ style = {}, gameReady = false, }) => (
       FedSimulator.com is a web based wrestling match & federation simulator with tools to manage the roster, brands and championships
     </header>
     <br />
-    <header className="center-xs">Name your federation below to start!</header>
+    <Choose>
+      <When condition={gameReady}>
+        <Flash>
+          <GameReady style={style} />
+        </Flash>
+      </When>
+      <Otherwise>
+        <header className="center-xs">Name your federation and import some data below to start!</header>
+      </Otherwise>
+    </Choose>
     <br />
     <Settings />
-    <If condition={gameReady}>
-      <GameReady style={style} />
-    </If>
+    <br />
     <footer className="center-xs pulse">
       <Social />
     </footer>

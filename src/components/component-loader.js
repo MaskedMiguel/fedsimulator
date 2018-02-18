@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ComponentLoader = ({ isLoading, error, pastDelay }) => {
+const ComponentLoader = ({ isLoading = true, error = null, pastDelay = null }) => {
   if (isLoading) {
     return pastDelay ? <div>Loading...</div> : null;
   } else if (error) {

@@ -17,26 +17,26 @@ export const pick = items => items[Math.floor(Math.random() * (items.length - 1)
 
 export const lifecycleMapper = lifecycle({
   componentWillMount() {
-    const { location, setId, onCreate, } = this.props
+    const { setId, onCreate, } = this.props
     let id
 
-    if (!location.query.id) {
+    if (!this.props.match.params.id) {
       id = getId()
 
       onCreate({ id, })
     } else {
-      id = location.query.id
+      id = this.props.match.params.id
     }
 
     setId(id)
   },
 
   componentWillUpdate(nextProps) {
-    const { location, router, } = this.props
+    const { match, history, } = this.props
     const currentMatch = nextProps.matches.find(item => item.id === nextProps.id)
 
-    if (currentMatch && currentMatch.id && !location.query.id) {
-      router.push(`/create-a-match?id=${currentMatch.id}`)
+    if (currentMatch && currentMatch.id && !match.params.idid) {
+      // history.push(`/create-a-match?id=${currentMatch.id}`)
     }
   },
 })
@@ -88,7 +88,7 @@ export default compose(
 
             props.setId(id)
             props.onCreate({ id, })
-            props.router.push(`/create-a-match?id=${id}`)
+            // props.history.push(`/create-a-match?id=${id}`)
           }
         },
         onSimulateMatch: event => {

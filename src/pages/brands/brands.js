@@ -18,8 +18,8 @@ const BrandsPage = ({ onClear = NOOP, }) => (
         <Reset onClick={onClear} />
       </span>
     </HeaderOne>
-    <Collection />
     <Create />
+    <Collection />
   </section>
 )
 

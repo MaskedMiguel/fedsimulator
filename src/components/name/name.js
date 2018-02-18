@@ -15,7 +15,7 @@ export class Name extends Component {
   }
 
   render() {
-    const { name } = this.props
+    const { name, placeholder } = this.props
 
     return (
       <span className="name-input">
@@ -24,7 +24,7 @@ export class Name extends Component {
           name="name"
           onChange={this.handleChange}
           label=""
-          placeholder="WWE, NXT, ROH, GFW, TNA"
+          placeholder={placeholder}
         />
       </span>
     )
@@ -36,6 +36,12 @@ Name.displayName = "Name"
 Name.propTypes = {
   dispatch: PropTypes.func,
   name: PropTypes.string,
+	placeholder: PropTypes.string,
+}
+
+
+Name.defaultProps = {
+	placeholder: "WWE, NXT, ROH, GFW, TNA",
 }
 
 export default connect(state => ({

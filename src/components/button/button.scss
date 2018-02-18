@@ -11,6 +11,7 @@ button {
   cursor: pointer;
   font-weight: $button-font-weight;
   font-size: $button-font-size;
+	font-family: inherit;
   padding: $button-padding;
   width: auto;
   margin: 0.5rem 0.5rem 0.5rem 0;
@@ -23,7 +24,16 @@ button.btn-delete {
   color: white;
 }
 
-button.btn-create {
+button.btn-good {
   background-color: green;
   color: white;
+}
+
+button.btn-bad {
+  background-color: darkred;
+  color: white;
+}
+
+button.btn-large {
+  font-size: large;
 }

@@ -2,14 +2,15 @@ import React from "react"
 import { shallow } from "enzyme"
 import sinon from "sinon"
 
-import Collection from "../src/components/collection/collection"
+import { Collection } from "../src/components/collection/collection"
 import ColorPickers from "../src/components/color-pickers/color-pickers"
 import ColorPicker from "../src/components/color-pickers/color-picker"
 import { Gender, Reset } from "../src/components/icons"
 import Input from "../src/components/form/input"
+import StyleSchema from "../src/models/style.model"
 
-const newStyle = { color: "red", backgroundColor: "white", }
-const defaultStyle = { color: "purple", backgroundColor: "black", }
+const newStyle = { color: "red", backgroundColor: "white" }
+const defaultStyle = { color: "purple", backgroundColor: "black" }
 
 const defaultCollection = [
   {
@@ -46,7 +47,7 @@ const getValuesTrueFor = (key, oldProps) => {
     canUpdateGender: false,
     canUpdateColors: false,
     canUpdateBrand: false,
-    collection: [defaultCollection[0],],
+    collection: [defaultCollection[0]],
   }
 
   if (newProps[key] !== undefined) {
@@ -56,12 +57,17 @@ const getValuesTrueFor = (key, oldProps) => {
   return Object.assign({}, oldProps, newProps)
 }
 
+const store = {
+  style: StyleSchema,
+}
+
 describe("Given the Collection component", () => {
   let component
 
   beforeEach(() => (component = shallow(<Collection {...testProps} />)))
 
   it("should render a Collection component", () => {
+    console.log(component.debug())
     expect(component.find(".collection")).to.have.length(1)
   })
 
@@ -97,7 +103,7 @@ describe("Given the Collection component", () => {
 
     describe("and input is updated", () => {
       before(() => {
-        component.find(Input).simulate("change", { target: { value: "My new value", }, })
+        component.find(Input).simulate("change", { target: { value: "My new value" } })
       })
 
       it("should call onChangeName", () => {

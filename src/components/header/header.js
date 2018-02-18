@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
+import classNames from "classnames"
 
 import "./header.scss"
 
-const Header = ({ style = {}, className = "", children = undefined, }) => (
-  <h2 style={style} className={className}>
+const Header = ({ style = {}, classes = "", children = undefined, }) => (
+  <header style={style} className={classNames(classes, "header")}>
     {children}
-  </h2>
+  </header>
 )
 
 Header.propTypes = {

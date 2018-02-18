@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Slider from "./form/slider"
 
 import { simulateRandomMatch } from "../actions/roster"
-import { updateGameSimulation } from "../actions/game"
+import { updateSimulation } from "../actions/simulations"
 
 const NOOP = () => {}
 
@@ -34,7 +34,7 @@ class Simulator extends PureComponent {
     const simulationSpeed = event.currentTarget.value
 
     this.props.dispatch(
-      updateGameSimulation({
+      updateSimulation({
         simulationSpeed,
         simulation: true,
       })
@@ -88,7 +88,7 @@ Simulator.defaultProps = {
 
 export default connect(state => ({
   simulationCount: state.roster.reduce((previousValue, currentValue) => previousValue + currentValue.wins, 0),
-  simulationSpeed: state.game.simulationSpeed,
+  simulationSpeed: state.simulations.simulationSpeed,
   roster: state.roster,
   championships: state.championships,
 }))(Simulator)

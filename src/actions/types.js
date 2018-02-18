@@ -3,17 +3,24 @@ export const UPDATE_STYLE = "UPDATE_STYLE"
 export const TOGGLE_LIGHT = "TOGGLE_LIGHT"
 export const TOGGLE_DARK = "TOGGLE_DARK"
 
-// Brand
+// Brands
 export const CREATE_BRAND = "CREATE_BRAND"
 export const UPDATE_BRAND = "UPDATE_BRAND"
 export const DELETE_BRAND = "DELETE_BRAND"
 export const RESET_BRANDS = "RESET_BRANDS"
 export const GENERATE_BRANDS = "GENERATE_BRANDS"
 
-//data
+// Data
 export const FETCH_COMPLETE = "FETCH_COMPLETE"
 export const FETCH_ERROR = "FETCH_ERROR"
 export const FETCH_START = "FETCH_START"
+
+// Tapings
+export const RESET_TAPINGS = "RESET_TAPINGS"
+export const CREATE_TAPING = "CREATE_TAPING"
+export const GENERATE_TAPINGS = "GENERATE_TAPINGS"
+export const DELETE_TAPING = "DELETE_TAPING"
+export const UPDATE_TAPING = "UPDATE_TAPING"
 
 // Championships
 export const GENERATE_CHAMPIONSHIPS = "GENERATE_CHAMPIONSHIPS"
@@ -24,13 +31,11 @@ export const RESET_CHAMPIONSHIPS = "RESET_CHAMPIONSHIPS"
 export const AWARD_CHAMPIONSHIP = "AWARD_CHAMPIONSHIP"
 
 // Game
-export const START_GAME = "START_GAME"
-export const TOGGLE_STARTED = "TOGGLE_STARTED"
 export const CHECK_VERSION = "CHECK_VERSION"
-export const UPDATE_NAME = "UPDATE_NAME"
 export const GENERATE = "GENERATE"
 export const RESET_GAME = "RESET_GAME"
-export const UPDATE_GAME_SIMULATION = "UPDATE_GAME_SIMULATION"
+export const UPDATE_GAME = "UPDATE_GAME"
+export const UPDATE_SIMULATION = "UPDATE_SIMULATION"
 
 // Roster
 export const GENERATE_ROSTER = "GENERATE_ROSTER"

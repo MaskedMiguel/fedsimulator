@@ -1,6 +1,6 @@
 import { compose, lifecycle } from "recompose"
 import { connect } from "react-redux"
-import { withRouter } from "react-router"
+import { withRouter } from "react-router-dom"
 
 import WelcomePage from "./welcome"
 
@@ -15,7 +15,7 @@ export default compose(
   lifecycle({
     componentDidMount() {
       if (this.props.name) {
-        this.props.router.push("/dashboard")
+        this.props.history.push("/dashboard")
       }
     },
   })

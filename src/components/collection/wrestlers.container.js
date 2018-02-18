@@ -12,12 +12,6 @@ import { updateWrestler, deleteWrestler } from "../../actions/roster"
 import Collection from "./collection"
 
 const NOOP = () => {}
-const shade = (amount, style) => {
-  return {
-    color: style.color,
-    backgroundColor: chromatism.hue(amount, style.backgroundColor).hex,
-  }
-}
 
 class WrestlersContainer extends Component {
   onChangeName = (wrestler, event) => {
@@ -56,16 +50,6 @@ class WrestlersContainer extends Component {
     dispatch(deleteWrestler(id))
   }
 
-  clean = (roster, style) => {
-    let x = 0
-    return (roster = roster.map(item => {
-      x++
-      let amount = x + 1
-      item.style = shade(amount, style)
-      return item
-    }))
-  }
-
   render() {
     let { style, roster, brands, } = this.props
 
@@ -78,12 +62,13 @@ class WrestlersContainer extends Component {
         onChangeBackgroundColor={this.onChangeBackgroundColor}
         onChangeBrand={this.onChangeBrand}
         brands={brands}
-        canUpdateColors={false}
         canUpdateBrand={true}
+        canUpdateColors={false}
         canUpdateGender={true}
         canDelete={true}
         canUpdateName={true}
-        collection={this.clean(roster, style)}
+        collection={roster}
+        stripe={true}
         tabIndex="0"
       />
     )

@@ -26,6 +26,7 @@ input {
   display: $display;
   font-size: $font-size;
   font-weight: $font-weight;
+  font-family: inherit;
   margin: 0.2rem 0 0.2rem;
   max-width: $input-max-width;
   outline: none;

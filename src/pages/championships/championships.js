@@ -18,8 +18,8 @@ const Championships = ({ onClear = NOOP, }) => (
         <Reset onClick={onClear} />
       </span>
     </HeaderOne>
-    <Collection />
     <Create />
+    <Collection />
   </section>
 )
 

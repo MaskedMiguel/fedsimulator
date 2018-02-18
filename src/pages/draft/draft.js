@@ -13,22 +13,17 @@ import "./draft.scss"
 
 const NOOP = () => {}
 
-const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, onGenerate = NOOP, }) => (
+const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, }) => (
   <section className="page draft">
-    <HeaderOne />
+    <HeaderOne>Draft</HeaderOne>
     <If condition={brands.length === 0}>
       <Create placeholder={ADD_BRAND_ENTRY} />
     </If>
     <If condition={brands.length > 0}>
       <div className="brands">
-        <div style={style.darkStyle} className="brand">
-          <h3>
-            All{" "}
-            <span tabIndex="0" className="tools">
-              <Generate onClick={onGenerate} title="Generate default roster" />
-            </span>
-          </h3>
-          <Wrestlers style={style.darkStyle} />
+        <div style={style} className="brand">
+          <h3>All</h3>
+          <Wrestlers style={style} />
         </div>
         {brands.map(brand => {
           const { style, id: brandId, } = brand
@@ -50,7 +45,6 @@ DraftPage.propTypes = {
   brands: PropTypes.array,
   style: PropTypes.object,
   onDrop: PropTypes.func,
-  onGenerate: PropTypes.func,
 }
 
 export default DraftPage

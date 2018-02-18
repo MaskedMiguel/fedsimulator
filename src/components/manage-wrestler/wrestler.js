@@ -119,24 +119,12 @@ const EditWrestler = ({
     </div>
     <If condition={!id}>
       <div className="create form-field">
-        <Button
-          classes="btn-create"
-          onClick={onCreate}
-          onKeyPress={onCreate}
-          style={createStyle}
-          tabIndex="0"
-          value="Create wrestler"
-        />
+        <Button classes="btn-bad" onClick={onCreate} onKeyPress={onCreate} style={createStyle} tabIndex="0" value="Create wrestler" />
       </div>
     </If>
     <If condition={showDelete}>
       <div className="delete form-field">
-        <Button
-          classes="btn-delete"
-          onClick={onDelete}
-          onKeyPress={onDelete}
-          style={deleteStyle}
-          tabIndex="0">
+        <Button classes="btn-good" onClick={onDelete} onKeyPress={onDelete} style={deleteStyle} tabIndex="0">
           <Reset /> Delete wrestler
         </Button>
       </div>

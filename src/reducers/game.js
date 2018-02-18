@@ -12,17 +12,14 @@ export default (state, action) => {
       state = state.set("name", "WWE")
       state = state.set("started", true)
       break
-    case "TOGGLE_STARTED":
-    case "START_GAME":
-      state = state.set("started", true)
-      break
-    case "UPDATE_GAME_SIMULATION":
+    case "UPDATE_GAME":
       state = state.merge(action.payload)
-      break
-    case "UPDATE_NAME":
-      state = state.set("name", action.payload.name)
+
       break
   }
 
-  return new Model(state).toJS()
+  state = Model(state).toJS()
+  state.date = new Date(state.date)
+
+  return state
 }

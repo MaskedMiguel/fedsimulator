@@ -1,18 +1,19 @@
+import React, { Component } from "react"
 import { connect } from "react-redux"
-import { Component } from "react"
+import { compose } from "recompose"
+import { withRouter } from "react-router-dom"
+
 import PropTypes from "prop-types"
 
 class DefaultPage extends Component {
   componentWillMount() {
-    const { name, router, } = this.props
-
     let pathName = "dashboard"
 
-    if (!name) {
+    if (!this.props.name) {
       pathName = "/welcome"
     }
 
-    router.push(pathName)
+    this.props.history.push(pathName)
   }
 
   render() {
@@ -22,15 +23,15 @@ class DefaultPage extends Component {
 
 DefaultPage.displayName = "DefaultPage"
 
-DefaultPage.contextTypes = {
-  router: PropTypes.object.isRequired,
-}
-
 DefaultPage.propTypes = {
   name: PropTypes.string.isRequired,
-  router: PropTypes.object.isRequired,
 }
 
-export default connect(state => ({
-  name: state.game.name,
-}))(DefaultPage)
+export const enhance = compose(
+  withRouter,
+  connect(state => ({
+    name: state.game.name,
+  }))
+)
+
+export default enhance(DefaultPage)

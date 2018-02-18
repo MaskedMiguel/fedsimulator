@@ -63,7 +63,7 @@ const BattleRoyal = ({
               <Labels id="gender" tabIndex="0" onKeyPress={onGenderUpdate} onClick={onGenderUpdate} highlighted={male} labels={genderLabels} />
             </div>
             <div className="form-group">
-              <Button style={style.darkStyle} classes="rounded" onClick={onGenerateEntries}>
+              <Button style={style.darkStyle} onClick={onGenerateEntries}>
                 Generate entries
               </Button>
               <Choose>
@@ -72,7 +72,7 @@ const BattleRoyal = ({
                   <Wrestler wrestler={winner} />
                 </When>
                 <Otherwise>
-                  <Button style={style.darkStyle} classes="rounded" onClick={onSimulate}>
+                  <Button style={style.darkStyle} onClick={onSimulate}>
                     {simulateButtonTitle}
                   </Button>
                 </Otherwise>

@@ -17,16 +17,20 @@ describe("given a game reducer", () => {
 
   describe("and a toggleStarted request is sent", () => {
     before(() => {
-      action.type = types.TOGGLE_STARTED
+      action.type = types.UPDATE_GAME
+      action.payload = { started: true }
       activeReducer = reducer(activeReducer, action)
     })
 
     it("and the started is defaulted to true", () => {
-      expect(activeReducer.started).to.equal(true)
+      expect(activeReducer.started).to.equal(action.payload.started)
     })
 
     describe("and a toggleStarted request is sent", () => {
-      before(() => (activeReducer = reducer(activeReducer, action)))
+      before(() => {
+        action.payload = {}
+        activeReducer = reducer(activeReducer, action)
+      })
 
       it("and the started is defaulted to true", () => {
         expect(activeReducer.started).to.equal(true)
@@ -36,8 +40,8 @@ describe("given a game reducer", () => {
 
   describe("and a updateName request is sent", () => {
     before(() => {
-      action.type = types.UPDATE_NAME
-      action.payload = { name: "Aaron", }
+      action.type = types.UPDATE_GAME
+      action.payload = { name: "Aaron" }
       activeReducer = reducer(activeReducer, action)
     })
 

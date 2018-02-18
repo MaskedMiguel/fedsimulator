@@ -5,3 +5,5 @@ export const WRESTLER_CONFIRM_DELETE = "Are you sure you want to delete this wre
 export const BRAND_CONFIRM_DELETE = "Are you sure you want to delete this brand?"
 export const BRANDS_CONFIRM_CLEAR = "Are you sure you want to empty the brands?"
 export const ADD_BRAND_ENTRY = "Type a brand name and hit enter"
+export const TAPINGS_CONFIRM_CLEAR = "Are you sure you want to empty the tapings?"
+export const SKIP_MATCH_CONFIRM_CLEAR = "Are you sure you want to skip this match? The owner will charge you a fee!"

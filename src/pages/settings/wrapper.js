@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import { compose } from "recompose"
 import { connect } from "react-redux"
+import { withRouter } from "react-router"
 
 import { Reset } from "../../components/icons"
 import { resetAll } from "../../actions/game"
@@ -26,20 +28,19 @@ class SettingsWrapper extends Component {
   }
 
   onReset = () => {
-    const { router, dispatch, } = this.props
-
-    dispatch(resetAll())
-    router.push("/default")
+    this.props.dispatch(resetAll())
+    this.props.history.push("/welcome")
   }
 }
 
-SettingsWrapper.contextTypes = {
-  router: PropTypes.object.isRequired,
-}
-
 SettingsWrapper.propTypes = {
-  router: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 }
 
-export default connect(null)(SettingsWrapper)
+export const enhance = compose(
+  connect(null),
+  withRouter //
+)
+
+export default enhance(SettingsWrapper)

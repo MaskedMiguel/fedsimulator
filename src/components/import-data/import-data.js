@@ -1,11 +1,11 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
 import Lightbox from "../lightbox"
-import Button from "../button/withLightStyle"
-import HeaderOne from "../header/header"
 import { fetchData, importData } from "../../actions/data"
 import { Tick } from "../icons"
+import Escape from "../../hoc/escape"
 
 import "./import-data.scss"
 
@@ -21,10 +21,10 @@ class ImportData extends Component {
     this.props.dispatch(fetchData(API_ENDPOINT))
   }
 
-  onImport({ title, type, payload }) {
+  onImport({ title, type, payload, }) {
     const callback = () => this.importFinished()
 
-    this.props.dispatch(importData({ type, payload, callback }))
+    this.props.dispatch(importData({ type, payload, callback, }))
 
     this.setState({
       title,
@@ -45,32 +45,40 @@ class ImportData extends Component {
   }
 
   render() {
-    const { title, importComplete } = this.state
-    const { data } = this.props.data
+    const columns = "inner col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
+    const { title, importComplete, } = this.state
+    const { data, } = this.props.data
 
     if (!data) {
       return null
     }
 
     return (
-      <div>
-        <Lightbox show={importComplete} onClose={this.onClose}>
-          <Tick /> "{title}" complete!
-        </Lightbox>
-        <ul className="import-data">
-          {data.map(({ title, type, payload }) => {
+      <div className="import-data">
+        <Escape onEscape={this.onClose}>
+          <Lightbox show={importComplete} onClose={this.onClose}>
+            <Tick /> "{title}" complete!
+          </Lightbox>
+        </Escape>
+        <div className="row">
+          {data.map(({ title, type, payload, style, }) => {
             return (
-              <li key={title}>
-                <Button onClick={() => this.onImport({ title, type, payload })}>
+              <div className={columns} key={title} onClick={() => this.onImport({ title, type, payload, })}>
+                <div className="box" style={style}>
                   {title} ({payload.length})
-                </Button>
-              </li>
+                </div>
+              </div>
             )
           })}
-        </ul>
+        </div>
       </div>
     )
   }
+}
+
+ImportData.propTypes = {
+  dispatch: PropTypes.func,
+  data: PropTypes.any,
 }
 
 export default connect(state => ({

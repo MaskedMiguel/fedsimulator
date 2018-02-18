@@ -1,5 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
+import chromatism from "chromatism"
+import { compose } from "recompose"
+import withStyle from "../../hoc/withStyle"
 
 import ColorPickers from "../color-pickers/color-pickers"
 import Select from "../form/select"
@@ -10,38 +13,50 @@ import "./collection.scss"
 
 const NOOP = () => {}
 
-const Collection = ({
+const shade = (amount, style) => {
+  return {
+    color: style.color,
+    backgroundColor: chromatism.hue(amount, style.backgroundColor).hex,
+  }
+}
+
+const clean = (collection, style) => {
+  let x = 0
+  return (collection = collection.map(item => {
+    x++
+    let amount = x + 10
+    item.style = shade(amount, style)
+    return item
+  }))
+}
+
+export const Collection = ({
   brands = [],
   canDelete = false,
   canUpdateBrand = false,
   canUpdateColors = false,
   canUpdateGender = false,
   canUpdateName = true,
-  canUpdateWrestler = false,
   collection = [],
   onChangeBackgroundColor = NOOP,
   onChangeBrand = NOOP,
   onChangeColor = NOOP,
   onChangeGender = NOOP,
   onChangeName = NOOP,
-  onChangeWrestler = NOOP,
   onDelete = NOOP,
   style = {},
-  roster = [],
+  stripe = false,
 }) => {
-  let newRoster = {
-    true: roster.filter(wrestler => wrestler.male),
-    false: roster.filter(wrestler => !wrestler.male),
-  }
+  const collectionToLoop = stripe ? clean(collection, style) : collection
   return (
     <div className="collection">
-      {collection.map(item => {
+      {collectionToLoop.map(item => {
+        let currentStyle = style
         if (item.style) {
-          style = item.style
+          currentStyle = item.style
         }
-        roster = newRoster[item.male]
         return (
-          <div key={item.id} className="item row middle-xs pulse pulse-small" style={style}>
+          <div key={item.id} className="item row middle-xs pulse pulse-small" style={currentStyle}>
             <If condition={canUpdateColors}>
               <div className="col-xs small">
                 <div className="box">
@@ -56,22 +71,7 @@ const Collection = ({
             <If condition={canUpdateName}>
               <div className="col-xs input">
                 <div className="box">
-                  <Input style={style} value={item.name} onChange={event => onChangeName(item, event)} />
-                </div>
-              </div>
-            </If>
-            <If condition={canUpdateWrestler}>
-              <div className="col-xs end-xs medium">
-                <div className="box">
-                  <Choose>
-                    <When condition={item.tag}>
-                      <Select options={roster} value={item.wrestlers[0]} onChange={event => onChangeWrestler(item, event)} />
-                      <Select options={roster} value={item.wrestlers[1]} onChange={event => onChangeWrestler(item, event)} />
-                    </When>
-                    <Otherwise>
-                      <Select options={roster} value={item.wrestlers[0]} onChange={event => onChangeWrestler(item, event)} />
-                    </Otherwise>
-                  </Choose>
+                  <Input style={currentStyle} value={item.name} onChange={event => onChangeName(item, event)} />
                 </div>
               </div>
             </If>
@@ -119,10 +119,10 @@ Collection.propTypes = {
   onChangeColor: PropTypes.func,
   onChangeGender: PropTypes.func,
   onChangeName: PropTypes.func,
-  onChangeWrestler: PropTypes.func,
   onDelete: PropTypes.func,
-  roster: PropTypes.array,
   style: PropTypes.object,
+  stripe: PropTypes.bool,
 }
 
-export default Collection
+export const enhance = compose(withStyle)
+export default enhance(Collection)

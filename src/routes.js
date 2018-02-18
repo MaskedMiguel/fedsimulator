@@ -1,124 +1,51 @@
 /* eslint-disable no-console */
 import React from "react"
-import Page from "./components/page/page"
-import { IndexRoute, Route } from "react-router"
+import { HashRouter, Switch } from "react-router-dom"
+import Loadable from "react-loadable"
 
-const onChange = (previousRoute, nextRoute) => {
-  // eslint-disable-next-line
-  if (ga && nextRoute.location && nextRoute.location.pathname[0] !== "/") {
-    // eslint-disable-next-line
-    ga("send", "pageview", nextRoute.location.pathname)
-  }
-}
+import asyncComponent from "./asyncComponent"
+import Route from "./route"
+import ComponentLoader from "./components/component-loader"
 
-function errorLoading(err) {
-  console.error("Dynamic page loading failed", err)
-}
+import SiteLayout from "./layouts/site/container"
+import StoryLayout from "./layouts/story/story"
+import WelcomeLayout from "./layouts/welcome/welcome"
 
-function loadRoute(cb) {
-  return module => cb(null, module.default)
-}
+const Default = asyncComponent(() => import("./pages/default/default"))
+const Dashboard = asyncComponent(() => import("./pages/dashboard/dashboard"))
+const Story = asyncComponent(() => import("./pages/story/start/start.container"))
+const Calendar = asyncComponent(() => import("./pages/calendar/container"))
+const Welcome = asyncComponent(() => import("./pages/welcome/container"))
+const NotFound = asyncComponent(() => import("./components/not-found"))
+const Settings = asyncComponent(() => import("./pages/settings/wrapper"))
+const Draft = asyncComponent(() => import("./pages/draft/container"))
+const Brands = asyncComponent(() => import("./pages/brands/container"))
+const CreateAMatch = asyncComponent(() => import("./pages/create-a-match/container"))
+const Championships = asyncComponent(() => import("./pages/championships/container"))
+const BattleRoyal = asyncComponent(() => import("./pages/battle-royal/container"))
+const Roster = asyncComponent(() => import("./pages/roster/container"))
+const Tapings = asyncComponent(() => import("./pages/tapings/container"))
 
 const Router = () => {
   return (
-    <Route path="/" onChange={onChange} component={Page}>
-      <IndexRoute
-        getComponent={(location, cb) => {
-          import("./pages/default/default" /* webpackChunkName:"default" */)
-            .then(loadRoute(cb))
-            .catch(errorLoading)
-        }}
-      />
-      <Route path="welcome">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/welcome/container" /* webpackChunkName:"welcome" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="battle-royal">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/battle-royal/container" /* webpackChunkName:"battle-royal" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="create-a-match">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/create-a-match/container" /* webpackChunkName:"create-a-match" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="roster">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/roster/container" /* webpackChunkName:"roster" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="brands">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/brands/container" /* webpackChunkName:"brands" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="draft">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/draft/container" /* webpackChunkName:"draft" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="dashboard">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/dashboard/dashboard" /* webpackChunkName:"dashboard" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="championships">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/championships/container" /* webpackChunkName:"championships" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route path="settings">
-        <IndexRoute
-          getComponent={(location, cb) => {
-            import("./pages/settings/wrapper" /* webpackChunkName:"settings" */)
-              .then(loadRoute(cb))
-              .catch(errorLoading)
-          }}
-        />
-      </Route>
-      <Route
-        path="*"
-        getComponent={(location, cb) => {
-          import("./pages/default/default")
-            .then(loadRoute(cb))
-            .catch(errorLoading)
-        }}
-      />
-    </Route>
+    <HashRouter hashType="hashbang">
+      <Switch>
+        <Route layout={SiteLayout} path="/dashboard" component={Dashboard} />
+        <Route layout={WelcomeLayout} path="/welcome" layoutProps={{ goBack: false }} component={Welcome} />
+        <Route layout={SiteLayout} path="/battle-royal" component={BattleRoyal} />
+        <Route layout={SiteLayout} path="/roster" component={Roster} />
+        <Route layout={SiteLayout} path="/create-a-match" component={CreateAMatch} />
+        <Route layout={SiteLayout} path="/create-a-match/:id" component={CreateAMatch} />
+        <Route layout={SiteLayout} path="/brands" component={Brands} />
+        <Route layout={SiteLayout} path="/tapings" component={Tapings} />
+        <Route layout={SiteLayout} path="/draft" component={Draft} />
+        <Route layout={SiteLayout} path="/settings" component={Settings} />
+        <Route layout={SiteLayout} path="/championships" component={Championships} />
+        <Route layout={StoryLayout} path="/story" component={Story} />
+        <Route layout={StoryLayout} path="/calendar" component={Calendar} />
+        <Route layout={SiteLayout} component={Default} />
+      </Switch>
+    </HashRouter>
   )
 }
 

@@ -1,9 +1,15 @@
 import * as types from "./types"
 
-export function updateGameSimulation({ simulationSpeed, simulation }) {
+import { addOneDay } from "../constants/dates"
+import defaultGame from "../models/game.model"
+
+export function addOneDayToGame(game) {
+  const date = addOneDay(game.date)
+  const payload = Object.assign({}, game, { date, })
+
   return {
-    type: types.UPDATE_GAME_SIMULATION,
-    payload: { simulationSpeed, simulation },
+    type: types.UPDATE_GAME,
+    payload,
   }
 }
 
@@ -13,10 +19,24 @@ export function toggleStarted() {
   }
 }
 
+export function updateGame(payload) {
+  return {
+    type: types.UPDATE_GAME,
+    payload,
+  }
+}
+
 export function updateName(name) {
   return {
-    type: types.UPDATE_NAME,
-    payload: { name },
+    type: types.UPDATE_GAME,
+    payload: { name, },
+  }
+}
+
+export function resetGame() {
+  return {
+    type: types.UPDATE_GAME,
+    payload: Object.assign({}, defaultGame),
   }
 }
 

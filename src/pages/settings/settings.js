@@ -30,7 +30,9 @@ class Settings extends Component {
       <div className="row settings">
         <div className="col-xs-12 pulse pulse-small">
           <div className="box" style={reduceBrightness()}>
-            <header>Name your federation</header>
+            <header>
+              <label htmlFor="name">Name your federation</label>
+            </header>
             <Name />
           </div>
         </div>
@@ -50,8 +52,8 @@ class Settings extends Component {
 }
 
 Settings.propTypes = {
-  style: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func,
+  style: PropTypes.object,
 }
 
 export const enhance = compose(

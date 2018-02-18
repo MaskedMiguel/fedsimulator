@@ -6,20 +6,8 @@ import "./button.scss"
 
 const NOOP = () => {}
 
-const Button = ({
-  value = "",
-  children = {},
-  classes = "",
-  onClick = NOOP,
-  style = {},
-}) => (
-  <button
-    style={style}
-    type="submit"
-    tabIndex="0"
-    className={classnames("btn", classes)}
-    onKeyPress={onClick}
-    onClick={onClick}>
+const Button = ({ autoFocus = false, value = "", children = {}, classes = "", onClick = NOOP, style = {}, }) => (
+  <button style={style} autoFocus={autoFocus} type="submit" tabIndex="0" className={classnames("btn", classes)} onKeyPress={onClick} onClick={onClick}>
     {value ? value : children}
   </button>
 )
@@ -32,9 +20,10 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
+  autoFocus: PropTypes.any,
   children: PropTypes.any,
   value: PropTypes.string,
-  classes: PropTypes.string,
+  classes: PropTypes.oneOfType([PropTypes.string, PropTypes.array,]),
   onClick: PropTypes.func,
   style: PropTypes.object,
 }
