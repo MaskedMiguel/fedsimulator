@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from "react"
 import { HashRouter, Switch } from "react-router-dom"
-import Loadable from "react-loadable"
+import Analytics from "react-router-ga"
 
 import asyncComponent from "./asyncComponent"
 import Route from "./route"
@@ -29,22 +29,24 @@ const Tapings = asyncComponent(() => import("./pages/tapings/container"))
 const Router = () => {
   return (
     <HashRouter hashType="hashbang">
-      <Switch>
-        <Route layout={SiteLayout} path="/dashboard" component={Dashboard} />
-        <Route layout={WelcomeLayout} path="/welcome" layoutProps={{ goBack: false }} component={Welcome} />
-        <Route layout={SiteLayout} path="/battle-royal" component={BattleRoyal} />
-        <Route layout={SiteLayout} path="/roster" component={Roster} />
-        <Route layout={SiteLayout} path="/create-a-match" component={CreateAMatch} />
-        <Route layout={SiteLayout} path="/create-a-match/:id" component={CreateAMatch} />
-        <Route layout={SiteLayout} path="/brands" component={Brands} />
-        <Route layout={SiteLayout} path="/tapings" component={Tapings} />
-        <Route layout={SiteLayout} path="/draft" component={Draft} />
-        <Route layout={SiteLayout} path="/settings" component={Settings} />
-        <Route layout={SiteLayout} path="/championships" component={Championships} />
-        <Route layout={StoryLayout} path="/story" component={Story} />
-        <Route layout={StoryLayout} path="/calendar" component={Calendar} />
-        <Route layout={SiteLayout} component={Default} />
-      </Switch>
+      <Analytics id="UA-91494970-2">
+        <Switch>
+          <Route layout={SiteLayout} path="/dashboard" component={Dashboard} />
+          <Route layout={WelcomeLayout} path="/welcome" layoutProps={{ goBack: false }} component={Welcome} />
+          <Route layout={SiteLayout} path="/battle-royal" component={BattleRoyal} />
+          <Route layout={SiteLayout} path="/roster" component={Roster} />
+          <Route layout={SiteLayout} path="/create-a-match" component={CreateAMatch} />
+          <Route layout={SiteLayout} path="/create-a-match/:id" component={CreateAMatch} />
+          <Route layout={SiteLayout} path="/brands" component={Brands} />
+          <Route layout={SiteLayout} path="/tapings" component={Tapings} />
+          <Route layout={SiteLayout} path="/draft" component={Draft} />
+          <Route layout={SiteLayout} path="/settings" component={Settings} />
+          <Route layout={SiteLayout} path="/championships" component={Championships} />
+          <Route layout={StoryLayout} path="/story" component={Story} />
+          <Route layout={StoryLayout} path="/calendar" component={Calendar} />
+          <Route layout={SiteLayout} component={Default} />
+        </Switch>
+      </Analytics>
     </HashRouter>
   )
 }
