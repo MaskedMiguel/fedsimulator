@@ -1,7 +1,10 @@
 @import "src/stylesheets/breakpoints";
 
 .page.battle-royal {
-  font-size: small;
+
+  .labels {
+    font-size: small;
+  }
 
   .tools {
     display: flex;
