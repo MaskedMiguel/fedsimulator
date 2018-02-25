@@ -8,7 +8,7 @@ class Escape extends Component {
     this.onEscape = this.onEscape.bind(this)
   }
 
-  onEscape({ keyCode }) {
+  onEscape({ keyCode, }) {
     if (keyCode === 27) {
       this.props.onEscape()
     }

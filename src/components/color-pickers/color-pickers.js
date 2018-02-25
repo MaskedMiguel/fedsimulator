@@ -8,7 +8,7 @@ import "./color-pickers.scss"
 const NOOP = () => {}
 
 const ColorPickers = ({ backgroundColor = "", color = "", onChangeBackgroundColor = NOOP, onChangeColor = NOOP, }) => (
-  <div className="row around-xs cursor-pointer color-pickers pulse">
+  <div className="row around-xs cursor-pointer color-pickers shadow pulse">
     <div className="col-xs-6 col background-color" style={{ backgroundColor, }}>
       <ColorPicker tabIndex="0" onChange={onChangeBackgroundColor} />
     </div>

@@ -1,7 +1,7 @@
 import { compose, withProps, withStateHandlers } from "recompose"
 import { connect } from "react-redux"
 
-import withStyle from "../../hoc/withStyle.js"
+import withStyle from "../../hoc/withHighlightedStyle.js"
 
 import { resetRoster } from "../../actions/roster"
 import { ROSTER_CONFIRM_RESET } from "../../constants/confirmations"
@@ -19,17 +19,17 @@ const propsMapper = props => {
   }
 }
 
-const defaultState = { id: false, creating: true, listView: false }
+const defaultState = { id: false, creating: true, listView: false, }
 
 const stateHandlers = {
-  onToggleCreating: ({ creating }) => () => ({
+  onToggleCreating: ({ creating, }) => () => ({
     creating: !creating,
     id: false,
   }),
-  onSetId: ({ id }) => () => ({
+  onSetId: ({ id, }) => () => ({
     id: id,
   }),
-  onToggleListView: ({ listView }) => () => ({
+  onToggleListView: ({ listView, }) => () => ({
     listView: !listView,
   }),
   onClick: () => id => ({

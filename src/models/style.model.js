@@ -1,17 +1,11 @@
 import { Record } from "immutable"
 
-const light = "#fff"
-const dark = "#4B09BE"
-
 export const schema = {
-  backgroundColor: "#4B09BE",
-  color: light,
-  shade: -60,
-  light: true,
-  darkStyle: {
-    color: light,
-    backgroundColor: "#000025",
-  },
+  hex: "#4B09BE",
+  shade: -40,
+  light: Boolean(Math.round(Math.random())),
+  highlighted: {},
+  container: {},
 }
 
 export default Record(schema)

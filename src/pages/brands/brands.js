@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import HeaderOne from "../../components/header/header"
 import Create from "../../components/create/brand.container.js"
 import Collection from "../../components/collection/brands.container"
-import { Reset } from "../../components/icons"
+import Button from "../../components/button/button"
 
 import "./brands.scss"
 
@@ -15,7 +15,7 @@ const BrandsPage = ({ onClear = NOOP, }) => (
     <HeaderOne>
       Manage Brands
       <span tabIndex="0" className="tools">
-        <Reset onClick={onClear} />
+        <Button value="Delete all" onClick={onClear} classes="btn-bad" />
       </span>
     </HeaderOne>
     <Create />

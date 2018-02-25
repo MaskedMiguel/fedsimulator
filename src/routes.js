@@ -12,7 +12,7 @@ import StoryLayout from "./layouts/story/story"
 import WelcomeLayout from "./layouts/welcome/welcome"
 
 const Default = asyncComponent(() => import("./pages/default/default"))
-const Dashboard = asyncComponent(() => import("./pages/dashboard/dashboard"))
+const Dashboard = asyncComponent(() => import("./pages/dashboard/container"))
 const Story = asyncComponent(() => import("./pages/story/start/start.container"))
 const Calendar = asyncComponent(() => import("./pages/calendar/container"))
 const Welcome = asyncComponent(() => import("./pages/welcome/container"))

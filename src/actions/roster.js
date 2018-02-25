@@ -1,9 +1,9 @@
 import * as types from "./types"
 import Match from "../helpers/match"
 
-export function simulateRandomMatch({ roster = [], championships = [] }) {
+export function simulateRandomMatch({ roster = [], championships = [], }) {
   const brandId = roster[Math.floor(Math.random() * roster.length)].brandId
-  const payload = new Match({ roster, brandId, championships })
+  const payload = new Match({ roster, brandId, championships, })
     .generate()
     .simulate()
     .savePoints()

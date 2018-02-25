@@ -8,7 +8,7 @@ import { Icon, Reset } from "../icons"
 
 const NOOP = () => {}
 
-const Team = ({ classes = "", teamId = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWrestler = NOOP, onDrop = NOOP, }) => {
+const Team = ({ classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWrestler = NOOP, onDrop = NOOP, }) => {
   const hasWinner = wrestlers.find(wrestler => wrestler.winner)
   const hasManyWrestlers = wrestlers.length > 2
   const teamClasses = classnames(
@@ -23,7 +23,7 @@ const Team = ({ classes = "", teamId = "", wrestlers = [], onSelectWinner = NOOP
   return (
     <div className={teamClasses}>
       <Droppable types={["wrestler",]} onDrop={onDrop}>
-        <div className="box dropzone pulse">
+        <div className="box dropzone shadow pulse">
           <Choose>
             <When condition={wrestlers.length > 0}>
               {wrestlers.map(wrestler => {
@@ -57,7 +57,6 @@ const Team = ({ classes = "", teamId = "", wrestlers = [], onSelectWinner = NOOP
 
 Team.propTypes = {
   classes: PropTypes.string,
-  teamId: PropTypes.string.isRequired,
   onDrop: PropTypes.func.isRequired,
   onRemoveWrestler: PropTypes.func.isRequired,
   onSelectWinner: PropTypes.func.isRequired,

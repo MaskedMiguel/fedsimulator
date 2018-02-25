@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
-import Button from "./button/withDarkStyle"
+import Button from "./button/button"
 
 const style = {
   backdrop: {

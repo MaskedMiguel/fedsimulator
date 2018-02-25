@@ -12,7 +12,7 @@ const NOOP = () => {}
 
 const Wrestler = ({ wrestler = schema, onClick = NOOP, highlight = false, canDrag = true, }) => {
   const { id, name, brandId, points, image, championshipId, } = wrestler
-  const classes = classnames("wrestler", "pulse", { [brandId]: brandId, }, { "has-highlight": highlight, }, { "has-image": image, })
+  const classes = classnames("wrestler", "shadow", "pulse", { [brandId]: brandId, }, { "has-highlight": highlight, }, { "has-image": image, })
   const names = processNames(name)
   const withImage = image ? { backgroundImage: `url(${image}`, } : {}
 

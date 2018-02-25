@@ -1,10 +1,10 @@
 import { connect } from "react-redux"
 import { compose } from "recompose"
 
-import Button from "./button"
-
-export default compose(
+export const withStyle = compose(
   connect(state => ({
-    style: state.style.darkStyle,
+    style: state.style.container,
   }))
-)(Button)
+)
+
+export default withStyle

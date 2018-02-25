@@ -12,7 +12,7 @@ const gameReadyStyle = {
   backgroundColor: "black",
   color: "white",
 }
-const GameReady = ({ style = {}, }) => (
+const GameReady = ({ style = gameReadyStyle, }) => (
   <Link to="/dashboard">
     <br />
     <div style={gameReadyStyle} className="gameReady center-xs">

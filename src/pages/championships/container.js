@@ -8,7 +8,7 @@ import Championships from "./championships"
 
 class ManageChampionships extends Component {
   onClear = () => {
-    const { dispatch } = this.props
+    const { dispatch, } = this.props
 
     if (confirm(CHAMPIONSHIP_RESET_CONFIRM)) {
       dispatch(resetChampionships())

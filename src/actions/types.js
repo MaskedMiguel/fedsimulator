@@ -1,7 +1,7 @@
 // style
-export const UPDATE_STYLE = "UPDATE_STYLE"
 export const TOGGLE_LIGHT = "TOGGLE_LIGHT"
 export const TOGGLE_DARK = "TOGGLE_DARK"
+export const UPDATE_STYLE_HEX = "UPDATE_STYLE_HEX"
 
 // Brands
 export const CREATE_BRAND = "CREATE_BRAND"

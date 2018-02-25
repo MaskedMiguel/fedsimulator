@@ -31,13 +31,13 @@ export default (state, action) => {
       }
       break
     case "CREATE_WRESTLER":
-      state = state.push(new Model(action.payload).merge({ id: getId() }))
+      state = state.push(new Model(action.payload).merge({ id: getId(), }))
       break
     case "UPDATE_WRESTLER":
       index = state.findIndex(item => item.id === action.payload.id)
 
       if (index > -1) {
-        state = state.updateIn([index], item =>
+        state = state.updateIn([index,], item =>
           new Model(item).merge(action.payload),
         )
       }

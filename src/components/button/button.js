@@ -7,7 +7,14 @@ import "./button.scss"
 const NOOP = () => {}
 
 const Button = ({ autoFocus = false, value = "", children = {}, classes = "", onClick = NOOP, style = {}, }) => (
-  <button style={style} autoFocus={autoFocus} type="submit" tabIndex="0" className={classnames("btn", classes)} onKeyPress={onClick} onClick={onClick}>
+  <button
+    style={style}
+    autoFocus={autoFocus}
+    type="submit"
+    tabIndex="0"
+    className={classnames("btn", "shadow", classes)}
+    onKeyPress={onClick}
+    onClick={onClick}>
     {value ? value : children}
   </button>
 )

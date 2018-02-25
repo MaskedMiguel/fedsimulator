@@ -12,7 +12,7 @@ export default (state, action) => {
       state = selectRandomResults(state.toJS())
       break
     case "RANDOMISE_MATCH":
-      state = randomiseWrestlers({ wrestlers: state.toJS() })
+      state = randomiseWrestlers({ wrestlers: state.toJS(), })
       break
     case "SELECT_WINNER_IN_MATCH":
       state = state.map(item => {

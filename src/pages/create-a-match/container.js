@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router"
 import { List } from "immutable"
 
-import withStyle from "../../hoc/withStyle.js"
+import withStyle from "../../hoc/withHighlightedStyle.js"
 import withRoster from "../../hoc/withRoster.js"
 
 import EmptyRoster from "../../components/empty-roster.js"
@@ -35,7 +35,7 @@ export const lifecycleMapper = lifecycle({
     const { match, history, } = this.props
     const currentMatch = nextProps.matches.find(item => item.id === nextProps.id)
 
-    if (currentMatch && currentMatch.id && !match.params.idid) {
+    if (currentMatch && currentMatch.id && !match.params.id) {
       // history.push(`/create-a-match?id=${currentMatch.id}`)
     }
   },

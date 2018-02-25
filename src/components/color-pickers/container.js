@@ -3,35 +3,13 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
 import ColorPickers from "./color-pickers"
-import { updateStyle } from "../../actions/style"
+import { updateStyleHex } from "../../actions/style"
 
 class ColorPickersContainer extends Component {
-  onChangeColor = newColor => {
+  onChangeBackgroundColor = hex => {
     const { backgroundColor, color, dispatch, } = this.props
 
-    const newState = Object.assign(
-      {},
-      { backgroundColor, color, },
-      {
-        color: newColor,
-      }
-    )
-
-    dispatch(updateStyle(newState))
-  }
-
-  onChangeBackgroundColor = newBackgroundColor => {
-    const { backgroundColor, color, dispatch, } = this.props
-
-    const newState = Object.assign(
-      {},
-      { backgroundColor, color, },
-      {
-        backgroundColor: newBackgroundColor,
-      }
-    )
-
-    dispatch(updateStyle(newState))
+    dispatch(updateStyleHex(hex))
   }
 
   shouldComponentUpdate() {
@@ -40,9 +18,7 @@ class ColorPickersContainer extends Component {
 
   render() {
     const { backgroundColor, color, } = this.props
-    return (
-      <ColorPickers backgroundColor={backgroundColor} color={color} onChangeBackgroundColor={this.onChangeBackgroundColor} onChangeColor={this.onChangeColor} />
-    )
+    return <ColorPickers backgroundColor={backgroundColor} color={color} onChangeBackgroundColor={this.onChangeBackgroundColor} />
   }
 }
 
@@ -55,5 +31,5 @@ ColorPickersContainer.propTypes = {
 }
 
 export default connect(state => ({
-  ...state.style,
+  ...state.style.highlighted,
 }))(ColorPickersContainer)

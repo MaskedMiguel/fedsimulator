@@ -44,5 +44,5 @@ StoryLayout.defaultProps = {
 }
 
 export default connect(state => ({
-  style: state.style,
+  style: state.style.highlighted,
 }))(StoryLayout)

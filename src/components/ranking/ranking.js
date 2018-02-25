@@ -32,7 +32,7 @@ const Ranking = ({ currencySymbol, style, columns, rows, amountToShow, title, })
                     <Choose>
                       <When condition={type === "rank"}>#{rowKey + 1}</When>
                       <When condition={type === "currency"}>{formatCurrency(currencySymbol, row[column])}</When>
-                      <When condition={type === "winner"}>{row[column] == true ? "Winner!" : ""}</When>
+                      <When condition={type === "winner"}>{row[column] === true ? "Winner!" : ""}</When>
                       <Otherwise>{row[column]}</Otherwise>
                     </Choose>
                   </td>

@@ -2,7 +2,7 @@ import axios from "axios"
 
 const NOOP = () => {}
 
-export const importData = ({ payload, type, callback = NOOP }) => {
+export const importData = ({ payload, type, callback = NOOP, }) => {
   return {
     type,
     payload,

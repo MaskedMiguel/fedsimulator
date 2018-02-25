@@ -4,7 +4,7 @@ import { compose } from "recompose"
 import { connect } from "react-redux"
 import { withRouter } from "react-router"
 
-import { Reset } from "../../components/icons"
+import Button from "../../components/button/button"
 import { resetAll } from "../../actions/game"
 
 import Settings from "./settings"
@@ -18,8 +18,8 @@ class SettingsWrapper extends Component {
         <HeaderOne>
           Settings
           <span tabIndex="0" className="tools">
-            <ToggleTheme />
-            <Reset onClick={this.onReset} />
+            <ToggleTheme />&nbsp;
+            <Button value="Reset everything" onClick={this.onReset} classes="btn-bad" />
           </span>
         </HeaderOne>
         <Settings />

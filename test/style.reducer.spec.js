@@ -18,34 +18,18 @@ describe("given a style reducer", () => {
   })
 
   it("and the color is defaulted to the right value", () => {
-    expect(activeReducer.color).to.equal(schema.color)
-  })
-
-  it("and the color is defaulted to the right value", () => {
     expect(activeReducer.backgroundColor).to.equal(schema.backgroundColor)
   })
 
   describe("and a update request is sent", () => {
     before(() => {
-      action.type = types.UPDATE_STYLE
-      action.payload = { color: compareHex, }
+      action.type = types.UPDATE_STYLE_HEX
+      action.payload = { hex: compareHex }
       activeReducer = reducer(activeReducer, action)
     })
 
     it("and the color is updated to red", () => {
-      expect(activeReducer.color).to.equal(action.payload.color)
-    })
-
-    describe("and the backgroundColor and color are the same", () => {
-      before(() => {
-        action.type = types.UPDATE_STYLE
-        action.payload = { color: compareHex, backgroundColor: compareHex }
-        activeReducer = reducer(activeReducer, action)
-      })
-
-      it("and should ensure they don't set the same value", () => {
-        expect(activeReducer.color).to.not.equal(activeReducer.backgroundColor)
-      })
+      expect(activeReducer.hex).to.equal(action.payload.hex)
     })
   })
 })

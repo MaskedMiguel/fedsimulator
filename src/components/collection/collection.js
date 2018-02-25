@@ -2,12 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import chromatism from "chromatism"
 import { compose } from "recompose"
-import withStyle from "../../hoc/withStyle"
+import withStyle from "../../hoc/withHighlightedStyle"
 
 import ColorPickers from "../color-pickers/color-pickers"
 import Select from "../form/select"
 import Input from "../form/input"
-import { Reset, Gender } from "../icons"
+import Button from "../button/button"
 
 import "./collection.scss"
 
@@ -56,7 +56,7 @@ export const Collection = ({
           currentStyle = item.style
         }
         return (
-          <div key={item.id} className="item row middle-xs pulse pulse-small" style={currentStyle}>
+          <div key={item.id} className="item row middle-xs pulse shadow pulse-small" style={currentStyle}>
             <If condition={canUpdateColors}>
               <div className="col-xs small">
                 <div className="box">
@@ -85,16 +85,14 @@ export const Collection = ({
             <If condition={canUpdateGender}>
               <div className="col-xs small">
                 <div className="box">
-                  <Gender gender={item.male} onClick={event => onChangeGender(item, event)} />
+                  <Button classes="gender" onClick={event => onChangeGender(item, event)} value={item.male ? "Male" : "Female"} />
                 </div>
               </div>
             </If>
             <If condition={canDelete}>
               <div className="col-xs end-xs small">
                 <div className="box">
-                  <a className="delete" onClick={() => onDelete(item.id)}>
-                    <Reset />
-                  </a>
+                  <Button classes="delete" onClick={() => onDelete(item.id)} value="Delete" />
                 </div>
               </div>
             </If>

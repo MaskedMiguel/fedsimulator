@@ -17,8 +17,9 @@
   }
 
   .panel {
-    padding: 1rem 0.5rem;
-
+    .box {
+      padding: 1rem 0.5rem;
+    }
     .form-group {
       margin-bottom: 1rem;
     }

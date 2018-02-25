@@ -39,7 +39,7 @@ const CalendarPage = ({
         <span className="tools">
           <Choose>
             <When condition={paused}>
-              <Pause onClick={onTogglePause} />
+              <i className="icon fa fa-pause" onClick={onTogglePause} />
             </When>
             <Otherwise>
               <Play onClick={onTogglePause} />

@@ -4,7 +4,7 @@ import { compose } from "recompose"
 
 import withRoster from "../../hoc/withRoster"
 import withBrands from "../../hoc/withBrands"
-import withStyle from "../../hoc/withStyle"
+import withStyle from "../../hoc/withHighlightedStyle"
 import withChampionships from "../../hoc/withChampionships"
 
 import { updateChampionship, deleteChampionship } from "../../actions/champions"

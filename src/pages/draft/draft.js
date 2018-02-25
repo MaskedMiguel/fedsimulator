@@ -6,7 +6,6 @@ import HeaderOne from "../../components/header/header"
 import Wrestlers from "../../components/wrestlers/container"
 import Create from "../../components/create/brand.container"
 
-import { Generate } from "../../components/icons"
 import { ADD_BRAND_ENTRY } from "../../constants/confirmations"
 
 import "./draft.scss"

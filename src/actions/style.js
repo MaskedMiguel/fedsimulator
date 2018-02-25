@@ -1,9 +1,9 @@
 import * as types from "./types"
 
-export function updateStyle(payload) {
+export function updateStyleHex(hex) {
   return {
-    type: types.UPDATE_STYLE,
-    payload,
+    type: types.UPDATE_STYLE_HEX,
+    payload: { hex, },
   }
 }
 

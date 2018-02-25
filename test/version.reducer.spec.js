@@ -1,7 +1,7 @@
 import reducer from "../src/reducers/version"
 import * as types from "../src/actions/types"
 
-import { defaultState } from "../src/reducers/version"
+import VERSION from "../src/constants/version"
 
 const action = {
   type: types.CHECK_VERSION,
@@ -9,7 +9,7 @@ const action = {
 
 describe("given a version reducer", () => {
   it("should set a default version", () => {
-    expect(reducer(undefined, action)).to.equal(defaultState)
+    expect(reducer(undefined, action)).to.equal(VERSION)
   })
 
   it("and the version number is now 6", () => {

@@ -5,7 +5,7 @@ import { withRouter } from "react-router"
 
 import withName from "./name.container"
 import withGame from "../../../hoc/withGame"
-import withStyle from "../../../hoc/withStyle"
+import withStyle from "../../../hoc/withHighlightedStyle"
 import withRoster from "../../../hoc/withRoster"
 
 import { getId } from "../../../models/model.helper"

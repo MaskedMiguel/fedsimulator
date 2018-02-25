@@ -7,7 +7,7 @@ import withStyle from "../../hoc/withStyle"
 
 import Name from "../../components/name/name"
 import ImportWrapper from "../../components/import-data/wrapper"
-import ColorPickers from "../../components/color-pickers/container"
+import ColorPicker from "../../components/color-pickers/color-picker.container"
 
 const BRIGHTNESS_REDUCTION_STEP = 4
 
@@ -19,31 +19,38 @@ class Settings extends Component {
     let brightness = 0
     const reduceBrightness = () => {
       brightness = brightness + BRIGHTNESS_REDUCTION_STEP
-      const backgroundColor = chromatism.brightness(brightness, style.backgroundColor).hex
+      const backgroundColor = chromatism.brightness(brightness, style.highlighted.backgroundColor).hex
       return {
-        color: style.color,
+        color: style.highlighted.color,
         backgroundColor,
       }
     }
 
     return (
-      <div className="row settings">
-        <div className="col-xs-12 pulse pulse-small">
-          <div className="box" style={reduceBrightness()}>
-            <header>
-              <label htmlFor="name">Name your federation</label>
-            </header>
-            <Name />
+      <div className="settings">
+        <div className="row " style={reduceBrightness()}>
+          <div className="col-xs-12 col-md-8 col-sm-8 col-lg-10">
+            <div className="box">
+              <header>
+                <label htmlFor="name">Name your federation</label>
+              </header>
+              <Name />
+            </div>
+          </div>
+          <div className="col-xs-12 col-md-4 col-sm-4 col-lg-2">
+            <div className="box">
+              <header>
+                <label htmlFor="name">Select your theming</label>
+              </header>
+              <ColorPicker />
+            </div>
           </div>
         </div>
-        <div className="col-xs-12 pulse pulse-small">
-          <div className="box" style={reduceBrightness()}>
-            <ColorPickers />
-          </div>
-        </div>
-        <div className="col-xs-12 pulse pulse-small">
-          <div className="box" style={reduceBrightness()}>
-            <ImportWrapper />
+        <div className="row" style={reduceBrightness()}>
+          <div className="col-xs-12">
+            <div className="box">
+              <ImportWrapper />
+            </div>
           </div>
         </div>
       </div>

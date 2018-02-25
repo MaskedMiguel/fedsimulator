@@ -27,12 +27,10 @@ const lifecycleMapper = {
 }
 
 export const propsMapper = props => {
-  const invertedStyle = props.style.darkStyle
   const links = !props.isSubMenuOpen ? defaultLinks : []
 
   return {
     links,
-    invertedStyle,
     ...props,
   }
 }

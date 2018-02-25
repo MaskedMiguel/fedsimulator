@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import "./winner.scss"
 
-export const Winner = ({ name = "" }) => (
+export const Winner = ({ name = "", }) => (
   <h2 className="winner">
     <span>{name} Wins</span>
   </h2>

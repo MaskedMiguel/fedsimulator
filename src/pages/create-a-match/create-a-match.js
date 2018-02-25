@@ -5,8 +5,7 @@ import Wrestlers from "../../components/wrestlers/container"
 import { Winner, Loser } from "../../components/winner/winner"
 import HeaderOne from "../../components/header/header"
 import Match from "../../components/match/container"
-import Button from "../../components/button/withLightStyle"
-import { Reset, Randomise } from "../../components/icons"
+import Button from "../../components/button/button"
 
 import "./create-a-match.scss"
 
@@ -28,8 +27,8 @@ const CreateAMatch = ({
       <HeaderOne>
         Create a Match
         <span tabIndex="0" className="tools">
-          <Randomise onClick={onRandomise} />
-          <Reset onClick={onReset} />
+          <Button value="Randomise" onClick={onRandomise} />&nbsp;
+          <Button value="Reset" onClick={onReset} classes="btn-bad" />
         </span>
       </HeaderOne>
       <div className="row">

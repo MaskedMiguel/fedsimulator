@@ -7,7 +7,7 @@ import WelcomePage from "./welcome"
 export default compose(
   connect(state => ({
     name: state.game.name,
-    style: state.style,
+    style: state.style.container,
     roster: state.roster,
     gameReady: state.roster.length > 0 && state.game.name !== "",
   })),

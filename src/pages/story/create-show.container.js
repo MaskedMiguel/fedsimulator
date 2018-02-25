@@ -12,7 +12,7 @@ const propsMapper = props => {
   const taping = props.tapings.find(item => item.id === id)
 
   if (id && taping) {
-    const { brandId, name } = taping
+    const { brandId, name, } = taping
     const show = { id: getId(), name, brandId, }
     console.log(show)
 

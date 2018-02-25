@@ -15,7 +15,7 @@ export class Name extends Component {
   }
 
   render() {
-    const { name, placeholder } = this.props
+    const { name, placeholder, } = this.props
 
     return (
       <span className="name-input">

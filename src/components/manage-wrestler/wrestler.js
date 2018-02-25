@@ -14,12 +14,12 @@ const genderLabels = [
   {
     id: true,
     name: "male",
-    style: { backgroundColor: "MidnightBlue", color: "white" },
+    style: { backgroundColor: "MidnightBlue", color: "white", },
   },
   {
     id: false,
     name: "female",
-    style: { backgroundColor: "MediumVioletRed", color: "white" },
+    style: { backgroundColor: "MediumVioletRed", color: "white", },
   },
 ]
 const createStyle = {

@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import pick from "lodash.pick"
 import sortBy from "lodash.sortby"
 
-import withStyle from "../../hoc/withStyle"
+import withStyle from "../../hoc/withHighlightedStyle"
 import withRoster from "../../hoc/withRoster"
 
 import EmptyRoster from "../../components/empty-roster"

@@ -45,7 +45,7 @@ class ImportData extends Component {
   }
 
   render() {
-    const columns = "inner col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
+    const columns = "inner shadow pulse col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
     const { title, importComplete, } = this.state
     const { data, } = this.props.data
 
@@ -57,7 +57,7 @@ class ImportData extends Component {
       <div className="import-data">
         <Escape onEscape={this.onClose}>
           <Lightbox show={importComplete} onClose={this.onClose}>
-            <Tick /> "{title}" complete!
+            <Tick /> {title} complete!
           </Lightbox>
         </Escape>
         <div className="row">

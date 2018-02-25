@@ -1,7 +1,7 @@
 import { compose, withProps, renderNothing, branch } from "recompose"
 
 import withBrands from "../../hoc/withBrands"
-import withStyle from "../../hoc/withStyle"
+import withStyle from "../../hoc/withHighlightedStyle"
 import withRoster from "../../hoc/withRoster"
 
 import Segments from "./segments"

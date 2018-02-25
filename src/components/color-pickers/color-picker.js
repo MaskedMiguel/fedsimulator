@@ -1,12 +1,14 @@
-import React from "react"
+import React, { Component } from "react"
 import { GithubPicker as Picker } from "react-color"
 import PropTypes from "prop-types"
 
 import { colors } from "../../constants/colors"
 
-const noop = () => {}
+import "./color-picker.scss"
 
-class ColorPicker extends React.Component {
+const NOOP = () => {}
+
+class ColorPicker extends Component {
   state = {
     displayColorPicker: false,
   }
@@ -29,7 +31,7 @@ class ColorPicker extends React.Component {
 
   render() {
     return (
-      <div style={this.props.style} onKeyPress={this.handleClick} onClick={this.handleClick} className="color-picker">
+      <div style={this.props.style} onKeyPress={this.handleClick} onClick={this.handleClick} className="color-picker only">
         {this.state.displayColorPicker ? (
           <div className="popover" onKeyPress={this.handleClose} onClick={this.handleClose}>
             <div className="cover" tabIndex="0" />
@@ -50,8 +52,8 @@ ColorPicker.propTypes = {
 }
 
 ColorPicker.defaultProps = {
-  onClick: noop,
-  onChange: noop,
+  onClick: NOOP,
+  onChange: NOOP,
   style: {},
 }
 

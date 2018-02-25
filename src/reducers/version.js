@@ -1,11 +1,11 @@
-export const defaultState = 6.1
+import VERSION from "../constants/version"
 
-export default (state = defaultState, action) => {
+export default (state = VERSION, action) => {
   state = JSON.parse(JSON.stringify(state))
 
   switch (action.type) {
     case "RESET":
-      state = defaultState
+      state = VERSION
       break
     case "CHECK_VERSION":
       break

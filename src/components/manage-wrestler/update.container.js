@@ -2,7 +2,7 @@ import { compose, withProps } from "recompose"
 
 import withBrands from "../../hoc/withBrands"
 import withChampionships from "../../hoc/withChampionships"
-import withStyle from "../../hoc/withStyle"
+import withStyle from "../../hoc/withHighlightedStyle"
 
 import { WRESTLER_CONFIRM_DELETE } from "../../constants/confirmations"
 import { updateWrestler, deleteWrestler } from "../../actions/roster"

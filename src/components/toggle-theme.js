@@ -3,25 +3,22 @@ import { connect } from "react-redux"
 import { compose } from "recompose"
 
 import { toggleLight, toggleDark } from "../actions/style"
+import Button from "../components/button/button"
 
 const NOOP = () => {}
 
-export const ToggleTheme = ({
-  style = {},
-  onToggleDark = NOOP,
-  onToggleLight = NOOP,
-}) => (
+export const ToggleTheme = ({ style = {}, onToggleDark = NOOP, onToggleLight = NOOP, }) => (
   <span>
     <Choose>
       <When condition={style.light}>
-        <a onClick={onToggleDark}>
-          <i className="icon fa far fa-lightbulb" style={{ color: "black" }} />
-        </a>
+        <Button style={{ backgroundColor: "black", }} onClick={onToggleDark}>
+          &nbsp;
+        </Button>
       </When>
       <Otherwise>
-        <a onClick={onToggleLight}>
-          <i className="icon fa far fa-lightbulb" style={{ color: "white" }} />
-        </a>
+        <Button style={{ backgroundColor: "white", }} onClick={onToggleLight}>
+          &nbsp;
+        </Button>
       </Otherwise>
     </Choose>
   </span>
@@ -35,8 +32,8 @@ export const enhance = compose(
     dispatch => ({
       onToggleDark: () => dispatch(toggleDark()),
       onToggleLight: () => dispatch(toggleLight()),
-    }),
-  ),
+    })
+  )
 )
 
 export default enhance(ToggleTheme)

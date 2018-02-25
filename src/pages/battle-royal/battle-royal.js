@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import Loadable from "react-loadable"
 
 import ComponentLoader from "../../components/component-loader"
-import { Reset, Generate } from "../../components/icons"
-import Button from "../../components/button/withDarkStyle"
+import Button from "../../components/button/button"
 import HeaderOne from "../../components/header/header"
 import Labels from "../../components/labels/labels"
 import Slider from "../../components/form/slider"
@@ -43,13 +42,12 @@ const BattleRoyal = ({
       <HeaderOne>
         Battle Royal
         <span tabIndex="0" className="tools">
-          <Generate onClick={onGenerateEntries} title="Generate match" />
-          <Reset onClick={onClear} />
+          <Button value="Reset" onClick={onClear} classes="btn-bad" />
         </span>
       </HeaderOne>
       <div className="row">
-        <div style={style} className="col-xs center-xs start-lg start-md start-sm panel">
-          <div className="box">
+        <div className="col-xs center-xs start-lg start-md start-sm panel">
+          <div className="box" style={style}>
             <div className="form-group">
               <label htmlFor="entry">
                 Entry amount ({amountOfEntries} / {maxEntries})
@@ -66,15 +64,14 @@ const BattleRoyal = ({
               <Button style={style.darkStyle} onClick={onGenerateEntries}>
                 Generate entries
               </Button>
+              &nbsp;
               <Choose>
                 <When condition={winner}>
                   <h3>Winner!</h3>
                   <Wrestler wrestler={winner} />
                 </When>
                 <Otherwise>
-                  <Button style={style.darkStyle} onClick={onSimulate}>
-                    {simulateButtonTitle}
-                  </Button>
+                  <Button style={style.darkStyle} onClick={onSimulate} value={simulateButtonTitle} />
                 </Otherwise>
               </Choose>
             </div>

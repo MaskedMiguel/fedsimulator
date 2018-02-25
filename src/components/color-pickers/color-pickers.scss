@@ -18,23 +18,18 @@
 }
 
 .color-pickers {
-  border: 0.2rem solid currentColor;
-  height: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .1rem solid currentColor;
   margin: 0;
   padding: 0;
-  width: 2.7rem;
 
   .color-picker {
-    display: flex;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  .col {
-    padding-left: 0;
-    padding-right: 0;
+    content: "";
+    width: 1.7rem;
+    border: none;
+    height: 1rem;
   }
 }
 

@@ -4,7 +4,7 @@ import pick from "lodash.pick"
 
 import withBrands from "../../hoc/withBrands"
 import withChampionships from "../../hoc/withChampionships"
-import withStyle from "../../hoc/withStyle.js"
+import withStyle from "../../hoc/withHighlightedStyle.js"
 
 import { createWrestler } from "../../actions/roster"
 

@@ -3,7 +3,7 @@ import { compose } from "recompose"
 import PropTypes from "prop-types"
 
 import withBrands from "../../hoc/withBrands"
-import withStyle from "../../hoc/withStyle"
+import withStyle from "../../hoc/withHighlightedStyle"
 
 import { updateBrand, deleteBrand } from "../../actions/brands"
 import Collection from "./collection"

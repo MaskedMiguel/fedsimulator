@@ -19,34 +19,34 @@ class Data extends Component {
 
   render() {
     const { totals, style, } = this.props
-    const columns = "col-xs-6 col-md-6 col-md-3 col-lg-3 center-xs middle-xs"
+    const columns = "col-xs-6 col-md-6 col-md-3 col-lg-3 center-xs middle-xs shadow pulse"
 
     return (
-      <div>
+      <div className="wrapper">
         <div className="row">
-          <div className={columns} style={style}>
-            <div className="box">
+          <div className={columns}>
+            <div className="box" style={style}>
               <header>
                 <Reset onClick={this.onResetRoster} /> <Icon icon="users" /> {totals.roster} wrestlers
               </header>
             </div>
           </div>
-          <div className={columns} style={style}>
-            <div className="box">
+          <div className={columns}>
+            <div className="box" style={style}>
               <header>
                 <Reset onClick={this.onResetChampionships} /> <Icon icon="trophy" /> {totals.championships} championships
               </header>
             </div>
           </div>
-          <div className={columns} style={style}>
-            <div className="box">
+          <div className={columns}>
+            <div className="box" style={style}>
               <header>
                 <Reset onClick={this.onResetBrands} /> <Icon icon="tv" /> {totals.brands} brands
               </header>
             </div>
           </div>
-          <div className={columns} style={style}>
-            <div className="box">
+          <div className={columns}>
+            <div className="box" style={style}>
               <header>
                 <Reset onClick={this.onResetTapings} /> <Icon icon="film" /> {totals.tapings} tapings
               </header>
@@ -67,7 +67,7 @@ Data.propTypes = {
 
 export const enhance = compose(
   connect(state => ({
-    style: state.style,
+    style: state.style.highlighted,
     totals: {
       championships: state.championships.length,
       roster: state.roster.length,

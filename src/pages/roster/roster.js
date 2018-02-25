@@ -6,7 +6,7 @@ import Wrestlers from "../../components/wrestlers/container"
 import Collection from "../../components/collection/wrestlers.container"
 import AddWrestler from "../../components/manage-wrestler/create.container"
 import EditWrestler from "../../components/manage-wrestler/update.container"
-import { Reset, ListToggle, Create } from "../../components/icons"
+import Button from "../../components/button/button"
 
 import "./roster.scss"
 
@@ -24,17 +24,15 @@ const RosterPage = ({
   style = {},
 }) => {
   const hasPane = creating || currentWrestler
-  const col = hasPane
-    ? "col-lg-6 col-md-6 col-sm-6 col-xs-12"
-    : "col-lg-12 col-md-12 col-sm-12 col-xs-12"
+  const col = hasPane ? "col-lg-6 col-md-6 col-sm-6 col-xs-12" : "col-lg-12 col-md-12 col-sm-12 col-xs-12"
   return (
     <div className="page roster">
       <HeaderOne>
         Manage Roster
         <span tabIndex="0" className="tools">
-          <Create onClick={onToggleCreating} ritle="Create wrestler" />
-          <ListToggle onClick={onToggleListView} title="Toggle list view" />
-          <Reset onClick={onClear} title="Clear roster" />
+          <Button onClick={onToggleCreating} value="Create wrestler" classes="btn-good" />&nbsp;
+          <Button onClick={onToggleListView} value="Toggle list view" />&nbsp;
+          <Button onClick={onClear} value="Delete all" classes="btn-bad" />
         </span>
       </HeaderOne>
       <div className="row">

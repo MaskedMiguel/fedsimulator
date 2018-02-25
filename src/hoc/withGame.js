@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import { compose } from "recompose"
 
 export const withGame = compose(
-  connect(({ game }) => ({
+  connect(({ game, }) => ({
     game,
   }))
 )

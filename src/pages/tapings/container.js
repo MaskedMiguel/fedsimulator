@@ -1,7 +1,7 @@
 import { compose } from "recompose"
 import { connect } from "react-redux"
 
-import withStyle from "../../hoc/withStyle.js"
+import withStyle from "../../hoc/withHighlightedStyle.js"
 
 import { resetTapings } from "../../actions/tapings"
 import { TAPINGS_CONFIRM_RESET } from "../../constants/confirmations"

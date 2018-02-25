@@ -14,7 +14,7 @@ button {
 	font-family: inherit;
   padding: $button-padding;
   width: auto;
-  margin: 0.5rem 0.5rem 0.5rem 0;
+  margin: 0;
   padding: 0.3rem 0.7rem;
   border-radius: 0.1rem;
 }
@@ -30,7 +30,7 @@ button.btn-good {
 }
 
 button.btn-bad {
-  background-color: darkred;
+  background-color: #cc0101;
   color: white;
 }
 

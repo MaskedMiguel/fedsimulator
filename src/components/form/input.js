@@ -21,6 +21,7 @@ const Input = ({ label, name, onChange, placeholder, style, value, }) => (
       onKeyPress={onChange}
       placeholder={placeholder}
       type="text"
+      className="shadow"
     />
   </div>
 )

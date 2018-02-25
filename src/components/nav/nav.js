@@ -1,6 +1,6 @@
 import React from "react"
 import classnames from "classnames"
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 import { Icon } from "../icons"
@@ -14,7 +14,9 @@ const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, link
     <nav className="nav" style={style}>
       <div className="nav-left">
         <h1>
-          <Link to="/">Fed Simulator</Link>
+          <Link replace to="/">
+            Fed Simulator
+          </Link>
         </h1>
       </div>
       <If condition={links.length > 0}>
@@ -30,8 +32,7 @@ const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, link
                 key={key}
                 style={{ color: style.color, }}
                 to={url}
-                onClick={toggleSubMenuOpen}
-              >
+                onClick={toggleSubMenuOpen}>
                 <Icon icon={icon} style={style} tabIndex={-1} />&nbsp;
                 <div tabIndex="1">{title}</div>
               </Link>

@@ -11,9 +11,8 @@ export const Label = ({ style = {}, id = "", active = false, onClick = NOOP, nam
     tabIndex="0"
     onKeyPress={() => onClick(id)}
     onClick={() => onClick(id)}
-    className={classnames({ active: active, }, "pulse", "label", "title")}
-    style={style}
-  >
+    className={classnames({ active: active, }, "shadow", "pulse", "label", "title")}
+    style={style}>
     {name}
   </span>
 )

@@ -4,7 +4,7 @@
   margin: 0 0.5rem;
 
   .small.col-xs {
-    max-width: 4rem;
+    max-width: 5rem;
     justify-content: flex-end;
   }
 
@@ -21,6 +21,7 @@
     }
     input {
       padding: 1rem;
+      box-shadow: none;
     }
   }
 

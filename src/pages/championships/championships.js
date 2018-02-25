@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import HeaderOne from "../../components/header/header"
 import Create from "../../components/create/championship.container.js"
 import Collection from "../../components/collection/championships.container"
-import { Reset } from "../../components/icons"
+import Button from "../../components/button/button"
 
 import "./championships.scss"
 
@@ -15,7 +15,7 @@ const Championships = ({ onClear = NOOP, }) => (
     <HeaderOne>
       Manage Championships
       <span tabIndex="0" className="tools">
-        <Reset onClick={onClear} />
+        <Button value="Delete all" onClick={onClear} classes="btn-bad" />
       </span>
     </HeaderOne>
     <Create />

@@ -8,12 +8,12 @@ import Nav from "../../components/nav/container"
 import "./site.scss"
 import "../../stylesheets/base.scss"
 
-const SiteLayout = ({ children = "", classnames = "", style = {}, invertedStyle = {}, name = "Fed Simulator", links = [], }) => {
+const SiteLayout = ({ children = "", classnames = "", style = {}, name = "Fed Simulator", links = [], }) => {
   return (
-    <div id="page-container" style={invertedStyle} className={classNames(classnames, ["site", "page-container", "no-select",])}>
+    <div id="page-container" style={style.container} className={classNames(classnames, ["site", "page-container", "no-select",])}>
       <main>
         <aside>
-          <Nav name={name} tabIndex="0" links={links} style={style} modifier="main" />
+          <Nav name={name} tabIndex="0" links={links} style={style.highlighted} modifier="main" />
         </aside>
         {children}
       </main>
