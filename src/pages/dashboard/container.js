@@ -15,6 +15,6 @@ export default compose(
     rankedMaleWrestlers: orderBy(state.roster.filter(wrestler => wrestler.male), "points", "desc"),
     rankedFemaleWrestlers: orderBy(state.roster.filter(wrestler => !wrestler.male), "points", "desc"),
     ...state.game,
-    style: state.style.container,
+    style: state.style.highlighted,
   }))
 )(Dashboard)

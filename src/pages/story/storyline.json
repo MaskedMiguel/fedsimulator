@@ -1,0 +1,16 @@
+[
+  {
+    "stage": 0,
+    "type": "bout",
+    "props": {
+      "title": "Your debut match!"
+    }
+  },
+  {
+    "stage": 1,
+    "type": "scene",
+    "props": {
+      "title": "Your first scene"
+    }
+  }
+]

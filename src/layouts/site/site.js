@@ -1,6 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import PropTypes from "prop-types"
+import { NavLink } from "react-router-dom"
 
 import StyleBrands from "../style-brands"
 import Nav from "../../components/nav/container"
@@ -13,9 +14,15 @@ const SiteLayout = ({ children = "", classnames = "", style = {}, name = "Fed Si
     <div id="page-container" style={style.container} className={classNames(classnames, ["site", "page-container", "no-select",])}>
       <main>
         <aside>
-          <Nav name={name} tabIndex="0" links={links} style={style.highlighted} modifier="main" />
+          <Nav name={name} tabIndex="0" links={links} style={style.highlighted} modifier="main">
+            <div className="nav-left">
+              <h1>
+                <NavLink to="/">Fed Simulator</NavLink>
+              </h1>
+            </div>
+          </Nav>
         </aside>
-        {children}
+        <section className="page">{children}</section>
       </main>
       <StyleBrands />
     </div>
@@ -31,11 +38,6 @@ SiteLayout.propTypes = {
   style: PropTypes.object,
   invertedStyle: PropTypes.object,
   links: PropTypes.array,
-}
-
-SiteLayout.defaultProps = {
-  name: "Fed Simulator",
-  classnames: "",
 }
 
 export default SiteLayout

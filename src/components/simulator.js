@@ -75,8 +75,8 @@ Simulator.displayName = "PageSecondary"
 
 Simulator.propTypes = {
   dispatch: PropTypes.func,
-	championships: PropTypes.array,
-	roster: PropTypes.array,
+  championships: PropTypes.array,
+  roster: PropTypes.array,
   simulationCount: PropTypes.number,
   simulationSpeed: PropTypes.oneOfType([PropTypes.number, PropTypes.string,]),
 }

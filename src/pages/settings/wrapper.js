@@ -14,7 +14,7 @@ import HeaderOne from "../../components/header/header"
 class SettingsWrapper extends Component {
   render() {
     return (
-      <section className="page settings">
+      <div className="settings">
         <HeaderOne>
           Settings
           <span tabIndex="0" className="tools">
@@ -23,7 +23,7 @@ class SettingsWrapper extends Component {
           </span>
         </HeaderOne>
         <Settings />
-      </section>
+      </div>
     )
   }
 

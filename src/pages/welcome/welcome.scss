@@ -1,6 +1,6 @@
 @import "src/stylesheets/breakpoints";
 
-.page.welcome {
+.page .welcome {
   font-size: 1rem;
   font-weight: 100;
   margin-top: 1rem;
@@ -11,8 +11,7 @@
     color: white;
   }
 
-  .gameReady,
-  .social {
+  .bar {
     font-size: medium;
     padding: 1rem;
 

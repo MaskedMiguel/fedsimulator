@@ -2,14 +2,15 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import { compose } from "recompose"
 import { withRouter } from "react-router-dom"
-
 import PropTypes from "prop-types"
+
+import withGame from "../../hoc/withGame"
 
 class DefaultPage extends Component {
   componentWillMount() {
     let pathName = "dashboard"
 
-    if (!this.props.name) {
+    if (!this.props.game.name) {
       pathName = "/welcome"
     }
 
@@ -24,14 +25,10 @@ class DefaultPage extends Component {
 DefaultPage.displayName = "DefaultPage"
 
 DefaultPage.propTypes = {
-  name: PropTypes.string.isRequired,
+  game: PropTypes.object,
+  history: PropTypes.object,
 }
 
-export const enhance = compose(
-  withRouter,
-  connect(state => ({
-    name: state.game.name,
-  }))
-)
+export const enhance = compose(withRouter, withGame)
 
 export default enhance(DefaultPage)

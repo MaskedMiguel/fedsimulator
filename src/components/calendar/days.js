@@ -2,7 +2,7 @@ import React from "react"
 import classnames from "classnames"
 import PropTypes from "prop-types"
 
-const defaultDaysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",]
+const defaultDaysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat",]
 
 export const DayNames = ({ daysOfWeek = defaultDaysOfWeek, }) => (
   <span className="weekday-names">

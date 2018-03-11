@@ -1,35 +1,38 @@
 import React from "react"
+import { NavLink } from "react-router-dom"
 import classNames from "classnames"
-import { connect } from "react-redux"
 import PropTypes from "prop-types"
-import { Link } from "react-router-dom"
+import { compose } from "recompose"
 
-import Budget from "../../components/budget/container"
+// import Budget from "../../components/budget/container"
+import Nav from "../../components/nav/nav"
 import StyleBrands from "../style-brands"
+import withStyle from "../../hoc/withStyle"
+
+import links from "./links.json"
 
 import "./story.scss"
 import "../../stylesheets/base.scss"
 
-const StoryLayout = ({ children = "", classnames = "", style = {}, }) => (
-  <div id="page-container" style={style} className={classNames(classnames, ["story", "page-container", "no-select",])}>
-    <main>
-      <div className="row go-back center-xs middle-xs">
-        <div className="col-xs start-lg start-md start-sm center-xs">
-          <div className="box">
-            <Link to="/dashboard">Go back to management</Link>
+const StoryLayout = ({ children = "", classnames = "", style = {}, }) => {
+  return (
+    <div id="page-container" style={style.highlighted} className={classNames(classnames, ["story", "page-container", "no-select",])}>
+      <main>
+        <Nav style={style.container} links={links}>
+          <div className="nav-left">
+            <h1>
+              <NavLink exact to="/">
+                Fed Sim
+              </NavLink>
+            </h1>
           </div>
-        </div>
-        <div className="col-xs end-lg end-md end-sm center-xs">
-          <div className="box">
-            <Budget />
-          </div>
-        </div>
-      </div>
-      {children}
-    </main>
-    <StyleBrands />
-  </div>
-)
+        </Nav>
+        <section className="page">{children}</section>
+      </main>
+      <StyleBrands />
+    </div>
+  )
+}
 
 StoryLayout.displayName = "StoryLayout"
 
@@ -39,10 +42,6 @@ StoryLayout.propTypes = {
   style: PropTypes.object,
 }
 
-StoryLayout.defaultProps = {
-  classnames: "",
-}
+const enhance = compose(withStyle)
 
-export default connect(state => ({
-  style: state.style.highlighted,
-}))(StoryLayout)
+export default enhance(StoryLayout)

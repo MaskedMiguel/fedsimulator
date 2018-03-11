@@ -13,7 +13,7 @@ import "./draft.scss"
 const NOOP = () => {}
 
 const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, }) => (
-  <section className="page draft">
+  <div className="draft">
     <HeaderOne>Draft</HeaderOne>
     <If condition={brands.length === 0}>
       <Create placeholder={ADD_BRAND_ENTRY} />
@@ -37,7 +37,7 @@ const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, }) => (
         })}
       </div>
     </If>
-  </section>
+  </div>
 )
 
 DraftPage.propTypes = {

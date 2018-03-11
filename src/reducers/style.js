@@ -3,13 +3,14 @@ import chromatism from "chromatism"
 import Model from "../models/style.model"
 import { shade as shadeFn } from "../helpers/shade"
 
+const shade = -10
+
 const updateStyle = state => {
   const hex = state.get("hex")
   const isLight = state.get("light")
-  const shade = -20
 
-  const lightBackgroundColor = shadeFn(hex, shade)
-  const darkBG = shadeFn(lightBackgroundColor, shade + 10)
+  const lightBackgroundColor = hex
+  const darkBG = shadeFn(lightBackgroundColor, shade + -30)
 
   const highlightBG = lightBackgroundColor
   const highlightColor = chromatism.contrastRatio(highlightBG).hex

@@ -6,13 +6,14 @@ $wrestlers-points-dimensions: 1rem;
 .wrestler {
   align-items: center;
   background-color: black;
-  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
   color: white;
   display: inline-flex;
   font-size: x-small;
-  height: 1.8rem;
+  height: 2.7rem;
   margin: 0.3rem;
-  min-width: 4.5rem;
+  min-width: 6rem;
   overflow: hidden;
   padding: 0.2rem;
   word-wrap: break-word;

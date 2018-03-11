@@ -10,7 +10,6 @@ import withBrands from "../../hoc/withBrands"
 import withMonthlyTapings from "../../hoc/withMonthlyTapings"
 import withGame from "../../hoc/withGame"
 
-import defaultGame from "../../models/game.model"
 import { addOneDayToGame, updateGame } from "../../actions/game"
 import { WEEK_TICK_TIMER, SKIP_MONTH_FINE, SKIP_MATCH_FINE } from "../../constants/game"
 import { SKIP_MATCH_CONFIRM_CLEAR } from "../../constants/confirmations"
@@ -75,9 +74,9 @@ const propsMapper = props => {
   return {
     todaysShow,
     brand: brands.find(item => item.id === brandId),
-    goToShow: id => props.history.push(`/story/show/${id}`),
+    goToBout: () => props.history.push(`/story/next-stage`),
     skipShow: () => props.onUpdateGame({ date: addDays(date, 1), budget: budget - SKIP_MONTH_FINE, }),
-    onReset: () => props.onUpdateGame(defaultGame),
+    onReset: () => props.onUpdateGame({ started: false, wrestlerId: null, matchId: null, male: null, brandId: null, }),
     onTogglePause: () => props.onUpdateGame({ paused: !paused, }),
     skipMonth: () => {
       if (confirm(SKIP_MATCH_CONFIRM_CLEAR)) {

@@ -3,20 +3,13 @@ import { List } from "immutable"
 import Model from "../models/match.model"
 import WrestlersReducer from "./match.wrestlers"
 
-import { getId } from "../models/model.helper"
-
 export default (state, action) => {
   state = List(state)
   let index
 
   switch (action.type) {
     case "CREATE_MATCH":
-      {
-        const payload = action.payload || {}
-        const id = action.payload.id ? action.payload.id : getId()
-
-        state = state.push(new Model(payload).merge({ id, }))
-      }
+      state = state.push(new Model(action.payload))
       break
     case "RANDOMISE_MATCH":
       {
@@ -90,6 +83,32 @@ export default (state, action) => {
         item.wrestlers = []
         return item
       })
+      break
+    case "HIT_MOVE_IN_MATCH":
+      {
+        const { id, damage, defenciveId, offensiveId, } = action.payload
+
+        index = state.findIndex(item => item.id === id)
+
+        let nowHasAWinner = false
+
+        state = state.updateIn([index,], bout => {
+          const offensiveIndex = bout.wrestlers.findIndex(item => item.id === offensiveId)
+          const defenciveIndex = bout.wrestlers.findIndex(item => item.id === defenciveId)
+          const health = bout.wrestlers[defenciveIndex].health - damage
+          nowHasAWinner = health < 1
+          bout.wrestlers[defenciveIndex].health = health
+          bout.wrestlers[defenciveIndex].loser = nowHasAWinner
+
+          if (nowHasAWinner) {
+            bout.wrestlers[offensiveIndex].winner = true
+          }
+
+          bout.simulated = bout.wrestlers.filter(item => item.health < 1).length > 0
+          bout.wrestlers = new WrestlersReducer(bout.wrestlers, action)
+          return bout
+        })
+      }
       break
     case "RESET_MATCHES":
     case "RESET":

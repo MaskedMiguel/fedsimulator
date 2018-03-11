@@ -1,8 +1,13 @@
-.page.create-a-match {
+.page .create-a-match {
   .Droppable {
     min-height: 3.2rem;
   }
-  .teams {
+
+  .team {
     margin-bottom: 1rem;
+  }
+
+  .hasWinner .last {
+    display: none;
   }
 }

@@ -11,7 +11,7 @@ button {
   cursor: pointer;
   font-weight: $button-font-weight;
   font-size: $button-font-size;
-	font-family: inherit;
+  font-family: inherit;
   padding: $button-padding;
   width: auto;
   margin: 0;
@@ -36,4 +36,13 @@ button.btn-bad {
 
 button.btn-large {
   font-size: large;
+  margin: 0 1rem;
+}
+
+button.btn-small {
+  font-size: small;
+}
+
+button.btn-square {
+  border-radius: 0;
 }

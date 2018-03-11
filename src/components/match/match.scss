@@ -6,13 +6,13 @@ $match-border-color: #a4a3a3;
 .match .team {
   margin-bottom: 0.5rem;
 
+  &.last {
+    opacity: 0.4;
+  }
+
   .dropzone {
     min-height: inherit;
     border: 0.1rem solid $match-border-color;
-  }
-
-  &:last-of-type {
-    opacity: 0.4;
   }
 
   .active {
@@ -23,16 +23,15 @@ $match-border-color: #a4a3a3;
     color: $inactive-color;
   }
 
-  .points {
-    font-size: x-small;
-  }
-
   .member {
-    flex-grow: 1;
     margin: 0.1rem;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     display: flex;
+    flex-grow: 1;
+
+    .tools {
+      justify-content: space-around;
+      flex-direction: column;
+      display: flex;
+    }
   }
 }

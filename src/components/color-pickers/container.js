@@ -6,16 +6,8 @@ import ColorPickers from "./color-pickers"
 import { updateStyleHex } from "../../actions/style"
 
 class ColorPickersContainer extends Component {
-  onChangeBackgroundColor = hex => {
-    const { backgroundColor, color, dispatch, } = this.props
-
-    dispatch(updateStyleHex(hex))
-  }
-
-  shouldComponentUpdate() {
-    return true
-  }
-
+  onChangeBackgroundColor = hex => this.props.dispatch(updateStyleHex(hex))
+  shouldComponentUpdate = () => true
   render() {
     const { backgroundColor, color, } = this.props
     return <ColorPickers backgroundColor={backgroundColor} color={color} onChangeBackgroundColor={this.onChangeBackgroundColor} />

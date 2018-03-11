@@ -1,0 +1,17 @@
+.page.bout {
+  header {
+    line-height: normal;
+    font-variant: small-caps;
+    font-size: 3vh;
+    line-height: 3.5vh;
+    letter-spacing: 0.5vw;
+    margin: 3vh 0 0;
+    padding-bottom: 2vh;
+    text-shadow: 2px 2px 2px black;
+
+    &:hover {
+      filter: invert(30%);
+      text-shadow: none;
+    }
+  }
+}

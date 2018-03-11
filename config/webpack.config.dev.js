@@ -37,23 +37,6 @@ module.exports = {
 
     devtoolModuleFilenameTemplate: info => path.resolve(info.absoluteResourcePath).replace(/\\/g, "/"),
   },
-  resolve: {
-    modules: ["node_modules", paths.appNodeModules,].concat(process.env.NODE_PATH.split(path.delimiter).filter(Boolean)),
-
-    extensions: [".web.js", ".js", ".json", ".web.jsx", ".jsx",],
-    alias: {
-      "react-native": "react-native-web",
-    },
-    plugins: [
-      new CopyWebpackPlugin([
-        {
-          from: paths.appPublic,
-          to: "static/",
-        },
-      ]),
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson,]),
-    ],
-  },
   module: {
     strictExportPresence: true,
     rules: [
@@ -92,6 +75,10 @@ module.exports = {
             ],
           },
           {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,
+            use: "file?name=[name].[ext]",
+          },
+          {
             exclude: [/\.js$/, /\.html$/, /\.json$/,],
             loader: require.resolve("file-loader"),
             options: {
@@ -119,8 +106,6 @@ module.exports = {
     new CaseSensitivePathsPlugin(),
 
     new WatchMissingNodeModulesPlugin(paths.appNodeModules),
-
-    new webpack.IgnorePlugin(/^\.\/locale$/),
   ],
 
   node: {

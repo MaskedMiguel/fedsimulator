@@ -11,7 +11,7 @@ import "./brands.scss"
 const NOOP = () => {}
 
 const BrandsPage = ({ onClear = NOOP, }) => (
-  <section className="page manage-brands">
+  <div className="manage-brands">
     <HeaderOne>
       Manage Brands
       <span tabIndex="0" className="tools">
@@ -20,7 +20,7 @@ const BrandsPage = ({ onClear = NOOP, }) => (
     </HeaderOne>
     <Create />
     <Collection />
-  </section>
+  </div>
 )
 
 BrandsPage.propTypes = {

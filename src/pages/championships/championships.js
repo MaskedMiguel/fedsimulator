@@ -11,7 +11,7 @@ import "./championships.scss"
 const NOOP = () => {}
 
 const Championships = ({ onClear = NOOP, }) => (
-  <section className="page manage-championships">
+  <div className="manage-championships">
     <HeaderOne>
       Manage Championships
       <span tabIndex="0" className="tools">
@@ -20,7 +20,7 @@ const Championships = ({ onClear = NOOP, }) => (
     </HeaderOne>
     <Create />
     <Collection />
-  </section>
+  </div>
 )
 
 Championships.propTypes = {

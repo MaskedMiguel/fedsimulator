@@ -10,7 +10,9 @@ import "../../stylesheets/base.scss"
 
 const GameLayout = ({ children = "", classnames = "", style = {}, }) => (
   <div id="page-container" style={style.container} className={classNames(classnames, ["welcome", "page-container", "no-select",])}>
-    <main>{children}</main>
+    <main>
+      <section className="page">{children}</section>
+    </main>
   </div>
 )
 
@@ -20,11 +22,6 @@ GameLayout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node,]),
   classnames: PropTypes.string,
   style: PropTypes.object,
-}
-
-GameLayout.defaultProps = {
-  classnames: "",
-  style: {},
 }
 
 const enhance = compose(withStyle)

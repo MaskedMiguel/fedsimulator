@@ -5,13 +5,20 @@ import { BUDGET } from "../constants/game"
 export const schema = {
   id: undefined,
   name: "",
+  date: new Date(2018, 1, 1),
+  stage: 0,
+
   started: false,
   paused: false,
-  date: new Date(2018, 1, 1),
+
   foes: [],
   friends: [],
+
   brandId: null,
   wrestlerId: null,
+  matchId: null,
+  storyId: null,
+
   male: null,
   budget: BUDGET,
 }

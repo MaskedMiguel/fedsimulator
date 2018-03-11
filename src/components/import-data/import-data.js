@@ -56,7 +56,7 @@ class ImportData extends Component {
     return (
       <div className="import-data">
         <Escape onEscape={this.onClose}>
-          <Lightbox show={importComplete} onClose={this.onClose}>
+          <Lightbox isVisible={importComplete} onClose={this.onClose}>
             <Tick /> {title} complete!
           </Lightbox>
         </Escape>

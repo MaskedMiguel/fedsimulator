@@ -1,42 +1,34 @@
 [
   {
-    "url": "dashboard",
-    "title": "Dashboard",
-    "icon": "tachometer-alt"
+    "url": "/dashboard",
+    "title": "Dashboard"
   },
   {
-    "url": "create-a-match",
-    "title": "Create a match",
-    "icon": "ambulance"
+    "url": "/create-match",
+    "title": "Create a match"
   },
   {
-    "url": "battle-royal",
-    "title": "Battle Royal",
-    "icon": "unlink"
+    "url": "/battle-royal",
+    "title": "Battle Royal"
   },
   {
-    "url": "draft",
-    "title": "Draft",
-    "icon": "columns"
+    "url": "/draft",
+    "title": "Draft"
   },
   {
-    "url": "roster",
-    "title": "Roster",
-    "icon": "users"
+    "url": "/roster",
+    "title": "Roster"
   },
   {
-    "url": "brands",
-    "title": "Brands",
-    "icon": "tv"
+    "url": "/brands",
+    "title": "Brands"
   },
   {
-    "url": "championships",
-    "title": "Championships",
-    "icon": "trophy"
+    "url": "/championships",
+    "title": "Championships"
   },
   {
-    "url": "settings",
-    "title": "Settings",
-    "icon": "cog"
+    "url": "/settings",
+    "title": "Settings"
   }
 ]

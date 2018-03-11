@@ -6,7 +6,7 @@ import "./button.scss"
 
 const NOOP = () => {}
 
-const Button = ({ autoFocus = false, value = "", children = {}, classes = "", onClick = NOOP, style = {}, }) => (
+const Button = ({ autoFocus = false, value = "", children = "", classes = "", onClick = NOOP, style = {}, }) => (
   <button
     style={style}
     autoFocus={autoFocus}
@@ -18,13 +18,6 @@ const Button = ({ autoFocus = false, value = "", children = {}, classes = "", on
     {value ? value : children}
   </button>
 )
-
-Button.defaultProps = {
-  value: "",
-  classes: "",
-  onClick: NOOP,
-  style: {},
-}
 
 Button.propTypes = {
   autoFocus: PropTypes.any,

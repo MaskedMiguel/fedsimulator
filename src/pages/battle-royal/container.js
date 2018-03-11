@@ -12,7 +12,7 @@ import BattleRoyal from "./battle-royal"
 import { generateEntries, resetBattleRoyal, updateBattleRoyal, eliminateEntry } from "../../actions/battle-royal"
 import { ELIMINATION_TICK_TIMER } from "../../constants/game"
 
-const validProps = ["onClear", "dispatch", "onGenerate", "male", "entries", "eliminations", "winner",]
+const validProps = ["dispatch", "onGenerate", "male", "entries", "eliminations", "winner",]
 
 const propsMapper = props => {
   const { roster, male, entries, amountOfEntries, simulate, } = props
@@ -66,8 +66,8 @@ export default compose(
       onEliminateEntry: entries => dispatch(eliminateEntry(entries)),
       onGenderUpdate: male => dispatch(updateBattleRoyal({ eliminations: [], entries: [], simulate: false, male: !male, })),
       onSimulate: simulate => dispatch(updateBattleRoyal({ simulate: !simulate, })),
-      onClear: () => dispatch(resetBattleRoyal()),
       onGenerateEntries: props => dispatch(generateEntries(props)),
+      onClear: () => dispatch(resetBattleRoyal()),
       onUpdateAmountOfEntries: ({ currentTarget: { value, }, }) => dispatch(updateBattleRoyal({ amountOfEntries: Number(value), })),
     })
   ),

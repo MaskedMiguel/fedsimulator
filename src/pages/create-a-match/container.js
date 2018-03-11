@@ -1,54 +1,21 @@
-import { compose, withProps, lifecycle, withStateHandlers, branch, renderComponent } from "recompose"
+import { compose, withProps, branch, renderComponent } from "recompose"
 import { connect } from "react-redux"
-import { withRouter } from "react-router"
 import { List } from "immutable"
 
-import withStyle from "../../hoc/withHighlightedStyle.js"
-import withRoster from "../../hoc/withRoster.js"
+import withStyle from "../../hoc/withHighlightedStyle"
+import withRoster from "../../hoc/withRoster"
+import withBout from "../../hoc/withBout"
 
-import EmptyRoster from "../../components/empty-roster.js"
+import EmptyRoster from "../../components/empty-roster"
 import CreateAMatch from "./create-a-match"
 
 import { getId } from "../../models/model.helper"
-import { createMatch, simulateMatch, addWrestlerToMatch, randomiseMatch } from "../../actions/matches"
-import { MATCH_CONFIRM_RESET } from "../../constants/confirmations"
+import { simulateMatch, addWrestlerToMatch, randomiseMatch } from "../../actions/matches"
 
 export const pick = items => items[Math.floor(Math.random() * (items.length - 1))]
 
-export const lifecycleMapper = lifecycle({
-  componentWillMount() {
-    const { setId, onCreate, } = this.props
-    let id
-
-    if (!this.props.match.params.id) {
-      id = getId()
-
-      onCreate({ id, })
-    } else {
-      id = this.props.match.params.id
-    }
-
-    setId(id)
-  },
-
-  componentWillUpdate(nextProps) {
-    const { match, history, } = this.props
-    const currentMatch = nextProps.matches.find(item => item.id === nextProps.id)
-
-    if (currentMatch && currentMatch.id && !match.params.id) {
-      // history.push(`/create-a-match?id=${currentMatch.id}`)
-    }
-  },
-})
-
-const initialState = { id: null, }
-const stateHandlers = {
-  setId: () => id => ({ id: String(id), }),
-}
-
 export default compose(
-  withRouter,
-  withStateHandlers(initialState, stateHandlers),
+  withBout,
   withRoster,
   connect(
     state => ({
@@ -57,14 +24,13 @@ export default compose(
     }),
     dispatch => ({
       onRandomise: id => dispatch(randomiseMatch(id)),
-      onCreate: currentMatch => dispatch(createMatch(currentMatch)),
       onSimulateMatch: id => dispatch(simulateMatch(id)),
       onWrestlerClick: props => dispatch(addWrestlerToMatch(props)),
     })
   ),
   withProps(props => {
     let newProps, winner, loser
-    const currentMatch = props.matches.find(item => item.id === props.id)
+    const { bout: currentMatch, } = props
 
     if (currentMatch) {
       winner = currentMatch && currentMatch.wrestlers.find(item => item.winner)
@@ -74,6 +40,7 @@ export default compose(
         winner = props.roster.find(item => item.id === winner.id)
         loser = props.roster.find(item => item.id === loser.id)
       }
+
       newProps = {
         currentMatch,
         onWrestlerClick: wrestlerId => {
@@ -83,13 +50,7 @@ export default compose(
           })
         },
         onReset: () => {
-          if (confirm(MATCH_CONFIRM_RESET)) {
-            const id = getId()
-
-            props.setId(id)
-            props.onCreate({ id, })
-            // props.history.push(`/create-a-match?id=${id}`)
-          }
+          props.history.push(`/create-match/`)
         },
         onSimulateMatch: event => {
           event.preventDefault()
@@ -108,7 +69,6 @@ export default compose(
     }
     return { ...props, ...newProps, }
   }),
-  lifecycleMapper,
   withStyle,
   branch(props => props.roster.length === 0, renderComponent(EmptyRoster))
 )(CreateAMatch)

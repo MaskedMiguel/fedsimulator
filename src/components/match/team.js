@@ -3,8 +3,9 @@ import classnames from "classnames"
 import PropTypes from "prop-types"
 import { Droppable } from "react-drag-and-drop"
 
+import Button from "../button/button"
 import Wrestler from "../wrestler/wrestler"
-import { Icon, Reset } from "../icons"
+import { Trophy, Reset, Info } from "../icons"
 
 const NOOP = () => {}
 
@@ -17,7 +18,7 @@ const Team = ({ classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWre
     { "has-winner": hasWinner, },
     { "has-wrestlers": wrestlers.length > 0, },
     { "col-lg-6 col-sm-6 ": !hasManyWrestlers, },
-    { "col-lg-12 col-sm-12 col-xs-12": hasManyWrestlers, },
+    { "col-lg-12 col-sm-12": hasManyWrestlers, },
     classes
   )
   return (
@@ -27,26 +28,26 @@ const Team = ({ classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWre
           <Choose>
             <When condition={wrestlers.length > 0}>
               {wrestlers.map(wrestler => {
-                const key = `tw-${wrestler.id}`
-                const trophyClasses = classnames({
-                  active: wrestler.winner,
-                  inactive: wrestler.loser,
-                })
+                const { id, } = wrestler
+
                 return (
-                  <div tabIndex="0" className="member" key={key}>
+                  <div key={id} tabIndex={0} className="member center-xs middle-xs">
                     <Wrestler wrestler={wrestler} />
                     &nbsp;
-                    <span className="wrestler__icons">
-                      <Icon icon="trophy" className={trophyClasses} title="Select the winner of the match" onClick={() => onSelectWinner(wrestler.id)} />
-                      &nbsp;
-                      <Reset title="Remove this wrestler from this match" onClick={() => onRemoveWrestler(wrestler.id)} />
+                    <span className="tools">
+                      <Button classes="btn-good btn-small btn-square" onClick={() => onSelectWinner(id)}>
+                        <Trophy />
+                      </Button>
+                      <Button classes="btn-bad btn-small btn-square" onClick={() => onRemoveWrestler(id)}>
+                        <Reset />
+                      </Button>
                     </span>
                   </div>
                 )
               })}
             </When>
             <Otherwise>
-              <Icon icon="info-circle" />&nbsp;Drop wrestlers here
+              <Info />&nbsp;Drop wrestlers here
             </Otherwise>
           </Choose>
         </div>

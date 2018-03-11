@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "8bit": "^1.0.1",
-    "animate-components": "^1.4.8",
     "axios": "^0.17.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -41,6 +40,7 @@
     "react-dropzone": "~3.13.3",
     "react-loadable": "^5.3.1",
     "react-redux": "~5.0.6",
+    "react-reveal": "^1.2.1",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-ga": "^1.0.0",

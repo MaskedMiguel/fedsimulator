@@ -1,3 +1,11 @@
 $z-index-color-pickers: 20;
 $z-index-wrestlers: 5;
 $z-index-create-icon: 1;
+
+.nav {
+  z-index: 300;
+}
+
+.backdrop {
+  z-index: 200;
+}

@@ -38,10 +38,10 @@ const BattleRoyal = ({
 }) => {
   const simulateButtonTitle = !simulate ? "Simulate match" : "Pause simulation"
   return (
-    <section className="page battle-royal">
+    <div className="battle-royal">
       <HeaderOne>
         Battle Royal
-        <span tabIndex="0" className="tools">
+        <span tabIndex={0} className="tools">
           <Button value="Reset" onClick={onClear} classes="btn-bad" />
         </span>
       </HeaderOne>
@@ -61,17 +61,15 @@ const BattleRoyal = ({
               <Labels id="gender" tabIndex="0" onKeyPress={onGenderUpdate} onClick={onGenderUpdate} highlighted={male} labels={genderLabels} />
             </div>
             <div className="form-group">
-              <Button style={style.darkStyle} onClick={onGenerateEntries}>
-                Generate entries
-              </Button>
+              <Button onClick={onGenerateEntries}>Generate entries</Button>
               &nbsp;
               <Choose>
                 <When condition={winner}>
-                  <h3>Winner!</h3>
+                  <header>Winner!</header>
                   <Wrestler wrestler={winner} />
                 </When>
                 <Otherwise>
-                  <Button style={style.darkStyle} onClick={onSimulate} value={simulateButtonTitle} />
+                  <Button onClick={onSimulate} value={simulateButtonTitle} />
                 </Otherwise>
               </Choose>
             </div>
@@ -92,7 +90,7 @@ const BattleRoyal = ({
           </div>
         </If>
       </div>
-    </section>
+    </div>
   )
 }
 

@@ -19,10 +19,11 @@ const Calendar = ({ date = Date(), dates = [], emptyDates = [], events = [], Eve
             <header>{date.getDate()}</header>
           </div>
         ))}
-        {dates.map(currentDate => {
+        {dates.map((currentDate, key) => {
           const currentDay = currentDate.getDate()
           const active = date.getDate() === currentDay
           const currentEvent = events[currentDate.getDate()]
+          // const endRow = (emptyDates.length + 1 + key) % 7 === 0
 
           return (
             <div key={currentDate} className={classnames("day", { active: active, })}>

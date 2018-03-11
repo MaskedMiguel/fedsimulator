@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
-import { Flash } from "animate-components"
+import Flash from "react-reveal/Flash"
 
 import Social from "../../components/social"
 import Settings from "../settings/settings"
@@ -12,29 +12,21 @@ const gameReadyStyle = {
   backgroundColor: "black",
   color: "white",
 }
-const GameReady = ({ style = gameReadyStyle, }) => (
-  <Link to="/dashboard">
-    <br />
-    <div style={gameReadyStyle} className="gameReady center-xs">
-      Game ready! Go to your dashboard and start simulating!
-    </div>
-  </Link>
-)
 
-GameReady.propTypes = {
-  style: PropTypes.object,
-}
-
-const WelcomePage = ({ style = {}, gameReady = false, }) => (
-  <section className="page welcome">
+const WelcomePage = ({ gameReady = false, }) => (
+  <div className="welcome">
     <header className="center-xs">
       FedSimulator.com is a web based wrestling match & federation simulator with tools to manage the roster, brands and championships
     </header>
     <br />
     <Choose>
       <When condition={gameReady}>
-        <Flash>
-          <GameReady style={style} />
+        <Flash duration={1200}>
+          <Link to="/dashboard">
+            <div style={gameReadyStyle} className="bar center-xs pulse cursor-pointer">
+              Game ready! Go to your dashboard and start simulating!
+            </div>
+          </Link>
         </Flash>
       </When>
       <Otherwise>
@@ -44,10 +36,10 @@ const WelcomePage = ({ style = {}, gameReady = false, }) => (
     <br />
     <Settings />
     <br />
-    <footer className="center-xs pulse">
+    <footer style={gameReadyStyle} className="bar center-xs pulse">
       <Social />
     </footer>
-  </section>
+  </div>
 )
 
 WelcomePage.propTypes = {

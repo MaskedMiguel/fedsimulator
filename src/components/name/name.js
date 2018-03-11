@@ -19,13 +19,7 @@ export class Name extends Component {
 
     return (
       <span className="name-input">
-        <Input
-          value={name}
-          name="name"
-          onChange={this.handleChange}
-          label=""
-          placeholder={placeholder}
-        />
+        <Input value={name} name="name" onChange={this.handleChange} label="" placeholder={placeholder} />
       </span>
     )
   }
@@ -36,12 +30,11 @@ Name.displayName = "Name"
 Name.propTypes = {
   dispatch: PropTypes.func,
   name: PropTypes.string,
-	placeholder: PropTypes.string,
+  placeholder: PropTypes.string,
 }
 
-
 Name.defaultProps = {
-	placeholder: "WWE, NXT, ROH, GFW, TNA",
+  placeholder: "WWE, NXT, ROH, GFW, TNA",
 }
 
 export default connect(state => ({

@@ -1,5 +1,5 @@
 import React from "react"
-import { compose, withProps, lifecycle, withStateHandlers } from "recompose"
+import { compose, withProps, lifecycle } from "recompose"
 import { connect } from "react-redux"
 import { withRouter } from "react-router"
 
@@ -28,7 +28,7 @@ const lifecycleMapper = {
     }
   },
   redirect() {
-    this.props.history.push("/calendar")
+    this.props.history.push("/story/calendar")
   },
 }
 

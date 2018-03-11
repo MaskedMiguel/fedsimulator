@@ -19,7 +19,7 @@ const style = {
     color: "#000",
     borderRadius: 5,
     maxWidth: 500,
-    margin: "0 auto",
+    margin: "10% auto",
     padding: 30,
   },
   footer: {
@@ -27,32 +27,30 @@ const style = {
   },
 }
 
-class LightBox extends Component {
-  render() {
-    const { children, onClose, show, } = this.props
+const NOOP = () => {}
 
-    if (!show) {
-      return null
-    }
-
-    return (
-      <div className="backdrop" style={style.backdrop}>
-        <div className="modal" style={style.modal}>
-          {children}
+const LightBox = ({ children = "", onClose = NOOP, canClose = true, isVisible = false, }) => {
+  if (!isVisible) return null
+  return (
+    <div className="backdrop" style={style.backdrop}>
+      <div className="modal" style={style.modal}>
+        {children}
+        {canClose && (
           <div style={style.footer} className="footer">
             <Button autoFocus={true} onClick={onClose}>
               Close
             </Button>
           </div>
-        </div>
+        )}
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 LightBox.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  show: PropTypes.bool,
+  canClose: PropTypes.bool,
+  onClose: PropTypes.func,
+  isVisible: PropTypes.bool,
   children: PropTypes.node,
 }
 

@@ -5,9 +5,9 @@ import { formatCurrency } from "../../helpers/currency"
 
 import "./ranking.scss"
 
-const Ranking = ({ currencySymbol, style, columns, rows, amountToShow, title, }) => (
+const Ranking = ({ title = "", amountToShow = 100, columns = {}, currencySymbol = "$", rows = [], style = {}, }) => (
   <div className="ranking">
-    <h3 style={style}>{title}</h3>
+    {title ? <h3 style={style}>{title}</h3> : null}
     <table className="ranking__table table table-striped">
       <thead>
         <tr>
@@ -52,15 +52,7 @@ Ranking.propTypes = {
   currencySymbol: PropTypes.string,
   rows: PropTypes.array.isRequired,
   style: PropTypes.object,
-  title: PropTypes.string.isRequired,
-}
-
-Ranking.defaultProps = {
-  amountToShow: 100,
-  columns: {},
-  currencySymbol: "$",
-  rows: [],
-  style: {},
+  title: PropTypes.string,
 }
 
 export default Ranking

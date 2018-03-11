@@ -5,6 +5,7 @@ export const schema = {
   teamId: null,
   winner: false,
   loser: false,
+  health: 100,
 }
 
 export default Record(schema)

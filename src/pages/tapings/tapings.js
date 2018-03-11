@@ -12,7 +12,7 @@ const NOOP = () => {}
 
 const RosterPage = ({ onClear = NOOP, }) => {
   return (
-    <section className="page tapings">
+    <div className="tapings">
       <HeaderOne>
         Manage Tapings
         <span tabIndex="0" className="tools">
@@ -21,7 +21,7 @@ const RosterPage = ({ onClear = NOOP, }) => {
       </HeaderOne>
       <Create />
       <Collection />
-    </section>
+    </div>
   )
 }
 

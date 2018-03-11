@@ -12,7 +12,7 @@ const Header = ({ style = {}, classes = "", children = undefined, }) => (
 
 Header.propTypes = {
   style: PropTypes.object,
-  className: PropTypes.string,
+  classes: PropTypes.string,
   children: PropTypes.any,
 }
 

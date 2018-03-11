@@ -5,7 +5,7 @@ import "./input.scss"
 
 const NOOP = () => {}
 
-const Input = ({ label, name, onChange, placeholder, style, value, }) => (
+const Input = ({ label = "", name = "", onChange = NOOP, placeholder = "", style = {}, value = "", }) => (
   <div>
     <If condition={label.length > 0}>
       <label htmlFor={name}>{label}</label>
@@ -33,15 +33,6 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   style: PropTypes.object,
   value: PropTypes.any,
-}
-
-Input.defaultProps = {
-  label: "",
-  name: "",
-  onChange: NOOP,
-  placeholder: "",
-  style: {},
-  value: "",
 }
 
 export default Input

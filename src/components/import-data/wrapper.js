@@ -8,7 +8,7 @@ import { resetChampionships } from "../../actions/champions"
 import { resetBrands } from "../../actions/brands"
 import { resetTapings } from "../../actions/tapings"
 
-import { Icon, Reset } from "../icons"
+import Button from "../button/button"
 import ImportData from "./import-data"
 
 class Data extends Component {
@@ -19,37 +19,33 @@ class Data extends Component {
 
   render() {
     const { totals, style, } = this.props
-    const columns = "col-xs-6 col-md-6 col-md-3 col-lg-3 center-xs middle-xs shadow pulse"
+    const columns = "col-xs-6 col-sm-3 col-md-3 col-lg-3 center-xs middle-xs pulse"
 
     return (
       <div className="wrapper">
         <div className="row">
           <div className={columns}>
-            <div className="box" style={style}>
-              <header>
-                <Reset onClick={this.onResetRoster} /> <Icon icon="users" /> {totals.roster} wrestlers
-              </header>
+            <div className="box">
+              <header>{totals.roster} wrestlers</header>
+              <Button onClick={this.onResetRoster} value="Clear" />
             </div>
           </div>
           <div className={columns}>
-            <div className="box" style={style}>
-              <header>
-                <Reset onClick={this.onResetChampionships} /> <Icon icon="trophy" /> {totals.championships} championships
-              </header>
+            <div className="box">
+              <header>{totals.championships} championships</header>
+              <Button onClick={this.onResetChampionships} value="Clear" />
             </div>
           </div>
           <div className={columns}>
-            <div className="box" style={style}>
-              <header>
-                <Reset onClick={this.onResetBrands} /> <Icon icon="tv" /> {totals.brands} brands
-              </header>
+            <div className="box">
+              <header>{totals.brands} brands</header>
+              <Button onClick={this.onResetBrands} value="Clear" />
             </div>
           </div>
           <div className={columns}>
-            <div className="box" style={style}>
-              <header>
-                <Reset onClick={this.onResetTapings} /> <Icon icon="film" /> {totals.tapings} tapings
-              </header>
+            <div className="box">
+              <header>{totals.tapings} tapings</header>
+              <Button onClick={this.onResetTapings} value="Clear" />
             </div>
           </div>
         </div>

@@ -1,41 +1,34 @@
 import React from "react"
 import classnames from "classnames"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import PropTypes from "prop-types"
-
-import { Icon } from "../icons"
 
 import "./nav.scss"
 
 const NOOP = () => {}
 
-const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, links = [], }) => {
+const Nav = ({ children = "", classes = "", style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, links = [], }) => {
   return (
-    <nav className="nav" style={style}>
-      <div className="nav-left">
-        <h1>
-          <Link replace to="/">
-            Fed Simulator
-          </Link>
-        </h1>
-      </div>
+    <nav className={classnames("nav", classes)} style={style}>
+      {children}
       <If condition={links.length > 0}>
         <label htmlFor="menu-toggle" className="nav-toggle" onClick={toggleSubMenuOpen}>
           &equiv;
         </label>
         <div className={classnames({ active: isSubMenuOpen, }, "nav-right", "nav-menu")} style={style}>
           {links.map((item, key) => {
-            const { url, icon, title, } = item
+            const { url, title, } = item
             return (
-              <Link
-                className={classnames("nav-item", "pointer", { active: item.active, })}
+              <NavLink
                 key={key}
+                exact
+                activeClassName="active"
+                className="nav-item pointer"
                 style={{ color: style.color, }}
                 to={url}
                 onClick={toggleSubMenuOpen}>
-                <Icon icon={icon} style={style} tabIndex={-1} />&nbsp;
-                <div tabIndex="1">{title}</div>
-              </Link>
+                <div tabIndex={1}>{title}</div>
+              </NavLink>
             )
           })}
         </div>
@@ -45,6 +38,8 @@ const Nav = ({ style = {}, isSubMenuOpen = false, toggleSubMenuOpen = NOOP, link
 }
 
 Nav.propTypes = {
+  classes: PropTypes.string,
+  children: PropTypes.any,
   backgroundColor: PropTypes.string,
   color: PropTypes.string,
   isSubMenuOpen: PropTypes.bool,

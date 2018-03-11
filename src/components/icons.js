@@ -9,6 +9,9 @@ const Icon = ({ icon = false, children = "", onClick = NOOP, className = "", tab
   </i>
 )
 
+const Cross = ({ onClick, }) => new Icon({ icon: "times-circle", onClick, })
+const Info = ({ onClick, }) => new Icon({ icon: "info-circle", onClick, })
+const Trophy = ({ onClick, }) => new Icon({ icon: "trophy", onClick, })
 const Create = ({ onClick, }) => new Icon({ icon: "plus-circle green", onClick, })
 const Generate = ({ onClick, }) => new Icon({ icon: "rocket", onClick, })
 const ListToggle = ({ onClick, }) => new Icon({ icon: "list", onClick, })
@@ -50,4 +53,4 @@ Icon.propTypes = {
 }
 Gender.propTypes = Object.assign({}, Icon.propTypes, { gender: PropTypes.bool, })
 
-export { Icon, Create, Gender, Generate, Pause, Play, ListToggle, SortBy, Randomise, Visible, Tick, Direction, Reset }
+export { Cross, Info, Trophy, Icon, Create, Gender, Generate, Pause, Play, ListToggle, SortBy, Randomise, Visible, Tick, Direction, Reset }

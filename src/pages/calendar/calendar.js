@@ -2,21 +2,23 @@ import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 
-import Row from "../../components/row"
 import Taping from "../../components/taping/taping"
-import HeaderOne from "../../components/header/header"
 import Calendar from "../../components/calendar/container"
 import Button from "../../components/button/button"
-
-import { Pause, Play, Reset } from "../../components/icons"
+import LightboxShow from "./light-box-show"
 import { pageTitle } from "../../constants/dates"
 
 const NOOP = () => {}
 
+const titleClasses = ["col-xs-12", "col-sm-12", "col-md-6", "col-lg-8", "start-lg", "start-md", "center-sm", "center-xs",]
+const buttonClasses = ["col-xs-12", "col-sm-12", "col-md-6", "col-lg-4", "end-lg", "end-md", "center-sm", "center-xs",]
+
+import "./calendar.scss"
+
 const CalendarPage = ({
   brand = {},
   date = new Date(),
-  goToShow = NOOP,
+  goToBout = NOOP,
   onReset = NOOP,
   onTogglePause = NOOP,
   paused = false,
@@ -33,36 +35,35 @@ const CalendarPage = ({
     EventComponent: Taping,
   }
   return (
-    <section className={classnames("page", "story", "calendar")}>
-      <HeaderOne>
-        {pageTitle(date)} for {brand.name}&nbsp;
-        <span className="tools">
-          <Choose>
-            <When condition={paused}>
-              <i className="icon fa fa-pause" onClick={onTogglePause} />
-            </When>
-            <Otherwise>
-              <Play onClick={onTogglePause} />
-            </Otherwise>
-          </Choose>
-          <Reset onClick={onReset} />
-        </span>
-      </HeaderOne>
+    <div className="calendar-page">
+      <div className="row middle-xs">
+        <div className={classnames(titleClasses)}>
+          <div className="box">
+            <header>
+              {pageTitle(date)} for {brand.name}
+            </header>
+          </div>
+        </div>
+        <div className={classnames(buttonClasses)}>
+          <div className="box">
+            <Choose>
+              <When condition={paused}>
+                <Button onClick={onTogglePause} classes="btn-good" value="▶ Resume" />
+              </When>
+              <Otherwise>
+                <Button onClick={onTogglePause} classes="btn-mid" value="&#9612;&#9612;Pause" />
+              </Otherwise>
+            </Choose>
+            <Button onClick={onReset} classes="btn-bad" value="Reset" />
+          </div>
+        </div>
+      </div>
+      <br />
       <Calendar {...calendarProps} />
       <If condition={todaysShow}>
-        <Row classes="center-xs middle-xs">
-          <Button classes="btn-good btn-large" onClick={goToShow}>
-            Start Show
-          </Button>
-          <Button classes="btn-bad btn-large" onClick={skipShow}>
-            Skip Show
-          </Button>
-          <Button classes="btn-bad btn-large" onClick={skipMonth}>
-            Skip Month
-          </Button>
-        </Row>
+        <LightboxShow todaysShow={todaysShow} date={date} goToBout={goToBout} skipShow={skipShow} skipMonth={skipMonth} />
       </If>
-    </section>
+    </div>
   )
 }
 
@@ -71,7 +72,7 @@ CalendarPage.displayName = "CalendarPage"
 CalendarPage.propTypes = {
   brand: PropTypes.object,
   date: PropTypes.object,
-  goToShow: PropTypes.func,
+  goToBout: PropTypes.func,
   onReset: PropTypes.func,
   onTogglePause: PropTypes.func,
   paused: PropTypes.bool,

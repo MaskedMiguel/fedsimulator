@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Champions from "../../components/champions/champions"
+import Champions from "../../components/champions/container"
 import HeaderOne from "../../components/header/header"
 import Simulator from "../../components/simulator"
 import Ranking from "../../components/ranking/ranking"
@@ -12,7 +12,7 @@ import { RANKED_COLUMNS } from "../../constants/ranking"
 import "./dashboard.scss"
 
 export const DashboardPage = ({ name = "", style = {}, championships = [], rankedMaleWrestlers = [], rankedFemaleWrestlers = [], }) => (
-  <section className="page dashboard zoom">
+  <div className="dashboard">
     <HeaderOne>
       {name} Dashboard
       <span tabIndex="0" className="tools">
@@ -40,7 +40,7 @@ export const DashboardPage = ({ name = "", style = {}, championships = [], ranke
         </div>
       </div>
     </div>
-  </section>
+  </div>
 )
 
 DashboardPage.displayName = "DashboardPage"
