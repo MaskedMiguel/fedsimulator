@@ -5,7 +5,6 @@ import { connect } from "react-redux"
 import Lightbox from "../lightbox"
 import { fetchData, importData } from "../../actions/data"
 import { Tick } from "../icons"
-import Button from "../button/button"
 import Row from "../row"
 import Escape from "../../hoc/escape"
 
@@ -59,6 +58,8 @@ class ImportData extends Component {
   }
 
   render() {
+    const importAllStyle = { backgroundColor: "black", color: "white" }
+    const columns = "inner "
     const { title, importComplete } = this.state
     const { data } = this.props.collection
 
@@ -73,15 +74,19 @@ class ImportData extends Component {
             <Tick /> {title} complete!
           </Lightbox>
         </Escape>
-        <Row classes="center-xs middle-xs">
-          <Button onClick={this.onImportAll}>Import all</Button>
-        </Row>
+        <div className="row center-xs">
+          <div className="col-xs-4">
+            <div className="box inner" onClick={this.onImportAll} style={importAllStyle}>
+              Import all (recommended)
+            </div>
+          </div>
+        </div>
         <div className="row">
           {data.map(({ title, type, payload, style }) => {
             return (
               <div
                 key={title}
-                className="inner shadow pulse col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
+                className="shadow pulse inner col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
                 onClick={() => this.onImport({ title, type, payload })}>
                 <div className="box" style={style}>
                   {title} ({payload.length})
