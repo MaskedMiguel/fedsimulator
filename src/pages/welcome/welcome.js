@@ -4,7 +4,9 @@ import PropTypes from "prop-types"
 import Flash from "react-reveal/Flash"
 
 import Social from "../../components/social"
-import Settings from "../settings/settings"
+
+import SettingsName from "../settings/name"
+import SettingsImporter from "../settings/importer"
 
 import "./welcome.scss"
 
@@ -13,12 +15,8 @@ const gameReadyStyle = {
   color: "white",
 }
 
-const WelcomePage = ({ gameReady = false, }) => (
+const WelcomePage = ({ gameReady = false, style = {}, }) => (
   <div className="welcome">
-    <header className="center-xs">
-      FedSimulator.com is a web based wrestling match & federation simulator with tools to manage the roster, brands and championships
-    </header>
-    <br />
     <Choose>
       <When condition={gameReady}>
         <Flash duration={1200}>
@@ -33,8 +31,13 @@ const WelcomePage = ({ gameReady = false, }) => (
         <header className="center-xs">Name your federation and import some data below to start!</header>
       </Otherwise>
     </Choose>
+    <div className="box" style={style}>
+      <SettingsName style={style} />
+    </div>
     <br />
-    <Settings />
+    <div className="box" style={style}>
+      <SettingsImporter style={style} />
+    </div>
     <br />
     <footer style={gameReadyStyle} className="bar center-xs pulse">
       <Social />

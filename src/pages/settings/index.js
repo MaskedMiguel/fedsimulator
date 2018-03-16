@@ -6,13 +6,19 @@ import { withRouter } from "react-router"
 
 import Button from "../../components/button/button"
 import { resetAll } from "../../actions/game"
-
-import Settings from "./settings"
+import withStyle from "../../hoc/withStyle"
 import ToggleTheme from "../../components/toggle-theme"
 import HeaderOne from "../../components/header/header"
+import SettingsSummary from "./summary"
+import SettingsName from "./name"
+import SettingsTheme from "./theme"
+import SettingsImporter from "./importer"
 
-class SettingsWrapper extends Component {
+import "./settings.scss"
+
+class Settings extends Component {
   render() {
+    const { style: { highlighted: style, }, } = this.props
     return (
       <div className="settings">
         <HeaderOne>
@@ -22,7 +28,15 @@ class SettingsWrapper extends Component {
             <Button value="Reset everything" onClick={this.onReset} classes="btn-bad" />
           </span>
         </HeaderOne>
-        <Settings />
+        <div className="settings">
+          <SettingsSummary style={style} />
+          <br />
+          <SettingsName style={style} />
+          <br />
+          <SettingsTheme style={style} />
+          <br />
+          <SettingsImporter style={style} />
+        </div>
       </div>
     )
   }
@@ -33,14 +47,16 @@ class SettingsWrapper extends Component {
   }
 }
 
-SettingsWrapper.propTypes = {
+Settings.propTypes = {
   dispatch: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
+  style: PropTypes.object,
 }
 
 export const enhance = compose(
   connect(null),
-  withRouter //
+  withRouter,
+  withStyle //
 )
 
-export default enhance(SettingsWrapper)
+export default enhance(Settings)

@@ -8,11 +8,11 @@ import { Tick } from "../icons"
 import Row from "../row"
 import Escape from "../../hoc/escape"
 
-import "./import-data.scss"
+import "./importer.scss"
 
 const API_ENDPOINT = "/defaults.json"
 
-class ImportData extends Component {
+class Importer extends Component {
   state = {
     importComplete: false,
     title: null,
@@ -34,10 +34,10 @@ class ImportData extends Component {
     }
   }
 
-  onImport = ({ title, type, payload }) => {
+  onImport = ({ title, type, payload, }) => {
     const callback = () => this.importFinished()
 
-    this.props.dispatch(importData({ type, payload, callback }))
+    this.props.dispatch(importData({ type, payload, callback, }))
 
     this.setState({
       title,
@@ -58,10 +58,10 @@ class ImportData extends Component {
   }
 
   render() {
-    const importAllStyle = { backgroundColor: "black", color: "white" }
+    const importAllStyle = { backgroundColor: "black", color: "white", }
     const columns = "inner "
-    const { title, importComplete } = this.state
-    const { data } = this.props.collection
+    const { title, importComplete, } = this.state
+    const { data, } = this.props.collection
 
     if (!data) {
       return null
@@ -82,12 +82,12 @@ class ImportData extends Component {
           </div>
         </div>
         <div className="row">
-          {data.map(({ title, type, payload, style }) => {
+          {data.map(({ title, type, payload, style, }) => {
             return (
               <div
                 key={title}
                 className="shadow pulse inner col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
-                onClick={() => this.onImport({ title, type, payload })}>
+                onClick={() => this.onImport({ title, type, payload, })}>
                 <div className="box" style={style}>
                   {title} ({payload.length})
                 </div>
@@ -100,11 +100,11 @@ class ImportData extends Component {
   }
 }
 
-ImportData.propTypes = {
+Importer.propTypes = {
   dispatch: PropTypes.func,
-  data: PropTypes.any,
+  collection: PropTypes.any,
 }
 
 export default connect(state => ({
   collection: state.data,
-}))(ImportData)
+}))(Importer)

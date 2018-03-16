@@ -9,16 +9,15 @@ import { resetBrands } from "../../actions/brands"
 import { resetTapings } from "../../actions/tapings"
 
 import Button from "../button/button"
-import ImportData from "./import-data"
 
-class Data extends Component {
+class ImportSummary extends Component {
   onResetRoster = () => this.props.dispatch(resetRoster())
   onResetChampionships = () => this.props.dispatch(resetChampionships())
   onResetBrands = () => this.props.dispatch(resetBrands())
   onResetTapings = () => this.props.dispatch(resetTapings())
 
   render() {
-    const { totals, style, } = this.props
+    const { totals, } = this.props
     const columns = "col-xs-6 col-sm-3 col-md-3 col-lg-3 center-xs middle-xs pulse"
 
     return (
@@ -49,14 +48,12 @@ class Data extends Component {
             </div>
           </div>
         </div>
-        <br />
-        <ImportData />
       </div>
     )
   }
 }
 
-Data.propTypes = {
+ImportSummary.propTypes = {
   totals: PropTypes.object,
   style: PropTypes.object,
 }
@@ -73,4 +70,4 @@ export const enhance = compose(
   }))
 )
 
-export default enhance(Data)
+export default enhance(ImportSummary)
