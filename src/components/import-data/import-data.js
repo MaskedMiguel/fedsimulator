@@ -5,6 +5,8 @@ import { connect } from "react-redux"
 import Lightbox from "../lightbox"
 import { fetchData, importData } from "../../actions/data"
 import { Tick } from "../icons"
+import Button from "../button/button"
+import Row from "../row"
 import Escape from "../../hoc/escape"
 
 import "./import-data.scss"
@@ -21,10 +23,22 @@ class ImportData extends Component {
     this.props.dispatch(fetchData(API_ENDPOINT))
   }
 
-  onImport({ title, type, payload, }) {
+  onImportAll = () => {
+    if (this.props.collection.data) {
+      this.props.collection.data.forEach(props => {
+        this.onImport(props)
+      })
+      this.setState({
+        importComplete: true,
+        title: "Import everything",
+      })
+    }
+  }
+
+  onImport = ({ title, type, payload }) => {
     const callback = () => this.importFinished()
 
-    this.props.dispatch(importData({ type, payload, callback, }))
+    this.props.dispatch(importData({ type, payload, callback }))
 
     this.setState({
       title,
@@ -45,9 +59,8 @@ class ImportData extends Component {
   }
 
   render() {
-    const columns = "inner shadow pulse col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
-    const { title, importComplete, } = this.state
-    const { data, } = this.props.data
+    const { title, importComplete } = this.state
+    const { data } = this.props.collection
 
     if (!data) {
       return null
@@ -60,10 +73,16 @@ class ImportData extends Component {
             <Tick /> {title} complete!
           </Lightbox>
         </Escape>
+        <Row classes="center-xs middle-xs">
+          <Button onClick={this.onImportAll}>Import all</Button>
+        </Row>
         <div className="row">
-          {data.map(({ title, type, payload, style, }) => {
+          {data.map(({ title, type, payload, style }) => {
             return (
-              <div className={columns} key={title} onClick={() => this.onImport({ title, type, payload, })}>
+              <div
+                key={title}
+                className="inner shadow pulse col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
+                onClick={() => this.onImport({ title, type, payload })}>
                 <div className="box" style={style}>
                   {title} ({payload.length})
                 </div>
@@ -82,5 +101,5 @@ ImportData.propTypes = {
 }
 
 export default connect(state => ({
-  data: state.data,
+  collection: state.data,
 }))(ImportData)
