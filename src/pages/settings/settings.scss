@@ -5,6 +5,16 @@
     text-decoration: none;
   }
 
+  .summary {
+    header {
+      font-size: large;
+      margin-bottom: 0.5rem;
+    }
+    .box {
+      padding: 0.5rem;
+    }
+  }
+
   .box {
     padding: 1rem;
     font-size: medium;

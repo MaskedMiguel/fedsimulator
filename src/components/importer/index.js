@@ -59,7 +59,6 @@ class Importer extends Component {
 
   render() {
     const importAllStyle = { backgroundColor: "black", color: "white", }
-    const columns = "inner "
     const { title, importComplete, } = this.state
     const { data, } = this.props.collection
 
@@ -68,7 +67,7 @@ class Importer extends Component {
     }
 
     return (
-      <div className="import-data">
+      <div className="importer">
         <Escape onEscape={this.onClose}>
           <Lightbox isVisible={importComplete} onClose={this.onClose}>
             <Tick /> {title} complete!
