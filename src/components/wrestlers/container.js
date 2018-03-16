@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import { compose, setPropTypes, withProps } from "recompose"
 import { connect } from "react-redux"
-import sortBy from "lodash.sortby"
+import orderBy from "lodash.orderby"
 
 import Wrestlers from "./wrestlers"
 
 export const mappedPropTypes = {
-  brandId: PropTypes.oneOfType([PropTypes.null, PropTypes.string,]),
+  brandId: PropTypes.oneOfType([PropTypes.null, PropTypes.string]),
   collection: PropTypes.array,
   onClick: PropTypes.func,
   canDrag: PropTypes.bool,
@@ -19,7 +19,7 @@ export const propsMapper = props => {
     newRoster = newRoster.filter(item => item.brandId === props.brandId)
   }
 
-  newRoster = sortBy(newRoster, "points").reverse()
+  newRoster = orderBy(newRoster, ["championshipId", "points"], ["asc", "desc"])
 
   return {
     collection: newRoster,
