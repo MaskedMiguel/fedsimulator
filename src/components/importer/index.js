@@ -64,7 +64,7 @@ class Importer extends Component {
     const { data, } = this.props.collection
 
     if (!data) {
-      return null
+      return <div>Loading...</div>
     }
 
     return (

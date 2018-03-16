@@ -17,20 +17,15 @@ const gameReadyStyle = {
 
 const WelcomePage = ({ gameReady = false, style = {}, }) => (
   <div className="welcome">
-    <Choose>
-      <When condition={gameReady}>
-        <Flash duration={1200}>
-          <Link to="/dashboard">
-            <div style={gameReadyStyle} className="bar center-xs pulse cursor-pointer">
-              Game ready! Go to your dashboard and start simulating!
-            </div>
-          </Link>
-        </Flash>
-      </When>
-      <Otherwise>
-        <header className="center-xs">Name your federation and import some data below to start!</header>
-      </Otherwise>
-    </Choose>
+    <If condition={gameReady}>
+      <Flash duration={1200}>
+        <Link to="/dashboard">
+          <div style={gameReadyStyle} className="bar center-xs pulse cursor-pointer">
+            Game ready! Go to your dashboard and start simulating!
+          </div>
+        </Link>
+      </Flash>
+    </If>
     <div className="box" style={style}>
       <SettingsName style={style} />
     </div>
