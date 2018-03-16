@@ -75,7 +75,7 @@ class ImportData extends Component {
           </Lightbox>
         </Escape>
         <div className="row center-xs">
-          <div className="col-xs-4">
+          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <div className="box inner" onClick={this.onImportAll} style={importAllStyle}>
               Import all (recommended)
             </div>
