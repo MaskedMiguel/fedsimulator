@@ -1,0 +1,46 @@
+@import "../form/input.scss";
+@import "../form/select.scss";
+
+.rjsf {
+  .form-group {
+    margin-bottom: 1rem;
+
+    .control-label {
+      font-size: large;
+    }
+
+    fieldset {
+      border: 0;
+      padding: 0;
+    }
+
+    .checkbox label {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .field-range-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      input[type="range"] {
+        width: 90%;
+      }
+    }
+
+    select {
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+
+    input[type="color"] {
+      height: 1rem;
+      display: block;
+      min-height: 3rem;
+      padding: 0;
+      background-color: transparent;
+      border: 0;
+    }
+  }
+}

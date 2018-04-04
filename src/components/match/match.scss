@@ -3,35 +3,52 @@ $inactive-color: red;
 $main-color: #fff;
 $match-border-color: #a4a3a3;
 
-.match .team {
-  margin-bottom: 0.5rem;
-
-  &.last {
-    opacity: 0.4;
+.match {
+  &.simulated .team .member .tools {
+    display: none;
   }
+  .team {
+    margin-bottom: 0.5rem;
 
-  .dropzone {
-    min-height: inherit;
-    border: 0.1rem solid $match-border-color;
-  }
+    &.last {
+      opacity: 0.4;
+    }
 
-  .active {
-    color: $active-color;
-  }
+    .dropzone {
+      min-height: inherit;
+      border: 0;
+      padding: 0;
 
-  .inactive {
-    color: $inactive-color;
-  }
+      &.active {
+        box-shadow: none;
+      }
+    }
 
-  .member {
-    margin: 0.1rem;
-    display: flex;
-    flex-grow: 1;
+    .active {
+      color: $active-color;
+    }
 
-    .tools {
-      justify-content: space-around;
-      flex-direction: column;
+    .inactive {
+      color: $inactive-color;
+    }
+
+    &.no-wrestlers {
+      box-shadow: 1px solid white;
+    }
+
+    .member {
+      background-color: black;
+      margin: 0.1rem;
       display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      padding: 0 0.2rem;
+
+      .tools {
+        justify-content: space-around;
+        flex-direction: column;
+        display: flex;
+      }
     }
   }
 }

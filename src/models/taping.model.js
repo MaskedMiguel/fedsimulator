@@ -7,7 +7,8 @@ export const schema = {
   day: 1,
   repeat: true,
   brandId: null,
-  enabled: true,
+  color: "black",
+  backgroundColor: "white",
 }
 
 export default Record(schema)

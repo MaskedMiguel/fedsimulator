@@ -6,19 +6,19 @@ import "./labels.scss"
 
 const NOOP = () => {}
 
-export const Label = ({ style = {}, id = "", active = false, onClick = NOOP, name = "", }) => (
+export const Label = ({ color = "", backgroundColor = "", id = "", active = false, onClick = NOOP, name = "", }) => (
   <span
     tabIndex="0"
     onKeyPress={() => onClick(id)}
     onClick={() => onClick(id)}
     className={classnames({ active: active, }, "shadow", "pulse", "label", "title")}
-    style={style}>
+    style={{ color, backgroundColor, }}>
     {name}
   </span>
 )
 
-export const Labels = ({ style = {}, highlighted, onClick = NOOP, labels = [], }) => (
-  <div className="labels" tabIndex="0" style={style}>
+export const Labels = ({ highlighted, onClick = NOOP, labels = [], }) => (
+  <div className="labels" tabIndex="0">
     {labels.map(label => <Label onKeyPress={onClick} onClick={onClick} active={label.id === highlighted} key={label.id} {...label} />)}
   </div>
 )
@@ -27,7 +27,6 @@ Labels.propTypes = {
   highlighted: PropTypes.any,
   labels: PropTypes.array,
   onClick: PropTypes.func,
-  style: PropTypes.object,
 }
 
 Label.propTypes = {
@@ -35,7 +34,8 @@ Label.propTypes = {
   id: PropTypes.any,
   name: PropTypes.string,
   onClick: PropTypes.func,
-  style: PropTypes.object,
+  color: PropTypes.string,
+  backgroundColor: PropTypes.string,
 }
 
 export default Labels

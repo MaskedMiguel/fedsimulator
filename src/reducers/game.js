@@ -1,18 +1,21 @@
 import Model from "../models/game.model"
+import * as types from "../actions/types"
 
 export default (state, action) => {
   state = new Model(state)
 
   switch (action.type) {
-    case "RESET":
-    case "RESET_GAME":
+    case types.RESET:
+    case types.RESET_GAME:
       state = new Model()
       break
-    case "GENERATE":
+
+    case types.GENERATE:
       state = state.set("name", "WWE")
       state = state.set("started", true)
       break
-    case "UPDATE_GAME":
+
+    case types.UPDATE_GAME:
       state = state.merge(action.payload)
 
       break

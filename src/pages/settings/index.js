@@ -29,12 +29,10 @@ class Settings extends Component {
           </span>
         </HeaderOne>
         <div className="settings">
-          <SettingsSummary style={style} />
-          <br />
           <SettingsName style={style} />
-          <br />
           <SettingsTheme style={style} />
           <br />
+          <SettingsSummary style={style} />
           <SettingsImporter style={style} />
         </div>
       </div>

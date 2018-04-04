@@ -48,6 +48,7 @@ export const UPDATE_ROSTER = "UPDATE_ROSTER"
 export const CREATE_SHOW = "CREATE_SHOW"
 export const UPDATE_SHOW = "UPDATE_SHOW"
 export const DELETE_SHOW = "DELETE_SHOW"
+export const RESET_SHOWS = "RESET_SHOWS"
 
 // Matches
 export const CREATE_MATCH = "CREATE_MATCH"
@@ -60,6 +61,7 @@ export const RESET_MATCHES = "RESET_MATCHES"
 export const CLEAR_WRESTLERS_FROM_MATCH = "CLEAR_WRESTLERS_FROM_MATCH"
 export const RANDOMISE_MATCH = "RANDOMISE_MATCH"
 export const HIT_MOVE_IN_MATCH = "HIT_MOVE_IN_MATCH"
+export const RESET_MATCH = "RESET_MATCH"
 
 // Battle Royal
 export const RESET_BATTLE_ROYAL = "RESET_BATTLE_ROYAL"

@@ -1,16 +1,12 @@
-$dropzone-border: 0.08rem solid rgba(255, 255, 255, 0.08);
-
 .dropzone {
   align-items: center;
-  border: $dropzone-border;
-  display: flex;
   justify-content: center;
+  display: flex;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 1px black;
 
-  h3 {
-    margin: 0.5rem;
-  }
-}
-
-.Droppable {
-  min-height: 10rem;
+  font-size: small;
+  font-weight: lighter;
+  height: 100%;
+  text-transform: capitalize;
 }

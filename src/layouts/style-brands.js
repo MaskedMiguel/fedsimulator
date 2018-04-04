@@ -9,6 +9,7 @@ const StyleBrands = ({ styleInline, }) => {
 StyleBrands.defaultProps = {
   styleInline: "",
 }
+
 StyleBrands.propTypes = {
   styleInline: PropTypes.string,
 }
@@ -18,11 +19,11 @@ export default connect(state => ({
     (prevVal, item) =>
       prevVal +
       ` .${item.id} .points, .${item.id}.taping {
-          background-color: ${item.style.backgroundColor};
-          color: ${item.style.color};
+          background-color: ${item.backgroundColor};
+          color: ${item.color};
         }
         .${item.id} .trophy {
-          color: ${item.style.backgroundColor};
+          color: ${item.backgroundColor};
         }
         `,
     ""

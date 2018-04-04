@@ -23,7 +23,8 @@ export default compose(
         const color = chromatism.contrastRatio(hex).hex
         props.createBrand({
           name: props.name,
-          style: { backgroundColor: hex, color, },
+          backgroundColor: hex,
+          color,
         })
         props.updateName("")
       }

@@ -1,14 +1,14 @@
 [
   {
     "url": "/story",
-    "title": "Dash"
+    "title": "Dashboard"
   },
   {
     "url": "/story/calendar",
     "title": "Calendar"
   },
   {
-    "url": "/story/next-stage",
-    "title": "Bout"
+    "url": "/story/tapings",
+    "title": "Tapings"
   }
 ]

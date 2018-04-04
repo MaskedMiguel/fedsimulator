@@ -1,9 +1,9 @@
 @import "src/stylesheets/breakpoints";
 
 select {
-  background-color: transparent;
+  background-color: white;
   border: none;
-  color: currentColor;
+  color: black;
   margin: 0;
   outline: none;
   padding: 0.5rem;
@@ -12,10 +12,13 @@ select {
   box-sizing: border-box;
   font-size: medium;
   width: 8rem;
+  line-height: 1rem;
+  height: 2rem;
+  width: 100%;
 
   @include breakpoint(xs) {
     font-size: small;
-    text-align-last:center
+    text-align-last: center;
   }
 }
 

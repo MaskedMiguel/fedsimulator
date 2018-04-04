@@ -1,12 +1,20 @@
 import React, { PureComponent } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
-import Slider from "./form/slider"
+import Form from "react-jsonschema-form"
 
 import { simulateRandomMatch } from "../actions/roster"
 import { updateSimulation } from "../actions/simulations"
 
-const NOOP = () => {}
+const noop = () => {}
+const schema = {
+  type: "integer",
+  default: 0,
+  minimum: 0,
+  maximum: 200,
+}
+const uiSchema = { "ui:widget": "range", }
+const sliderStyle = { height: "1rem", }
 
 class Simulator extends PureComponent {
   constructor(props) {
@@ -30,9 +38,7 @@ class Simulator extends PureComponent {
     this.clearInterval()
   }
 
-  onChange = event => {
-    const simulationSpeed = event.currentTarget.value
-
+  onChange = simulationSpeed => {
     this.props.dispatch(
       updateSimulation({
         simulationSpeed,
@@ -43,9 +49,11 @@ class Simulator extends PureComponent {
 
   render() {
     return (
-      <div>
-        Simulations ({this.props.simulationCount.toLocaleString("en")})
-        <Slider max={70} value={this.props.simulationSpeed} onChange={this.onChange} />
+      <div className="simulator">
+        <h2>Simulations ({this.props.simulationCount.toLocaleString("en")})</h2>
+        <Form style={sliderStyle} schema={schema} uiSchema={uiSchema} formData={this.props.simulationSpeed} onChange={data => this.onChange(data.formData)}>
+          <span className="hide" />
+        </Form>
       </div>
     )
   }
@@ -82,7 +90,7 @@ Simulator.propTypes = {
 }
 
 Simulator.defaultProps = {
-  dispatch: NOOP,
+  dispatch: noop,
   simulationCount: PropTypes.number,
   simulationSpeed: 0,
 }

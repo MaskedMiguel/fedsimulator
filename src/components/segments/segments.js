@@ -6,8 +6,8 @@ import "./segments.scss"
 const Segments = ({ segments = [], }) => (
   <div className="segments">
     {segments.map((segment, key) => {
-      const { width, value, name, } = segment
-      const style = Object.assign({}, segment.style, { width: width + "%", })
+      const { width, value, name, color, backgroundColor, } = segment
+      const style = Object.assign({}, { color, backgroundColor, }, { width: width + "%", })
       return (
         <div key={key} style={style} className="segment pulse">
           <span className="name">{name}</span>

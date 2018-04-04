@@ -1,6 +1,7 @@
 import { List } from "immutable"
 
-import randomiseWrestlers from "../helpers/randomise-wrestlers.js"
+import * as types from "../actions/types"
+import randomiseWrestlers from "../helpers/randomise-wrestlers"
 import selectRandomResults from "../helpers/select-random-results"
 import Model from "../models/match.wrestler.model"
 
@@ -8,24 +9,30 @@ export default (state, action) => {
   state = List(state)
 
   switch (action.type) {
-    case "SIMULATE_MATCH":
+    case types.SIMULATE_MATCH:
       state = selectRandomResults(state.toJS())
       break
-    case "RANDOMISE_MATCH":
+
+    case types.RANDOMISE_MATCH:
       state = randomiseWrestlers({ wrestlers: state.toJS(), })
       break
-    case "SELECT_WINNER_IN_MATCH":
+
+    case types.SELECT_WINNER_IN_MATCH:
       state = state.map(item => {
         const isAlreadyWinner = item.winner
-        const isWinner =
-          !isAlreadyWinner && item.id === action.payload.wrestlerId
+        const isWinner = !isAlreadyWinner && item.id === action.payload.wrestlerId
 
         item.winner = isWinner
         item.loser = false
         return new Model(item)
       })
       break
-    case "REMOVE_WRESTLER_FROM_MATCH":
+
+    case types.RESET_MATCH:
+      state = []
+      break
+
+    case types.REMOVE_WRESTLER_FROM_MATCH:
       state = state.filter(item => item.id !== action.payload.wrestlerId)
       state = state.map(item => {
         item.winner = false
@@ -33,7 +40,8 @@ export default (state, action) => {
         return item
       })
       break
-    case "ADD_WRESTLER_TO_MATCH":
+
+    case types.ADD_WRESTLER_TO_MATCH:
       {
         const newItem = new Model(action.payload.wrestler)
 

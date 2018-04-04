@@ -2,11 +2,11 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
-import Lightbox from "../lightbox"
 import { fetchData, importData } from "../../actions/data"
 import { Tick } from "../icons"
-import Row from "../row"
+
 import Escape from "../../hoc/escape"
+import Lightbox from "../lightbox"
 
 import "./importer.scss"
 

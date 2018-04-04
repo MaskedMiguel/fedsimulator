@@ -4,15 +4,22 @@
   display: flex;
   flex-wrap: inherit;
 
+  header {
+    margin: 0.5rem;
+  }
+
   .brand {
     flex: 1 0;
     margin: 0;
     overflow: hidden;
-    padding: 0.5rem;
+    padding: 0.1rem;
   }
 
-  h3 {
-    margin: 0.5rem 0;
+  .Droppable {
+    min-height: 5rem;
+    padding: 0.3rem;
+    outline: 0.1rem dashed currentColor;
+    outline-offset: -0.5rem;
   }
 
   @include breakpoint(xs) {
@@ -29,10 +36,6 @@
     .icon.trophy {
       font-size: small;
       margin: 0;
-    }
-
-    h3 {
-      font-size: xx-small;
     }
   }
 }

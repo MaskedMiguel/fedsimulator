@@ -1,5 +1,3 @@
-@import "src/stylesheets/breakpoints";
-
 .page .battle-royal {
   .labels {
     font-size: small;
@@ -15,22 +13,11 @@
     font-size: small;
   }
 
-  .form-group {
-    padding: 1rem;
+	.panel {
+		padding: 1rem;
 
-    header {
-      margin-top: 1rem;
-      font-size: large;
-    }
-  }
-
-  @include breakpoint(xs) {
-    .panel {
-      margin-bottom: 1rem;
-    }
-
-    .labels {
-      justify-content: center;
-    }
-  }
+		.form-group {
+			padding: 0 0 .5rem;
+		}
+	}
 }

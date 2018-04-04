@@ -24,7 +24,7 @@ describe("given a style reducer", () => {
   describe("and a update request is sent", () => {
     before(() => {
       action.type = types.UPDATE_STYLE_HEX
-      action.payload = { hex: compareHex }
+      action.payload = { hex: compareHex, }
       activeReducer = reducer(activeReducer, action)
     })
 

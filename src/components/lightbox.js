@@ -17,7 +17,6 @@ const style = {
   modal: {
     backgroundColor: "#fff",
     color: "#000",
-    borderRadius: 5,
     maxWidth: 500,
     margin: "10% auto",
     padding: 30,

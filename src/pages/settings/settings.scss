@@ -7,11 +7,19 @@
 
   .summary {
     header {
-      font-size: large;
+      font-size: small;
+      text-transform: capitalize;
       margin-bottom: 0.5rem;
     }
     .box {
       padding: 0.5rem;
+    }
+  }
+
+  .rjsf {
+    input {
+      min-height: 4rem !important;
+      height: 2rem !important;
     }
   }
 

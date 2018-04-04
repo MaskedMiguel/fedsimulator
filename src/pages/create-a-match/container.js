@@ -1,28 +1,30 @@
 import { compose, withProps, branch, renderComponent } from "recompose"
 import { connect } from "react-redux"
 import { List } from "immutable"
+import { withRouter } from "react-router-dom"
 
 import withStyle from "../../hoc/withHighlightedStyle"
 import withRoster from "../../hoc/withRoster"
 import withBout from "../../hoc/withBout"
-
 import EmptyRoster from "../../components/empty-roster"
 import CreateAMatch from "./create-a-match"
 
 import { getId } from "../../models/model.helper"
-import { simulateMatch, addWrestlerToMatch, randomiseMatch } from "../../actions/matches"
+import { simulateMatch, addWrestlerToMatch, randomiseMatch, resetMatch } from "../../actions/matches"
 
 export const pick = items => items[Math.floor(Math.random() * (items.length - 1))]
 
 export default compose(
   withBout,
   withRoster,
+  withRouter,
   connect(
     state => ({
       roster: state.roster,
       matches: state.matches,
     }),
     dispatch => ({
+      onResetMatch: id => dispatch(resetMatch(id)),
       onRandomise: id => dispatch(randomiseMatch(id)),
       onSimulateMatch: id => dispatch(simulateMatch(id)),
       onWrestlerClick: props => dispatch(addWrestlerToMatch(props)),
@@ -49,9 +51,7 @@ export default compose(
             wrestler: Object.assign({}, props.roster.find(item => item.id === wrestlerId), { teamId: getId(), }),
           })
         },
-        onReset: () => {
-          props.history.push(`/create-match/`)
-        },
+        onResetMatch: () => props.onResetMatch(currentMatch.id),
         onSimulateMatch: event => {
           event.preventDefault()
 
@@ -60,7 +60,7 @@ export default compose(
         onRandomise: event => {
           event.preventDefault()
 
-          return props.onRandomise({ id: currentMatch.id, roster: props.roster, })
+          return props.onRandomise({ matchId: currentMatch.id, roster: props.roster, })
         },
         winner,
         loser,

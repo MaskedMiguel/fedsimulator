@@ -10,7 +10,7 @@ const defaultFemale = {
   name: "woman",
   male: false,
 }
-const defaultCollection = [defaultMale, defaultFemale]
+const defaultCollection = [defaultMale, defaultFemale,]
 const action = {
   type: types.RESET,
   payload: [],
@@ -61,7 +61,7 @@ describe("given a roster reducer", () => {
     let updatedWrestler
 
     before(() => {
-      updatedWrestler = Object.assign({}, activeReducer[0], { name: "Nothing" })
+      updatedWrestler = Object.assign({}, activeReducer[0], { name: "Nothing", })
 
       action.type = types.UPDATE_WRESTLER
       action.payload = updatedWrestler

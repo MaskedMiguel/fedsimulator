@@ -5,7 +5,7 @@ import withRoster from "../../hoc/withRoster"
 import withBrands from "../../hoc/withBrands"
 import withStyle from "../../hoc/withHighlightedStyle"
 
-import EmptyRoster from "../../components/empty-roster.js"
+import EmptyRoster from "../../components/empty-roster"
 import Draft from "./draft"
 
 export const handlers = {

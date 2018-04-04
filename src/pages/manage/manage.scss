@@ -1,0 +1,20 @@
+.manage {
+  .pane .box {
+    padding: 1rem;
+  }
+
+  .rainbow .stripe .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .form-field {
+    margin: 0 0 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,10 +1,8 @@
 @import "z-index";
 @import "typography";
 @import "breakpoints";
-@import "clearfix";
 @import "variables";
 @import "flexboxgrid";
-@import "form";
 @import "colours";
 @import "table";
 @import "highlight";
@@ -79,6 +77,14 @@ a:hover,
 
 .shadow {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"] {
+  min-height: 1rem !important;
+}
+
+.range-view {
+  display: none;
 }
 
 @import "overrides";

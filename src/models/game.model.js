@@ -11,9 +11,6 @@ export const schema = {
   started: false,
   paused: false,
 
-  foes: [],
-  friends: [],
-
   brandId: null,
   wrestlerId: null,
   matchId: null,

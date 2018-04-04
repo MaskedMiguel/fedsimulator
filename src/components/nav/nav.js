@@ -16,21 +16,38 @@ const Nav = ({ children = "", classes = "", style = {}, isSubMenuOpen = false, t
           &equiv;
         </label>
         <div className={classnames({ active: isSubMenuOpen, }, "nav-right", "nav-menu")} style={style}>
-          {links.map((item, key) => {
-            const { url, title, } = item
-            return (
-              <NavLink
-                key={key}
-                exact
-                activeClassName="active"
-                className="nav-item pointer"
-                style={{ color: style.color, }}
-                to={url}
-                onClick={toggleSubMenuOpen}>
-                <div tabIndex={1}>{title}</div>
-              </NavLink>
-            )
-          })}
+          <ul>
+            {links.map((item, key) => {
+              const { url, title, items, } = item
+              if (url) {
+                return (
+                  <li key={key}>
+                    <NavLink exact className="nav-item pointer" to={url}>
+                      {title}
+                    </NavLink>
+                  </li>
+                )
+              } else {
+                return (
+                  <li key={key}>
+                    <a className="nav-item pointer">▾&nbsp;&nbsp;{title}</a>
+                    <ul style={style}>
+                      {items.map(subItem => {
+                        const { url, title, } = subItem
+                        return (
+                          <li key={url}>
+                            <NavLink exact className="nav-item pointer" to={url}>
+                              {title}
+                            </NavLink>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </li>
+                )
+              }
+            })}
+          </ul>
         </div>
       </If>
     </nav>

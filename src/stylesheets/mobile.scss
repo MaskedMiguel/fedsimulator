@@ -9,11 +9,6 @@ h5 {
 }
 
 @include breakpoint(xs) {
-  h2 {
-    font-weight: bolder;
-    font-size: x-large;
-  }
-
   .page {
     padding: 0.2rem 1rem;
   }
@@ -27,8 +22,7 @@ h5 {
   h2,
   h3,
   h4,
-  h5,
-  .icon {
+  h5 {
     font-size: large;
   }
 }

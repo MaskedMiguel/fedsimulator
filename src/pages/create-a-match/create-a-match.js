@@ -8,52 +8,42 @@ import HeaderOne from "../../components/header/header"
 import Match from "../../components/match/container"
 import Button from "../../components/button/button"
 
-import "../../components/form/input.scss"
 import "./create-a-match.scss"
 
-const inputStyle = {
-  backgroundColor: "transparent",
-  color: "currentColor",
-  padding: 0,
-  width: "auto",
-}
-
-const NOOP = () => {}
+const noop = () => {}
 
 const CreateAMatch = ({
   currentMatch = null,
+  onResetMatch = noop,
+  onRandomise = noop,
+  onSimulateMatch = noop,
+  onWrestlerClick = noop,
   loser = null,
-  onReset = NOOP,
-  onRandomise = NOOP,
-  onSimulateMatch = NOOP,
-  onWrestlerClick = NOOP,
-  style = {},
   winner = null,
   numberOfWrestlers = 0,
+  style = {},
 }) => (
   <div className="create-a-match">
     <form onSubmit={onSimulateMatch}>
       <HeaderOne>
-        <input style={inputStyle} defaultValue="Create a Match" />
-        <span tabIndex={0} className="tools">
-          <Button value="Randomise" onClick={onRandomise} />&nbsp;
-          <Button value="Reset" onClick={onReset} classes="btn-bad" />
+        Create A Match
+        <span className="tools">
+          <If condition={numberOfWrestlers > 1}>
+            <Button tabIndex={0} value="Simulate" classes="btn-info" onClick={onSimulateMatch} />&nbsp;
+          </If>
+          <Button value="Randomise" onClick={onRandomise} classes="btn-info" />&nbsp;
+          <Button value="Reset" onClick={onResetMatch} classes="btn-bad" />
         </span>
       </HeaderOne>
       <div className="row">
         <div className="col-xs-12 col-lg-8 center-xs middle-xs">
           <div className={classnames("box", { hasWinner: winner, })}>
             <Match currentMatch={currentMatch} />
-            <Choose>
-              <When condition={winner && loser}>
-                <Winner {...winner} />
-                <br />
-                <Loser {...loser} />
-              </When>
-              <When condition={numberOfWrestlers > 1}>
-                <Button tabIndex={0} value="Simulate match" onClick={onSimulateMatch} />
-              </When>
-            </Choose>
+            <If condition={winner && loser}>
+              <Winner {...winner} />
+              <br />
+              <Loser {...loser} />
+            </If>
           </div>
           <br />
         </div>
@@ -71,7 +61,7 @@ CreateAMatch.propTypes = {
   currentMatch: PropTypes.object,
   loser: PropTypes.object,
   onRandomise: PropTypes.func,
-  onReset: PropTypes.func,
+  onResetMatch: PropTypes.func,
   onSimulateMatch: PropTypes.func,
   onWrestlerClick: PropTypes.func,
   style: PropTypes.object,

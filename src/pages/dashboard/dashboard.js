@@ -14,7 +14,7 @@ import "./dashboard.scss"
 export const DashboardPage = ({ name = "", style = {}, championships = [], rankedMaleWrestlers = [], rankedFemaleWrestlers = [], }) => (
   <div className="dashboard">
     <HeaderOne>
-      {name} Dashboard
+      {name}
       <span tabIndex="0" className="tools">
         <Simulator />
       </span>
@@ -24,7 +24,7 @@ export const DashboardPage = ({ name = "", style = {}, championships = [], ranke
       <If condition={championships.length > 0}>
         <div className="col-xs">
           <div className="box">
-            <Champions />
+            <Champions championships={championships} />
             <br />
           </div>
         </div>

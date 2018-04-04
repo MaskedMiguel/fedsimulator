@@ -21,19 +21,13 @@ const defaultWrestlers = new List([
   }),
 ]).toJS()
 
-const storeStates = {
-  roster: defaultWrestlers,
-}
-
-const getState = storeName => storeStates[storeName]
-
 const reducerCreator = (activeReducer, type = types.RESET, payload = false) => {
   const action = {
     type,
     payload,
   }
 
-  return reducer(activeReducer, action, getState)
+  return reducer(activeReducer, action)
 }
 
 describe("given a matches reducer", () => {
@@ -44,12 +38,12 @@ describe("given a matches reducer", () => {
   before(() => (activeReducer = reducerCreator()))
 
   it("should return the initial state", () => {
-    expect(activeReducer).to.be.empty
+    expect(activeReducer).to.be.an.array
   })
 
   describe("and a match is created", () => {
     before(() => {
-      activeReducer = reducerCreator(activeReducer, types.CREATE_MATCH)
+      activeReducer = reducerCreator(activeReducer, types.CREATE_MATCH, { id: getId(), })
       currentMatch = activeReducer[0]
     })
 
@@ -68,7 +62,7 @@ describe("given a matches reducer", () => {
 
     describe("and a match is created", () => {
       before(() => {
-        activeReducer = reducerCreator(activeReducer, types.CREATE_MATCH)
+        activeReducer = reducerCreator(activeReducer, types.CREATE_MATCH, { id: getId(), })
       })
 
       it("should now have two items", () => {

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import groupBy from "lodash.groupby"
+import classnames from "classnames"
 
 import { getId } from "../../models/model.helper"
 import * as matchesAction from "../../actions/matches"
@@ -15,8 +16,9 @@ class MatchContainer extends Component {
     if (!currentMatch || !currentMatch.id) {
       return null
     } else {
+      const { simulated, } = currentMatch
       return (
-        <div className="match">
+        <div className={classnames("match", { simulated, })}>
           <Teams
             onDrop={onAddWrestler}
             onAddWrestler={onAddWrestler}

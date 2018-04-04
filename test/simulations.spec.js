@@ -15,11 +15,10 @@ describe("given a simulations reducer", () => {
     expect(activeReducer.simulationSpeed).to.equal(0)
   })
 
-
   describe("and an update simulation speed request is sent", () => {
     before(() => {
       action.type = types.UPDATE_SIMULATION
-      action.payload = { simulationSpeed: 200 }
+      action.payload = { simulationSpeed: 200, }
       activeReducer = reducer(activeReducer, action)
     })
 

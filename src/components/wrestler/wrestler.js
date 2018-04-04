@@ -19,8 +19,12 @@ const Wrestler = ({ wrestler = schema, onClick = NOOP, highlight = false, canDra
   return (
     <Draggable type="wrestler" enabled={canDrag} data={id}>
       <div className={classes} style={withImage} data-id={id} tabIndex="0" onKeyPress={() => onClick(id)} onClick={() => onClick(id)}>
-        <span className="points">{points}</span>
-        <span className="name">{names.map((newName, key) => <div key={key}>{newName}</div>)}</span>
+        <span className="points" tabIndex={1}>
+          {points}
+        </span>
+        <span className="name" tabIndex={1}>
+          {names.map((newName, key) => <div key={key}>{newName}</div>)}
+        </span>
         <If condition={championshipId}>
           <span className="championshipId">
             <i className="icon trophy fa fa-trophy" aria-hidden="true" />

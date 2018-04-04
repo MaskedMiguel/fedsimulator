@@ -1,7 +1,7 @@
 import { Record } from "immutable"
 
 export const schema = {
-  hex: "#4B09BE",
+  hex: "#673ab7",
   light: Boolean(Math.round(Math.random())),
   highlighted: {},
   container: {},

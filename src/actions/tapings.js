@@ -7,10 +7,10 @@ export function updateTaping(payload) {
   }
 }
 
-export function createTaping(wrestler) {
+export function createTaping(taping) {
   return {
     type: types.CREATE_TAPING,
-    payload: wrestler,
+    payload: taping,
   }
 }
 

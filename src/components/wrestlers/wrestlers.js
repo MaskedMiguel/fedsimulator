@@ -18,13 +18,13 @@ export const Container = ({ collection = [], showGenderHeader = true, onClick = 
     <div className="wrestlers" style={style}>
       <If condition={men.length > 0}>
         <If condition={showGenderHeader}>
-          <h3>Men ({men.length})</h3>
+          <header>Men ({men.length})</header>
         </If>
         <Collection collection={men} onClick={onClick} canDrag={canDrag} />
       </If>
       <If condition={women.length > 0}>
         <If condition={showGenderHeader}>
-          <h3>Women ({women.length})</h3>
+          <header>Women ({women.length})</header>
         </If>
         <Collection collection={women} onClick={onClick} canDrag={canDrag} />
       </If>

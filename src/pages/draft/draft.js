@@ -6,7 +6,7 @@ import HeaderOne from "../../components/header/header"
 import Wrestlers from "../../components/wrestlers/container"
 import Create from "../../components/create/brand.container"
 
-import { ADD_BRAND_ENTRY } from "../../constants/confirmations"
+import { ADD_ITEM } from "../../constants/confirmations"
 
 import "./draft.scss"
 
@@ -15,28 +15,31 @@ const NOOP = () => {}
 const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, }) => (
   <div className="draft">
     <HeaderOne>Draft</HeaderOne>
-    <If condition={brands.length === 0}>
-      <Create placeholder={ADD_BRAND_ENTRY} />
-    </If>
-    <If condition={brands.length > 0}>
-      <div className="brands">
-        <div style={style} className="brand">
-          <h3>All</h3>
-          <Wrestlers style={style} />
+    <Choose>
+      <When condition={brands.length > 1}>
+        <div className="brands">
+          <div style={style} className="brand">
+            <header>All</header>
+            <Wrestlers style={style} />
+          </div>
+          {brands.map(brand => {
+            const { backgroundColor, color, id: brandId, } = brand
+            const style = { color, backgroundColor, }
+            return (
+              <div key={brandId} style={style} className="brand pulse">
+                <header>{brand.name}</header>
+                <Droppable types={["wrestler",]} onDrop={event => onDrop(brandId, event)}>
+                  <Wrestlers brandId={brandId} style={style} />
+                </Droppable>
+              </div>
+            )
+          })}
         </div>
-        {brands.map(brand => {
-          const { style, id: brandId, } = brand
-          return (
-            <div key={brandId} style={style} className="brand">
-              <h3>{brand.name}</h3>
-              <Droppable types={["wrestler",]} onDrop={event => onDrop(brandId, event)}>
-                <Wrestlers brandId={brandId} style={style} />
-              </Droppable>
-            </div>
-          )
-        })}
-      </div>
-    </If>
+      </When>
+      <Otherwise>
+        <Create placeholder={ADD_ITEM} />
+      </Otherwise>
+    </Choose>
   </div>
 )
 

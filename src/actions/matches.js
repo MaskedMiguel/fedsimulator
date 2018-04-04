@@ -26,10 +26,17 @@ export function createMatch(props) {
   }
 }
 
-export function randomiseMatch(matchId) {
+export function resetMatch(matchId) {
+  return {
+    type: types.RESET_MATCH,
+    payload: matchId,
+  }
+}
+
+export function randomiseMatch({ matchId, roster, }) {
   return {
     type: types.RANDOMISE_MATCH,
-    payload: matchId,
+    payload: { id: matchId, roster, },
   }
 }
 

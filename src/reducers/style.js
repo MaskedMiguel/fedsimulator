@@ -1,5 +1,6 @@
 import chromatism from "chromatism"
 
+import * as types from "../actions/types"
 import Model from "../models/style.model"
 import { shade as shadeFn } from "../helpers/shade"
 
@@ -34,16 +35,19 @@ export default (state, action) => {
   state = new Model(state)
 
   switch (action.type) {
-    case "RESET":
+    case types.RESET:
       state = new Model()
       break
-    case "UPDATE_STYLE_HEX":
+
+    case types.UPDATE_STYLE_HEX:
       state = state.merge(action.payload)
       break
-    case "TOGGLE_LIGHT":
+
+    case types.TOGGLE_LIGHT:
       state = state.set("light", true)
       break
-    case "TOGGLE_DARK":
+
+    case types.TOGGLE_DARK:
       state = state.set("light", false)
       break
   }

@@ -10,7 +10,8 @@ const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin")
 const getClientEnvironment = require("./env")
 const paths = require("./paths")
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin")
-const WebpackPwaManifest = require('webpack-pwa-manifest');
+const WebpackPwaManifest = require("webpack-pwa-manifest")
+const WebpackBar = require("webpackbar")
 
 const publicPath = "/"
 const publicUrl = ""
@@ -133,6 +134,7 @@ module.exports = {
         comments: false,
       },
     }),
+    new WebpackBar(),
     new webpack.HashedModuleIdsPlugin(),
     new InterpolateHtmlPlugin(env.raw),
     new HtmlWebpackPlugin({
@@ -155,17 +157,17 @@ module.exports = {
       minChunks: 3,
     }),
     new WebpackPwaManifest({
-      name: 'Fed Simulator',
-      short_name: 'FedSim',
-      description: 'A web based wrestling match and federation simulator with match creator, draft and roster management',
-      background_color: '#000025',
+      name: "Fed Simulator",
+      short_name: "FedSim",
+      description: "A web based wrestling match and federation simulator with match creator, draft and roster management",
+      background_color: "#000025",
       icons: [
         {
-          src: path.resolve(paths.appPublic, 'favicon.png'),
-          sizes: [96, 128, 192, 256, 384, 512]
-        }
-      ]
-    })
+          src: path.resolve(paths.appPublic, "favicon.png"),
+          sizes: [96, 128, 192, 256, 384, 512,],
+        },
+      ],
+    }),
   ],
   node: {
     fs: "empty",

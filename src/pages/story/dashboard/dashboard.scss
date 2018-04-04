@@ -1,9 +1,8 @@
-.story .page .wrestler {
-  height: 2.5rem;
-  background-position: bottom right;
-
-  .points,
-  .championshipId {
-    display: none;
+.story .page {
+  .wrestler,
+  div[type="wrestler"] {
+    width: 96%;
+    background-color: transparent;
+    box-shadow: none;
   }
 }

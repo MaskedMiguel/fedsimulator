@@ -1,20 +1,35 @@
 import { compose, branch, renderComponent } from "recompose"
-import orderBy from "lodash.orderby"
 import { connect } from "react-redux"
+import orderBy from "lodash.orderby"
+import pickProps from "../../../hoc/pickProps"
 
-import withRoster from "../../../hoc/withRoster.js"
-
-import EmptyRoster from "../../../components/empty-roster.js"
+import withRoster from "../../../hoc/withRoster"
+import EmptyRoster from "../../../components/empty-roster"
 import Dashboard from "./dashboard"
+
+const isVisible = (item, { rank, brandId, male, }) => item.rank === rank && item.male === male && item.brandId === brandId
 
 export default compose(
   withRoster,
   branch(props => props.roster.length === 0, renderComponent(EmptyRoster)),
-  connect(state => ({
-    championships: state.championships,
-    rankedItems: orderBy(state.roster.filter(wrestler => wrestler.male === state.game.male), "points", "desc"),
-    game: state.game,
-    brandId: state.game.brandId,
-    male: state.game.male,
-  }))
+  connect(state => {
+    let { championships, roster: wrestlers, } = state
+    const { brandId, male, wrestlerId, } = state.game
+    const wrestler = wrestlers.find(item => item.id === wrestlerId)
+
+    if (wrestler) {
+      const filter = { rank: wrestler.rank, brandId, male, }
+
+      championships = championships.filter(item => isVisible(item, filter))
+      wrestlers = wrestlers.filter(item => isVisible(item, filter))
+      wrestlers = orderBy(wrestlers, "points")
+    }
+
+    return {
+      wrestler,
+      wrestlers,
+      championships,
+    }
+  }),
+  pickProps(["wrestler", "wrestlers", "championships",])
 )(Dashboard)

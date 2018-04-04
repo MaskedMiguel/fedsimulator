@@ -2,12 +2,13 @@ import React, { Component } from "react"
 import { compose } from "recompose"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
+import PropTypes from "prop-types"
 
 import withGame from "../../hoc/withGame"
 import withRoster from "../../hoc/withRoster"
 import { getId } from "../../models/model.helper"
 import { createMatch } from "../../actions/matches"
-import randomiseWrestlers from "../../helpers/randomise-wrestlers.js"
+import randomiseWrestlers from "../../helpers/randomise-wrestlers"
 
 import storyline from "./storyline.json"
 
@@ -68,10 +69,10 @@ const enhance = compose(
 )
 
 NextStage.propTypes = {
-  history,
-  game,
-  dispatch,
-  roster,
+  history: PropTypes.func,
+  game: PropTypes.object,
+  dispatch: PropTypes.func,
+  roster: PropTypes.array,
 }
 
 export default enhance(NextStage)

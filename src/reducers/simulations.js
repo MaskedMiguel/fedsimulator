@@ -1,13 +1,16 @@
 import Model from "../models/simulations.model"
 
+import * as types from "../actions/types"
+
 export default (state, action) => {
   state = new Model(state)
 
   switch (action.type) {
-    case "RESET":
+    case types.RESET:
       state = new Model()
       break
-    case "UPDATE_SIMULATION":
+
+    case types.UPDATE_SIMULATION:
       state = state.merge(action.payload)
       break
   }

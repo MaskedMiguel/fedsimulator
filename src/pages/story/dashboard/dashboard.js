@@ -2,30 +2,36 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Champions from "../../../components/champions/container"
-import Ranking from "../../../components/ranking/ranking"
-
-import { RANKED_COLUMNS } from "../../../constants/ranking"
+import Leaderboard from "../../../components/leaderboard/leaderboard"
 
 import "./dashboard.scss"
 
-export const DashboardPage = ({ style = {}, male = null, brandId = null, championships = [], rankedItems = [], }) => (
+export const StoryDashboard = ({ wrestler = {}, championships = [], wrestlers = [], }) => (
   <div className="dashboard">
-    <If condition={championships.length > 0}>
-      <Champions brandId={brandId} male={male} />
-      <br />
-    </If>
-    <Ranking style={style} amountToShow={30} rows={rankedItems} columns={RANKED_COLUMNS} />
+    <div className="row">
+      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+        <div className="box">
+          <If condition={championships.length > 0}>
+            <Champions championships={championships} />
+          </If>
+        </div>
+      </div>
+      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+        <div className="box">
+          <h3>Rank {wrestler.rank}</h3>
+          <Leaderboard wrestlers={wrestlers} activeId={wrestler.id} />
+        </div>
+      </div>
+    </div>
   </div>
 )
 
-DashboardPage.displayName = "DashboardPage"
+StoryDashboard.displayName = "StoryDashboard"
 
-DashboardPage.propTypes = {
-  brandId: PropTypes.string,
+StoryDashboard.propTypes = {
   championships: PropTypes.array,
-  rankedItems: PropTypes.array,
-  style: PropTypes.object,
-  male: PropTypes.bool,
+  wrestler: PropTypes.object,
+  wrestlers: PropTypes.array,
 }
 
-export default DashboardPage
+export default StoryDashboard

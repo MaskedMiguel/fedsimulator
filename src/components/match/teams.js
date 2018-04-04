@@ -1,13 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { compose } from "recompose"
 
+import withStyle from "../../hoc/withHighlightedStyle"
 import Team from "./team"
 
 import "./match.scss"
 
 const noop = () => {}
 
-const Teams = ({ onAddWrestler = noop, onRemoveWrestler = noop, onSelectWinner = noop, teams = [], }) => {
+const Teams = ({ style = {}, onAddWrestler = noop, onRemoveWrestler = noop, onSelectWinner = noop, teams = [], }) => {
   const amountOfTeams = Object.keys(teams).length - 1
   return (
     <div className="teams row">
@@ -18,11 +20,12 @@ const Teams = ({ onAddWrestler = noop, onRemoveWrestler = noop, onSelectWinner =
           <Team
             classes={classes}
             onDrop={item => onAddWrestler(teamId, item)}
-            key={`t-${teamId}-${key}`}
+            key={`${teamId}-${key}`}
             teamId={teamId}
             onRemoveWrestler={onRemoveWrestler}
             onSelectWinner={onSelectWinner}
             wrestlers={wrestlers}
+            style={style}
           />
         )
       })}
@@ -35,5 +38,11 @@ Teams.propTypes = {
   onRemoveWrestler: PropTypes.func,
   onSelectWinner: PropTypes.func,
   teams: PropTypes.object,
+  style: PropTypes.object,
 }
-export default Teams
+
+const enhance = compose(
+  withStyle //
+)
+
+export default enhance(Teams)

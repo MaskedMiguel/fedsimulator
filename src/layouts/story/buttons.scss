@@ -14,24 +14,13 @@ $reset-sec-button-background: #ce372b;
 $reset-shadow-color: #8c2022;
 
 button {
-  background: $button-background;
   display: inline-block;
   position: relative;
   text-align: center;
   text-decoration: none;
+  font-size: x-small;
   line-height: 1.5rem;
-  box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
   letter-spacing: 1px;
-
-  &:hover,
-  &:focus {
-    background: $sec-button-background;
-    box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
-  }
-
-  &:active {
-    box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
-  }
 
   &:before,
   &:after {
@@ -56,7 +45,23 @@ button {
     border-right: $outline-width black solid;
   }
 
-  &.btn-bad {
+  &.btn-good {
+    background: $button-background;
+    box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+
+    &:hover,
+    &:focus {
+      background: $sec-button-background;
+      box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
+    }
+
+    &:active {
+      box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
+    }
+  }
+
+  &.btn-bad,
+  &.btn-delete {
     box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $reset-shadow-color;
 
     &:hover,

@@ -1,4 +1,4 @@
-//https://gist.github.com/aamnah/2ebe6049fa1822c2e72d64c85a350874
+import * as types from "../actions/types"
 
 const initialState = {
   isFetching: false,
@@ -7,14 +7,18 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
+  state = JSON.parse(JSON.stringify(state))
+
   switch (action.type) {
-    case "FETCH_START":
+    case types.FETCH_START:
       state = {
         ...state,
         isFetching: true,
         error: false,
       }
-    case "FETCH_COMPLETE":
+      break
+
+    case types.FETCH_COMPLETE:
       state = {
         ...state,
         isFetching: false,
@@ -22,13 +26,16 @@ export default (state = initialState, action) => {
         receivedAt: +new Date(),
         data: action.data,
       }
-    case "FETCH_ERROR":
+      break
+
+    case types.FETCH_ERROR:
       state = {
         ...state,
         isFetching: false,
         error: true,
         data: action.data,
       }
+      break
   }
   return state
 }

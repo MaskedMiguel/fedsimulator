@@ -1,34 +1,52 @@
 [
   {
-    "url": "/dashboard",
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "url": "/dashboard"
   },
   {
-    "url": "/create-match",
-    "title": "Create a match"
+    "title": "Manage",
+    "items": [
+      {
+        "title": "Roster",
+        "url": "/roster"
+      },
+      {
+        "title": "Brands",
+        "url": "/brands"
+      },
+      {
+        "title": "Championships",
+        "url": "/championships"
+      },
+      {
+        "title": "Shows",
+        "url": "/shows"
+      }
+    ]
   },
   {
-    "url": "/battle-royal",
-    "title": "Battle Royal"
+    "title": "Create",
+    "items": [
+      {
+        "title": "Match",
+        "url": "/create-match"
+      },
+      {
+        "title": "Show",
+        "url": "/create-show"
+      },
+      {
+        "title": "Battle Royal",
+        "url": "/battle-royal"
+      },
+      {
+        "title": "Draft",
+        "url": "/draft"
+      }
+    ]
   },
   {
-    "url": "/draft",
-    "title": "Draft"
-  },
-  {
-    "url": "/roster",
-    "title": "Roster"
-  },
-  {
-    "url": "/brands",
-    "title": "Brands"
-  },
-  {
-    "url": "/championships",
-    "title": "Championships"
-  },
-  {
-    "url": "/settings",
-    "title": "Settings"
+    "title": "Settings",
+    "url": "/settings"
   }
 ]

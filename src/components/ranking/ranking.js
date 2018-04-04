@@ -7,7 +7,11 @@ import "./ranking.scss"
 
 const Ranking = ({ title = "", amountToShow = 100, columns = {}, currencySymbol = "$", rows = [], style = {}, }) => (
   <div className="ranking">
-    {title ? <h3 style={style}>{title}</h3> : null}
+    {title ? (
+      <h3 style={style} tabIndex={0}>
+        {title}
+      </h3>
+    ) : null}
     <table className="ranking__table table table-striped">
       <thead>
         <tr>

@@ -68,7 +68,7 @@ export default compose(
       onSimulate: simulate => dispatch(updateBattleRoyal({ simulate: !simulate, })),
       onGenerateEntries: props => dispatch(generateEntries(props)),
       onClear: () => dispatch(resetBattleRoyal()),
-      onUpdateAmountOfEntries: ({ currentTarget: { value, }, }) => dispatch(updateBattleRoyal({ amountOfEntries: Number(value), })),
+      onUpdateAmountOfEntries: value => dispatch(updateBattleRoyal({ amountOfEntries: Number(value), })),
     })
   ),
   withProps(propsMapper),

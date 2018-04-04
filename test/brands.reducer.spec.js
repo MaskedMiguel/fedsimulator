@@ -3,17 +3,13 @@ import * as types from "../src/actions/types"
 
 const defaultModel1 = {
   name: "Smackdown Live",
-  style: {
-    color: "blue",
-    backgroundColor: "white",
-  },
+  color: "blue",
+  backgroundColor: "white",
 }
 const defaultModel2 = {
   name: "Raw",
-  style: {
-    color: "red",
-    backgroundColor: "white",
-  },
+  color: "red",
+  backgroundColor: "white",
 }
 const action = {
   type: types.RESET,
@@ -46,11 +42,11 @@ describe("given a brands reducer", () => {
 
     it("should have a red brand", () => {
       expect(activeReducer[0].id).to.not.be.null
-      expect(activeReducer[0].style.color).to.equal(defaultModel1.style.color)
+      expect(activeReducer[0].color).to.equal(defaultModel1.color)
     })
 
     it("should have a blue brand", () => {
-      expect(activeReducer[1].style.color).to.equal(defaultModel2.style.color)
+      expect(activeReducer[1].color).to.equal(defaultModel2.color)
     })
 
     describe("and DELETE_BRAND is called", () => {

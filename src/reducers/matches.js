@@ -1,5 +1,6 @@
 import { List } from "immutable"
 
+import * as types from "../actions/types"
 import Model from "../models/match.model"
 import WrestlersReducer from "./match.wrestlers"
 
@@ -8,18 +9,35 @@ export default (state, action) => {
   let index
 
   switch (action.type) {
-    case "CREATE_MATCH":
+    case types.RESET_MATCHES:
+    case types.RESET:
+      state = List()
+      break
+
+    case types.RESET_MATCH:
+      index = state.findIndex(item => item.id === action.payload)
+
+      state = state.updateIn([index,], item => {
+        item.simulated = false
+        item.wrestlers = new WrestlersReducer(item.wrestlers, action)
+        return item
+      })
+      break
+
+    case types.CREATE_MATCH:
       state = state.push(new Model(action.payload))
       break
-    case "RANDOMISE_MATCH":
+
+    case types.RANDOMISE_MATCH:
       {
         const { id, roster, } = action.payload
+
         if (action.payload) {
           index = state.findIndex(item => item.id === id)
 
           if (index > -1) {
             state = state.updateIn([index,], item => {
-              item.simulated = true
+              item.simulated = false
               item.wrestlers = new WrestlersReducer(roster, action)
               return item
             })
@@ -27,7 +45,8 @@ export default (state, action) => {
         }
       }
       break
-    case "SIMULATE_MATCH":
+
+    case types.SIMULATE_MATCH:
       index = state.findIndex(item => item.id === action.payload)
 
       state = state.updateIn([index,], item => {
@@ -36,7 +55,8 @@ export default (state, action) => {
         return item
       })
       break
-    case "SELECT_WINNER_IN_MATCH":
+
+    case types.SELECT_WINNER_IN_MATCH:
       {
         const { matchId, } = action.payload
 
@@ -50,7 +70,8 @@ export default (state, action) => {
         }
       }
       break
-    case "REMOVE_WRESTLER_FROM_MATCH":
+
+    case types.REMOVE_WRESTLER_FROM_MATCH:
       {
         const { matchId, } = action.payload
 
@@ -64,7 +85,8 @@ export default (state, action) => {
         }
       }
       break
-    case "ADD_WRESTLER_TO_MATCH":
+
+    case types.ADD_WRESTLER_TO_MATCH:
       index = state.findIndex(item => item.id === action.payload.matchId)
 
       if (index > -1) {
@@ -76,7 +98,8 @@ export default (state, action) => {
         })
       }
       break
-    case "CLEAR_WRESTLERS_FROM_MATCH":
+
+    case types.CLEAR_WRESTLERS_FROM_MATCH:
       index = state.findIndex(item => item.id === action.payload)
 
       state = state.updateIn([index,], item => {
@@ -84,7 +107,8 @@ export default (state, action) => {
         return item
       })
       break
-    case "HIT_MOVE_IN_MATCH":
+
+    case types.HIT_MOVE_IN_MATCH:
       {
         const { id, damage, defenciveId, offensiveId, } = action.payload
 
@@ -109,10 +133,6 @@ export default (state, action) => {
           return bout
         })
       }
-      break
-    case "RESET_MATCHES":
-    case "RESET":
-      state = List()
       break
   }
   return state.toJS()

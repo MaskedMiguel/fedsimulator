@@ -9,14 +9,17 @@ import { Trophy, Reset, Info } from "../icons"
 
 const NOOP = () => {}
 
-const Team = ({ classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWrestler = NOOP, onDrop = NOOP, }) => {
+const Team = ({ style = {}, classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWrestler = NOOP, onDrop = NOOP, }) => {
   const hasWinner = wrestlers.find(wrestler => wrestler.winner)
+  const hasLoser = wrestlers.find(wrestler => wrestler.loser)
   const hasManyWrestlers = wrestlers.length > 2
+  const hasWrestlers = wrestlers.length > 0
   const teamClasses = classnames(
     "team",
     "col-xs-12",
     { "has-winner": hasWinner, },
-    { "has-wrestlers": wrestlers.length > 0, },
+    { "has-loser": hasLoser, },
+    { "has-wrestlers": hasWrestlers, },
     { "col-lg-6 col-sm-6 ": !hasManyWrestlers, },
     { "col-lg-12 col-sm-12": hasManyWrestlers, },
     classes
@@ -24,9 +27,9 @@ const Team = ({ classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWre
   return (
     <div className={teamClasses}>
       <Droppable types={["wrestler",]} onDrop={onDrop}>
-        <div className="box dropzone shadow pulse">
+        <div style={style} className={classnames("box", "dropzone", "pulse", { active: hasWrestlers, })}>
           <Choose>
-            <When condition={wrestlers.length > 0}>
+            <When condition={hasWrestlers}>
               {wrestlers.map(wrestler => {
                 const { id, } = wrestler
 
@@ -35,10 +38,10 @@ const Team = ({ classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWre
                     <Wrestler wrestler={wrestler} />
                     &nbsp;
                     <span className="tools">
-                      <Button classes="btn-good btn-small btn-square" onClick={() => onSelectWinner(id)}>
+                      <Button classes="btn-good btn-small" onClick={() => onSelectWinner(id)}>
                         <Trophy />
                       </Button>
-                      <Button classes="btn-bad btn-small btn-square" onClick={() => onRemoveWrestler(id)}>
+                      <Button classes="btn-bad btn-small" onClick={() => onRemoveWrestler(id)}>
                         <Reset />
                       </Button>
                     </span>
@@ -47,7 +50,9 @@ const Team = ({ classes = "", wrestlers = [], onSelectWinner = NOOP, onRemoveWre
               })}
             </When>
             <Otherwise>
-              <Info />&nbsp;Drop wrestlers here
+              <span tabIndex={1}>
+                <Info />&nbsp;Drop wrestlers here
+              </span>
             </Otherwise>
           </Choose>
         </div>
@@ -62,6 +67,7 @@ Team.propTypes = {
   onRemoveWrestler: PropTypes.func.isRequired,
   onSelectWinner: PropTypes.func.isRequired,
   wrestlers: PropTypes.array.isRequired,
+  style: PropTypes.object,
 }
 
 export default Team

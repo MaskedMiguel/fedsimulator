@@ -7,6 +7,8 @@ import { resetRoster } from "../../actions/roster"
 import { resetChampionships } from "../../actions/champions"
 import { resetBrands } from "../../actions/brands"
 import { resetTapings } from "../../actions/tapings"
+import { resetShows } from "../../actions/shows"
+import { resetMatches } from "../../actions/matches"
 
 import Button from "../button/button"
 
@@ -15,10 +17,12 @@ class ImportSummary extends Component {
   onResetChampionships = () => this.props.dispatch(resetChampionships())
   onResetBrands = () => this.props.dispatch(resetBrands())
   onResetTapings = () => this.props.dispatch(resetTapings())
+  onResetShows = () => this.props.dispatch(resetShows())
+  onResetMatches = () => this.props.dispatch(resetMatches())
 
   render() {
     const { totals, } = this.props
-    const columns = "col-xs-6 col-sm-3 col-md-3 col-lg-3 center-xs middle-xs pulse"
+    const columns = "col-xs-6 col-sm-2 col-md-2 col-lg-2 center-xs middle-xs pulse"
 
     return (
       <div className="wrapper">
@@ -26,25 +30,37 @@ class ImportSummary extends Component {
           <div className={columns}>
             <div className="box">
               <header>{totals.roster} wrestlers</header>
-              <Button onClick={this.onResetRoster} value="Clear" />
+              <Button classes="btn-bad" onClick={this.onResetRoster} value="Clear" />
             </div>
           </div>
           <div className={columns}>
             <div className="box">
               <header>{totals.championships} championships</header>
-              <Button onClick={this.onResetChampionships} value="Clear" />
+              <Button classes="btn-bad" onClick={this.onResetChampionships} value="Clear" />
             </div>
           </div>
           <div className={columns}>
             <div className="box">
               <header>{totals.brands} brands</header>
-              <Button onClick={this.onResetBrands} value="Clear" />
+              <Button classes="btn-bad" onClick={this.onResetBrands} value="Clear" />
             </div>
           </div>
           <div className={columns}>
             <div className="box">
               <header>{totals.tapings} tapings</header>
-              <Button onClick={this.onResetTapings} value="Clear" />
+              <Button classes="btn-bad" onClick={this.onResetTapings} value="Clear" />
+            </div>
+          </div>
+          <div className={columns}>
+            <div className="box">
+              <header>{totals.shows} shows</header>
+              <Button classes="btn-bad" onClick={this.onResetShows} value="Clear" />
+            </div>
+          </div>
+          <div className={columns}>
+            <div className="box">
+              <header>{totals.matches} matches</header>
+              <Button classes="btn-bad" onClick={this.onResetMatches} value="Clear" />
             </div>
           </div>
         </div>
@@ -65,6 +81,8 @@ export const enhance = compose(
       championships: state.championships.length,
       roster: state.roster.length,
       brands: state.brands.length,
+      shows: state.shows.length,
+      matches: state.matches.length,
       tapings: state.tapings.length,
     },
   }))
