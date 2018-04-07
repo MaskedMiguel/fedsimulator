@@ -11,4 +11,5 @@ export const SKIP_MATCH_FINE = 1000
 export const SKIP_MONTH_FINE = 3500
 export const MAX_DAMAGE_PER_MOVE = 8
 export const SPEED_PER_MOVE = 300
+export const WRESTLER_MAX_POINTS = 200
 export const NAME_PLACEHOLDER = "Baron Blade, Brock Lee"

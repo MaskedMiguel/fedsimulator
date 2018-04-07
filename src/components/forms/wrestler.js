@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Form from "react-jsonschema-form"
 import { compose } from "recompose"
 
+import { WRESTLER_MAX_POINTS } from "../../constants/game"
 import withChampionships from "../../hoc/withChampionships"
 import withBrands from "../../hoc/withBrands"
 
@@ -33,7 +34,7 @@ const schema = {
       title: "Points",
       default: 1,
       minimum: 1,
-      maximum: 100,
+      maximum: WRESTLER_MAX_POINTS,
     },
   },
 }
