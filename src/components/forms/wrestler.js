@@ -46,8 +46,16 @@ const uiSchema = {
 }
 
 const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit = noop, currentItem = {}, }) => {
-  schema.properties.brandId.enum = brands.map(item => item.id).concat(["",])
-  schema.properties.brandId.enumNames = brands.map(item => item.name).concat(["Unbranded",])
+  if (currentItem.brandId === null) {
+    currentItem.brandId = ""
+  }
+
+  if (currentItem.championshipId === null) {
+    currentItem.brandId = ""
+  }
+
+  schema.properties.brandId.enum = brands.map(item => item.id)
+  schema.properties.brandId.enumNames = brands.map(item => item.name)
 
   schema.properties.championshipId.enum = championships.map(item => item.id)
   schema.properties.championshipId.enumNames = championships.map(item => item.name)
