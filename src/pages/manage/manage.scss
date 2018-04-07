@@ -3,6 +3,11 @@
     padding: 1rem;
   }
 
+  .rainbow {
+    height: 100vh;
+    overflow: scroll;
+  }
+
   .rainbow .stripe .box {
     display: flex;
     justify-content: space-between;
