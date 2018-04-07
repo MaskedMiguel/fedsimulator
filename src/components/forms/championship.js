@@ -51,6 +51,9 @@ const uiSchema = {
 }
 
 const ChampionshipForm = ({ children = "", brands = [], onSubmit = noop, currentItem = {}, }) => {
+  if (currentItem.brandId === null) {
+    currentItem.brandId = ""
+  }
   schema.properties.brandId.enum = brands.map(item => item.id)
   schema.properties.brandId.enumNames = brands.map(item => item.name)
   return (
