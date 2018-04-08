@@ -25,8 +25,9 @@ const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, }) => (
           {brands.map(brand => {
             const { backgroundColor, color, id: brandId, } = brand
             const style = { color, backgroundColor, }
+
             return (
-              <div key={brandId} style={style} className="brand pulse">
+              <div key={brandId} style={style} className="brand">
                 <header>{brand.name}</header>
                 <Droppable types={["wrestler",]} onDrop={event => onDrop(brandId, event)}>
                   <Wrestlers brandId={brandId} style={style} />
