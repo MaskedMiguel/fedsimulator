@@ -22,22 +22,12 @@ class Importer extends Component {
     this.props.dispatch(fetchData(API_ENDPOINT))
   }
 
-  onImportAll = () => {
-    if (this.props.collection.data) {
-      this.props.collection.data.forEach(props => {
-        this.onImport(props)
-      })
-      this.setState({
-        importComplete: true,
-        title: "Import everything",
-      })
-    }
-  }
+  onImport = ({ title, items, }) => {
+    items.forEach(({ type, payload, }) => {
+      this.props.dispatch(importData({ type, payload, }))
+    })
 
-  onImport = ({ title, type, payload, }) => {
-    const callback = () => this.importFinished()
-
-    this.props.dispatch(importData({ type, payload, callback, }))
+    this.importFinished()
 
     this.setState({
       title,
@@ -58,7 +48,6 @@ class Importer extends Component {
   }
 
   render() {
-    const importAllStyle = { backgroundColor: "black", color: "white", }
     const { title, importComplete, } = this.state
     const { data, } = this.props.collection
 
@@ -73,22 +62,15 @@ class Importer extends Component {
             <Tick /> {title} complete!
           </Lightbox>
         </Escape>
-        <div className="row center-xs">
-          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div className="box inner" onClick={this.onImportAll} style={importAllStyle}>
-              Import all (recommended)
-            </div>
-          </div>
-        </div>
         <div className="row">
-          {data.map(({ title, type, payload, style, }) => {
+          {data.map(({ title, items, style, }) => {
             return (
               <div
                 key={title}
                 className="shadow pulse inner col-lg-4 col-md-4 col-sm-4 col-xs-12 middle-xs center-xs"
-                onClick={() => this.onImport({ title, type, payload, })}>
+                onClick={() => this.onImport({ title, items, })}>
                 <div className="box" style={style}>
-                  {title} ({payload.length})
+                  {title}
                 </div>
               </div>
             )
