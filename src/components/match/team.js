@@ -5,7 +5,6 @@ import { Droppable } from "react-drag-and-drop"
 
 import Button from "../button/button"
 import Wrestler from "../wrestler/wrestler"
-import { Trophy, Reset, Info } from "../icons"
 
 const NOOP = () => {}
 
@@ -38,10 +37,10 @@ const Team = ({ style = {}, classes = "", wrestlers = [], onSelectWinner = NOOP,
                     <Wrestler wrestler={wrestler} />
                     <span className="tools">
                       <Button classes="btn-good btn-small" onClick={() => onSelectWinner(id)}>
-                        <Trophy />
+                        🏆
                       </Button>
                       <Button classes="btn-bad btn-small" onClick={() => onRemoveWrestler(id)}>
-                        <Reset />
+                        🗑
                       </Button>
                     </span>
                   </div>
@@ -49,9 +48,7 @@ const Team = ({ style = {}, classes = "", wrestlers = [], onSelectWinner = NOOP,
               })}
             </When>
             <Otherwise>
-              <span tabIndex={1}>
-                <Info />&nbsp;Drop wrestlers here
-              </span>
+              <span tabIndex={1}>ℹ &nbsp;Drop wrestlers here</span>
             </Otherwise>
           </Choose>
         </div>

@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 import Name from "../../../components/form/input"
 import Button from "../../../components/button/button"
-import { Icon } from "../../../components/icons"
 import Image8Bit from "../../../hoc/8bit"
 
 import Brand from "./brand.container"
@@ -54,12 +53,12 @@ const StoryStart = ({ canStart = false, name = "", step = 1, onChangeName = NOOP
           <Choose>
             <When condition={!canStart}>
               <Button onClick={NOOP} classes={["btn-large", "btn-bad",]}>
-                <Icon icon={"check"} /> Fill out your bio to continue!
+                Fill out your bio to continue!
               </Button>
             </When>
             <Otherwise>
               <Button onClick={onStart} classes={["btn-large", "btn-good",]}>
-                <Icon icon={"check"} /> Start your rise to the top
+                Start your rise to the top
               </Button>
             </Otherwise>
           </Choose>

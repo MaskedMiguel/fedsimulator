@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
 import { fetchData, importData } from "../../actions/data"
-import { Tick } from "../icons"
 
 import Escape from "../../hoc/escape"
 import Lightbox from "../lightbox"
@@ -59,7 +58,7 @@ class Importer extends Component {
       <div className="importer">
         <Escape onEscape={this.onClose}>
           <Lightbox isVisible={importComplete} onClose={this.onClose}>
-            <Tick /> {title} complete!
+            ✅ {title} complete!
           </Lightbox>
         </Escape>
         <div className="row">
