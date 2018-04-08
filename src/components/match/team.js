@@ -36,7 +36,6 @@ const Team = ({ style = {}, classes = "", wrestlers = [], onSelectWinner = NOOP,
                 return (
                   <div key={id} tabIndex={0} className="member center-xs middle-xs">
                     <Wrestler wrestler={wrestler} />
-                    &nbsp;
                     <span className="tools">
                       <Button classes="btn-good btn-small" onClick={() => onSelectWinner(id)}>
                         <Trophy />

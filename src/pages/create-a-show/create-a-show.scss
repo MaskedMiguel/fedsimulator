@@ -12,10 +12,6 @@
     }
   }
 
-  .Droppable {
-    min-height: 3.2rem;
-  }
-
   .dropzone {
     box-shadow: none;
   }
@@ -27,14 +23,6 @@
     h2 {
       margin: 0;
     }
-  }
-
-  .has-loser.team .dropzone {
-    box-shadow: inset 0px 0px 6px 3px red;
-  }
-
-  .has-winner.team .dropzone {
-    box-shadow: inset 0px 0px 6px 3px green;
   }
 
   .match.simulated .last {

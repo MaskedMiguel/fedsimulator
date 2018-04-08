@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 
-import { Cross, Tick } from "../../components/icons"
 import Healthbar from "../../components/healthbar/healthbar"
 
 const BoutWrestler = ({ name = "", health = 100, loser = false, winner = false, }) => (

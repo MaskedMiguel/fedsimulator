@@ -7,6 +7,7 @@ $match-border-color: #a4a3a3;
   &.simulated .team .member .tools {
     display: none;
   }
+
   .team {
     margin-bottom: 0.5rem;
 
@@ -36,18 +37,46 @@ $match-border-color: #a4a3a3;
       box-shadow: 1px solid white;
     }
 
+    &.has-wrestlers {
+      .dropzone {
+        background-color: transparent !important;
+      }
+    }
+
+    &.has-loser .dropzone {
+      box-shadow: 0.3rem 0.3rem 0 red;
+    }
+
+    &.has-winner .dropzone {
+      box-shadow: 0.3rem 0.3rem 0 green;
+    }
+
+    .dropzone {
+      transition: box-shadow 1s ease-in-out;
+    }
+
     .member {
       background-color: black;
-      margin: 0.1rem;
       display: flex;
       flex-grow: 1;
       justify-content: space-between;
-      padding: 0 0.2rem;
+
+      .wrestler,
+      div[type="wrestler"] {
+        width: 100%;
+        margin: 0;
+      }
 
       .tools {
         justify-content: space-around;
         flex-direction: column;
         display: flex;
+        height: 3rem;
+
+        button {
+          height: 100%;
+          display: block;
+        }
       }
     }
   }
