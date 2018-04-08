@@ -63,10 +63,13 @@ const Manage = ({
             <Rainbow>
               {collection.map((item, index) => {
                 const { id, name, color, backgroundColor, } = item
+                if (color && backgroundColor) {
+                  style = { color, backgroundColor, }
+                }
 
                 return (
                   <Item key={id} onClick={() => onClick(id)} index={index} style={style}>
-                    {Presentation ? <Presentation item={item} /> : <Button style={{ color, backgroundColor, }}>{name}</Button>}
+                    {Presentation ? <Presentation item={item} /> : name}
                     <Button classes="btn-delete" onClick={() => onDelete(id)}>
                       Delete
                     </Button>

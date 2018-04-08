@@ -8,20 +8,17 @@ import "./rainbow.scss"
 const noop = () => {}
 const defaultStyle = { backgroundColor: "#fff", color: "#000", }
 
-const shade = (index, { color, backgroundColor, }) => ({
+const getStyle = (index, { color, backgroundColor, }) => ({
   color,
-  backgroundColor: chromatism.hue(index * 1.2, backgroundColor).hex,
+  backgroundColor: chromatism.hue(index, backgroundColor).hex,
 })
 
-const Rainbow = ({ children = "", }) => {
-  return <div className="rainbow">{children}</div>
-}
+const Rainbow = ({ children = "", }) => <div className="rainbow">{children}</div>
 
 const Item = ({ index = 0, onClick = noop, classes = "", children = "", style = defaultStyle, }) => {
-  const borderBottom = { borderBottom: `1px solid ${chromatism.shade(index * 3, style.backgroundColor).hex}`, }
   return (
-    <div className="row stripe pulse" style={borderBottom}>
-      <div className="col-xs" style={shade(index, style)}>
+    <div className="row stripe pulse" style={getStyle(index, style)}>
+      <div className="col-xs">
         <div className={classnames("box", classes)} onClick={onClick}>
           {children}
         </div>
