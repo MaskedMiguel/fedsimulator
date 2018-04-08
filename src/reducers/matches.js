@@ -14,6 +14,11 @@ export default (state, action) => {
       state = List()
       break
 
+    case types.GENERATE_MATCHES:
+      state = state.merge(List(action.payload.map(item => new Model(item))))
+      state = state.filter((prev, i, self) => i === self.findIndex(next => next.id === prev.id))
+      break
+
     case types.RESET_MATCH:
       index = state.findIndex(item => item.id === action.payload)
 
