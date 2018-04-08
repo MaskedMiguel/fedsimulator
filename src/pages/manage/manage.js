@@ -12,6 +12,7 @@ const NOOP = () => {}
 const Manage = ({
   title = "",
   Form = NOOP,
+  Presentation = null,
   creating = false,
   currentItem = null,
   onClick = NOOP,
@@ -62,9 +63,10 @@ const Manage = ({
             <Rainbow>
               {collection.map((item, index) => {
                 const { id, name, color, backgroundColor, } = item
+
                 return (
                   <Item key={id} onClick={() => onClick(id)} index={index} style={style}>
-                    <Button style={{ color, backgroundColor, }}>{name}</Button>
+                    {Presentation ? <Presentation item={item} /> : <Button style={{ color, backgroundColor, }}>{name}</Button>}
                     <Button classes="btn-delete" onClick={() => onDelete(id)}>
                       Delete
                     </Button>
@@ -82,6 +84,7 @@ const Manage = ({
 Manage.propTypes = {
   title: PropTypes.string,
   Form: PropTypes.func,
+  Presentation: PropTypes.func,
   creating: PropTypes.bool,
   currentItem: PropTypes.object,
   onClick: PropTypes.func,
