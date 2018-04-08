@@ -5,8 +5,8 @@
   .form-group {
     margin-bottom: 1rem;
 
-    .control-label {
-      font-size: large;
+    p {
+      margin: 0;
     }
 
     fieldset {
@@ -29,9 +29,8 @@
       }
     }
 
-    select {
-      border-radius: 0;
-      -webkit-appearance: none;
+    .file-info {
+      display: none;
     }
 
     input[type="color"] {

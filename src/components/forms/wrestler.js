@@ -24,11 +24,11 @@ const schema = {
       title: "Championship",
       type: "string",
     },
-    // image: {
-    //   type: "string",
-    //   format: "data-url",
-    //   title: "Image",
-    // },
+    image: {
+      type: "string",
+      format: "data-url",
+      title: "Image",
+    },
     points: {
       type: "integer",
       title: "Points",
@@ -60,9 +60,12 @@ const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit
   schema.properties.championshipId.enum = championships.map(item => item.id)
   schema.properties.championshipId.enumNames = championships.map(item => item.name)
   return (
-    <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
-      {children}
-    </Form>
+    <span>
+      {currentItem.image ? <img src={currentItem.image} /> : ""}
+      <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
+        {children}
+      </Form>
+    </span>
   )
 }
 
