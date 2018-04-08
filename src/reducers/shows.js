@@ -17,8 +17,6 @@ export default (state, action) => {
     case types.GENERATE_SHOWS:
       state = state.merge(List(action.payload.map(item => new Model(item))))
       state = state.filter((prev, i, self) => i === self.findIndex(next => next.id === prev.id))
-
-      action.callback()
       break
 
     case types.CREATE_SHOW:
