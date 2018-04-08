@@ -9,7 +9,6 @@ import { EXTREME_PERCENT_GAIN_FOR_HIGHEST_WRESTLER, PERCENT_GAIN_FOR_HIGHEST_WRE
 export default function selectRandomResults(wrestlers = [], highBias = false) {
   const numberOfTeams = Object.keys(groupBy(wrestlers, "teamId")).length
   const numberOfWrestlers = wrestlers.length
-  const hasWinner = wrestlers.findIndex(wrestler => wrestler.winner) > -1
 
   if (numberOfWrestlers > 1 && numberOfTeams > 1) {
     let weightedWrestlers = arrayOfLength(wrestlers.length)
@@ -29,7 +28,7 @@ export default function selectRandomResults(wrestlers = [], highBias = false) {
       weightedWrestlers[highestIndex] = weightedWrestlers[highestIndex] + highestAttackersPercentageGain
     }
 
-    const winner = hasWinner ? wrestlers.find(wrestler => wrestler.winner) : weighted.select(wrestlers, weightedWrestlers)
+    const winner = weighted.select(wrestlers, weightedWrestlers)
     const losers = wrestlers.filter(loser => loser.teamId !== winner.teamId)
     const losersRandomWeighting = arrayOfLength(losers.length)
     const loser = weighted.select(losers, losersRandomWeighting)
