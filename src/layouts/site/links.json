@@ -4,6 +4,10 @@
     "url": "/dashboard"
   },
   {
+    "title": "Shows",
+    "url": "/shows"
+  },
+  {
     "title": "Manage",
     "items": [
       {
@@ -17,10 +21,6 @@
       {
         "title": "Championships",
         "url": "/championships"
-      },
-      {
-        "title": "Shows",
-        "url": "/shows"
       }
     ]
   },
