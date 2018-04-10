@@ -43,11 +43,11 @@ $match-border-color: #a4a3a3;
       }
     }
 
-    &.has-loser .dropzone {
+    &.has-loser .member {
       box-shadow: 0.3rem 0.3rem 0 red;
     }
 
-    &.has-winner .dropzone {
+    &.has-winner .member {
       box-shadow: 0.3rem 0.3rem 0 green;
     }
 
