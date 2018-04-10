@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import { compose, setPropTypes, withProps } from "recompose"
+import { compose, withStateHandlers, setPropTypes, withProps } from "recompose"
 import { connect } from "react-redux"
 import orderBy from "lodash.orderby"
 
@@ -13,10 +13,15 @@ export const mappedPropTypes = {
 }
 
 export const propsMapper = props => {
-  let newRoster = Object.assign([], props.collection)
+  const { searchText, collection, brandId } = props
+  let newRoster = Object.assign([], collection)
 
-  if (props.brandId) {
-    newRoster = newRoster.filter(item => item.brandId === props.brandId)
+  if (brandId) {
+    newRoster = newRoster.filter(item => item.brandId === brandId)
+  }
+
+  if (searchText) {
+    newRoster = newRoster.filter(item => item.name.toUpperCase().indexOf(searchText.toUpperCase()) > -1)
   }
 
   newRoster = orderBy(newRoster, ["championshipId", "points"], ["asc", "desc"])
@@ -26,10 +31,20 @@ export const propsMapper = props => {
   }
 }
 
-export const defaultStoreState = state => ({
+const defaultSearchState = ""
+const defaultStoreState = state => ({
   collection: state.roster,
 })
 
-export const enhance = compose(connect(defaultStoreState), setPropTypes(mappedPropTypes), withProps(propsMapper))
+const onSearch = () => action => ({
+  searchText: action.target.value,
+})
+
+export const enhance = compose(
+  connect(defaultStoreState),
+  setPropTypes(mappedPropTypes),
+  withStateHandlers(defaultSearchState, { onSearch }),
+  withProps(propsMapper) //
+)
 
 export default enhance(Wrestlers)

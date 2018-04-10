@@ -1,20 +1,17 @@
 @import "src/stylesheets/z-index";
 
 .wrestlers {
-  align-items: end;
-  display: flex;
-  flex-flow: row wrap;
-  flex-grow: 1;
-  justify-content: space-between;
   overflow: scroll;
-  padding: 0.3rem;
+  padding: 0.5rem;
   z-index: $z-index-wrestlers;
   height: 100vh;
 
-  header {
-    font-size: small;
-    margin: 0.5rem 0;
-    display: block;
-    width: 100%;
-  }
+	.collection {
+		display: flex;
+		flex-flow: row wrap;
+
+		align-items: end;
+		justify-content: space-between;
+		flex-grow: 1;
+	}
 }

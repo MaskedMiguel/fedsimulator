@@ -1,32 +1,25 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import Input from "../form/input"
 import Wrestler from "../wrestler/wrestler"
 
 import "./wrestlers.scss"
 
-const NOOP = () => {}
+const noop = () => {}
 
 export const Collection = ({ collection = [], ...props }) => {
   return collection.map(wrestler => <Wrestler key={wrestler.id} wrestler={wrestler} {...props} />)
 }
 
-export const Container = ({ collection = [], showGenderHeader = true, onClick = NOOP, canDrag = true, style = {}, }) => {
-  const women = collection.filter(item => !item.male)
-  const men = collection.filter(item => item.male)
+export const Container = ({ searchText = "", onSearch = noop, collection = [], onClick = noop, canDrag = true, style = {} }) => {
   return (
     <div className="wrestlers" style={style}>
-      <If condition={men.length > 0}>
-        <If condition={showGenderHeader}>
-          <header>Men ({men.length})</header>
-        </If>
-        <Collection collection={men} onClick={onClick} canDrag={canDrag} />
-      </If>
-      <If condition={women.length > 0}>
-        <If condition={showGenderHeader}>
-          <header>Women ({women.length})</header>
-        </If>
-        <Collection collection={women} onClick={onClick} canDrag={canDrag} />
+      <If condition={collection.length > 0}>
+        <Input value={searchText} name="name" onChange={onSearch} label="" placeholder="Search..." />
+        <span className="collection">
+          <Collection collection={collection} onClick={onClick} canDrag={canDrag} />
+        </span>
       </If>
     </div>
   )
@@ -37,10 +30,11 @@ Collection.propTypes = {
 }
 
 const ContainerPropTypes = Object.assign({}, Collection.propTypes, {
+  searchText: PropTypes.string,
+  onSearch: PropTypes.func,
   collection: PropTypes.array,
   onClick: PropTypes.func,
   canDrag: PropTypes.bool,
-  showGenderHeader: PropTypes.bool,
   style: PropTypes.object,
 })
 
