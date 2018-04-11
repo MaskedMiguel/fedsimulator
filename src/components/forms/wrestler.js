@@ -65,7 +65,7 @@ const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit
     <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
       <Row classes="middle-xs center-xs">{currentItem.image ? <img src={currentItem.image} /> : ""}</Row>
       {children}
-    </Form>,
+    </Form>
   )
 }
 
