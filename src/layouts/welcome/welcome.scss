@@ -2,8 +2,11 @@
   font-family: "Rubik", sans-serif;
   .headers {
     padding: 1rem 3%;
+    header {
+      font-size: medium;
+    }
   }
   .page {
-    padding: 3%;
+    padding: 3% 8%;
   }
 }

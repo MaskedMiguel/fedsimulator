@@ -11,7 +11,6 @@ import ToggleTheme from "../../components/toggle-theme"
 import HeaderOne from "../../components/header/header"
 import SettingsSummary from "./summary"
 import SettingsName from "./name"
-import SettingsTheme from "./theme"
 import SettingsImporter from "./importer"
 
 import "./settings.scss"
@@ -28,12 +27,10 @@ class Settings extends Component {
             <Button value="Reset everything" onClick={this.onReset} classes="btn-bad" />
           </span>
         </HeaderOne>
-        <div className="settings">
-          <SettingsName style={style} />
-          <SettingsTheme style={style} />
-          <br />
-          <SettingsSummary style={style} />
-          <SettingsImporter style={style} />
+        <div className="settings" style={style}>
+          <SettingsName />
+          <SettingsSummary />
+          <SettingsImporter />
         </div>
       </div>
     )

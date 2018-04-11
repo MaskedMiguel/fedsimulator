@@ -39,11 +39,6 @@ const CreateAMatch = ({
         <div className="col-xs-12 col-lg-8 center-xs middle-xs">
           <div className={classnames("box", { hasWinner: winner, })}>
             <Match currentMatch={currentMatch} />
-            <If condition={winner && loser}>
-              <Winner {...winner} />
-              <br />
-              <Loser {...loser} />
-            </If>
           </div>
           <br />
         </div>

@@ -2,33 +2,20 @@ import chromatism from "chromatism"
 
 import * as types from "../actions/types"
 import Model from "../models/style.model"
-import { shade as shadeFn } from "../helpers/shade"
-
-const shade = -10
 
 const updateStyle = state => {
-  const hex = state.get("hex")
   const isLight = state.get("light")
-
-  const lightBackgroundColor = hex
-  const darkBG = shadeFn(lightBackgroundColor, shade + -30)
-
-  const highlightBG = lightBackgroundColor
-  const highlightColor = chromatism.contrastRatio(highlightBG).hex
-
-  const containerBG = isLight ? "#f4f2f2" : darkBG
-  const containerColor = chromatism.contrastRatio(containerBG).hex
 
   return {
     highlighted: {
-      color: highlightColor,
-      backgroundColor: highlightBG,
-      backgroundImage: `linear-gradient(to right, ${highlightBG} 0%, ${chromatism.shade(-20, highlightBG).hex} 100%)`,
+      color: "white",
+      backgroundColor: "#232526",
+      backgroundImage: "linear-gradient(to top, #232526, #414345)",
     },
     container: {
-      color: containerColor,
-      backgroundColor: containerBG,
-      backgroundImage: `linear-gradient(to left, ${containerBG} 0%, ${chromatism.shade(-20, containerBG).hex} 100%)`,
+      color: isLight ? "black" : "white",
+      backgroundColor: isLight ? "#cacaca" : "#232526",
+      backgroundImage: isLight ? "linear-gradient(to right, #cacaca, #e2e2e2)" : "linear-gradient(to bottom, black, #414345)",
     },
   }
 }

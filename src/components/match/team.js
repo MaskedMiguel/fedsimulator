@@ -36,9 +36,6 @@ const Team = ({ style = {}, classes = "", wrestlers = [], onSelectWinner = NOOP,
                   <div key={id} tabIndex={0} className="member center-xs middle-xs">
                     <Wrestler wrestler={wrestler} />
                     <span className="tools">
-                      <Button classes="btn-good btn-small" onClick={() => onSelectWinner(id)}>
-                        🏆
-                      </Button>
                       <Button classes="btn-bad btn-small" onClick={() => onRemoveWrestler(id)}>
                         🗑
                       </Button>
@@ -48,7 +45,7 @@ const Team = ({ style = {}, classes = "", wrestlers = [], onSelectWinner = NOOP,
               })}
             </When>
             <Otherwise>
-              <span tabIndex={1}>ℹ &nbsp;Drop wrestlers here</span>
+              <span tabIndex={1}>❕&nbsp;Drop wrestlers here</span>
             </Otherwise>
           </Choose>
         </div>

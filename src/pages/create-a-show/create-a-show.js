@@ -63,11 +63,9 @@ const ShowPage = ({
               const title = bouts.length !== index ? `Match ${index}` : "Main Event"
 
               return (
-                <div key={index} style={style} tabIndex={1} className="bout">
+                <div key={index} tabIndex={1} className="bout">
                   <h2 tabIndex={1}>
-                    <Link style={style} to={`/create-a-match/${bout.id}`}>
-                      {title}
-                    </Link>
+                    <Link to={`/create-a-match/${bout.id}`}>{title} ➪</Link>
                   </h2>
                   <Match key={bout.id} currentMatch={bout} />
                 </div>

@@ -7,16 +7,13 @@
   }
 
   .bar {
-    font-size: medium;
+    font-size: large;
     padding: 1rem;
+    text-transform: capitalize;
 
     &,
     & a {
       color: white;
     }
-  }
-
-  .social {
-    background-color: black;
   }
 }

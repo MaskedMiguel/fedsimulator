@@ -24,19 +24,13 @@ const WelcomePage = ({ gameReady = false, style = {}, }) => (
             Game ready! Go to your dashboard and start simulating!
           </div>
         </Link>
+        <br />
       </Flash>
     </If>
     <div className="box" style={style}>
-      <SettingsName style={style} />
+      <SettingsName />
+      <SettingsImporter />
     </div>
-    <br />
-    <div className="box" style={style}>
-      <SettingsImporter style={style} />
-    </div>
-    <br />
-    <footer style={gameReadyStyle} className="bar center-xs pulse">
-      <Social />
-    </footer>
   </div>
 )
 
