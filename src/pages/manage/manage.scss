@@ -1,18 +1,11 @@
 .manage {
-  .pane .box {
-    padding: 1rem;
-  }
-
   .rainbow {
     height: 100vh;
     overflow: scroll;
-  }
 
-  .rainbow .stripe .box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+    .pane {
+      padding: 1rem;
+    }
   }
 
   .form-field {

@@ -7,7 +7,6 @@ import "./rainbow.scss"
 
 const noop = () => {}
 const defaultStyle = { backgroundColor: "#fff", color: "#000", }
-
 const getStyle = (index, { color, backgroundColor, }) => ({
   color,
   backgroundColor: chromatism.hue(index, backgroundColor).hex,
@@ -15,11 +14,22 @@ const getStyle = (index, { color, backgroundColor, }) => ({
 
 const Rainbow = ({ children = "", }) => <div className="rainbow">{children}</div>
 
-const Item = ({ index = 0, onClick = noop, classes = "", children = "", style = defaultStyle, }) => {
+Rainbow.propTypes = {
+  children: PropTypes.any,
+}
+
+const Item = ({
+  index = 0,
+  onClick = noop,
+  topClasses = ["stripe", "pulse",],
+  innerClasses = ["middle-xs", "between-xs",],
+  children = "",
+  style = defaultStyle,
+}) => {
   return (
-    <div className="row stripe pulse" style={getStyle(index, style)}>
+    <div className={classnames("row", "cursor-pointer", topClasses)} style={getStyle(index, style)}>
       <div className="col-xs">
-        <div className={classnames("box", classes)} onClick={onClick}>
+        <div className={classnames("box", innerClasses)} onClick={onClick}>
           {children}
         </div>
       </div>
@@ -27,12 +37,9 @@ const Item = ({ index = 0, onClick = noop, classes = "", children = "", style = 
   )
 }
 
-Rainbow.propTypes = {
-  children: PropTypes.any,
-}
-
 Item.propTypes = {
-  classes: PropTypes.string,
+  topClasses: PropTypes.array,
+  innerClasses: PropTypes.array,
   children: PropTypes.any,
   index: PropTypes.number,
   style: PropTypes.object,

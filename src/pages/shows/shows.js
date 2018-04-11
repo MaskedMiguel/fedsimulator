@@ -28,7 +28,7 @@ export const ShowsPage = ({ shows = [], style = {}, onReset = noop, onDelete = n
         <Rainbow>
           {shows.map(({ id, name, bouts, }, index) => {
             return (
-              <Item key={id} classes="between-xs" index={index} style={style}>
+              <Item key={id} index={index} style={style}>
                 <Link key={id} to={`create-a-show/${id}`}>
                   <span style={{ color: style.color, }} tabIndex={0}>
                     {name}&nbsp;({bouts.length})

@@ -48,11 +48,13 @@ const Manage = ({
                 </Form>
               </If>
               <If condition={currentItem}>
-                <Form onSubmit={onUpdate} currentItem={currentItem}>
-                  <Button type="submit" classes="btn-info">
-                    Update
-                  </Button>
-                </Form>
+                <div className="box" style={style}>
+                  <Form onSubmit={onUpdate} currentItem={currentItem}>
+                    <Button type="submit" classes="btn-info">
+                      Update
+                    </Button>
+                  </Form>
+                </div>
               </If>
             </div>
           </div>
