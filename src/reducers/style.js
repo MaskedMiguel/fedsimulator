@@ -23,10 +23,12 @@ const updateStyle = state => {
     highlighted: {
       color: highlightColor,
       backgroundColor: highlightBG,
+      backgroundImage: `linear-gradient(to right, ${highlightBG} 0%, ${chromatism.shade(-20, highlightBG).hex} 100%)`,
     },
     container: {
       color: containerColor,
       backgroundColor: containerBG,
+      backgroundImage: `linear-gradient(to left, ${containerBG} 0%, ${chromatism.shade(-20, containerBG).hex} 100%)`,
     },
   }
 }
