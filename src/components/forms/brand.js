@@ -2,37 +2,41 @@ import React from "react"
 import PropTypes from "prop-types"
 import Form from "react-jsonschema-form"
 
+import Color from "./ui/color"
+
 import "./forms.scss"
 
 const noop = () => {}
 const schema = {
   type: "object",
-  required: ["name",],
+  required: ["name"],
   properties: {
-    name: { type: "string", title: "Name", default: "", },
+    name: { type: "string", title: "Name", default: "" },
     backgroundColor: {
       type: "string",
       title: "Background color",
-      default: "black",
+      default: "#000000",
     },
     color: {
       type: "string",
       title: "Font color",
-      default: "white",
+      default: "#ffffff",
     },
   },
 }
 const uiSchema = {
   color: {
-    "ui:widget": "color",
+    "ui:field": "color",
   },
   backgroundColor: {
-    "ui:widget": "color",
+    "ui:field": "color",
   },
 }
 
-const BrandForm = ({ children = "", onSubmit = noop, currentItem = {}, }) => (
-  <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
+const fields = { color: Color }
+
+const BrandForm = ({ children = "", onSubmit = noop, currentItem = {} }) => (
+  <Form schema={schema} fields={fields} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
     {children}
   </Form>
 )
