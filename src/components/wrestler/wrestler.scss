@@ -3,9 +3,8 @@
 $wrestlers-points-dimensions: 1rem;
 
 .wrestler {
-  background-color: black;
-  background-position: bottom right;
-  background-repeat: no-repeat;
+  background: #000000;
+  background: linear-gradient(to right, #000000, #3c4146);
   color: white;
   position: relative;
   font-size: small;
@@ -19,6 +18,8 @@ $wrestlers-points-dimensions: 1rem;
     align-items: center;
     display: flex;
     height: 100%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
   }
 
   &.has-image .name {

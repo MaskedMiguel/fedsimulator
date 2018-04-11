@@ -18,13 +18,13 @@ const Wrestler = ({ wrestler = schema, onClick = NOOP, highlight = false, canDra
 
   return (
     <Draggable type="wrestler" enabled={canDrag} data={id}>
-      <div className={classes} style={withImage} data-id={id} tabIndex="0" onKeyPress={() => onClick(id)} onClick={() => onClick(id)}>
+      <div className={classes} data-id={id} tabIndex="0" onKeyPress={() => onClick(id)} onClick={() => onClick(id)}>
         <If condition={championshipId}>
           <div className="ribbon">
             <span>Champ</span>
           </div>
         </If>
-        <div className="inner">
+        <div className="inner" style={withImage}>
           <span className="points" tabIndex={1}>
             {points}
           </span>
