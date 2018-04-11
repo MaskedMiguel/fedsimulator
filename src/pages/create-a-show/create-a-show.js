@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { Link } from "react-router-dom"
 
+import Row from "../../components/row"
 import Image from "../../components/form/image"
 import Input from "../../components/form/input"
 import Button from "../../components/button/button"
@@ -52,25 +53,33 @@ const ShowPage = ({
                   <Input style={style} value={name} onChange={updateName} placeholder="Wrestlemania, Royal Rumble, Hell in a Cell..." />
                 </div>
               </div>
-              <div className="col-xs-12 start-xs top-xs">
-                <div className="box">
-                  <Image id="image" name="image" label={image ? "" : "Drop image here"} value={image} onChange={updateImage} />
-                </div>
-              </div>
             </div>
-            {bouts.map((bout, key) => {
-              const index = key + 1
-              const title = bouts.length !== index ? `Match ${index}` : "Main Event"
+            <Choose>
+              <When condition={bouts.length > 0}>
+                <Row classes="center-xs">
+                  <Image id="image" name="image" label={image ? "" : "❕ Drop image here"} value={image} onChange={updateImage} />
+                </Row>
+                {bouts.map((bout, key) => {
+                  const index = key + 1
+                  const title = bouts.length !== index ? `Match ${index}` : "Main Event"
 
-              return (
-                <div key={index} tabIndex={1} className="bout">
-                  <h2 tabIndex={1}>
-                    <Link to={`/create-a-match/${bout.id}`}>{title} ➪</Link>
-                  </h2>
-                  <Match key={bout.id} currentMatch={bout} />
-                </div>
-              )
-            })}
+                  return (
+                    <div key={index} tabIndex={1} className="bout">
+                      <h2 tabIndex={1}>
+                        <Link to={`/create-a-match/${bout.id}`}>{title} ➪</Link>
+                      </h2>
+                      <Match key={bout.id} currentMatch={bout} />
+                    </div>
+                  )
+                })}
+              </When>
+              <Otherwise>
+                <Row classes="center-xs">
+                  <br />
+                  <header>❕ Click "Add Bouts" to start making matches</header>
+                </Row>
+              </Otherwise>
+            </Choose>
           </div>
         </div>
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 pane">

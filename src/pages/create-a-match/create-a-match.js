@@ -18,7 +18,6 @@ const CreateAMatch = ({
   onRandomise = noop,
   onSimulateMatch = noop,
   onWrestlerClick = noop,
-  loser = null,
   winner = null,
   numberOfWrestlers = 0,
   style = {},
