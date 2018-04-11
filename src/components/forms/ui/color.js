@@ -8,8 +8,6 @@ class Color extends Component {
   constructor(props) {
     super(props)
 
-    console.log("Hey")
-
     this.state = { value: props.formData }
   }
 

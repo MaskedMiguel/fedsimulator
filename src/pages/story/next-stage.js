@@ -14,7 +14,7 @@ import storyline from "./storyline.json"
 
 class NextStage extends Component {
   componentDidMount() {
-    const { game, roster, dispatch, } = this.props
+    const { game, roster, dispatch } = this.props
     const id = getId()
     const stage = storyline[game.stage]
 
@@ -23,7 +23,7 @@ class NextStage extends Component {
         break
       case "bout":
         {
-          const wrestlers = randomiseWrestlers({ wrestlers: roster, })
+          const wrestlers = randomiseWrestlers({ wrestlers: roster })
 
           const bout = {
             id,
@@ -35,16 +35,15 @@ class NextStage extends Component {
         break
     }
 
-    // console.log("id", id)
     this.setState({
       stage,
       boutId: id,
     })
   }
 
-  shouldComponentUpdate({ matches: bouts, }, nextState) {
-    const { boutId, } = nextState
-    // console.log("componentWillReceiveProps", bouts)
+  shouldComponentUpdate({ matches: bouts }, nextState) {
+    const { boutId } = nextState
+
     if (boutId) {
       const newBout = bouts.find(bout => bout.id === boutId)
 

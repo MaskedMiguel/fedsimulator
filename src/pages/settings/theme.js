@@ -18,7 +18,7 @@ const uiSchema = {
 
 const noop = () => {}
 
-const SettingsTheme = ({ style = {}, hex = "#fff", onChange = noop, }) => (
+const SettingsTheme = ({ style = {}, hex = "#fff", onChange = noop }) => (
   <div className="row">
     <div className="col-xs-12">
       <div className="box" style={style}>
@@ -42,10 +42,7 @@ const enhance = compose(
       hex: state.style.hex,
     }),
     dispatch => ({
-      onChange: hex => {
-        console.log(hex)
-        return dispatch(updateStyleHex(hex))
-      },
+      onChange: hex => dispatch(updateStyleHex(hex)),
     })
   )
 )
