@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Form from "react-jsonschema-form"
 import { compose } from "recompose"
 
+import Color from "./ui/color"
 import withBrands from "../../hoc/withBrands"
 
 import "./forms.scss"
@@ -10,14 +11,14 @@ import "./forms.scss"
 const noop = () => {}
 const schema = {
   type: "object",
-  required: ["name",],
+  required: ["name"],
   properties: {
-    name: { type: "string", title: "Name", default: "", },
+    name: { type: "string", title: "Name", default: "" },
     brandId: {
       title: "Brand",
       type: "string",
     },
-    male: { type: "boolean", title: "Male", default: true, },
+    male: { type: "boolean", title: "Male", default: true },
     rank: {
       "ui:widget": "range",
       type: "integer",
@@ -43,21 +44,24 @@ const uiSchema = {
     "ui:widget": "range",
   },
   color: {
-    "ui:widget": "color",
+    "ui:field": "color",
   },
   backgroundColor: {
-    "ui:widget": "color",
+    "ui:field": "color",
   },
 }
 
-const ChampionshipForm = ({ children = "", brands = [], onSubmit = noop, currentItem = {}, }) => {
+const fields = { color: Color }
+
+const ChampionshipForm = ({ children = "", brands = [], onSubmit = noop, currentItem = {} }) => {
   if (currentItem.brandId === null) {
     currentItem.brandId = ""
   }
   schema.properties.brandId.enum = brands.map(item => item.id)
   schema.properties.brandId.enumNames = brands.map(item => item.name)
+
   return (
-    <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
+    <Form schema={schema} fields={fields} fields={fields} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
       {children}
     </Form>
   )

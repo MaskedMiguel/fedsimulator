@@ -12,10 +12,10 @@ import "./forms.scss"
 const noop = () => {}
 const schema = {
   type: "object",
-  required: ["name", "points",],
+  required: ["name", "points"],
   properties: {
-    name: { type: "string", title: "Name", default: "", },
-    male: { type: "boolean", title: "Male", default: true, },
+    name: { type: "string", title: "Name", default: "" },
+    male: { type: "boolean", title: "Male", default: true },
     brandId: {
       title: "Brand",
       type: "string",
@@ -45,7 +45,7 @@ const uiSchema = {
   },
 }
 
-const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit = noop, currentItem = {}, }) => {
+const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit = noop, currentItem = {} }) => {
   if (currentItem.brandId === null) {
     currentItem.brandId = ""
   }
@@ -59,6 +59,7 @@ const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit
 
   schema.properties.championshipId.enum = championships.map(item => item.id)
   schema.properties.championshipId.enumNames = championships.map(item => item.name)
+
   return (
     <span>
       {currentItem.image ? <img src={currentItem.image} /> : ""}
