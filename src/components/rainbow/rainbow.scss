@@ -1,7 +1,10 @@
 @import "src/stylesheets/breakpoints";
 
 .rainbow {
-  .stripe .box {
+	.stripe {
+		transition: all 2s ease;
+	}
+  .box {
     display: flex;
     padding: 0.5rem;
   }
