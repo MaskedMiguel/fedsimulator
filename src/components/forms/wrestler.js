@@ -61,14 +61,12 @@ const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit
   schema.properties.championshipId.enum = championships.map(item => item.id)
   schema.properties.championshipId.enumNames = championships.map(item => item.name)
 
-  return [
-    <Row classes="middle-xs center-xs">{currentItem.image ? <img src={currentItem.image} /> : ""}</Row>,
-    <Row>
-      <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
-        {children}
-      </Form>
-    </Row>,
-  ]
+  return (
+    <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
+      <Row classes="middle-xs center-xs">{currentItem.image ? <img src={currentItem.image} /> : ""}</Row>
+      {children}
+    </Form>,
+  )
 }
 
 WrestlerForm.propTypes = {
