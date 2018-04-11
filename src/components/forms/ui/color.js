@@ -27,11 +27,14 @@ class Color extends Component {
   }
 
   render() {
-    return (
+    return [
+      <label className="control-label" htmlFor="root_name">
+        {this.props.schema.title}
+      </label>,
       <div className="ColorPicker__container">
         <ColorPicker color={this.state.value} onChange={this.onChange} />
-      </div>
-    )
+      </div>,
+    ]
   }
 }
 
