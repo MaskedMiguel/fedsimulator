@@ -22,7 +22,7 @@ const Nav = ({ children = "", classes = "", style = {}, isSubMenuOpen = false, t
             if (url) {
               return (
                 <li key={key}>
-                  <NavLink exact className="nav-item pointer" to={url}>
+                  <NavLink exact className="nav-item cursor-pointer" to={url}>
                     {title}
                   </NavLink>
                 </li>
@@ -30,7 +30,7 @@ const Nav = ({ children = "", classes = "", style = {}, isSubMenuOpen = false, t
             } else {
               return (
                 <li key={key}>
-                  <a className="nav-item pointer">▾&nbsp;&nbsp;{title}</a>
+                  <a className="nav-item cursor-pointer">▾&nbsp;&nbsp;{title}</a>
                   <ul style={style}>
                     {items.map(subItem => {
                       const { url, title, } = subItem
