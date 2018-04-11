@@ -8,10 +8,13 @@ $nav-height: 2.5rem;
   padding: 0 1rem;
   position: relative;
 
-  h1 a {
-    text-transform: uppercase;
-    font-size: medium;
-    font-weight: 400;
+  h1 {
+    margin: 0;
+    a {
+      text-transform: uppercase;
+      font-size: large;
+      font-weight: 400;
+    }
   }
 
   a {
@@ -22,7 +25,7 @@ $nav-height: 2.5rem;
     align-items: center;
     display: flex;
     flex-grow: inherit;
-    font-size: small;
+    font-size: medium;
     padding: 0.25rem 0.5rem;
 
     &:hover,

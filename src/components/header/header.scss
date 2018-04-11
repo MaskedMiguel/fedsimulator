@@ -1,3 +1,5 @@
+@import "src/stylesheets/breakpoints";
+
 header.header {
   display: flex;
   justify-content: space-between;
@@ -5,11 +7,16 @@ header.header {
   margin: 0 0 0.3rem;
   width: 100%;
 
+  @include breakpoint(xs) {
+    flex-direction: column;
+  }
+
   .icon {
     margin: 0.2rem;
   }
 
   .tools {
+    display: flex;
     font-size: 1rem;
   }
 }
