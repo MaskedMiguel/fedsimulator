@@ -28,10 +28,6 @@ export default (state, action) => {
       state = new Model()
       break
 
-    case types.UPDATE_STYLE_HEX:
-      state = state.merge(action.payload)
-      break
-
     case types.TOGGLE_LIGHT:
       state = state.set("light", true)
       break
