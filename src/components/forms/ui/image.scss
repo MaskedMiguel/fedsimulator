@@ -1,0 +1,11 @@
+.formImage {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1rem dashed #ccc;
+  outline-offset: -0.5rem;
+  img {
+    max-height: 3.5rem;
+  }
+}

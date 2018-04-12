@@ -8,7 +8,7 @@ const SummaryName = ({ style = {}, }) => (
     <div className="col-xs-12">
       <div className="box" style={style}>
         <header>
-          <label htmlFor="name">Name your federation</label>
+          <label htmlFor="name">❕ Name your federation</label>
         </header>
         <Name />
       </div>

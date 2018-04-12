@@ -3,20 +3,20 @@ import PropTypes from "prop-types"
 import Form from "react-jsonschema-form"
 import { compose } from "recompose"
 
-import Row from "../row"
 import { WRESTLER_MAX_POINTS } from "../../constants/game"
 import withChampionships from "../../hoc/withChampionships"
 import withBrands from "../../hoc/withBrands"
+import Image from "./ui/image"
 
 import "./forms.scss"
 
 const noop = () => {}
 const schema = {
   type: "object",
-  required: ["name", "points",],
+  required: ["name", "points"],
   properties: {
-    name: { type: "string", title: "Name", default: "", },
-    male: { type: "boolean", title: "Male", default: true, },
+    name: { type: "string", title: "Name", default: "" },
+    male: { type: "boolean", title: "Male", default: true },
     brandId: {
       title: "Brand",
       type: "string",
@@ -27,7 +27,6 @@ const schema = {
     },
     image: {
       type: "string",
-      format: "data-url",
       title: "Image",
     },
     points: {
@@ -44,9 +43,14 @@ const uiSchema = {
   points: {
     "ui:widget": "range",
   },
+  image: {
+    "ui:field": "image",
+  },
 }
 
-const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit = noop, currentItem = {}, }) => {
+const fields = { image: Image }
+
+const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit = noop, currentItem = {} }) => {
   if (currentItem.brandId === null) {
     currentItem.brandId = ""
   }
@@ -62,8 +66,7 @@ const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit
   schema.properties.championshipId.enumNames = championships.map(item => item.name)
 
   return (
-    <Form schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
-      <Row classes="middle-xs center-xs">{currentItem.image ? <img src={currentItem.image} /> : ""}</Row>
+    <Form fields={fields} schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
       {children}
     </Form>
   )

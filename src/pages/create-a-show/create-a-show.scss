@@ -1,5 +1,9 @@
 .create-a-show {
   &.print {
+    .formImage {
+      border: none;
+    }
+
     .panes {
       .pane:nth-child(1) {
         width: 100%;
@@ -12,17 +16,9 @@
     }
   }
 
-  .Droppable {
-    box-shadow: none;
-    min-height: 3rem;
-  }
-
   .bout {
-    padding: 0.5rem 0.5rem 0;
-    margin-bottom: 1.5rem;
-
     h2 {
-      margin: 0;
+      margin: 1rem 0 0.2rem 0;
       a {
         color: currentColor;
       }

@@ -4,7 +4,7 @@ import classnames from "classnames"
 import { Link } from "react-router-dom"
 
 import Row from "../../components/row"
-import Image from "../../components/form/image"
+import Image from "../../components/forms/ui/image"
 import Input from "../../components/form/input"
 import Button from "../../components/button/button"
 import Wrestlers from "../../components/wrestlers/container"
@@ -27,9 +27,9 @@ const ShowPage = ({
   printMode = false,
   togglePrintMode = noop,
 }) => {
-  const { name, image, bouts, } = currentShow
+  const { name, image, bouts } = currentShow
   return (
-    <div className={classnames("create-a-show", { print: printMode, })}>
+    <div className={classnames("create-a-show", { print: printMode })}>
       <HeaderOne>
         Create A Show
         <span className="tools">
@@ -47,17 +47,14 @@ const ShowPage = ({
       <div className="row panes">
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-8 pane">
           <div className="box">
-            <div className="row">
-              <div className="col-xs-12">
-                <div className="box">
-                  <Input style={style} value={name} onChange={updateName} placeholder="Wrestlemania, Royal Rumble, Hell in a Cell..." />
-                </div>
-              </div>
-            </div>
+            <Row>
+              <Input style={style} value={name} onChange={updateName} placeholder="Wrestlemania, Royal Rumble, Hell in a Cell..." />
+            </Row>
+            <br />
             <Choose>
               <When condition={bouts.length > 0}>
                 <Row classes="center-xs">
-                  <Image id="image" name="image" label={image ? "" : "❕ Drop image here"} value={image} onChange={updateImage} />
+                  <Image formData={image} onChange={updateImage} />
                 </Row>
                 {bouts.map((bout, key) => {
                   const index = key + 1
@@ -75,7 +72,6 @@ const ShowPage = ({
               </When>
               <Otherwise>
                 <Row classes="center-xs">
-                  <br />
                   <header>❕ Click "Add Bouts" to start making matches</header>
                 </Row>
               </Otherwise>

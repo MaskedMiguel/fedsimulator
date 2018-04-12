@@ -6,7 +6,6 @@ const action = {
   type: types.RESET,
   payload: false,
 }
-const compareHex = "#FF0000"
 
 describe("given a style reducer", () => {
   let activeReducer
@@ -19,17 +18,5 @@ describe("given a style reducer", () => {
 
   it("and the color is defaulted to the right value", () => {
     expect(activeReducer.backgroundColor).to.equal(schema.backgroundColor)
-  })
-
-  describe("and a update request is sent", () => {
-    before(() => {
-      action.type = types.UPDATE_STYLE_HEX
-      action.payload = { hex: compareHex, }
-      activeReducer = reducer(activeReducer, action)
-    })
-
-    it("and the color is updated to red", () => {
-      expect(activeReducer.hex).to.equal(action.payload.hex)
-    })
   })
 })

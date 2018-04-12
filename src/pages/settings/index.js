@@ -28,8 +28,8 @@ class Settings extends Component {
           </span>
         </HeaderOne>
         <div className="settings" style={style}>
-          <SettingsName />
           <SettingsSummary />
+          <SettingsName />
           <SettingsImporter />
         </div>
       </div>

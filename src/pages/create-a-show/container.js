@@ -23,8 +23,8 @@ const enhance = compose(
   withShow,
   withStyle,
   connect(null, dispatch => ({
-    onAddBoutToShow: ({ show, boutId, }) => dispatch(addBoutToShow({ show, boutId, })),
-    onCreateMatch: ({ id, }) => dispatch(createMatch({ id, })),
+    onAddBoutToShow: ({ show, boutId }) => dispatch(addBoutToShow({ show, boutId })),
+    onCreateMatch: ({ id }) => dispatch(createMatch({ id })),
     onDeleteMatch: id => dispatch(deleteMatch(id)),
     onUpdateShow: show => {
       show = cleanBouts(show)
@@ -33,41 +33,41 @@ const enhance = compose(
     },
   })),
   withRoster,
-  branch(({ roster, }) => roster.length === 0, renderComponent(EmptyRoster)),
+  branch(({ roster }) => roster.length === 0, renderComponent(EmptyRoster)),
   withProps(props => ({
     updateName: name => {
-      const show = Object.assign({}, props.currentShow, { name: name.target.value, })
+      const show = Object.assign({}, props.currentShow, { name: name.target.value })
 
       props.onUpdateShow(show)
     },
-    updateImage: (name, value) => {
-      const show = Object.assign({}, props.currentShow, { image: String(value), })
+    updateImage: value => {
+      const show = Object.assign({}, props.currentShow, { image: String(value) })
 
       props.onUpdateShow(show)
     },
     addBout: () => {
       const id = getId()
 
-      props.onCreateMatch({ id, })
+      props.onCreateMatch({ id })
       props.onAddBoutToShow({
         show: cleanBouts(props.currentShow),
         boutId: id,
       })
     },
-    simulateBouts: () => props.currentShow.bouts.forEach(({ id, }) => props.dispatch(simulateMatch(id))),
-    randomiseBouts: () => props.currentShow.bouts.forEach(({ id: matchId, }) => props.dispatch(randomiseMatch({ matchId, roster: props.roster, }))),
+    simulateBouts: () => props.currentShow.bouts.forEach(({ id }) => props.dispatch(simulateMatch(id))),
+    randomiseBouts: () => props.currentShow.bouts.forEach(({ id: matchId }) => props.dispatch(randomiseMatch({ matchId, roster: props.roster }))),
   })),
   withStateHandlers(
     {
       printMode: false,
     },
     {
-      togglePrintMode: ({ printMode, }) => () => ({
+      togglePrintMode: ({ printMode }) => () => ({
         printMode: !printMode,
       }),
     }
   ),
-  mapProps(({ currentShow, addBout, updateName, onDeleteMatch, randomiseBouts, updateImage, simulateBouts, printMode, togglePrintMode, style, }) => ({
+  mapProps(({ currentShow, addBout, updateName, onDeleteMatch, randomiseBouts, updateImage, simulateBouts, printMode, togglePrintMode, style }) => ({
     currentShow,
     addBout,
     updateName,

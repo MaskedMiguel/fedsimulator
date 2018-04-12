@@ -29,7 +29,7 @@ class Color extends Component {
       <label className="control-label" htmlFor="root_name">
         {this.props.schema.title}
       </label>,
-      <div className="ColorPicker__container">
+      <div className="formColor">
         <ColorPicker color={this.state.value} onChange={this.onChange} />
       </div>,
     ]

@@ -1,8 +1,8 @@
 @import "src/stylesheets/z-index";
 
 .wrestlers {
-  overflow: scroll;
-  padding: 0.5rem;
+  overflow-y: auto;
+  padding: 0.2rem;
   z-index: $z-index-wrestlers;
   height: 100vh;
 

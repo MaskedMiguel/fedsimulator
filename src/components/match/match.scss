@@ -55,6 +55,13 @@ $match-border-color: #a4a3a3;
       transition: box-shadow 1s ease-in-out;
     }
 
+    .no-member {
+      height: 3rem;
+      display: flex;
+      border: 0.1rem dashed #ccc;
+      outline-offset: -0.5rem;
+    }
+
     .member {
       background-color: black;
       display: flex;
