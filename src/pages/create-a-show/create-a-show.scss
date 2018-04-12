@@ -1,21 +1,4 @@
 .create-a-show {
-  &.print {
-    .formImage {
-      border: none;
-    }
-
-    .panes {
-      .pane:nth-child(1) {
-        width: 100%;
-        flex-basis: initial;
-        max-width: initial;
-      }
-      .pane:nth-child(2) {
-        display: none;
-      }
-    }
-  }
-
   .bout {
     h2 {
       margin: 1rem 0 0.2rem 0;

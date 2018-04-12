@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classnames from "classnames"
 import { Link } from "react-router-dom"
 
 import Row from "../../components/row"
@@ -15,32 +14,18 @@ import "./create-a-show.scss"
 
 const noop = () => {}
 
-const ShowPage = ({
-  currentShow = {},
-  addBout = noop,
-  updateImage = noop,
-  simulateBouts = noop,
-  updateName = noop,
-  randomiseBouts = noop,
-  style = {},
-  printMode = false,
-  togglePrintMode = noop,
-}) => {
+const ShowPage = ({ currentShow = {}, addBout = noop, updateImage = noop, simulateBouts = noop, updateName = noop, randomiseBouts = noop, style = {}, }) => {
   const { name, image, bouts, } = currentShow
   return (
-    <div className={classnames("create-a-show", { print: printMode, })}>
+    <div className="create-a-show">
       <HeaderOne>
         Create A Show
         <span className="tools">
-          <If condition={!printMode}>
-            <Button value="Add Bout" classes="btn-good" onClick={addBout} />
-            &nbsp;
-            <Button value="Simulate" classes="btn-info" onClick={simulateBouts} />
-            &nbsp;
-            <Button value="Randomise" classes="btn-info" onClick={randomiseBouts} />
-          </If>
+          <Button value="Add Bout" classes="btn-good" onClick={addBout} />
           &nbsp;
-          <Button value="Present" onClick={togglePrintMode} />
+          <Button value="Simulate" classes="btn-info" onClick={simulateBouts} />
+          &nbsp;
+          <Button value="Randomise" classes="btn-info" onClick={randomiseBouts} />
         </span>
       </HeaderOne>
       <div className="row panes">
@@ -71,7 +56,7 @@ const ShowPage = ({
               </When>
               <Otherwise>
                 <Row classes="center-xs">
-                  <header>❕ Click "Add Bouts" to start making matches</header>
+                  <h3>❕ Click "Add Bouts" to start making matches</h3>
                 </Row>
               </Otherwise>
             </Choose>
@@ -94,8 +79,6 @@ ShowPage.propTypes = {
   updateName: PropTypes.func,
   updateImage: PropTypes.func,
   randomiseBouts: PropTypes.func,
-  printMode: PropTypes.bool,
-  togglePrintMode: PropTypes.func,
   style: PropTypes.object,
 }
 

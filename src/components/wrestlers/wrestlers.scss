@@ -6,12 +6,12 @@
   z-index: $z-index-wrestlers;
   height: 100vh;
 
-	.collection {
-		display: flex;
-		flex-flow: row wrap;
+  .collection {
+    display: flex;
+    flex-flow: row wrap;
 
-		align-items: end;
-		justify-content: space-between;
-		flex-grow: 1;
-	}
+    align-items: end;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
 }

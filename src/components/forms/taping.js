@@ -11,7 +11,7 @@ import "./forms.scss"
 const noop = () => {}
 const schema = {
   type: "object",
-  required: ["name"],
+  required: ["name",],
   properties: {
     name: {
       type: "string",
@@ -22,7 +22,7 @@ const schema = {
       title: "Brand",
       type: "string",
     },
-    repeat: { type: "boolean", title: "Weekly?", default: false },
+    repeat: { type: "boolean", title: "Weekly?", default: false, },
     month: {
       type: "integer",
       title: "Month Number",
@@ -68,9 +68,9 @@ const uiSchema = {
   },
 }
 
-const fields = { color: Color }
+const fields = { color: Color, }
 
-const TapingForm = ({ children = "", brands = [], onSubmit = noop, currentItem = {} }) => {
+const TapingForm = ({ children = "", brands = [], onSubmit = noop, currentItem = {}, }) => {
   schema.properties.brandId.enum = brands.map(item => item.id)
   schema.properties.brandId.enumNames = brands.map(item => item.name)
 
