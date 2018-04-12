@@ -39,7 +39,7 @@ const Manage = ({
       <div className="row">
         <If condition={hasPane}>
           <div className={col}>
-            <div className="box" style={style}>
+            <div className="box shadow" style={style}>
               <If condition={creating}>
                 <Form onSubmit={onCreate} onClose={onClose}>
                   <Button type="submit" classes="btn btn-good">
@@ -48,7 +48,7 @@ const Manage = ({
                 </Form>
               </If>
               <If condition={currentItem}>
-                <div className="box" style={style}>
+                <div className="box shadow" style={style}>
                   <Form onSubmit={onUpdate} currentItem={currentItem}>
                     <Button type="submit" classes="btn-info">
                       Update
