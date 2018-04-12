@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 
+import Row from "../../components/row"
 import Wrestlers from "../../components/wrestlers/container"
-import { Winner, Loser } from "../../components/winner/winner"
 import HeaderOne from "../../components/header/header"
 import Match from "../../components/match/container"
 import Button from "../../components/button/button"
@@ -34,19 +34,13 @@ const CreateAMatch = ({
           <Button value="Reset" onClick={onResetMatch} classes="btn-bad" />
         </span>
       </HeaderOne>
-      <div className="row">
-        <div className="col-xs-12 col-lg-8 center-xs middle-xs">
-          <div className={classnames("box", { hasWinner: winner, })}>
-            <Match currentMatch={currentMatch} />
-          </div>
-          <br />
-        </div>
-        <div className="col-xs-12 col-lg-4">
-          <div className="box">
-            <Wrestlers onClick={onWrestlerClick} style={style} />
-          </div>
-        </div>
-      </div>
+      <Row classes={classnames({ hasWinner: winner, })}>
+        <Match currentMatch={currentMatch} />
+      </Row>
+      <br />
+      <Row>
+        <Wrestlers onClick={onWrestlerClick} style={style} />
+      </Row>
     </form>
   </div>
 )
