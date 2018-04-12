@@ -46,7 +46,7 @@ const Team = ({ style = {}, classes = "", wrestlers = [], onSelectWinner = NOOP,
             </When>
             <Otherwise>
               <div tabIndex={0} className="no-member center-xs middle-xs">
-                <span tabIndex={1}>❕ Drop wrestlers here</span>
+                <h3 tabIndex={1}>❕ Click a wrestler or drag & drop them here</h3>
               </div>
             </Otherwise>
           </Choose>
