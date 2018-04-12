@@ -11,7 +11,6 @@ import Wrestlers from "../../components/wrestlers/container"
 import HeaderOne from "../../components/header/header"
 import Match from "../../components/match/container"
 
-import "../../components/form/input.scss"
 import "./create-a-show.scss"
 
 const noop = () => {}
@@ -27,9 +26,9 @@ const ShowPage = ({
   printMode = false,
   togglePrintMode = noop,
 }) => {
-  const { name, image, bouts } = currentShow
+  const { name, image, bouts, } = currentShow
   return (
-    <div className={classnames("create-a-show", { print: printMode })}>
+    <div className={classnames("create-a-show", { print: printMode, })}>
       <HeaderOne>
         Create A Show
         <span className="tools">

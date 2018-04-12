@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import "./input.scss"
-
 const NOOP = () => {}
 
 const Input = ({ label = "", name = "", onChange = NOOP, placeholder = "", style = {}, value = "", }) => (
