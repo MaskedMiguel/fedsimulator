@@ -15,7 +15,7 @@ const Nav = ({ children = "", classes = "", style = {}, isSubMenuOpen = false, t
       <label htmlFor="menu-toggle" className="nav-toggle" onClick={toggleSubMenuOpen}>
         &equiv;
       </label>
-      <div className={classnames({ active: isSubMenuOpen, }, "nav-right", "nav-menu")}>
+      <div style={style} className={classnames({ active: isSubMenuOpen, }, "nav-right", "nav-menu")}>
         <ul>
           {links.map((item, key) => {
             const { url, title, items, } = item
