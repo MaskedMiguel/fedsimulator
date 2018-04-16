@@ -2,7 +2,6 @@ import React from "react"
 import classnames from "classnames"
 import { NavLink } from "react-router-dom"
 import PropTypes from "prop-types"
-import chromatism from "chromatism"
 
 import "./nav.scss"
 
