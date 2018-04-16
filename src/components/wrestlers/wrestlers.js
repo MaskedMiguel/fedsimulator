@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import Row from "../row"
 import Input from "../form/input"
 import Wrestler from "../wrestler/wrestler"
 
@@ -13,14 +14,19 @@ export const Collection = ({ collection = [], ...props }) => {
 }
 
 export const Container = ({ searchText = "", onSearch = noop, collection = [], onClick = noop, canDrag = true, style = {}, }) => {
-  console.log(style)
+  const champions = collection.filter(item => item.championshipId)
+  const regular = collection.filter(item => !item.championshipId)
+
   return (
     <div className="wrestlers" style={style}>
       <If condition={collection.length > 0}>
         <Input value={searchText} name="name" onChange={onSearch} label="" placeholder="Search..." />
-        <span className="collection">
-          <Collection collection={collection} onClick={onClick} canDrag={canDrag} />
-        </span>
+        <div className="collection">
+          <Collection collection={champions} onClick={onClick} canDrag={canDrag} />
+        </div>
+        <div className="collection">
+          <Collection collection={regular} onClick={onClick} canDrag={canDrag} />
+        </div>
       </If>
     </div>
   )

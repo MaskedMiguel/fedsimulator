@@ -9,9 +9,9 @@
   .collection {
     display: flex;
     flex-flow: row wrap;
-
     align-items: end;
     justify-content: space-between;
     flex-grow: 1;
+    margin: 0 0 1rem;
   }
 }
