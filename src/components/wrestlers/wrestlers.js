@@ -19,8 +19,8 @@ export const Container = ({ searchText = "", onSearch = noop, collection = [], o
 
   return (
     <div className="wrestlers" style={style}>
+      <Input value={searchText} name="name" onChange={onSearch} label="" placeholder="Search..." />
       <If condition={collection.length > 0}>
-        <Input value={searchText} name="name" onChange={onSearch} label="" placeholder="Search..." />
         <div className="collection">
           <Collection collection={champions} onClick={onClick} canDrag={canDrag} />
         </div>
