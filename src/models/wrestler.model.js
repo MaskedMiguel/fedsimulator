@@ -1,4 +1,5 @@
 import { Record } from "immutable"
+import { WRESTLER_MAX_POINTS } from "../constants/game"
 
 export const schema = {
   id: undefined,
@@ -18,8 +19,8 @@ class Model extends Record(schema) {
   constructor(props) {
     props = Object.assign({}, props, { rank: Math.round(props.points / 20) })
 
-    if (props.points > 200) {
-      props.points = 200
+    if (props.points > WRESTLER_MAX_POINTS) {
+      props.points = WRESTLER_MAX_POINTS
     }
     super(props)
   }
