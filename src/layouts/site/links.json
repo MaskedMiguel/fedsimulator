@@ -4,12 +4,12 @@
     "url": "/dashboard"
   },
   {
-    "title": "Shows",
-    "url": "/shows"
-  },
-  {
     "title": "Draft",
     "url": "/draft"
+  },
+  {
+    "title": "Shows",
+    "url": "/shows"
   },
   {
     "title": "Manage",
