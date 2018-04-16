@@ -56,14 +56,14 @@ const WrestlerForm = ({ children = "", brands = [], championships = [], onSubmit
   }
 
   if (currentItem.championshipId === null) {
-    currentItem.brandId = ""
+    currentItem.championshipId = ""
   }
 
-  schema.properties.brandId.enum = brands.map(item => item.id)
-  schema.properties.brandId.enumNames = brands.map(item => item.name)
+  schema.properties.brandId.enum = brands.map(item => item.id).concat("")
+  schema.properties.brandId.enumNames = brands.map(item => item.name).concat("None")
 
-  schema.properties.championshipId.enum = championships.map(item => item.id)
-  schema.properties.championshipId.enumNames = championships.map(item => item.name)
+  schema.properties.championshipId.enum = championships.map(item => item.id).concat("")
+  schema.properties.championshipId.enumNames = championships.map(item => item.name).concat("None")
 
   return (
     <Form fields={fields} schema={schema} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
