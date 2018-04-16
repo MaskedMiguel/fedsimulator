@@ -16,7 +16,11 @@ export const schema = {
 
 class Model extends Record(schema) {
   constructor(props) {
-    props = Object.assign({}, props, { rank: Math.round(props.points / 20), })
+    props = Object.assign({}, props, { rank: Math.round(props.points / 20) })
+
+    if (props.points > 200) {
+      props.points = 200
+    }
     super(props)
   }
 }
