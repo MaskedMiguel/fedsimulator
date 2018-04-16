@@ -22,7 +22,7 @@ const Nav = ({ children = "", classes = "", style = {}, isSubMenuOpen = false, t
             if (url) {
               return (
                 <li key={key}>
-                  <NavLink exact className="nav-item cursor-pointer" to={url}>
+                  <NavLink onClick={toggleSubMenuOpen} exact className="nav-item cursor-pointer" to={url}>
                     {title}
                   </NavLink>
                 </li>
@@ -36,7 +36,7 @@ const Nav = ({ children = "", classes = "", style = {}, isSubMenuOpen = false, t
                       const { url, title, } = subItem
                       return (
                         <li key={url}>
-                          <NavLink exact className="nav-item pointer" to={url}>
+                          <NavLink onClick={toggleSubMenuOpen} exact className="nav-item pointer" to={url}>
                             {title}
                           </NavLink>
                         </li>
