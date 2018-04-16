@@ -1,5 +1,3 @@
-import chromatism from "chromatism"
-
 import * as types from "../actions/types"
 import Model from "../models/style.model"
 
@@ -15,7 +13,7 @@ const updateStyle = state => {
     container: {
       color: isLight ? "black" : "white",
       backgroundColor: isLight ? "#cacaca" : "#232526",
-      backgroundImage: isLight ? "linear-gradient(to right, #cacaca, #e2e2e2)" : "linear-gradient(to bottom, black, #414345)",
+      backgroundImage: isLight ? "linear-gradient(to right, #cacaca, #e2e2e2)" : "linear-gradient(to right, rgb(125, 9, 26), rgb(14, 3, 87))",
     },
   }
 }

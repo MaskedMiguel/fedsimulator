@@ -9,8 +9,22 @@
     margin: 0;
     padding: 0.5rem;
 
+    &.sidelined {
+      color: #ffffff;
+      background-color: black;
+      background-image: linear-gradient(to right, #580814, #322775);
+      .Droppable {
+        border: 1px dashed white;
+      }
+    }
+
     .wrestlers {
       height: 100%;
+      min-height: 5rem;
+    }
+
+    .Droppable {
+      background-image: linear-gradient(to right, #580814, #1d154e);
     }
 
     .wrestler {
@@ -18,7 +32,7 @@
 
       .inner {
         font-size: x-small;
-        padding: .2rem 0 0 0.5rem;
+        padding: 0.2rem 0 0 0.5rem;
         flex-direction: column-reverse;
         display: flex;
         align-items: flex-start;
@@ -37,6 +51,9 @@
     overflow: hidden;
 
     .brand {
+      .temp {
+        display: none;
+      }
       max-height: 15rem;
       min-height: 10rem;
       overflow: scroll;

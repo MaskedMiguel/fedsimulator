@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { Droppable } from "react-drag-and-drop"
-import HeaderOne from "../../components/header/header"
 import Wrestlers from "../../components/wrestlers/container"
 import Create from "../../components/create/brand.container"
 import Row from "../../components/row"
@@ -13,24 +12,25 @@ import "./draft.scss"
 
 const NOOP = () => {}
 
-const DraftPage = ({ brands = [], style = {}, onDrop = NOOP }) => (
+const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, }) => (
   <div className="draft">
-    <HeaderOne>Draft</HeaderOne>
     <Choose>
       <When condition={brands.length > 1}>
         <div className="brands">
-          <div style={style} className="brand">
-            <header>All</header>
-            <Wrestlers style={style} />
+          <div className="brand sidelined">
+            <img className="temp" width="100%" src="/images/draft.jpg" />
+            <Droppable types={["wrestler",]} classes="shadow" onDrop={event => onDrop(null, event)}>
+              <Wrestlers brandId={null} />
+            </Droppable>
           </div>
           {brands.map(brand => {
-            const { backgroundColor, color, id: brandId } = brand
-            const style = { color, backgroundColor }
+            const { backgroundColor, color, id: brandId, } = brand
+            const style = { color, backgroundColor, }
 
             return (
               <div key={brandId} style={style} className="brand">
                 <Row classes="middle-xs center-xs">{brand.name}</Row>
-                <Droppable types={["wrestler"]} onDrop={event => onDrop(brandId, event)}>
+                <Droppable types={["wrestler",]} onDrop={event => onDrop(brandId, event)}>
                   <Wrestlers brandId={brandId} style={style} />
                 </Droppable>
               </div>

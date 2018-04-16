@@ -6,17 +6,17 @@ import orderBy from "lodash.orderby"
 import Wrestlers from "./wrestlers"
 
 export const mappedPropTypes = {
-  brandId: PropTypes.oneOfType([PropTypes.null, PropTypes.string]),
+  brandId: PropTypes.oneOfType([PropTypes.null, PropTypes.string,]),
   collection: PropTypes.array,
   onClick: PropTypes.func,
   canDrag: PropTypes.bool,
 }
 
 export const propsMapper = props => {
-  const { searchText, collection, brandId } = props
+  const { searchText, collection, brandId, } = props
   let newRoster = Object.assign([], collection)
 
-  if (brandId) {
+  if (brandId || brandId === null) {
     newRoster = newRoster.filter(item => item.brandId === brandId)
   }
 
@@ -24,7 +24,7 @@ export const propsMapper = props => {
     newRoster = newRoster.filter(item => item.name.toUpperCase().indexOf(searchText.toUpperCase()) > -1)
   }
 
-  newRoster = orderBy(newRoster, ["championshipId", "points"], ["asc", "desc"])
+  newRoster = orderBy(newRoster, ["championshipId", "points",], ["asc", "desc",])
 
   return {
     collection: newRoster,
@@ -43,7 +43,7 @@ const onSearch = () => action => ({
 export const enhance = compose(
   connect(defaultStoreState),
   setPropTypes(mappedPropTypes),
-  withStateHandlers(defaultSearchState, { onSearch }),
+  withStateHandlers(defaultSearchState, { onSearch, }),
   withProps(propsMapper) //
 )
 

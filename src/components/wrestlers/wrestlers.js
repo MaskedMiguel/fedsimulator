@@ -12,7 +12,8 @@ export const Collection = ({ collection = [], ...props }) => {
   return collection.map(wrestler => <Wrestler key={wrestler.id} wrestler={wrestler} {...props} />)
 }
 
-export const Container = ({ searchText = "", onSearch = noop, collection = [], onClick = noop, canDrag = true, style = {} }) => {
+export const Container = ({ searchText = "", onSearch = noop, collection = [], onClick = noop, canDrag = true, style = {}, }) => {
+  console.log(style)
   return (
     <div className="wrestlers" style={style}>
       <If condition={collection.length > 0}>

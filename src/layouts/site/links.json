@@ -8,6 +8,10 @@
     "url": "/shows"
   },
   {
+    "title": "Draft",
+    "url": "/draft"
+  },
+  {
     "title": "Manage",
     "items": [
       {
@@ -38,10 +42,6 @@
       {
         "title": "Battle Royal",
         "url": "/battle-royal"
-      },
-      {
-        "title": "Draft",
-        "url": "/draft"
       }
     ]
   },
