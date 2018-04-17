@@ -32,7 +32,7 @@ const ShowPage = ({ currentShow = {}, addBout = noop, updateImage = noop, simula
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-8 pane">
           <div className="box">
             <Row>
-              <Input style={style} value={name} onChange={updateName} placeholder="Wrestlemania, Royal Rumble, Hell in a Cell..." />
+              <Input value={name} onChange={updateName} placeholder="Wrestlemania, Royal Rumble, Hell in a Cell..." />
             </Row>
             <br />
             <Choose>
@@ -40,14 +40,15 @@ const ShowPage = ({ currentShow = {}, addBout = noop, updateImage = noop, simula
                 <Row classes="center-xs">
                   <Image formData={image} onChange={updateImage} />
                 </Row>
+                <br />
                 {bouts.map((bout, key) => {
                   const index = key + 1
                   const title = bouts.length !== index ? `Match ${index}` : "Main Event"
 
                   return (
                     <div key={index} tabIndex={1} className="bout">
-                      <h2 tabIndex={1}>
-                        <Link to={`/create-a-match/${bout.id}`}>{title} ➪</Link>
+                      <h2 tabIndex={0}>
+                        {title} <Link to={`/create-a-match/${bout.id}`}>↩</Link>
                       </h2>
                       <Match key={bout.id} currentMatch={bout} />
                     </div>
@@ -56,7 +57,7 @@ const ShowPage = ({ currentShow = {}, addBout = noop, updateImage = noop, simula
               </When>
               <Otherwise>
                 <Row classes="center-xs">
-                  <h3>❕ Click "Add Bouts" to start making matches</h3>
+                  <h3 tabIndex={0}>❕ Click "Add Bouts" to start making matches</h3>
                 </Row>
               </Otherwise>
             </Choose>
