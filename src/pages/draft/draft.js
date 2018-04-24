@@ -18,7 +18,7 @@ const DraftPage = ({ brands = [], style = {}, onDrop = NOOP, }) => (
       <When condition={brands.length > 1}>
         <div className="brands">
           <div className="brand sidelined">
-            <img className="temp" width="100%" src="/images/draft.jpg" />
+            <header>On the bench</header>
             <Droppable types={["wrestler",]} classes="shadow" onDrop={event => onDrop(null, event)}>
               <Wrestlers brandId={null} />
             </Droppable>

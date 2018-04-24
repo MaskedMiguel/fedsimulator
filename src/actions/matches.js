@@ -1,21 +1,21 @@
 import * as types from "./types"
 import { SIMULATE_MATCHES_AMOUNT, MAX_DAMAGE_PER_MOVE } from "../constants/game"
-import hitMove from "../helpers/hit-move"
+// import hitMove from "../helpers/hit-move"
 import { getId } from "../models/model.helper"
 
-export function hitMoveInMatch({ wrestlers = [], id = null, }) {
-  const { defenciveId, offensiveId, } = hitMove(wrestlers)
-  const damage = Math.floor(Math.random() * MAX_DAMAGE_PER_MOVE)
-  return {
-    type: types.HIT_MOVE_IN_MATCH,
-    payload: {
-      id,
-      damage,
-      defenciveId,
-      offensiveId,
-    },
-  }
-}
+// export function hitMoveInMatch({ wrestlers = [], id = null, }) {
+// const { defenciveId, offensiveId, } = hitMove(wrestlers)
+// const damage = Math.floor(Math.random() * MAX_DAMAGE_PER_MOVE)
+// return {
+//   type: types.HIT_MOVE_IN_MATCH,
+//   payload: {
+//     id,
+//     damage,
+//     defenciveId,
+//     offensiveId,
+//   },
+// }
+// }
 
 export function createMatch(props) {
   const id = props.id ? props.id : getId()

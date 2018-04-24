@@ -12,9 +12,11 @@
     &.sidelined {
       color: #ffffff;
       background-color: black;
-      background-image: linear-gradient(to right, #580814, #322775);
+      background-image: linear-gradient(to right, #580814, #1d154e);
+
       .Droppable {
-        border: 1px dashed white;
+        border: 1px dashed #666;
+        padding: 0.5rem;
       }
     }
 

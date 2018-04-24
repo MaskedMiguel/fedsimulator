@@ -11,7 +11,7 @@ import "./wrestler.scss"
 const NOOP = () => {}
 
 const Wrestler = ({ wrestler = schema, onClick = NOOP, highlight = false, canDrag = true, }) => {
-  const { id, name, brandId, points, image, championshipId, } = wrestler
+  const { id, name, rank, brandId, points, image, championshipId, } = wrestler
   const classes = classnames("wrestler", { [brandId]: brandId, }, { "has-highlight": highlight, }, { "has-championship": championshipId, }, { "has-image": image, })
   const names = processNames(name)
   const withImage = image ? { backgroundImage: `url(${image}`, } : {}
@@ -27,6 +27,7 @@ const Wrestler = ({ wrestler = schema, onClick = NOOP, highlight = false, canDra
         <div className="inner" style={withImage}>
           <span className="points" tabIndex={1}>
             {points}
+            <sup>{rank}</sup>
           </span>
           <span className="name" tabIndex={1}>
             {names.map((newName, key) => <div key={key}>{newName}</div>)}

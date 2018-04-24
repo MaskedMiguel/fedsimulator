@@ -1,0 +1,17 @@
+{
+  "title": "Import Wrestlemania 34",
+  "style": {
+    "color": "#e0c750",
+    "backgroundColor": "#59328c"
+  },
+  "items": [
+    {
+      "type": "GENERATE_SHOWS",
+      "payload": []
+    },
+    {
+      "type": "GENERATE_MATCHES",
+      "payload": []
+    }
+  ]
+},

@@ -15,7 +15,13 @@ export default (state, action) => {
       break
 
     case types.UPDATE_ROSTER:
-      // we do nothing because the new state is already set
+      action.payload.forEach(wrestler => {
+        const index = state.findIndex(item => item.id === wrestler.id)
+
+        if (index > -1) {
+          state = state.updateIn([index,], () => new Model(wrestler))
+        }
+      })
       break
 
     case types.GENERATE_ROSTER:

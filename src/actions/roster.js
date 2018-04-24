@@ -1,15 +1,39 @@
 import * as types from "./types"
 import Match from "../helpers/match"
 
-export function simulateRandomMatch({ roster = [], championships = [], }) {
-  const brandId = roster[Math.floor(Math.random() * roster.length)].brandId
-  const payload = new Match({ roster, brandId, championships, })
-    .generate()
+export function simulateRandomMatch({ roster = [], championships = [] }) {
+  const randomIndex = Math.floor(Math.random() * roster.length)
+  const brandId = roster[randomIndex].brandId
+
+  if (brandId !== null) {
+    roster = roster.filter(item => item.brandId === brandId)
+  }
+
+  const payload = new Match()
+    .randomiseTeams(roster)
+    .setChampionships(championships)
     .simulate()
-    .savePoints()
-    .switchChampionships()
-    .getRoster()
-    .toJS()
+    .updateWinLossRecord()
+    .updatePoints()
+    .moveChampionship()
+    .getWrestlers()
+
+  return {
+    type: types.UPDATE_ROSTER,
+    payload,
+  }
+}
+
+export function simulateMatch({ wrestlers = [], championships = [] }) {
+  wrestlers = Object.assign([], wrestlers)
+  const payload = new Match()
+    .setWrestlers(wrestlers)
+    .setChampionships(championships)
+    .simulate()
+    .updateWinLossRecord()
+    .updatePoints()
+    .moveChampionship()
+    .getWrestlers()
 
   return {
     type: types.UPDATE_ROSTER,

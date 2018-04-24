@@ -5,6 +5,7 @@ import Model from "../models/match.model"
 import WrestlersReducer from "./match.wrestlers"
 
 export default (state, action) => {
+  // console.log(JSON.stringify(state))
   state = List(state)
   let index
 

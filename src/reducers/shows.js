@@ -5,6 +5,7 @@ import Model from "../models/show.model"
 import { getId } from "../models/model.helper"
 
 export default (state, action) => {
+  // console.log(JSON.stringify(state))
   state = List(state).map(item => new Model(item))
   let index
 

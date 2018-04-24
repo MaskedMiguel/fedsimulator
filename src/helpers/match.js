@@ -1,121 +1,79 @@
-import { List } from "immutable"
-import includes from "lodash.includes"
-import keyBy from "lodash.keyby"
-
 import randomiseWrestlers from "./randomise-wrestlers"
 import selectRandomResults from "./select-random-results"
 
 import { POINTS_STEP } from "../constants/game"
 
-export default class Match {
-  /*
-    wrestlers: array, collection of wrestlers already in the Match
-    roster: array, full collection of available wrestlers to pick from
-    championship: array, belts to pass the championshipId to
-  */
-  constructor({ roster = [], wrestlers = [], brandId = null, championships = [], }) {
-    this.roster = new List(roster)
-    this.brandId = String(brandId)
-    this.wrestlers = new List(wrestlers)
-    this.championships = new List(championships)
+class Match {
+  getWrestlers = () => {
+    return this.wrestlers ? this.wrestlers : []
   }
-
-  getQuickKeys() {
-    this.winner = this.wrestlers.find(item => item.winner)
-    this.loser = this.wrestlers.find(item => item.loser)
-
-    this.winnerIds = this.wrestlers.reduce((prev, curr) => (curr.teamId === this.winner.teamId ? prev.concat(curr.id) : prev), [])
-    this.loserIds = this.wrestlers.reduce((prev, curr) => (curr.teamId === this.loser.teamId ? prev.concat(curr.id) : prev), [])
-
-    this.winners = this.roster.filter(item => includes(this.winnerIds, item.id))
-    this.losers = this.roster.filter(item => includes(this.loserIds, item.id))
+  getWinner = () => {
+    return this.wrestlers.find(item => item.winner)
   }
-
-  generate() {
-    let wrestlers = this.roster.toJS()
-
-    if (this.brandId !== null) {
-      wrestlers = wrestlers.filter(item => item.brandId === this.brandId)
-    }
-
-    this.wrestlers = new List(randomiseWrestlers({ wrestlers, }))
-
+  getLoser = () => {
+    return this.wrestlers.find(item => item.loser)
+  }
+  setChampionships = championships => {
+    this.championships = championships
     return this
   }
-
-  simulate() {
-    this.wrestlers = selectRandomResults(this.wrestlers.toJS())
-
+  setWrestlers = wrestlers => {
+    this.wrestlers = wrestlers
     return this
   }
+  randomiseTeams = wrestlers => {
+    this.wrestlers = randomiseWrestlers({ wrestlers, })
+    return this
+  }
+  simulate = () => {
+    this.wrestlers = selectRandomResults(this.wrestlers)
+    return this
+  }
+  moveChampionship = () => {
+    const loserIndex = this.wrestlers.findIndex(item => item.loser)
+    const winnerIndex = this.wrestlers.findIndex(item => item.winner)
 
-  switchChampionships() {
-    const winnersHaveChampionships = this.winners.find(item => item.championshipId)
+    if (loserIndex > -1 && winnerIndex > -1) {
+      const loser = this.wrestlers[loserIndex]
+      const winner = this.wrestlers[winnerIndex]
 
-    if (!winnersHaveChampionships && this.loser && this.loser.championshipId) {
-      const keyedChampionships = keyBy(this.championships.toJS(), "id")
+      const sameBrand = loser.brandId === winner.brandId
+      const sameGender = loser.gender === winner.gender
 
-      if (keyedChampionships[this.loser.championshipId]) {
-        this.championship = keyedChampionships[this.loser.championshipId]
+      const loserChampionship = loser.championshipId || ""
+      const winnerChampionship = winner.championshipId || ""
 
-        this.processChampionships()
+      if (sameBrand && sameGender && loserChampionship.length > 0 && winnerChampionship.length === 0) {
+        this.wrestlers[winnerIndex].championshipId = loser.championshipId
+        this.wrestlers[loserIndex].championshipId = null
       }
     }
 
     return this
   }
+  updateWinLossRecord = () => {
+    const loserIndex = this.wrestlers.findIndex(item => item.winner)
+    const winnerIndex = this.wrestlers.findIndex(item => item.loser)
 
-  processChampionships() {
-    const losers = this.losers.size
-    const winners = this.winners.size
+    if (winnerIndex > -1) {
+      this.wrestlers[loserIndex].losses += 1
+      this.wrestlers[winnerIndex].wins += 1
+    }
+    return this
+  }
+  updatePoints = () => {
+    const loserIndex = this.wrestlers.findIndex(item => item.winner)
+    const winnerIndex = this.wrestlers.findIndex(item => item.loser)
 
-    if (losers === 1 && winners === 1) {
-      this.roster = this.roster.map(wrestler => {
-        if (includes(this.winnerIds, wrestler.id)) {
-          wrestler.championshipId = this.championship.id
-        } else if (includes(this.loserIds, wrestler.id) || wrestler.championshipId === this.championship.id) {
-          wrestler.championshipId = null
-        }
-
-        return wrestler
-      })
+    if (winnerIndex > -1 && this.wrestlers[winnerIndex].wins % 10 === 0) {
+      this.wrestlers[winnerIndex].points = this.wrestlers[winnerIndex].points + POINTS_STEP
+    }
+    if (loserIndex > -1 && this.wrestlers[loserIndex].losses % 10 === 0) {
+      this.wrestlers[loserIndex].points = this.wrestlers[loserIndex].points - POINTS_STEP
     }
 
     return this
-  }
-
-  savePoints() {
-    this.getQuickKeys()
-
-    if (!this.winner || !this.loser) {
-      return this
-    }
-
-    this.roster = this.roster.map(wrestler => {
-      if (includes(this.loserIds, wrestler.id)) {
-        wrestler = wrestler.losses = wrestler.losses + POINTS_STEP
-
-        if (wrestler.losses % 10 === 0) {
-          wrestler.points = wrestler.points - POINTS_STEP
-        }
-      } else if (includes(this.winnerIds, wrestler.id)) {
-        wrestler.wins = wrestler.wins + POINTS_STEP
-
-        if (wrestler.wins % 10 === 0) {
-          wrestler.points = wrestler.points + POINTS_STEP
-        }
-      }
-      return wrestler
-    })
-
-    return this
-  }
-
-  getRoster() {
-    return this.roster
-  }
-
-  getWrestlers() {
-    return this.wrestlers
   }
 }
+
+export default Match

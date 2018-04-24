@@ -5,34 +5,35 @@ import { withRouter } from "react-router-dom"
 
 import withStyle from "../../hoc/withHighlightedStyle"
 import withRoster from "../../hoc/withRoster"
+import withChampionships from "../../hoc/withChampionships"
 import withBout from "../../hoc/withBout"
 import EmptyRoster from "../../components/empty-roster"
 import CreateAMatch from "./create-a-match"
 
 import { getId } from "../../models/model.helper"
-import { simulateMatch, addWrestlerToMatch, randomiseMatch, resetMatch } from "../../actions/matches"
-
+import { addWrestlerToMatch, randomiseMatch, resetMatch } from "../../actions/matches"
+import { simulateMatch } from "../../actions/roster"
 export const pick = items => items[Math.floor(Math.random() * (items.length - 1))]
 
 export default compose(
   withBout,
   withRoster,
+  withChampionships,
   withRouter,
   connect(
     state => ({
-      roster: state.roster,
       matches: state.matches,
     }),
     dispatch => ({
       onResetMatch: id => dispatch(resetMatch(id)),
       onRandomise: id => dispatch(randomiseMatch(id)),
-      onSimulateMatch: id => dispatch(simulateMatch(id)),
       onWrestlerClick: props => dispatch(addWrestlerToMatch(props)),
+      onSimulateMatch: props => dispatch(simulateMatch(props)),
     })
   ),
   withProps(props => {
     let newProps, winner, loser
-    const { bout: currentMatch, } = props
+    const { championships, roster, bout: currentMatch, } = props
 
     if (currentMatch) {
       winner = currentMatch && currentMatch.wrestlers.find(item => item.winner)
@@ -55,7 +56,11 @@ export default compose(
         onSimulateMatch: event => {
           event.preventDefault()
 
-          return props.onSimulateMatch(currentMatch.id)
+          return props.onSimulateMatch({
+            roster,
+            wrestlers: currentMatch.wrestlers,
+            championships,
+          })
         },
         onRandomise: event => {
           event.preventDefault()

@@ -24,7 +24,7 @@ export function deleteShow(id) {
 export function addBoutToShow({ show, boutId, }) {
   const payload = Object.assign({}, show)
 
-  payload.bouts.push(boutId)
+  payload.bouts.unshift(boutId)
 
   return {
     type: types.UPDATE_SHOW,
