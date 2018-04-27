@@ -113,33 +113,6 @@ export default (state, action) => {
         return item
       })
       break
-
-    case types.HIT_MOVE_IN_MATCH:
-      {
-        const { id, damage, defenciveId, offensiveId, } = action.payload
-
-        index = state.findIndex(item => item.id === id)
-
-        let nowHasAWinner = false
-
-        state = state.updateIn([index,], bout => {
-          const offensiveIndex = bout.wrestlers.findIndex(item => item.id === offensiveId)
-          const defenciveIndex = bout.wrestlers.findIndex(item => item.id === defenciveId)
-          const health = bout.wrestlers[defenciveIndex].health - damage
-          nowHasAWinner = health < 1
-          bout.wrestlers[defenciveIndex].health = health
-          bout.wrestlers[defenciveIndex].loser = nowHasAWinner
-
-          if (nowHasAWinner) {
-            bout.wrestlers[offensiveIndex].winner = true
-          }
-
-          bout.simulated = bout.wrestlers.filter(item => item.health < 1).length > 0
-          bout.wrestlers = new WrestlersReducer(bout.wrestlers, action)
-          return bout
-        })
-      }
-      break
   }
   return state.toJS()
 }

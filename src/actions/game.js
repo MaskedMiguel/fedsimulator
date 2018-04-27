@@ -1,23 +1,6 @@
 import * as types from "./types"
 
-import { addOneDay } from "../constants/dates"
 import defaultGame from "../models/game.model"
-
-export function addOneDayToGame(game) {
-  const date = addOneDay(game.date)
-  const payload = Object.assign({}, game, { date, })
-
-  return {
-    type: types.UPDATE_GAME,
-    payload,
-  }
-}
-
-export function toggleStarted() {
-  return {
-    type: types.TOGGLE_STARTED,
-  }
-}
 
 export function updateGame(payload) {
   return {

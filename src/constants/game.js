@@ -5,7 +5,6 @@ export const SIMULATE_MATCHES_AMOUNT = 50
 export const POINTS_STEP = 2
 export const ELIMINATION_TICK_TIMER = 100
 export const CURRENCY = "$"
-export const BUDGET = 5000
 export const WEEK_TICK_TIMER = 500
 export const SKIP_MATCH_FINE = 1000
 export const SKIP_MONTH_FINE = 3500

@@ -12,7 +12,6 @@ export default (state, action) => {
 
     case types.GENERATE:
       state = state.set("name", "WWE")
-      state = state.set("started", true)
       break
 
     case types.UPDATE_GAME:

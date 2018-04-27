@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 import Flash from "react-reveal/Flash"
 
-import Social from "../../components/social"
-
 import SettingsName from "../settings/name"
 import SettingsImporter from "../settings/importer"
 
