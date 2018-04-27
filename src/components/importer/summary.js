@@ -6,7 +6,6 @@ import { connect } from "react-redux"
 import { resetRoster } from "../../actions/roster"
 import { resetChampionships } from "../../actions/champions"
 import { resetBrands } from "../../actions/brands"
-import { resetTapings } from "../../actions/tapings"
 import { resetShows } from "../../actions/shows"
 import { resetMatches } from "../../actions/matches"
 
@@ -16,7 +15,6 @@ class ImportSummary extends Component {
   onResetRoster = () => this.props.dispatch(resetRoster())
   onResetChampionships = () => this.props.dispatch(resetChampionships())
   onResetBrands = () => this.props.dispatch(resetBrands())
-  onResetTapings = () => this.props.dispatch(resetTapings())
   onResetShows = () => this.props.dispatch(resetShows())
   onResetMatches = () => this.props.dispatch(resetMatches())
 
@@ -43,12 +41,6 @@ class ImportSummary extends Component {
             <div className="box">
               <header>{totals.brands} brands</header>
               <Button classes="btn-bad" onClick={this.onResetBrands} value="Clear" />
-            </div>
-          </div>
-          <div className={columns}>
-            <div className="box">
-              <header>{totals.tapings} tapings</header>
-              <Button classes="btn-bad" onClick={this.onResetTapings} value="Clear" />
             </div>
           </div>
           <div className={columns}>
@@ -83,7 +75,6 @@ export const enhance = compose(
       brands: state.brands.length,
       shows: state.shows.length,
       matches: state.matches.length,
-      tapings: state.tapings.length,
     },
   }))
 )

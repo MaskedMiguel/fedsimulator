@@ -9,7 +9,6 @@ import roster from "./roster"
 import shows from "./shows"
 import simulations from "./simulations"
 import style from "./style"
-import tapings from "./tapings"
 import version from "./version"
 
 const rootReducer = combineReducers({
@@ -23,7 +22,6 @@ const rootReducer = combineReducers({
   shows,
   simulations,
   style,
-  tapings,
   version,
 })
 
