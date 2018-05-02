@@ -8,7 +8,7 @@ const updateStyle = state => {
     highlighted: {
       color: "white",
       backgroundColor: "#232526",
-      backgroundImage: "linear-gradient(to top, #232526, #414345)",
+      backgroundImage: "linear-gradient(to top, #232526, #333)",
     },
     container: {
       color: isLight ? "black" : "white",
