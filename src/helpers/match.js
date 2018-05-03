@@ -52,8 +52,8 @@ class Match {
     return this
   }
   updateWinLossRecord = () => {
-    const loserIndex = this.wrestlers.findIndex(item => item.winner)
-    const winnerIndex = this.wrestlers.findIndex(item => item.loser)
+    const winnerIndex = this.wrestlers.findIndex(item => item.winner)
+    const loserIndex = this.wrestlers.findIndex(item => item.loser)
 
     if (winnerIndex > -1) {
       this.wrestlers[loserIndex].losses += 1
