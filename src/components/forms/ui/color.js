@@ -8,28 +8,28 @@ class Color extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { value: props.formData }
+    this.state = { value: props.formData, }
   }
 
-  onChange = ({ hex }) => {
+  onChange = ({ hex, }) => {
     const value = String(hex)
 
-    this.setState({ value })
+    this.setState({ value, })
     this.props.onChange(`#${value}`)
   }
 
   componentWillReceiveProps(nextProps) {
     const value = String(nextProps.formData)
 
-    this.setState({ value })
+    this.setState({ value, })
   }
 
   render() {
     return [
-      <label className="control-label" htmlFor="root_name">
+      <label key="label" className="control-label" htmlFor="root_name">
         {this.props.schema.title}
       </label>,
-      <div className="formColor">
+      <div key="formColor" className="formColor">
         <ColorPicker color={this.state.value} onChange={this.onChange} />
       </div>,
     ]

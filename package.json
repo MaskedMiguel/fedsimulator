@@ -5,13 +5,13 @@
   "repository": "https://github.com/azz0r/federation-simulator.git",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development DEBUG=app:* babel-node ./scripts/start.js",
     "dev": "NODE_ENV=development DEBUG=app:* yarn test | yarn start",
-    "build": "NODE_ENV=production DEBUG=app:* babel-node ./scripts/build.js",
     "lint": "eslint src --fix",
     "test": "NODE_ENV=test mocha --opts test/mocha.opts",
     "test:watch": "NODE_ENV=test mocha --watch --opts test/mocha.opts ",
-    "prepush": "npm test"
+    "prepush": "npm test",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -20,7 +20,9 @@
     "chromatism": "~2.6.0",
     "classnames": "~2.2.5",
     "coloreact": "^0.2.4",
+    "eslint-loader": "^2.0.0",
     "expect.js": "~0.3.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "fastclick": "~1.0.6",
     "immutable": "~4.0.0-rc.4",
     "lodash.groupby": "~4.6.0",
@@ -32,6 +34,7 @@
     "lodash.sortby": "~4.7.0",
     "promise": "~7.1.1",
     "react": "~16.2.0",
+    "react-dev-utils": "^5.0.1",
     "react-dom": "~16.2.0",
     "react-drag-and-drop": "~2.4.0",
     "react-dropzone": "~3.13.3",
@@ -48,6 +51,7 @@
     "redux-thunk": "^2.2.0",
     "string.prototype.includes": "~1.0.0",
     "uniqid": "~4.1.1",
+    "webpack-manifest-plugin": "^2.0.3",
     "weighted": "~0.3.0"
   },
   "devDependencies": {
@@ -130,6 +134,9 @@
     "fsevents": "*"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

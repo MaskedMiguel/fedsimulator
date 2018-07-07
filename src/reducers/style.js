@@ -8,12 +8,12 @@ const updateStyle = state => {
     highlighted: {
       color: "white",
       backgroundColor: "#232526",
-      backgroundImage: "linear-gradient(to top, #232526, #333)",
+      backgroundImage: "#232828",
     },
     container: {
       color: isLight ? "black" : "white",
-      backgroundColor: isLight ? "#cacaca" : "#232526",
-      backgroundImage: isLight ? "linear-gradient(to right, #cacaca, #e2e2e2)" : "linear-gradient(to right, rgb(125, 9, 26), rgb(13, 12, 152))",
+      backgroundColor: isLight ? "#cacaca" : "#232828",
+      backgroundImage: isLight ? "linear-gradient(to right, #cacaca, #e2e2e2)" : "linear-gradient(to right, #3c0201, black)",
     },
   }
 }

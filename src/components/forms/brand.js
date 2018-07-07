@@ -9,9 +9,9 @@ import "./forms.scss"
 const noop = () => {}
 const schema = {
   type: "object",
-  required: ["name"],
+  required: ["name",],
   properties: {
-    name: { type: "string", title: "Name", default: "" },
+    name: { type: "string", title: "Name", default: "", },
     backgroundColor: {
       type: "string",
       title: "Background color",
@@ -33,9 +33,9 @@ const uiSchema = {
   },
 }
 
-const fields = { color: Color }
+const fields = { color: Color, }
 
-const BrandForm = ({ children = "", onSubmit = noop, currentItem = {} }) => (
+const BrandForm = ({ children = "", onSubmit = noop, currentItem = {}, }) => (
   <Form schema={schema} fields={fields} uiSchema={uiSchema} formData={currentItem} onSubmit={data => onSubmit(data.formData)}>
     {children}
   </Form>
