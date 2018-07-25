@@ -49,6 +49,7 @@
     "redux-localstorage": "~0.4.1",
     "redux-thunk": "^2.2.0",
     "string.prototype.includes": "~1.0.0",
+    "styled-components": "^3.3.3",
     "uniqid": "~4.1.1",
     "webpack-manifest-plugin": "^2.0.3",
     "weighted": "~0.3.0"
