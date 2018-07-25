@@ -246,6 +246,7 @@
           {
             "id" : "j9mr6qbn",
             "brandId" : "MNR",
+            "championshipId" : "j9nfpobg",
             "male" : true,
             "name" : "Dolph Ziggler",
             "points" : 72
@@ -520,7 +521,6 @@
           {
             "id" : "j9mr6qci",
             "brandId" : "MNR",
-            "championshipId" : "j9nfpobf",
             "male" : false,
             "name" : "Nia Jax",
             "points" : 89
@@ -530,6 +530,7 @@
             "brandId" : "MNR",
             "male" : false,
             "name" : "Alexa Bliss",
+            "championshipId" : "j9nfpobf",
             "points" : 87
           },
           {
@@ -550,7 +551,6 @@
             "id" : "j9mrwbsa",
             "brandId" : "MNR",
             "male" : true,
-            "championshipId" : "j9nfpobg",
             "name" : "Seth Rollins",
             "points" : 90
           },
@@ -580,8 +580,7 @@
             "brandId" : "SDL",
             "male" : true,
             "name" : "Jeff Hardy",
-            "points" : 88,
-            "championshipId" : "wweUSW"
+            "points" : 88
           },
           {
             "id" : "SonyaDeville",
@@ -747,6 +746,7 @@
           {
             "id" : "j9mr6qbs",
             "brandId" : "SDL",
+            "championshipId": "wweUSW",
             "male" : true,
             "name" : "Shinsuke Nakamura",
             "points" : 90
