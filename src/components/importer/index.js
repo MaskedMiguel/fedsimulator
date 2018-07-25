@@ -67,7 +67,7 @@ class Importer extends Component {
               <div
                 key={title}
 
-                className="col-lg-4 col-md-4 col-sm-4 col-xs-12"
+                className="col-lg-6 col-md-6 col-sm-12 col-xs-12"
                 onClick={() => this.onImport({ title, items, })}>
                 <div className="box shadow pulse inner  middle-xs center-xs"	style={style}>
                   {title}
