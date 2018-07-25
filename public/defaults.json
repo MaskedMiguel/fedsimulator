@@ -1,9 +1,9 @@
 [
   {
-    "title" : "Import WWE Raw",
+    "title" : "Import WWE Summerslam",
     "style" : {
       "color" : "#ffffff",
-      "backgroundColor" : "#ac2e37"
+      "backgroundColor" : "#ec6323"
     },
     "items" : [
       {
@@ -32,6 +32,105 @@
       {
         "type" : "GENERATE_ROSTER",
         "payload" : [
+          {
+            "id" : "j9mr6qak",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Akira Tozawa",
+            "points" : 76
+          },
+          {
+            "id" : "j9mr6qam",
+            "brandId" : "TFL",
+            "championshipId" : "j9nfpobh",
+            "male" : true,
+            "name" : "Cedric Alexander",
+            "points" : 60
+          },
+          {
+            "id" : "j9mr6qar",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Drew Gulak",
+            "points" : 50
+          },
+          {
+            "id" : "j9mr6qb9",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Jack Gallagher",
+            "points" : 63
+          },
+          {
+            "id" : "j9mr6qbb",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Gran Metalik",
+            "points" : 69
+          },
+          {
+            "id" : "j9mr6qbd",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Kalisto",
+            "points" : 77
+          },
+          {
+            "id" : "j9mr6qbe",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Ariya Daivari",
+            "points" : 58
+          },
+          {
+            "id" : "j9mr6qbg",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Noam Dar",
+            "points" : 55
+          },
+          {
+            "id" : "j9mr6qbh",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Rich Swann",
+            "points" : 71
+          },
+          {
+            "id" : "j9mr6qbj",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Brian Kendrick",
+            "points" : 59
+          },
+          {
+            "id" : "j9mr6qbk",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Tony Nese",
+            "points" : 68
+          },
+          {
+            "id" : "j9mr6qbl",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "TJP",
+            "points" : 65
+          },
+          {
+            "id" : "j9ms1xjc",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Lince Dorado",
+            "points" : 56
+          },
+          {
+            "id" : "j9msb3ot",
+            "brandId" : "TFL",
+            "male" : true,
+            "name" : "Mustafa Ali",
+            "points" : 40
+          },
           {
             "id" : "j9mr6qah",
             "brandId" : "MNR",
@@ -475,53 +574,7 @@
             "male" : true,
             "name" : "Kurt Angle",
             "points" : 70
-          }
-        ]
-      },
-      {
-        "type" : "GENERATE_CHAMPIONSHIPS",
-        "payload" : [
-          {
-            "id" : "j9nfpobe",
-            "name" : "Universal Champ",
-            "rank" : 5,
-            "brandId" : "MNR",
-            "male" : true,
-            "color" : "#ffffff",
-            "backgroundColor" : "#d7182a"
           },
-          {
-            "id" : "j9nfpobf",
-            "name" : "Raw Womens Champ",
-            "rank" : 4,
-            "brandId" : "MNR",
-            "male" : false,
-            "color" : "#eb1826",
-            "backgroundColor" : "#ffffff"
-          },
-          {
-            "id" : "j9nfpobg",
-            "name" : "Intercontinental Champ",
-            "rank" : 3,
-            "brandId" : "MNR",
-            "male" : true,
-            "color" : "#000000",
-            "backgroundColor" : "#ffffff"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title" : "Import WWE Smackdown",
-    "style" : {
-      "color" : "#fff",
-      "backgroundColor" : "#4341a0"
-    },
-    "items" : [
-      {
-        "type" : "GENERATE_ROSTER",
-        "payload" : [
           {
             "id" : "j9mr6qbc",
             "brandId" : "SDL",
@@ -881,6 +934,33 @@
         "type" : "GENERATE_CHAMPIONSHIPS",
         "payload" : [
           {
+            "id" : "j9nfpobe",
+            "name" : "Universal Champ",
+            "rank" : 5,
+            "brandId" : "MNR",
+            "male" : true,
+            "color" : "#ffffff",
+            "backgroundColor" : "#d7182a"
+          },
+          {
+            "id" : "j9nfpobf",
+            "name" : "Raw Womens Champ",
+            "rank" : 4,
+            "brandId" : "MNR",
+            "male" : false,
+            "color" : "#eb1826",
+            "backgroundColor" : "#ffffff"
+          },
+          {
+            "id" : "j9nfpobg",
+            "name" : "Intercontinental Champ",
+            "rank" : 3,
+            "brandId" : "MNR",
+            "male" : true,
+            "color" : "#000000",
+            "backgroundColor" : "#ffffff"
+          },
+          {
             "id" : "wweC",
             "name" : "WWE Champ",
             "rank" : 5,
@@ -909,125 +989,7 @@
             "tag" : false,
             "color" : "#E4E2E3",
             "backgroundColor" : "#042195"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title" : "Import WWE 205 Live",
-    "style" : {
-      "color" : "#ffffff",
-      "backgroundColor" : "#750de5"
-    },
-    "items" : [
-      {
-        "type" : "GENERATE_ROSTER",
-        "payload" : [
-          {
-            "id" : "j9mr6qak",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Akira Tozawa",
-            "points" : 76
           },
-          {
-            "id" : "j9mr6qam",
-            "brandId" : "TFL",
-            "championshipId" : "j9nfpobh",
-            "male" : true,
-            "name" : "Cedric Alexander",
-            "points" : 60
-          },
-          {
-            "id" : "j9mr6qar",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Drew Gulak",
-            "points" : 50
-          },
-          {
-            "id" : "j9mr6qb9",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Jack Gallagher",
-            "points" : 63
-          },
-          {
-            "id" : "j9mr6qbb",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Gran Metalik",
-            "points" : 69
-          },
-          {
-            "id" : "j9mr6qbd",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Kalisto",
-            "points" : 77
-          },
-          {
-            "id" : "j9mr6qbe",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Ariya Daivari",
-            "points" : 58
-          },
-          {
-            "id" : "j9mr6qbg",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Noam Dar",
-            "points" : 55
-          },
-          {
-            "id" : "j9mr6qbh",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Rich Swann",
-            "points" : 71
-          },
-          {
-            "id" : "j9mr6qbj",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Brian Kendrick",
-            "points" : 59
-          },
-          {
-            "id" : "j9mr6qbk",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Tony Nese",
-            "points" : 68
-          },
-          {
-            "id" : "j9mr6qbl",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "TJP",
-            "points" : 65
-          },
-          {
-            "id" : "j9ms1xjc",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Lince Dorado",
-            "points" : 56
-          },
-          {
-            "id" : "j9msb3ot",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Mustafa Ali",
-            "points" : 40
-          }
-        ]
-      },
-      {
-        "type" : "GENERATE_CHAMPIONSHIPS",
-        "payload" : [
           {
             "id" : "j9nfpobh",
             "name" : "Cruiserweight Champ",
