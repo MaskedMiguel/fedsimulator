@@ -8,7 +8,7 @@ import Wrestler from "../wrestler/wrestler"
 
 const NOOP = () => {}
 
-const Team = ({ style = {}, classes = "", wrestlers = [], onRemoveWrestler = NOOP, onDrop = NOOP, }) => {
+const Team = ({ classes = "", wrestlers = [], onRemoveWrestler = NOOP, onDrop = NOOP, }) => {
   const hasWinner = wrestlers.find(wrestler => wrestler.winner)
   const hasLoser = wrestlers.find(wrestler => wrestler.loser)
   const hasManyWrestlers = wrestlers.length > 2
@@ -26,7 +26,7 @@ const Team = ({ style = {}, classes = "", wrestlers = [], onRemoveWrestler = NOO
   return (
     <div className={teamClasses}>
       <Droppable types={["wrestler",]} onDrop={onDrop}>
-        <div style={style} className={classnames("box", "dropzone", "pulse", { active: hasWrestlers, })}>
+        <div className={classnames("box", "dropzone", "pulse", { active: hasWrestlers, })}>
           <Choose>
             <When condition={hasWrestlers}>
               {wrestlers.map(wrestler => {
@@ -61,7 +61,6 @@ Team.propTypes = {
   onDrop: PropTypes.func.isRequired,
   onRemoveWrestler: PropTypes.func.isRequired,
   wrestlers: PropTypes.array.isRequired,
-  style: PropTypes.object,
 }
 
 export default Team
