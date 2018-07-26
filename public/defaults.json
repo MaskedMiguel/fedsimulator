@@ -1,1293 +1,1404 @@
-[
-  {
-    "title" : "Import WWE Summerslam",
-    "style" : {
-      "color" : "#ffffff",
-      "backgroundColor" : "#ec6323"
-    },
-    "items" : [
-      {
-        "type" : "GENERATE_BRANDS",
-        "payload" : [
-          {
-            "id" : "MNR",
-            "name" : "Raw",
-            "color" : "#ffffff",
-            "backgroundColor" : "#ac2e37"
-          },
-          {
-            "id" : "SDL",
-            "name" : "Smackdown Live",
-            "color" : "#ffffff",
-            "backgroundColor" : "#4341a0"
-          },
-          {
-            "id" : "TFL",
-            "name" : "205 Live",
-            "color" : "#ffffff",
-            "backgroundColor" : "#750de5"
-          }
-        ]
-      },
-      {
-        "type" : "GENERATE_ROSTER",
-        "payload" : [
-          {
-            "id" : "j9mr6qak",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Akira Tozawa",
-            "points" : 76
-          },
-          {
-            "id" : "j9mr6qam",
-            "brandId" : "TFL",
-            "championshipId" : "j9nfpobh",
-            "male" : true,
-            "name" : "Cedric Alexander",
-            "points" : 60
-          },
-          {
-            "id" : "j9mr6qar",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Drew Gulak",
-            "points" : 50
-          },
-          {
-            "id" : "j9mr6qb9",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Jack Gallagher",
-            "points" : 63
-          },
-          {
-            "id" : "j9mr6qbb",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Gran Metalik",
-            "points" : 69
-          },
-          {
-            "id" : "j9mr6qbd",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Kalisto",
-            "points" : 77
-          },
-          {
-            "id" : "j9mr6qbe",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Ariya Daivari",
-            "points" : 58
-          },
-          {
-            "id" : "j9mr6qbg",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Noam Dar",
-            "points" : 55
-          },
-          {
-            "id" : "j9mr6qbh",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Rich Swann",
-            "points" : 71
-          },
-          {
-            "id" : "j9mr6qbj",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Brian Kendrick",
-            "points" : 59
-          },
-          {
-            "id" : "j9mr6qbk",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Tony Nese",
-            "points" : 68
-          },
-          {
-            "id" : "j9mr6qbl",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "TJP",
-            "points" : 65
-          },
-          {
-            "id" : "j9ms1xjc",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Lince Dorado",
-            "points" : 56
-          },
-          {
-            "id" : "j9msb3ot",
-            "brandId" : "TFL",
-            "male" : true,
-            "name" : "Mustafa Ali",
-            "points" : 40
-          },
-          {
-            "id" : "j9mr6qah",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Chad Gable",
-            "points" : 55
-          },
-          {
-            "id" : "3ln2j",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Drew McIntyre",
-            "points" : 90
-          },
-          {
-            "id" : "j9mrarh7",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Sunil Singh",
-            "points" : 22
-          },
-          {
-            "id" : "j9mrb3m1",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Samir Singh",
-            "points" : 23
-          },
-          {
-            "id" : "j9mr6qcn",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Natalya",
-            "points" : 89
-          },
-          {
-            "id" : "j9mr6qbo",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Baron Corbin",
-            "points" : 83
-          },
-          {
-            "id" : "j9mry4ju",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Bobby Roode",
-            "points" : 88
-          },
-          {
-            "id" : "j9mr6qb0",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Mojo Rawley",
-            "points" : 64
-          },
-          {
-            "id" : "j9mse277",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Zack Ryder",
-            "points" : 60
-          },
-          {
-            "id" : "j9mrz5h7",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Fandango",
-            "points" : 50
-          },
-          {
-            "id" : "j9msdef9",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Tyler Breeze",
-            "points" : 50
-          },
-          {
-            "id" : "j9msdp6q",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Viktor",
-            "points" : 40
-          },
-          {
-            "id" : "456yhgfdr5tg",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Mike Kanellis",
-            "points" : 79
-          },
-          {
-            "id" : "3456tyhgfr",
-            "brandId" : null,
-            "male" : false,
-            "name" : "Maria Kanellis",
-            "points" : 49
-          },
-          {
-            "id" : "j9ms16cw",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Konnor",
-            "points" : 33
-          },
-          {
-            "id" : "bblshly",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Bobby Lashley",
-            "points" : 88
-          },
-          {
-            "id" : "j9mr6qbn",
-            "brandId" : "MNR",
-            "championshipId" : "j9nfpobg",
-            "male" : true,
-            "name" : "Dolph Ziggler",
-            "points" : 72
-          },
-          {
-            "id" : "j9mr6qbn",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Dolph Ziggler",
-            "points" : 72
-          },
-          {
-            "id" : "3ln2b",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Akam",
-            "points" : 87
-          },
-          {
-            "id" : "3ln2v",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Rezar",
-            "points" : 88
-          },
-          {
-            "id" : "3ln2w",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "No Way Jose",
-            "points" : 75
-          },
-          {
-            "id" : "undertaker",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Undertaker",
-            "points" : 90
-          },
-          {
-            "id" : "j9mr6qal",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Bo Dallas",
-            "points" : 49
-          },
-          {
-            "id" : "j9mr6qan",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Curt Hawkins",
-            "points" : 1
-          },
-          {
-            "id" : "j9mr6qao",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Curtis Axel",
-            "points" : 23
-          },
-          {
-            "id" : "stephMcMahon",
-            "brandId" : null,
-            "male" : false,
-            "name" : "Stephanie McMahon",
-            "points" : 23
-          },
-          {
-            "id" : "rondaRousey",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Ronda Rousey",
-            "points" : 90
-          },
-          {
-            "id" : "j9mr6qaq",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Dash Wilder",
-            "points" : 51
-          },
-          {
-            "id" : "j9mr6qas",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Heath Slater",
-            "points" : 35
-          },
-          {
-            "id" : "j9mr6qav",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Rhyno",
-            "points" : 66
-          },
-          {
-            "id" : "j9mr6qaw",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Titus O Neil",
-            "points" : 62
-          },
-          {
-            "id" : "hhh",
-            "brandId" : null,
-            "male" : true,
-            "name" : "HHH",
-            "points" : 90
-          },
-          {
-            "id" : "j9mr6qbr",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Jinder Mahal",
-            "points" : 87
-          },
-          {
-            "id" : "j9mr6qb1",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Apollo Crews",
-            "points" : 67
-          },
-          {
-            "id" : "j9mr6qb3",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Big Show",
-            "points" : 78
-          },
-          {
-            "id" : "wsm",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Mark Henry",
-            "points" : 78
-          },
-          {
-            "id" : "j9mr6qb4",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Bray Wyatt",
-            "points" : 76
-          },
-          {
-            "id" : "LivMorgan",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Liv Morgan",
-            "points" : 65
-          },
-          {
-            "id" : "SarahLogan",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Sarah Logan",
-            "points" : 75
-          },
-          {
-            "id" : "jkrrmndr",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Ruby Riott",
-            "points" : 80
-          },
-          {
-            "id" : "j9mr6qb6",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Elias",
-            "points" : 70
-          },
-          {
-            "id" : "j9mr6qb8",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Finn Balor",
-            "points" : 93
-          },
-          {
-            "id" : "j9msbxog",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Sami Zayn",
-            "points" : 79
-          },
-          {
-            "id" : "j9mr6qba",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Jason Jordan",
-            "points" : 76
-          },
-          {
-            "id" : "j9mr6qbf",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Karl Anderson",
-            "points" : 64
-          },
-          {
-            "id" : "j9mr6qbi",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Scott Dawson",
-            "points" : 65
-          },
-          {
-            "id" : "j9mr6qbv",
-            "brandId" : "MNR",
-            "championshipId" : "j9nfpobe",
-            "male" : true,
-            "name" : "Brock Lesnar",
-            "points" : 99
-          },
-          {
-            "id" : "j9mr6qbw",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Roman Reigns",
-            "points" : 94
-          },
-          {
-            "id" : "j9mr6qbx",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Dean Ambrose",
-            "points" : 90
-          },
-          {
-            "id" : "j9mr6qc0",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Braun Strowman",
-            "points" : 95
-          },
-          {
-            "id" : "j9mr6qc1",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Matt Hardy",
-            "points" : 79
-          },
-          {
-            "id" : "j9mr6qcb",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Alicia Fox",
-            "points" : 50
-          },
-          {
-            "id" : "j9mr6qcc",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Dana Brooke",
-            "points" : 53
-          },
-          {
-            "id" : "j9mr6qce",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Mickie James",
-            "points" : 79
-          },
-          {
-            "id" : "j9mr6qch",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Bayley",
-            "points" : 80
-          },
-          {
-            "id" : "j9mr6qci",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Nia Jax",
-            "points" : 89
-          },
-          {
-            "id" : "j9mr6qco",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Alexa Bliss",
-            "championshipId" : "j9nfpobf",
-            "points" : 87
-          },
-          {
-            "id" : "3ln3b",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Ember Moon",
-            "points" : 85
-          },
-          {
-            "id" : "j9mr6qcp",
-            "brandId" : "MNR",
-            "male" : false,
-            "name" : "Sasha Banks",
-            "points" : 88
-          },
-          {
-            "id" : "j9mrwbsa",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Seth Rollins",
-            "points" : 90
-          },
-          {
-            "id" : "j9mrzgpj",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Goldust",
-            "points" : 40
-          },
-          {
-            "id" : "j9ms0hpg",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Kane",
-            "points" : 90
-          },
-          {
-            "id" : "j9ms1ien",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Kurt Angle",
-            "points" : 70
-          },
-          {
-            "id" : "j9mr6qbc",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Jeff Hardy",
-            "points" : 88
-          },
-          {
-            "id" : "SonyaDeville",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Sonya Deville",
-            "points" : 70
-          },
-          {
-            "id" : "MandyRose",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Mandy Rose",
-            "points" : 80
-          },
-          {
-            "id" : "j9mr6qc3",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Samoa Joe",
-            "points" : 97
-          },
-          {
-            "id" : "3ln2t",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Killian Dain",
-            "points" : 86
-          },
-          {
-            "id" : "3ln2k",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Eric Young",
-            "points" : 85
-          },
-          {
-            "id" : "3ln2d",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Alexander Wolfe",
-            "points" : 80
-          },
-          {
-            "id" : "j9mr6qb2",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Big Cass",
-            "points" : 80
-          },
-          {
-            "id" : "j9mr6qcj",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Asuka",
-            "points" : 95
-          },
-          {
-            "id" : "j9mr6qb5",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Cesaro",
-            "points" : 84
-          },
-          {
-            "id" : "j9mr6qc4",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Sheamus",
-            "points" : 84
-          },
-          {
-            "id" : "j9mr6qat",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Luke Gallows",
-            "points" : 65
-          },
-          {
-            "id" : "3ln2e",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Andrade 'Cien' Almas",
-            "points" : 99
-          },
-          {
-            "id" : "3ln34",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Zelina Vega",
-            "points" : 50
-          },
-          {
-            "id" : "3ln37",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Peyton Royce",
-            "points" : 75
-          },
-          {
-            "id" : "3ln38",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Nikki Cross",
-            "points" : 78
-          },
-          {
-            "id" : "paigeUK",
-            "brandId" : null,
-            "male" : false,
-            "name" : "Paige",
-            "points" : 70
-          },
-          {
-            "id" : "j9mr6qaj",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Rowan",
-            "points" : 69
-          },
-          {
-            "id" : "j9mr6qax",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Jey Uso",
-            "points" : 74
-          },
-          {
-            "id" : "j9mr6qay",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Jimmy Uso",
-            "points" : 73
-          },
-          {
-            "id" : "j9mr6qc5",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "The Miz",
-            "points" : 86
-          },
-          {
-            "id" : "j9mr6qaz",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Harper",
-            "points" : 70
-          },
-          {
-            "id" : "j9mr6qbp",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Chris Jericho",
-            "points" : 82
-          },
-          {
-            "id" : "j9mr6qbq",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Randy Orton",
-            "points" : 87
-          },
-          {
-            "id" : "j9mr6qbs",
-            "brandId" : "SDL",
-            "championshipId": "wweUSW",
-            "male" : true,
-            "name" : "Shinsuke Nakamura",
-            "points" : 90
-          },
-          {
-            "id" : "j9mr6qbt",
-            "brandId" : "MNR",
-            "male" : true,
-            "name" : "Kevin Owens",
-            "points" : 87
-          },
-          {
-            "id" : "j9mr6qbu",
-            "brandId" : null,
-            "male" : true,
-            "name" : "John Cena",
-            "points" : 91
-          },
-          {
-            "id" : "j9mr6qby",
-            "brandId" : "SDL",
-            "championshipId" : "wweC",
-            "male" : true,
-            "name" : "AJ Styles",
-            "points" : 96
-          },
-          {
-            "id" : "j9mr6qc6",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Rusev",
-            "points" : 80
-          },
-          {
-            "id" : "j9mr6qc7",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Lana",
-            "points" : 20
-          },
-          {
-            "id" : "j9mr6qc8",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Carmella",
-            "championshipId" : "wweCW",
-            "points" : 61
-          },
-          {
-            "id" : "j9mr6qc9",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Tamina",
-            "points" : 62
-          },
-          {
-            "id" : "j9mr6qcg",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Becky Lynch",
-            "points" : 79
-          },
-          {
-            "id" : "456yhgfdr5tg",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Mike Kanellis",
-            "points" : 79
-          },
-          {
-            "id" : "3456tyhgfr",
-            "brandId" : null,
-            "male" : false,
-            "name" : "Maria Kanellis",
-            "points" : 49
-          },
-          {
-            "id" : "3456tMaryse",
-            "brandId" : null,
-            "male" : false,
-            "name" : "Maryse",
-            "points" : 49
-          },
-          {
-            "id" : "j9mr6qck",
-            "brandId" : null,
-            "male" : false,
-            "name" : "Nikki Bella",
-            "points" : 75
-          },
-          {
-            "id" : "babyBella",
-            "brandId" : null,
-            "male" : false,
-            "name" : "Brie Bella",
-            "points" : 55
-          },
-          {
-            "id" : "j9mr6qcl",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Charlotte Flair",
-            "points" : 95
-          },
-          {
-            "id" : "j9mr6qcm",
-            "brandId" : "SDL",
-            "male" : false,
-            "name" : "Naomi",
-            "points" : 81
-          },
-          {
-            "id" : "j9mrwzmd",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Aiden English",
-            "points" : 66
-          },
-          {
-            "id" : "j9mrxrq8",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Big E",
-            "points" : 77
-          },
-          {
-            "id" : "j9mrz5h7",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Fandango",
-            "points" : 50
-          },
-          {
-            "id" : "j9ms0wqd",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Kofi Kingston",
-            "points" : 78
-          },
-          {
-            "id" : "j9mscf7q",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Shelton Benjamin",
-            "points" : 80
-          },
-          {
-            "id" : "j9mscnd9",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Sin Cara",
-            "points" : 60
-          },
-          {
-            "id" : "dbSDL",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Daniel Bryan",
-            "points" : 94
-          },
-          {
-            "id" : "shaneSDL",
-            "brandId" : null,
-            "male" : true,
-            "name" : "Shane McMahon",
-            "points" : 80
-          },
-          {
-            "id" : "j9msd3g9",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Tye Dillinger",
-            "points" : 10
-          },
-          {
-            "id" : "j9mseg5y",
-            "brandId" : "SDL",
-            "male" : true,
-            "name" : "Xavier Woods",
-            "points" : 77
-          }
-        ]
-      },
-      {
-        "type" : "GENERATE_CHAMPIONSHIPS",
-        "payload" : [
-          {
-            "id" : "j9nfpobe",
-            "name" : "Universal Champ",
-            "rank" : 5,
-            "brandId" : "MNR",
-            "male" : true,
-            "color" : "#ffffff",
-            "backgroundColor" : "#d7182a"
-          },
-          {
-            "id" : "j9nfpobf",
-            "name" : "Raw Womens Champ",
-            "rank" : 4,
-            "brandId" : "MNR",
-            "male" : false,
-            "color" : "#eb1826",
-            "backgroundColor" : "#ffffff"
-          },
-          {
-            "id" : "j9nfpobg",
-            "name" : "Intercontinental Champ",
-            "rank" : 3,
-            "brandId" : "MNR",
-            "male" : true,
-            "color" : "#000000",
-            "backgroundColor" : "#ffffff"
-          },
-          {
-            "id" : "wweC",
-            "name" : "WWE Champ",
-            "rank" : 5,
-            "brandId" : "SDL",
-            "male" : true,
-            "tag" : false,
-            "color" : "#ffffff",
-            "backgroundColor" : "#404040"
-          },
-          {
-            "id" : "wweCW",
-            "name" : "Smackdowns Womens Champ",
-            "rank" : 4,
-            "brandId" : "SDL",
-            "male" : false,
-            "tag" : false,
-            "color" : "#3b30fe",
-            "backgroundColor" : "#ffffff"
-          },
-          {
-            "id" : "wweUSW",
-            "name" : "US Champ",
-            "rank" : 3,
-            "brandId" : "SDL",
-            "male" : true,
-            "tag" : false,
-            "color" : "#E4E2E3",
-            "backgroundColor" : "#042195"
-          },
-          {
-            "id" : "j9nfpobh",
-            "name" : "Cruiserweight Champ",
-            "rank" : 2,
-            "brandId" : "TFL",
-            "male" : true,
-            "color" : "#ffffff",
-            "backgroundColor" : "#5A49CD"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title" : "Import NXT",
-    "style" : {
-      "color" : "#000",
-      "backgroundColor" : "#ccaa4e"
-    },
-    "items" : [
-      {
-        "type" : "GENERATE_BRANDS",
-        "payload" : [
-          {
-            "id" : "NXT",
-            "name" : "NXT",
-            "color" : "#000000",
-            "backgroundColor" : "#ccaa4e"
-          }
-        ]
-      },
-      {
-        "type" : "GENERATE_ROSTER",
-        "payload" : [
-          {
-            "id" : "3ln2a",
-            "brandId" : "NXT",
-            "championshipId" : "NAChamp",
-            "male" : true,
-            "name" : "Adam Cole",
-            "points" : 85
-          },
-          {
-            "id" : "3ln2c",
-            "brandId" : "NXT",
-            "championshipId" : "j9nf",
-            "male" : true,
-            "name" : "Aleister Black",
-            "points" : 92
-          },
-          {
-            "id" : "3ln2f",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Angelo Dawkins",
-            "points" : 87
-          },
-          {
-            "id" : "3ln2g",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Buddy Murphy",
-            "points" : 72
-          },
-          {
-            "id" : "3ln2h",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Cezar Bononi",
-            "points" : 84
-          },
-          {
-            "id" : "3ln2i",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Danny Burch",
-            "points" : 86
-          },
-          {
-            "id" : "3ln2l",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Fabian Aichner",
-            "points" : 86
-          },
-          {
-            "id" : "3ln2m",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Johnny Gargano",
-            "points" : 98
-          },
-          {
-            "id" : "3ln2n",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Kassius Ohno",
-            "points" : 80
-          },
-          {
-            "id" : "3ln2o",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Lars Sullivan",
-            "points" : 83
-          },
-          {
-            "id" : "3ln2q",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Velveteen Dream",
-            "points" : 89
-          },
-          {
-            "id" : "3ln2r",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Tommaso Ciampa",
-            "points" : 88
-          },
-          {
-            "id" : "3lnsdfsfr",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "EC3",
-            "points" : 88
-          },
-          {
-            "id" : "3lnf3td2r",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Ricochet",
-            "points" : 88
-          },
-          {
-            "id" : "3lf4f3n2s",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Pete Dunne",
-            "championshipId" : "ukChamp",
-            "points" : 90
-          },
-          {
-            "id" : "3ln2s",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Tyler Bate",
-            "points" : 93
-          },
-          {
-            "id" : "3ln2u",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Roderick Strong",
-            "points" : 75
-          },
-          {
-            "id" : "3ln2x",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Kyle O'Reilly",
-            "points" : 85
-          },
-          {
-            "id" : "3ln2y",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Lio Rush",
-            "points" : 66
-          },
-          {
-            "id" : "3ln2z",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Oney Lorcan",
-            "points" : 87
-          },
-          {
-            "id" : "3ln30",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Tino Sabbatelli",
-            "points" : 70
-          },
-          {
-            "id" : "3ln31",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Tucker Knight",
-            "points" : 72
-          },
-          {
-            "id" : "3ln32",
-            "brandId" : "NXT",
-            "male" : true,
-            "name" : "Wesley Blake",
-            "points" : 69
-          },
-          {
-            "id" : "3ln33",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Taynara Conti",
-            "points" : 70
-          },
-          {
-            "id" : "3ln35",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Vanessa Borne",
-            "points" : 80
-          },
-          {
-            "id" : "3ln36",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Shayna Baszler",
-            "championshipId" : "j9nfW",
-            "points" : 80
-          },
-          {
-            "id" : "3ln39",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Lacey Evans",
-            "points" : 70
-          },
-          {
-            "id" : "3ln3a",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Kairi Sane",
-            "points" : 89
-          },
-          {
-            "id" : "3ln3c",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Billie Kay",
-            "points" : 78
-          },
-          {
-            "id" : "3ln3d",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Bianca Belair",
-            "points" : 85
-          },
-          {
-            "id" : "3ln3e",
-            "brandId" : "NXT",
-            "male" : false,
-            "name" : "Aliyah",
-            "points" : 65
-          }
-        ]
-      },
-      {
-        "type" : "GENERATE_CHAMPIONSHIPS",
-        "payload" : [
-          {
-            "id" : "j9nf",
-            "name" : "NXT Champ",
-            "brandId" : "NXT",
-            "male" : true,
-            "rank" : 2,
-            "color" : "#ffffff",
-            "backgroundColor" : "#261c11"
-          },
-          {
-            "id" : "ukChamp",
-            "name" : "UK Champ",
-            "brandId" : "NXT",
-            "male" : true,
-            "rank" : 1,
-            "color" : "#ffffff",
-            "backgroundColor" : "#15247c"
-          },
-          {
-            "id" : "j9nfW",
-            "name" : "NXT Women's Champ",
-            "brandId" : "NXT",
-            "rank" : 2,
-            "male" : false,
-            "color" : "#ffffff",
-            "backgroundColor" : "#b5a092"
-          },
-          {
-            "id" : "NAChamp",
-            "name" : "NXT North American Championship",
-            "brandId" : "NXT",
-            "rank" : 1,
-            "male" : false,
-            "color" : "#e6deda",
-            "backgroundColor" : "#573030"
-          }
-        ]
-      }
-    ]
-  }
+[{
+		"title": "Import WWE Summerslam",
+		"style": {
+			"color": "#ffffff",
+			"backgroundColor": "#ec6323"
+		},
+		"items": [{
+				"type": "GENERATE_SHOWS",
+				"payload": [{
+					"id": "jk1mficr",
+					"bouts": ["jk1mfmgd", "jk1mfmkh","jk1mgzkh", "jk1mfmca", "jk1mfm7m", "jk1mhnx3"],
+					"name": "Summerslam",
+					"image": "data:image/png;base64,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"
+				}]
+			},
+			{
+				"type": "GENERATE_MATCHES",
+				"payload": [{
+					"id": "jk1mfm7m",
+					"generated": false,
+					"simulated": false,
+					"resultStored": false,
+					"wrestlers": [{
+						"id": "j9mr6qc0",
+						"teamId": "jk1mgblx",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}, {
+						"id": "j9mr6qbt",
+						"teamId": "jk1mgkr2",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}]
+				}, {
+					"id": "jk1mfmca",
+					"generated": false,
+					"simulated": false,
+					"resultStored": false,
+					"wrestlers": [{
+						"id": "j9mr6qco",
+						"teamId": "jk1mg7i8",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}, {
+						"id": "rondaRousey",
+						"teamId": "jk1mgi68",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}]
+				}, {
+					"id": "jk1mfmgd",
+					"generated": false,
+					"simulated": false,
+					"resultStored": false,
+					"wrestlers": [{
+						"id": "j9mr6qby",
+						"teamId": "jk1mfyyk",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}, {
+						"id": "j9mr6qc3",
+						"teamId": "jk1mg410",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}]
+				}, {
+					"id": "jk1mfmkh",
+					"generated": false,
+					"simulated": false,
+					"resultStored": false,
+					"wrestlers": [{
+						"id": "j9mr6qbv",
+						"teamId": "jk1mfmky",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}, {
+						"id": "j9mr6qbw",
+						"teamId": "jk1mfr2t",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}]
+				}, {
+					"id": "jk1mgzkh",
+					"generated": false,
+					"simulated": false,
+					"resultStored": false,
+					"wrestlers": [{
+						"id": "j9mr6qbn",
+						"teamId": "jk1mgzkv",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}, {
+						"id": "j9mrwbsa",
+						"teamId": "jk1mhf42",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}]
+				}, {
+					"id": "jk1mhnx3",
+					"generated": false,
+					"simulated": false,
+					"resultStored": false,
+					"wrestlers": [{
+						"id": "j9mr6qc8",
+						"teamId": "jk1mhnxl",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}, {
+						"id": "j9mr6qcg",
+						"teamId": "jk1mhtqi",
+						"winner": false,
+						"loser": false,
+						"health": 100
+					}]
+				}]
+			},
+			{
+				"type": "GENERATE_BRANDS",
+				"payload": [{
+						"id": "MNR",
+						"name": "Raw",
+						"color": "#ffffff",
+						"backgroundColor": "#ac2e37"
+					},
+					{
+						"id": "SDL",
+						"name": "Smackdown Live",
+						"color": "#ffffff",
+						"backgroundColor": "#4341a0"
+					},
+					{
+						"id": "TFL",
+						"name": "205 Live",
+						"color": "#ffffff",
+						"backgroundColor": "#750de5"
+					}
+				]
+			},
+			{
+				"type": "GENERATE_ROSTER",
+				"payload": [{
+						"id": "j9mr6qak",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Akira Tozawa",
+						"points": 76
+					},
+					{
+						"id": "j9mr6qam",
+						"brandId": "TFL",
+						"championshipId": "j9nfpobh",
+						"male": true,
+						"name": "Cedric Alexander",
+						"points": 60
+					},
+					{
+						"id": "j9mr6qar",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Drew Gulak",
+						"points": 50
+					},
+					{
+						"id": "j9mr6qb9",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Jack Gallagher",
+						"points": 63
+					},
+					{
+						"id": "j9mr6qbb",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Gran Metalik",
+						"points": 69
+					},
+					{
+						"id": "j9mr6qbd",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Kalisto",
+						"points": 77
+					},
+					{
+						"id": "j9mr6qbe",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Ariya Daivari",
+						"points": 58
+					},
+					{
+						"id": "j9mr6qbg",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Noam Dar",
+						"points": 55
+					},
+					{
+						"id": "j9mr6qbh",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Rich Swann",
+						"points": 71
+					},
+					{
+						"id": "j9mr6qbj",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Brian Kendrick",
+						"points": 59
+					},
+					{
+						"id": "j9mr6qbk",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Tony Nese",
+						"points": 68
+					},
+					{
+						"id": "j9mr6qbl",
+						"brandId": "TFL",
+						"male": true,
+						"name": "TJP",
+						"points": 65
+					},
+					{
+						"id": "j9ms1xjc",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Lince Dorado",
+						"points": 56
+					},
+					{
+						"id": "j9msb3ot",
+						"brandId": "TFL",
+						"male": true,
+						"name": "Mustafa Ali",
+						"points": 40
+					},
+					{
+						"id": "j9mr6qah",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Chad Gable",
+						"points": 55
+					},
+					{
+						"id": "3ln2j",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Drew McIntyre",
+						"points": 90
+					},
+					{
+						"id": "j9mrarh7",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Sunil Singh",
+						"points": 22
+					},
+					{
+						"id": "j9mrb3m1",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Samir Singh",
+						"points": 23
+					},
+					{
+						"id": "j9mr6qcn",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Natalya",
+						"points": 89
+					},
+					{
+						"id": "j9mr6qbo",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Baron Corbin",
+						"points": 83
+					},
+					{
+						"id": "j9mry4ju",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Bobby Roode",
+						"points": 88
+					},
+					{
+						"id": "j9mr6qb0",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Mojo Rawley",
+						"points": 64
+					},
+					{
+						"id": "j9mse277",
+						"brandId": null,
+						"male": true,
+						"name": "Zack Ryder",
+						"points": 60
+					},
+					{
+						"id": "j9mrz5h7",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Fandango",
+						"points": 50
+					},
+					{
+						"id": "j9msdef9",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Tyler Breeze",
+						"points": 50
+					},
+					{
+						"id": "j9msdp6q",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Viktor",
+						"points": 40
+					},
+					{
+						"id": "456yhgfdr5tg",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Mike Kanellis",
+						"points": 79
+					},
+					{
+						"id": "3456tyhgfr",
+						"brandId": null,
+						"male": false,
+						"name": "Maria Kanellis",
+						"points": 49
+					},
+					{
+						"id": "j9ms16cw",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Konnor",
+						"points": 33
+					},
+					{
+						"id": "bblshly",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Bobby Lashley",
+						"points": 88
+					},
+					{
+						"id": "j9mr6qbn",
+						"brandId": "MNR",
+						"championshipId": "j9nfpobg",
+						"male": true,
+						"name": "Dolph Ziggler",
+						"points": 72
+					},
+					{
+						"id": "j9mr6qbn",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Dolph Ziggler",
+						"points": 72
+					},
+					{
+						"id": "3ln2b",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Akam",
+						"points": 87
+					},
+					{
+						"id": "3ln2v",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Rezar",
+						"points": 88
+					},
+					{
+						"id": "3ln2w",
+						"brandId": "MNR",
+						"male": true,
+						"name": "No Way Jose",
+						"points": 75
+					},
+					{
+						"id": "undertaker",
+						"brandId": null,
+						"male": true,
+						"name": "Undertaker",
+						"points": 90
+					},
+					{
+						"id": "j9mr6qal",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Bo Dallas",
+						"points": 49
+					},
+					{
+						"id": "j9mr6qan",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Curt Hawkins",
+						"points": 1
+					},
+					{
+						"id": "j9mr6qao",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Curtis Axel",
+						"points": 23
+					},
+					{
+						"id": "stephMcMahon",
+						"brandId": null,
+						"male": false,
+						"name": "Stephanie McMahon",
+						"points": 23
+					},
+					{
+						"id": "rondaRousey",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Ronda Rousey",
+						"points": 90
+					},
+					{
+						"id": "j9mr6qaq",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Dash Wilder",
+						"points": 51
+					},
+					{
+						"id": "j9mr6qas",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Heath Slater",
+						"points": 35
+					},
+					{
+						"id": "j9mr6qav",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Rhyno",
+						"points": 66
+					},
+					{
+						"id": "j9mr6qaw",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Titus O Neil",
+						"points": 62
+					},
+					{
+						"id": "hhh",
+						"brandId": null,
+						"male": true,
+						"name": "HHH",
+						"points": 90
+					},
+					{
+						"id": "j9mr6qbr",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Jinder Mahal",
+						"points": 87
+					},
+					{
+						"id": "j9mr6qb1",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Apollo Crews",
+						"points": 67
+					},
+					{
+						"id": "j9mr6qb3",
+						"brandId": null,
+						"male": true,
+						"name": "Big Show",
+						"points": 78
+					},
+					{
+						"id": "wsm",
+						"brandId": null,
+						"male": true,
+						"name": "Mark Henry",
+						"points": 78
+					},
+					{
+						"id": "j9mr6qb4",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Bray Wyatt",
+						"points": 76
+					},
+					{
+						"id": "LivMorgan",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Liv Morgan",
+						"points": 65
+					},
+					{
+						"id": "SarahLogan",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Sarah Logan",
+						"points": 75
+					},
+					{
+						"id": "jkrrmndr",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Ruby Riott",
+						"points": 80
+					},
+					{
+						"id": "j9mr6qb6",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Elias",
+						"points": 70
+					},
+					{
+						"id": "j9mr6qb8",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Finn Balor",
+						"points": 93
+					},
+					{
+						"id": "j9msbxog",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Sami Zayn",
+						"points": 79
+					},
+					{
+						"id": "j9mr6qba",
+						"brandId": null,
+						"male": true,
+						"name": "Jason Jordan",
+						"points": 76
+					},
+					{
+						"id": "j9mr6qbf",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Karl Anderson",
+						"points": 64
+					},
+					{
+						"id": "j9mr6qbi",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Scott Dawson",
+						"points": 65
+					},
+					{
+						"id": "j9mr6qbv",
+						"brandId": "MNR",
+						"championshipId": "j9nfpobe",
+						"male": true,
+						"name": "Brock Lesnar",
+						"points": 99
+					},
+					{
+						"id": "j9mr6qbw",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Roman Reigns",
+						"points": 94
+					},
+					{
+						"id": "j9mr6qbx",
+						"brandId": null,
+						"male": true,
+						"name": "Dean Ambrose",
+						"points": 90
+					},
+					{
+						"id": "j9mr6qc0",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Braun Strowman",
+						"points": 95
+					},
+					{
+						"id": "j9mr6qc1",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Matt Hardy",
+						"points": 79
+					},
+					{
+						"id": "j9mr6qcb",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Alicia Fox",
+						"points": 50
+					},
+					{
+						"id": "j9mr6qcc",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Dana Brooke",
+						"points": 53
+					},
+					{
+						"id": "j9mr6qce",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Mickie James",
+						"points": 79
+					},
+					{
+						"id": "j9mr6qch",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Bayley",
+						"points": 80
+					},
+					{
+						"id": "j9mr6qci",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Nia Jax",
+						"points": 89
+					},
+					{
+						"id": "j9mr6qco",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Alexa Bliss",
+						"championshipId": "j9nfpobf",
+						"points": 87
+					},
+					{
+						"id": "3ln3b",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Ember Moon",
+						"points": 85
+					},
+					{
+						"id": "j9mr6qcp",
+						"brandId": "MNR",
+						"male": false,
+						"name": "Sasha Banks",
+						"points": 88
+					},
+					{
+						"id": "j9mrwbsa",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Seth Rollins",
+						"points": 90
+					},
+					{
+						"id": "j9mrzgpj",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Goldust",
+						"points": 40
+					},
+					{
+						"id": "j9ms0hpg",
+						"brandId": null,
+						"male": true,
+						"name": "Kane",
+						"points": 90
+					},
+					{
+						"id": "j9ms1ien",
+						"brandId": null,
+						"male": true,
+						"name": "Kurt Angle",
+						"points": 70
+					},
+					{
+						"id": "j9mr6qbc",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Jeff Hardy",
+						"points": 88
+					},
+					{
+						"id": "SonyaDeville",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Sonya Deville",
+						"points": 70
+					},
+					{
+						"id": "MandyRose",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Mandy Rose",
+						"points": 80
+					},
+					{
+						"id": "j9mr6qc3",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Samoa Joe",
+						"points": 97
+					},
+					{
+						"id": "3ln2t",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Killian Dain",
+						"points": 86
+					},
+					{
+						"id": "3ln2k",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Eric Young",
+						"points": 85
+					},
+					{
+						"id": "3ln2d",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Alexander Wolfe",
+						"points": 80
+					},
+					{
+						"id": "j9mr6qb2",
+						"brandId": null,
+						"male": true,
+						"name": "Big Cass",
+						"points": 80
+					},
+					{
+						"id": "j9mr6qcj",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Asuka",
+						"points": 95
+					},
+					{
+						"id": "j9mr6qb5",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Cesaro",
+						"points": 84
+					},
+					{
+						"id": "j9mr6qc4",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Sheamus",
+						"points": 84
+					},
+					{
+						"id": "j9mr6qat",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Luke Gallows",
+						"points": 65
+					},
+					{
+						"id": "3ln2e",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Andrade 'Cien' Almas",
+						"points": 99
+					},
+					{
+						"id": "3ln34",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Zelina Vega",
+						"points": 50
+					},
+					{
+						"id": "3ln37",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Peyton Royce",
+						"points": 75
+					},
+					{
+						"id": "3ln38",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Nikki Cross",
+						"points": 78
+					},
+					{
+						"id": "paigeUK",
+						"brandId": null,
+						"male": false,
+						"name": "Paige",
+						"points": 70
+					},
+					{
+						"id": "j9mr6qaj",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Rowan",
+						"points": 69
+					},
+					{
+						"id": "j9mr6qax",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Jey Uso",
+						"points": 74
+					},
+					{
+						"id": "j9mr6qay",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Jimmy Uso",
+						"points": 73
+					},
+					{
+						"id": "j9mr6qc5",
+						"brandId": "SDL",
+						"male": true,
+						"name": "The Miz",
+						"points": 86
+					},
+					{
+						"id": "j9mr6qaz",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Harper",
+						"points": 70
+					},
+					{
+						"id": "j9mr6qbp",
+						"brandId": null,
+						"male": true,
+						"name": "Chris Jericho",
+						"points": 82
+					},
+					{
+						"id": "j9mr6qbq",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Randy Orton",
+						"points": 87
+					},
+					{
+						"id": "j9mr6qbs",
+						"brandId": "SDL",
+						"championshipId": "wweUSW",
+						"male": true,
+						"name": "Shinsuke Nakamura",
+						"points": 90
+					},
+					{
+						"id": "j9mr6qbt",
+						"brandId": "MNR",
+						"male": true,
+						"name": "Kevin Owens",
+						"points": 87
+					},
+					{
+						"id": "j9mr6qbu",
+						"brandId": null,
+						"male": true,
+						"name": "John Cena",
+						"points": 91
+					},
+					{
+						"id": "j9mr6qby",
+						"brandId": "SDL",
+						"championshipId": "wweC",
+						"male": true,
+						"name": "AJ Styles",
+						"points": 96
+					},
+					{
+						"id": "j9mr6qc6",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Rusev",
+						"points": 80
+					},
+					{
+						"id": "j9mr6qc7",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Lana",
+						"points": 20
+					},
+					{
+						"id": "j9mr6qc8",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Carmella",
+						"championshipId": "wweCW",
+						"points": 61
+					},
+					{
+						"id": "j9mr6qc9",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Tamina",
+						"points": 62
+					},
+					{
+						"id": "j9mr6qcg",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Becky Lynch",
+						"points": 79
+					},
+					{
+						"id": "456yhgfdr5tg",
+						"brandId": null,
+						"male": true,
+						"name": "Mike Kanellis",
+						"points": 79
+					},
+					{
+						"id": "3456tyhgfr",
+						"brandId": null,
+						"male": false,
+						"name": "Maria Kanellis",
+						"points": 49
+					},
+					{
+						"id": "3456tMaryse",
+						"brandId": null,
+						"male": false,
+						"name": "Maryse",
+						"points": 49
+					},
+					{
+						"id": "j9mr6qck",
+						"brandId": null,
+						"male": false,
+						"name": "Nikki Bella",
+						"points": 75
+					},
+					{
+						"id": "babyBella",
+						"brandId": null,
+						"male": false,
+						"name": "Brie Bella",
+						"points": 55
+					},
+					{
+						"id": "j9mr6qcl",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Charlotte Flair",
+						"points": 95
+					},
+					{
+						"id": "j9mr6qcm",
+						"brandId": "SDL",
+						"male": false,
+						"name": "Naomi",
+						"points": 81
+					},
+					{
+						"id": "j9mrwzmd",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Aiden English",
+						"points": 66
+					},
+					{
+						"id": "j9mrxrq8",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Big E",
+						"points": 77
+					},
+					{
+						"id": "j9mrz5h7",
+						"brandId": null,
+						"male": true,
+						"name": "Fandango",
+						"points": 50
+					},
+					{
+						"id": "j9ms0wqd",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Kofi Kingston",
+						"points": 78
+					},
+					{
+						"id": "j9mscf7q",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Shelton Benjamin",
+						"points": 80
+					},
+					{
+						"id": "j9mscnd9",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Sin Cara",
+						"points": 60
+					},
+					{
+						"id": "dbSDL",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Daniel Bryan",
+						"points": 94
+					},
+					{
+						"id": "shaneSDL",
+						"brandId": null,
+						"male": true,
+						"name": "Shane McMahon",
+						"points": 80
+					},
+					{
+						"id": "j9msd3g9",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Tye Dillinger",
+						"points": 10
+					},
+					{
+						"id": "j9mseg5y",
+						"brandId": "SDL",
+						"male": true,
+						"name": "Xavier Woods",
+						"points": 77
+					}
+				]
+			},
+			{
+				"type": "GENERATE_CHAMPIONSHIPS",
+				"payload": [{
+						"id": "j9nfpobe",
+						"name": "Universal Champ",
+						"rank": 5,
+						"brandId": "MNR",
+						"male": true,
+						"color": "#ffffff",
+						"backgroundColor": "#d7182a"
+					},
+					{
+						"id": "j9nfpobf",
+						"name": "Raw Womens Champ",
+						"rank": 4,
+						"brandId": "MNR",
+						"male": false,
+						"color": "#eb1826",
+						"backgroundColor": "#ffffff"
+					},
+					{
+						"id": "j9nfpobg",
+						"name": "Intercontinental Champ",
+						"rank": 3,
+						"brandId": "MNR",
+						"male": true,
+						"color": "#000000",
+						"backgroundColor": "#ffffff"
+					},
+					{
+						"id": "wweC",
+						"name": "WWE Champ",
+						"rank": 5,
+						"brandId": "SDL",
+						"male": true,
+						"tag": false,
+						"color": "#ffffff",
+						"backgroundColor": "#404040"
+					},
+					{
+						"id": "wweCW",
+						"name": "Smackdowns Womens Champ",
+						"rank": 4,
+						"brandId": "SDL",
+						"male": false,
+						"tag": false,
+						"color": "#3b30fe",
+						"backgroundColor": "#ffffff"
+					},
+					{
+						"id": "wweUSW",
+						"name": "US Champ",
+						"rank": 3,
+						"brandId": "SDL",
+						"male": true,
+						"tag": false,
+						"color": "#E4E2E3",
+						"backgroundColor": "#042195"
+					},
+					{
+						"id": "j9nfpobh",
+						"name": "Cruiserweight Champ",
+						"rank": 2,
+						"brandId": "TFL",
+						"male": true,
+						"color": "#ffffff",
+						"backgroundColor": "#5A49CD"
+					}
+				]
+			}
+		]
+	},
+	{
+		"title": "Import NXT",
+		"style": {
+			"color": "#000",
+			"backgroundColor": "#ccaa4e"
+		},
+		"items": [{
+				"type": "GENERATE_BRANDS",
+				"payload": [{
+					"id": "NXT",
+					"name": "NXT",
+					"color": "#000000",
+					"backgroundColor": "#ccaa4e"
+				}]
+			},
+			{
+				"type": "GENERATE_ROSTER",
+				"payload": [{
+						"id": "3ln2a",
+						"brandId": "NXT",
+						"championshipId": "NAChamp",
+						"male": true,
+						"name": "Adam Cole",
+						"points": 85
+					},
+					{
+						"id": "3ln2c",
+						"brandId": "NXT",
+						"championshipId": "j9nf",
+						"male": true,
+						"name": "Aleister Black",
+						"points": 92
+					},
+					{
+						"id": "3ln2f",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Angelo Dawkins",
+						"points": 87
+					},
+					{
+						"id": "3ln2g",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Buddy Murphy",
+						"points": 72
+					},
+					{
+						"id": "3ln2h",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Cezar Bononi",
+						"points": 84
+					},
+					{
+						"id": "3ln2i",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Danny Burch",
+						"points": 86
+					},
+					{
+						"id": "3ln2l",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Fabian Aichner",
+						"points": 86
+					},
+					{
+						"id": "3ln2m",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Johnny Gargano",
+						"points": 98
+					},
+					{
+						"id": "3ln2n",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Kassius Ohno",
+						"points": 80
+					},
+					{
+						"id": "3ln2o",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Lars Sullivan",
+						"points": 83
+					},
+					{
+						"id": "3ln2q",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Velveteen Dream",
+						"points": 89
+					},
+					{
+						"id": "3ln2r",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Tommaso Ciampa",
+						"points": 88
+					},
+					{
+						"id": "3lnsdfsfr",
+						"brandId": "NXT",
+						"male": true,
+						"name": "EC3",
+						"points": 88
+					},
+					{
+						"id": "3lnf3td2r",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Ricochet",
+						"points": 88
+					},
+					{
+						"id": "3lf4f3n2s",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Pete Dunne",
+						"championshipId": "ukChamp",
+						"points": 90
+					},
+					{
+						"id": "3ln2s",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Tyler Bate",
+						"points": 93
+					},
+					{
+						"id": "3ln2u",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Roderick Strong",
+						"points": 75
+					},
+					{
+						"id": "3ln2x",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Kyle O'Reilly",
+						"points": 85
+					},
+					{
+						"id": "3ln2y",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Lio Rush",
+						"points": 66
+					},
+					{
+						"id": "3ln2z",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Oney Lorcan",
+						"points": 87
+					},
+					{
+						"id": "3ln30",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Tino Sabbatelli",
+						"points": 70
+					},
+					{
+						"id": "3ln31",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Tucker Knight",
+						"points": 72
+					},
+					{
+						"id": "3ln32",
+						"brandId": "NXT",
+						"male": true,
+						"name": "Wesley Blake",
+						"points": 69
+					},
+					{
+						"id": "3ln33",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Taynara Conti",
+						"points": 70
+					},
+					{
+						"id": "3ln35",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Vanessa Borne",
+						"points": 80
+					},
+					{
+						"id": "3ln36",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Shayna Baszler",
+						"championshipId": "j9nfW",
+						"points": 80
+					},
+					{
+						"id": "3ln39",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Lacey Evans",
+						"points": 70
+					},
+					{
+						"id": "3ln3a",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Kairi Sane",
+						"points": 89
+					},
+					{
+						"id": "3ln3c",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Billie Kay",
+						"points": 78
+					},
+					{
+						"id": "3ln3d",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Bianca Belair",
+						"points": 85
+					},
+					{
+						"id": "3ln3e",
+						"brandId": "NXT",
+						"male": false,
+						"name": "Aliyah",
+						"points": 65
+					}
+				]
+			},
+			{
+				"type": "GENERATE_CHAMPIONSHIPS",
+				"payload": [{
+						"id": "j9nf",
+						"name": "NXT Champ",
+						"brandId": "NXT",
+						"male": true,
+						"rank": 2,
+						"color": "#ffffff",
+						"backgroundColor": "#261c11"
+					},
+					{
+						"id": "ukChamp",
+						"name": "UK Champ",
+						"brandId": "NXT",
+						"male": true,
+						"rank": 1,
+						"color": "#ffffff",
+						"backgroundColor": "#15247c"
+					},
+					{
+						"id": "j9nfW",
+						"name": "NXT Women's Champ",
+						"brandId": "NXT",
+						"rank": 2,
+						"male": false,
+						"color": "#ffffff",
+						"backgroundColor": "#b5a092"
+					},
+					{
+						"id": "NAChamp",
+						"name": "NXT North American Championship",
+						"brandId": "NXT",
+						"rank": 1,
+						"male": false,
+						"color": "#e6deda",
+						"backgroundColor": "#573030"
+					}
+				]
+			}
+		]
+	}
 ]
