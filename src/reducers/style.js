@@ -13,7 +13,7 @@ const updateStyle = state => {
     container: {
       color: isLight ? "black" : "white",
       backgroundColor: isLight ? "#cacaca" : "#232828",
-      backgroundImage: isLight ? "linear-gradient(to right, #cacaca, #ec6323)" : "linear-gradient(to bottom, #18308a 0%,#417bbb 30%,#417bbb 61%,#18308a 100%)",
+      backgroundImage: isLight ? "linear-gradient(to bottom, white, #ccc)" : "linear-gradient(to bottom, #18308a 0%,#417bbb 30%,#417bbb 61%,#18308a 100%)",
     },
   }
 }
