@@ -1,38 +1,25 @@
 div.ranking {
   font-size: small;
 
-  .table,
+  table,
   h3 {
-    font-weight: 100;
     margin: 0;
-    padding: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: medium;
   }
 
-  .losses,
-  .points,
-  .rank,
-  .wins {
-    text-align: center;
+  table {
+    width: 100%;
+    background-color: rgba(60, 60, 60, 0.5);
+    border-collapse: collapse;
+  }
+
+  td {
+    border-top: 0.1rem solid black;
+    line-height: 1.5rem;
   }
 
   thead {
     font-variant: small-caps;
-    font-weight: 500;
-    font-size: smaller;
-
-    td {
-      vertical-align: middle;
-    }
-  }
-
-  tbody {
-    font-variant: normal;
-
-    td {
-      vertical-align: text-bottom;
-    }
-    .name {
-      font-weight: 100;
-    }
   }
 }

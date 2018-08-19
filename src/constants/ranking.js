@@ -1,16 +1,16 @@
 export const RANKED_COLUMNS = {
-  rank: { type: "rank", },
-  name: { type: "string", },
-  points: { type: "number", },
-  wins: { type: "number", },
-  losses: { type: "number", },
+  rank: { type: "rank", title: "#", },
+  name: { type: "string", title: "Wrestler", },
+  points: { type: "number", title: "Rating", },
+  wins: { type: "number", title: "Wins", },
+  losses: { type: "number", title: "Loss", },
 }
 
 export const BATTLE_ROYAL_ENTRIES_COLUMNS = {
-  rank: { type: "rank", },
-  name: { type: "string", },
+  rank: { type: "rank", title: "#", },
+  name: { type: "string", title: "Wrestler", },
 }
 
 export const BATTLE_ROYAL_ELIMINATIONS_COLUMNS = {
-  name: { type: "string", },
+  name: { type: "string", title: "Wrestler", },
 }
