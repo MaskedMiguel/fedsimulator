@@ -2,7 +2,7 @@
 		"title": "Import WWE Summerslam",
 		"style": {
 			"color": "#ffffff",
-			"backgroundColor": "#ec6323"
+			"backgroundColor": "#ab3600"
 		},
 		"items": [{
 				"type": "GENERATE_SHOWS",
